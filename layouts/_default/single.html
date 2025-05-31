@@ -1,12 +1,13 @@
 {{ define "main" }}
 <main class="main" role="main">
 
-  {{ with .Params.heroimage }}
-  <div class="hero-image" style="background-image: url('{{ . | relURL }}');">
-    {{ with $.Params.herotext }}
-    <div class="hero-text">{{ . }}</div>
-    {{ end }}
-  </div>
+  {{/* חיפוש אחר תמונת הירו ב-Page Resources */}}
+  {{ $image := .Resources.GetMatch "hero.jpg" }}
+  {{ if $image }}
+    <img src="{{ $image.RelPermalink }}" alt="{{ $.Title }}" style="width:100%; height:auto; display:block; margin-bottom: 20px;">
+  {{ else if .Params.image }}
+    {{/* פתרון גיבוי למקרה שהתמונה אינה ב-Page Bundle אלא בתיקיית static (אם השארת את זה ב-config.toml) */}}
+    <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" style="width:100%; height:auto; display:block; margin-bottom: 20px;">
   {{ end }}
 
   <article class="post">
