@@ -1,0 +1,139 @@
+# כללי
+- id: read_more
+  translation: "המשך קריאה…"
+
+- id: menu_label
+  translation: "תפריט"
+
+- id: sidemenu_title
+  translation: "תפריט"
+
+# מטא של פוסטים
+- id: meta_lastmod
+  translation: "עודכן לאחרונה"
+
+- id: meta_translations
+  translation: "תרגומים"
+
+# תוכן עניינים
+- id: toc_title
+  translation: "תוכן העניינים"
+
+# ניווט בפוסט
+- id: post_nav_prev
+  translation: "הקודם"
+
+- id: post_nav_next
+  translation: "הבא"
+
+# תיבת מחבר
+- id: authorbox_name
+  translation: "על {{ .Name }}"
+
+# סרגל צד
+- id: sidebar_warning
+  translation: "אזהרה"
+
+- id: sidebar_recommendation
+  translation: "אנא הפעל לפחות ווידג'ט אחד בסרגל הצד."
+
+# ווידג'ט חיפוש
+- id: search_placeholder
+  translation: "חפש…"
+
+# ווידג'ט שפות
+- id: languages_title
+  translation: "שפות"
+
+# ווידג'ט קטגוריות
+- id: categories_title
+  translation: "קטגוריות"
+
+# ווידג'ט פוסטים אחרונים
+- id: recent_title
+  translation: "פוסטים אחרונים"
+
+# ווידג'ט רשתות חברתיות
+- id: social_title
+  translation: "רשתות חברתיות"
+
+# ווידג'ט תגיות
+- id: tags_title
+  translation: "תגיות"
+
+# תחתית העמוד
+- id: footer_credits
+  translation:
+    "נבנה עם <a href=\"https://gohugo.io/\" rel=\"nofollow noopener\" target=\"_blank\">Hugo</a> וערכת העיצוב     <a href=\"https://github.com/Vimux/Mainroad/\" rel=\"nofollow noopener\" target=\"_blank\">Mainroad</a>."
+
+# שגיאה 404
+- id: 404_title
+  translation: "404. הדף לא נמצא"
+
+- id: 404_text
+  translation:
+    "הדף שחיפשת ייתכן והועבר, הוסר או שאינו קיים. אנא השתמש בחיפוש או עבור אל"
+
+- id: 404_linktext
+  translation: "העמוד הראשי"
+
+# מצב ריק – אין פוסטים
+- id: noposts_warning_title
+  translation: "עדיין לא פרסמת פוסטים!"
+
+- id: noposts_warning_description
+  translation:
+    "ברגע שתפרסם משהו באחת מהתיקיות (סקשנים) בתיקיית <b>content</b>, הוא יופיע כאן. רק סקשן אחד (זה עם הכי הרבה פוסטים) יוצג כברירת מחדל בעמוד הראשי."
+
+- id: noposts_warning_tip
+  translation:
+    "<b>טיפ:</b> תוכל להציג כמה סקשנים שתרצה עם הפרמטר     <b><a href=\"https://gohugo.io/functions/where/#mainsections\" rel=\"nofollow noopener\" target=\"_blank\">mainSections</a></b>."
+
+# תפריט עליון
+- id: nav_home
+  translation: "עמוד הבית"
+
+- id: nav_about
+  translation: "אודות"
+
+- id: nav_contact
+  translation: "צור קשר"
+
+- id: nav_blog
+  translation: "מאמרים"
+
+- id: nav_faq
+  translation: "שאלות נפוצות"
+
+- id: nav_services
+  translation: "שירותים"
+
+# תיבת מידע אישית
+- id: therapist_intro_title
+  translation: "קצת עליי"
+
+- id: therapist_intro_text
+  translation: >
+    שמי עמיר. אני מטפל מוסמך בעל ניסיון בליווי תהליכים רגשיים. מטרתי היא לאפשר לך מרחב בטוח לצמיחה, הבנה וחיבור פנימי.
+
+# ניווט נגישות
+- id: skip_to_content
+  translation: "דלג לתוכן"
+
+# תגובות (אם תבחר להפעיל בעתיד Disqus)
+- id: comments_title
+  translation: "תגובות"
+
+- id: comments_disabled
+  translation: "התגובות סגורות למאמר זה."
+
+# קריאה לפעולה
+- id: cta_contact_me
+  translation: "מעוניין בטיפול? ← צור קשר"
+
+# פוטר נוסף
+- id: footer_about
+  translation: "מטפל רגשי מוסמך – טיפול מותאם אישית לתהליך האישי שלך."
+
+- id: footer_privacy
+  translation: "מדיניות פרטיות"

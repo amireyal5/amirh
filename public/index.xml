@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</description>
+    <generator>Hugo</generator>
+    <language>he</language>
+    <lastBuildDate>Sat, 31 May 2025 10:00:00 +0300</lastBuildDate>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting started</title>
+      <link>//localhost:1313/docs/getting-started/</link>
+      <pubDate>Mon, 24 Jan 2022 14:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/getting-started/</guid>
+      <description>&lt;p&gt;Welcome to the Mainroad theme documentation. This quick start guide covers Mainroad theme installation and minimal&#xA;configuration and is intended for intermediate to advanced users. To understand this guide, you need to be familiar&#xA;with the &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; static site generator.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Customization</title>
+      <link>//localhost:1313/docs/customization/</link>
+      <pubDate>Mon, 24 Jan 2022 14:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/customization/</guid>
+      <description>&lt;p&gt;Customization page describes common Mainroad configuration parameters which can be specified via configuration file or&#xA;via Front Matter section. That includes logo section tuning, adding a sidebar with widgets, adjusting highlight color,&#xA;and more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>אודות</title>
+      <link>//localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/about/</guid>
+      <description>&lt;p&gt;אני עמיר, פסיכותרפיסט קליני, מלווה כבר למעלה משני עשורים מבוגרים, הורים ומתבגרים במסע פנימי, אמיץ, שמתחיל לא פעם בשאלה פשוטה: האם אפשר אחרת?&lt;/p&gt;&#xA;&lt;h2 id=&#34;מה-מביא-אנשים-אליי&#34;&gt;מה מביא אנשים אליי?&lt;/h2&gt;&#xA;&lt;p&gt;לפעמים זו תחושת תקיעות – כאילו דלת פנימית שנסגרה מזמן לא מצליחה להיפתח.&lt;br&gt;&#xA;לפעמים זו חרדה ששוטפת בלי אזהרה, דיכאון שמערפל את היום, או קשרים שכבר לא מחזיקים כמו פעם.&lt;br&gt;&#xA;ולעיתים זו פשוט התחושה שמשהו לא עובד. שיכול להיות אחרת – אבל איך?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Frequently asked questions (FAQ)</title>
+      <link>//localhost:1313/docs/faq/</link>
+      <pubDate>Mon, 24 Jan 2022 14:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/faq/</guid>
+      <description>&lt;p&gt;Browse this FAQ page to find answers to frequently asked questions that have not been covered elsewhere&#xA;in the documentation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>סמכות הורית ובעיות טיפול</title>
+      <link>//localhost:1313/post/parental-authority/</link>
+      <pubDate>Sat, 31 May 2025 10:00:00 +0300</pubDate>
+      <guid>//localhost:1313/post/parental-authority/</guid>
+      <description>&lt;h2 id=&#34;מבוא&#34;&gt;מבוא&lt;/h2&gt;&#xA;&lt;p&gt;סמכות הורית היא נושא מורכב שמשפיע רבות על איכות הטיפול והקשר עם הילדים. במאמר זה נסקור את האתגרים המרכזיים העומדים בפני הורים בטיפול ובהצבת גבולות, ונציע דרכי התמודדות.&lt;/p&gt;&#xA;&lt;h2 id=&#34;מהי-סמכות-הורית&#34;&gt;מהי סמכות הורית?&lt;/h2&gt;&#xA;&lt;p&gt;סמכות הורית מתארת את היכולת של ההורה לקבוע כללים, להציב גבולות, ולהוביל את הילד בהתנהגותו בצורה ברורה ומכבדת. סמכות נכונה מחזקת את הביטחון של הילד ומאפשרת התפתחות תקינה.&lt;/p&gt;&#xA;&lt;h2 id=&#34;בעיות-נפוצות-בטיפול-ובסמכות-הורית&#34;&gt;בעיות נפוצות בטיפול ובסמכות הורית&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;חוסר עקביות&lt;/strong&gt;: הורים שמתקשים לשמור על כללים ברורים יוצרים בלבול אצל הילד.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;פחד מעימות&lt;/strong&gt;: הורים נמנעים מהצבת גבולות כדי לא לעורר מחלוקת.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;תקשורת לקויה&lt;/strong&gt;: חוסר הבנה או תקשורת בלתי פתוחה פוגעים באמון ההדדי.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;התמודדות עם קשיים רגשיים&lt;/strong&gt;: לעיתים טיפול רגשי לא מספק מחזק את הקשיים בסמכות.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;דרכי-התמודדות-ושיפור&#34;&gt;דרכי התמודדות ושיפור&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;הצבת גבולות ברורים ועקביים, עם הסברים מותאמים לגיל הילד.&lt;/li&gt;&#xA;&lt;li&gt;תקשורת פתוחה, הקשבה אמפתית וחיזוק רגשי.&lt;/li&gt;&#xA;&lt;li&gt;פנייה לייעוץ וטיפול משפחתי במידת הצורך.&lt;/li&gt;&#xA;&lt;li&gt;פיתוח מודעות עצמית והכרת האתגרים האישיים של ההורה.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;סיכום&#34;&gt;סיכום&lt;/h2&gt;&#xA;&lt;p&gt;סמכות הורית היא כלי מרכזי ביצירת סביבה משפחתית בטוחה ובריאה. עם כלים נכונים, הורים יכולים לשפר משמעותית את איכות הטיפול ואת הקשר עם ילדיהם.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Basic HTML Elements</title>
+      <link>//localhost:1313/post/basic-elements/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/post/basic-elements/</guid>
+      <description>&lt;p&gt;The main purpose of this article is to make sure that all basic HTML Elements are decorated with CSS so as to not miss any possible elements when creating new themes for Hugo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>//localhost:1313/post/hugo-template-primer/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/post/hugo-template-primer/</guid>
+      <description>&lt;p&gt;Hugo uses the excellent &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; &lt;a href=&#34;https://golang.org/pkg/html/template/&#34;&gt;html/template&lt;/a&gt; library for&#xA;its template engine. It is an extremely lightweight engine that provides a very&#xA;small amount of logic. In our experience that it is just the right amount of&#xA;logic to be able to create a good static website. If you have used other&#xA;template systems from different languages or frameworks you will find a lot of&#xA;similarities in Go templates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>//localhost:1313/post/getting-started-with-hugo/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/post/getting-started-with-hugo/</guid>
+      <description>&lt;h2 id=&#34;step-1-install-hugo&#34;&gt;Step 1. Install Hugo&lt;/h2&gt;&#xA;&lt;p&gt;Go to &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;Hugo releases&lt;/a&gt; and download the&#xA;appropriate version for your OS and architecture.&lt;/p&gt;&#xA;&lt;p&gt;Save it somewhere specific as we will be using it in the next step.&lt;/p&gt;&#xA;&lt;p&gt;More complete instructions are available at &lt;a href=&#34;https://gohugo.io/getting-started/installing/&#34;&gt;Install Hugo&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;step-2-build-the-docs&#34;&gt;Step 2. Build the Docs&lt;/h2&gt;&#xA;&lt;p&gt;Hugo has its own example site which happens to also be the documentation site&#xA;you are reading right now.&lt;/p&gt;&#xA;&lt;p&gt;Follow the following steps:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Clone the &lt;a href=&#34;https://github.com/spf13/hugo&#34;&gt;Hugo repository&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Go into the repo&lt;/li&gt;&#xA;&lt;li&gt;Run hugo in server mode and build the docs&lt;/li&gt;&#xA;&lt;li&gt;Open your browser to http://localhost:1313&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Corresponding pseudo commands:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

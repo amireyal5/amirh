@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
+    <link>//localhost:1313/categories/</link>
+    <description>Recent content in Categories on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</description>
+    <generator>Hugo</generator>
+    <language>he</language>
+    <lastBuildDate>Sat, 31 May 2025 10:00:00 +0300</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>הורות</title>
+      <link>//localhost:1313/categories/%D7%94%D7%95%D7%A8%D7%95%D7%AA/</link>
+      <pubDate>Sat, 31 May 2025 10:00:00 +0300</pubDate>
+      <guid>//localhost:1313/categories/%D7%94%D7%95%D7%A8%D7%95%D7%AA/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>טיפול</title>
+      <link>//localhost:1313/categories/%D7%98%D7%99%D7%A4%D7%95%D7%9C/</link>
+      <pubDate>Sat, 31 May 2025 10:00:00 +0300</pubDate>
+      <guid>//localhost:1313/categories/%D7%98%D7%99%D7%A4%D7%95%D7%9C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>//localhost:1313/categories/development/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Golang</title>
+      <link>//localhost:1313/categories/golang/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/golang/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
