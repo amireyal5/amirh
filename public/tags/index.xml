@@ -9,17 +9,38 @@
     <lastBuildDate>Sat, 31 May 2025 10:00:00 +0300</lastBuildDate>
     <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>התמודדות</title>
-      <link>//localhost:1313/tags/%D7%94%D7%AA%D7%9E%D7%95%D7%93%D7%93%D7%95%D7%AA/</link>
+      <title>אהבה</title>
+      <link>//localhost:1313/tags/%D7%90%D7%94%D7%91%D7%94/</link>
       <pubDate>Sat, 31 May 2025 10:00:00 +0300</pubDate>
-      <guid>//localhost:1313/tags/%D7%94%D7%AA%D7%9E%D7%95%D7%93%D7%93%D7%95%D7%AA/</guid>
+      <guid>//localhost:1313/tags/%D7%90%D7%94%D7%91%D7%94/</guid>
       <description></description>
     </item>
     <item>
-      <title>טיפול משפחתי</title>
-      <link>//localhost:1313/tags/%D7%98%D7%99%D7%A4%D7%95%D7%9C-%D7%9E%D7%A9%D7%A4%D7%97%D7%AA%D7%99/</link>
+      <title>גבולות</title>
+      <link>//localhost:1313/tags/%D7%92%D7%91%D7%95%D7%9C%D7%95%D7%AA/</link>
       <pubDate>Sat, 31 May 2025 10:00:00 +0300</pubDate>
-      <guid>//localhost:1313/tags/%D7%98%D7%99%D7%A4%D7%95%D7%9C-%D7%9E%D7%A9%D7%A4%D7%97%D7%AA%D7%99/</guid>
+      <guid>//localhost:1313/tags/%D7%92%D7%91%D7%95%D7%9C%D7%95%D7%AA/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>הדרכת הורים</title>
+      <link>//localhost:1313/tags/%D7%94%D7%93%D7%A8%D7%9B%D7%AA-%D7%94%D7%95%D7%A8%D7%99%D7%9D/</link>
+      <pubDate>Sat, 31 May 2025 10:00:00 +0300</pubDate>
+      <guid>//localhost:1313/tags/%D7%94%D7%93%D7%A8%D7%9B%D7%AA-%D7%94%D7%95%D7%A8%D7%99%D7%9D/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>הורות חיובית</title>
+      <link>//localhost:1313/tags/%D7%94%D7%95%D7%A8%D7%95%D7%AA-%D7%97%D7%99%D7%95%D7%91%D7%99%D7%AA/</link>
+      <pubDate>Sat, 31 May 2025 10:00:00 +0300</pubDate>
+      <guid>//localhost:1313/tags/%D7%94%D7%95%D7%A8%D7%95%D7%AA-%D7%97%D7%99%D7%95%D7%91%D7%99%D7%AA/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>חינוך</title>
+      <link>//localhost:1313/tags/%D7%97%D7%99%D7%A0%D7%95%D7%9A/</link>
+      <pubDate>Sat, 31 May 2025 10:00:00 +0300</pubDate>
+      <guid>//localhost:1313/tags/%D7%97%D7%99%D7%A0%D7%95%D7%9A/</guid>
       <description></description>
     </item>
     <item>
@@ -30,10 +51,38 @@
       <description></description>
     </item>
     <item>
-      <title>תקשורת משפחתית</title>
-      <link>//localhost:1313/tags/%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA-%D7%9E%D7%A9%D7%A4%D7%97%D7%AA%D7%99%D7%AA/</link>
-      <pubDate>Sat, 31 May 2025 10:00:00 +0300</pubDate>
-      <guid>//localhost:1313/tags/%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA-%D7%9E%D7%A9%D7%A4%D7%97%D7%AA%D7%99%D7%AA/</guid>
+      <title>CBT</title>
+      <link>//localhost:1313/tags/cbt/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/cbt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>חרדה</title>
+      <link>//localhost:1313/tags/%D7%97%D7%A8%D7%93%D7%94/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/%D7%97%D7%A8%D7%93%D7%94/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>חרדה חברתית</title>
+      <link>//localhost:1313/tags/%D7%97%D7%A8%D7%93%D7%94-%D7%97%D7%91%D7%A8%D7%AA%D7%99%D7%AA/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/%D7%97%D7%A8%D7%93%D7%94-%D7%97%D7%91%D7%A8%D7%AA%D7%99%D7%AA/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>טיפול דינמי</title>
+      <link>//localhost:1313/tags/%D7%98%D7%99%D7%A4%D7%95%D7%9C-%D7%93%D7%99%D7%A0%D7%9E%D7%99/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/%D7%98%D7%99%D7%A4%D7%95%D7%9C-%D7%93%D7%99%D7%A0%D7%9E%D7%99/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>טיפול רגשי</title>
+      <link>//localhost:1313/tags/%D7%98%D7%99%D7%A4%D7%95%D7%9C-%D7%A8%D7%92%D7%A9%D7%99/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/%D7%98%D7%99%D7%A4%D7%95%D7%9C-%D7%A8%D7%92%D7%A9%D7%99/</guid>
       <description></description>
     </item>
     <item>

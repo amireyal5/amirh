@@ -3,19 +3,21 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Getting started - עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
+  <title>בית - עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
   <script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-  <meta name="description" content="This article helps you get started with the Mainroad theme, including installation and minimal configuration.">
+  <meta name="description" content="">
     <meta property="og:url" content="//localhost:1313/docs/getting-started/">
   <meta property="og:site_name" content="עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים">
-  <meta property="og:title" content="Getting started">
-  <meta property="og:description" content="This article helps you get started with the Mainroad theme, including installation and minimal configuration.">
+  <meta property="og:title" content="בית">
+  <meta property="og:description" content="לחזור הביתה טיפול רגשי ליווי רגשי למבוגרים, מתבגרים והורים – בגישה מקצועית, רגישה ומותאמת אישית.
+לתיאום שיחת היכרות
+אודותיי שלום, אני עמיר – פסיכותרפיסט מומחה בטיפול רגשי למתבגרים ולמבוגרים.
+מומחה בהתמודדות עם חרדה, דיכאון, קשיים בקשרים בין-אישיים ומשברים רגשיים.
+אם אתם מרגישים תקועים בתוך מעגל חוזר של מחשבות, רגשות או דפוסי התנהגות – אני כאן בשבילכם.
+במהלך השנים ליוויתי אנשים רבים בתהליכי שינוי עמוקים, שחיזקו את החוסן הפנימי שלהם והובילו לחיים משמעותיים, שלווים ומדויקים יותר.">
   <meta property="og:locale" content="he">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:published_time" content="2022-01-24T14:00:00+00:00">
-    <meta property="article:modified_time" content="2022-01-24T14:00:00+00:00">
-    <meta property="article:tag" content="Installation">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -52,7 +54,7 @@
 		<li class="menu__item menu__item--active">
 			<a class="menu__link" href="/docs/getting-started/">
 				
-				<span class="menu__text">Getting started</span>
+				<span class="menu__text">בית</span>
 				
 			</a>
 		</li>
@@ -100,65 +102,62 @@
 
   <article class="post">
     <header class="post__header">
-      <h1 class="post__title">Getting started</h1>
-      <p class="post__lead">This article helps you get started with the Mainroad theme, including installation and minimal configuration.</p>
-      <div class="post__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2022-01-24T14:00:00Z">ינואר 24, 2022</time></div></div>
+      <h1 class="post__title">בית</h1>
+      
     </header>
     <div class="content post__content clearfix">
-      <p>Welcome to the Mainroad theme documentation. This quick start guide covers Mainroad theme installation and minimal
-configuration and is intended for intermediate to advanced users. To understand this guide, you need to be familiar
-with the <a href="https://gohugo.io/">Hugo</a> static site generator.</p>
-<h2 id="installation">Installation</h2>
-<p>Before installing the <strong>Mainroad</strong> theme, make sure that you&rsquo;ve
-<a href="https://gohugo.io/getting-started/quick-start/#step-1-install-hugo">installed <strong>Hugo</strong> (version 0.54.0 or later)</a> and
-<a href="https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site">created a new site</a>. To learn how to install
-Hugo, visit <a href="https://gohugo.io/getting-started/installing/">Hugo Documentation</a>.</p>
-<p>There are a few ways to install a theme in Hugo. This can be done via git submodule, git clone, Hugo modules, or
-by downloading the archive and manually copying the files. Three installation options are described below.</p>
-<h3 id="option-a-git-submodule">Option A: <code>git submodule</code></h3>
-<p><em>Additional requirements: git</em></p>
-<p>If you don&rsquo;t plan to make significant changes to the theme but still want to track and update it, you can add it as a
-<a href="https://git-scm.com/docs/git-submodule">git submodule</a> by running the following command from the root directory of
-your Hugo site:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git submodule add https://github.com/vimux/mainroad.git themes/mainroad
-</span></span></code></pre></div><p><strong>Note:</strong>
-<a href="https://docs.netlify.com/configure-builds/common-configurations/hugo/#hugo-themes">Netlify expects git submodule</a>
-instead of git clone.</p>
-<h3 id="option-b-git-clone">Option B: <code>git clone</code></h3>
-<p><em>Additional requirements: git</em></p>
-<p>Run this <a href="https://git-scm.com/docs/git-clone">git clone</a> command from the root of your Hugo site:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/vimux/mainroad.git themes/mainroad
-</span></span></code></pre></div><h3 id="option-c-manual-install">Option C: Manual install</h3>
-<p>If you do not want to use git, you can manually
-<strong><a href="https://github.com/vimux/mainroad/archive/master.zip">download ZIP</a></strong> and extract it into the <code>themes/mainroad</code>
-within your Hugo site.</p>
+      <h1 id="לחזור-הביתה-טיפול-רגשי">לחזור הביתה טיפול רגשי</h1>
+<p>ליווי רגשי למבוגרים, מתבגרים והורים – בגישה מקצועית, רגישה ומותאמת אישית.</p>
+<p><a href="/docs/getting-started/#%d7%99%d7%a6%d7%99%d7%a8%d7%aa-%d7%a7%d7%a9%d7%a8">לתיאום שיחת היכרות</a></p>
 <hr>
-<h3 id="activate-theme">Activate theme</h3>
-<p>Whichever installation option you choose, don&rsquo;t forget to edit <code>theme</code> param of the site configuration <code>config.toml</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;mainroad&#34;</span>
-</span></span></code></pre></div><p>To check it out, build the site via <code>hugo</code> command or make it available on a local server via <code>hugo server</code>.</p>
-<h2 id="minimal-configuration">Minimal configuration</h2>
-<p><strong>Do not copy the <a href="https://github.com/vimux/mainroad#configtoml-example">example config</a> as-is.</strong>
-Use only the parameters that you need. The Mainroad theme contains required defaults, so you don&rsquo;t need to add all of
-the configuration parameters to run the theme for the first time. Before adding any theme-specific parameters, make
-sure to edit the <code>theme</code> param inside the config file and check that the theme works.</p>
-<p>For information about common customization settings, see <a href="/docs/customization/" title="Mainroad theme customization">Customization page</a>.
-To view our example configuration, visit <a href="https://github.com/vimux/mainroad/blob/master/exampleSite/config.toml">demo config</a>.</p>
-<p><a href="https://github.com/vimux/mainroad/blob/master/exampleSite/content/docs/getting-started.md">Edit this page on GitHub</a></p>
+<h2 id="אודותיי">אודותיי</h2>
+<p>שלום, אני עמיר – פסיכותרפיסט מומחה בטיפול רגשי למתבגרים ולמבוגרים.<br>
+מומחה בהתמודדות עם חרדה, דיכאון, קשיים בקשרים בין-אישיים ומשברים רגשיים.</p>
+<p>אם אתם מרגישים תקועים בתוך מעגל חוזר של מחשבות, רגשות או דפוסי התנהגות – אני כאן בשבילכם.</p>
+<p>במהלך השנים ליוויתי אנשים רבים בתהליכי שינוי עמוקים, שחיזקו את החוסן הפנימי שלהם והובילו לחיים משמעותיים, שלווים ומדויקים יותר.</p>
+<p>הגישה שלי אינטגרטיבית:<br>
+אני משלב טיפול קוגניטיבי-התנהגותי (CBT), טיפול דינמי וגישות הומניסטיות – בהתאמה אישית לכל אדם ולמה שהוא עובר.</p>
+<p>במרחב בטוח, קשוב ולא שיפוטי – נמצא יחד את הדרך שנכונה לכם, בקצב שמתאים לכם.</p>
+<p><a href="">קראו עוד אודותיי</a></p>
+<hr>
+<h2 id="למי-אני-יכול-לעזור">למי אני יכול לעזור</h2>
+<h3 id="-מבוגרים">👨‍🦱 מבוגרים</h3>
+<p>התמודדות עם קשיים רגשיים, תחושת תקיעות, דיכאון, חרדה, משברי חיים, חיפוש משמעות</p>
+<h3 id="-מתבגרים">🧑‍🎓 מתבגרים</h3>
+<p>קשיים בגיבוש זהות, דימוי עצמי נמוך, לחץ חברתי, בדידות, יחסים עם ההורים</p>
+<h3 id="-הדרכת-הורים">👪 הדרכת הורים</h3>
+<p>אתגרים רגשיים והתנהגותיים עם ילדים ובני נוער, הצבת גבולות, פיתוח שיח רגשי בבית</p>
+<blockquote>
+<p>כל גיל והאתגרים שלו – אני כאן כדי להקשיב, ללוות ולכוון בדרך שמתאימה לכם.</p></blockquote>
+<hr>
+<h2 id="איך-נראה-תהליך-העבודה">איך נראה תהליך העבודה?</h2>
+<ol>
+<li>
+<p><strong>שיחת היכרות טלפונית</strong><br>
+שיחה קצרה לבדיקת התאמה ראשונית</p>
+</li>
+<li>
+<p><strong>פגישה ראשונה</strong><br>
+היכרות מעמיקה, זיהוי צרכים, מטרה ראשונית</p>
+</li>
+<li>
+<p><strong>תהליך טיפולי מותאם אישית</strong><br>
+קצב ותוכן שנבנים יחד – בקשב ובקצב שנכון לך</p>
+</li>
+</ol>
+<hr>
+<h2 id="יצירת-קשר">יצירת קשר</h2>
+<p><strong>שיחת ייעוץ ראשונית ללא התחייבות:</strong><br>
+📞 <strong>054-7509962</strong><br>
+📧 <a href="mailto:amir@amireyal.co.il">amir@amireyal.co.il</a></p>
+<p>🧭 מיקום: כרמיאל והסביבה<br>
+💻 ניתן לקיים פגישות גם אונליין</p>
+<p>🕘 שעות פעילות: ראשון–חמישי, 9:00–19:00<br>
+📱 אפשר גם ב-<a href="">WhatsApp</a></p>
+<hr>
+<hr>
+
     </div>
-    <footer class="post__footer">
-      
-<div class="post__tags tags clearfix">
-	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M4 0h8s2 0 4 2l15 15s2 2 0 4L21 31s-2 2-4 0L2 16s-2-2-2-4V3s0-3 4-3m3 10a3 3 0 0 0 0-6 3 3 0 0 0 0 6"/></svg>
-	<ul class="tags__list">
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/installation/" rel="tag">Installation</a>
-		</li>
-	</ul>
-</div>
-    </footer>
   </article>
 
 </main>
