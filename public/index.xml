@@ -38,10 +38,10 @@
     </item>
     <item>
       <title>צרו קשר</title>
-      <link>//localhost:1313/post/contact/</link>
+      <link>//localhost:1313/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/post/contact/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;h2 id=&#34;title-צור-קשר&#34;&gt;title: &amp;ldquo;צור קשר&amp;rdquo;&lt;/h2&gt;&#xA;&lt;h1 id=&#34;צור-קשר&#34;&gt;צור קשר&lt;/h1&gt;&#xA;&lt;p&gt;אנא מלא את הטופס הבא ונחזור אליך בהקדם:&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;שם מלא&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;אימייל&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;הודעה&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;שלח&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+      <guid>//localhost:1313/contact/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;נא מלאו את הפרטים ונחזור אליכם בהקדם האפשרי&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>חרדה חברתית: מאחורי הקלעים של הפחד החברתי – זיהוי,  ואפשרויות טיפול</title>

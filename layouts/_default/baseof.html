@@ -16,6 +16,8 @@
   {{- if .Site.Params.twitter_cards }}
     {{ template "_internal/twitter_cards.html" . }}
   {{- end }}
+  {{ $contactFormCss := resources.Get "css/contact-form.css" | minify }}
+        <link rel="stylesheet" href="{{ $contactFormCss.RelPermalink }}">
 
   {{- $googleFontsLink := .Site.Params.googleFontsLink | default "https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" }}
   {{- if hasPrefix $googleFontsLink "https://fonts.googleapis.com/" }}

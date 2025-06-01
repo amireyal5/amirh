@@ -1,0 +1,34 @@
+{{ define "main" }}
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+
+   <form name="contact" method="POST" data-netlify="true" action="/thank-you/">
+      <p class="hidden">
+        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+      </p>
+      <p>
+        <label for="name">שם:</label>
+        <input type="text" id="name" name="name" required>
+      </p>
+      <p>
+        <label for="email">אימייל:</label>
+        <input type="email" id="email" name="email" required>
+      </p>
+      <p>
+        <label for="phone">טלפון:</label>
+        <input type="tel" id="phone" name="phone"> </p>
+      <p>
+        <label for="subject">נושא:</label>
+        <input type="text" id="subject" name="subject">
+      </p>
+      <p>
+        <label for="message">הודעה:</label>
+        <textarea id="message" name="message" required></textarea>
+      </p>
+      <p>
+        <button type="submit">שלח</button>
+      </p>
+    </form>
+  </div>
+{{ end }}
