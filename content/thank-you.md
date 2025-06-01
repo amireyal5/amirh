@@ -2,8 +2,7 @@
 title: "הודעתך נשלחה בהצלחה"
 date: 2023-10-27T10:30:00+02:00
 draft: false
-headless: true # 
-אופציונלי: מונע יצירת דף נפרד בתפריט/מפת אתר
+headless: true # אופציונלי
 sidebar: left
 ---
 
