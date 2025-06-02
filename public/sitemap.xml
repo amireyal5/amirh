@@ -3,14 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//localhost:1313/</loc>
-    <lastmod>2025-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/post/home/</loc>
   </url><url>
     <loc>//localhost:1313/docs/customization/</loc>
     <lastmod>2022-01-24T14:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/about/</loc>
   </url><url>
     <loc>//localhost:1313/post/about/</loc>
   </url><url>
@@ -18,6 +16,9 @@
     <lastmod>2022-01-24T14:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/contact/</loc>
+  </url><url>
+    <loc>//localhost:1313/spaceship/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/</loc>
     <lastmod>2025-05-31T00:00:00+00:00</lastmod>
@@ -126,6 +127,10 @@
   </url><url>
     <loc>//localhost:1313/tags/themes/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/questionnaires/</loc>
+  </url><url>
+    <loc>//localhost:1313/questionnaires/anxiety/</loc>
   </url><url>
     <loc>//localhost:1313/search/</loc>
     <priority>0.1</priority>

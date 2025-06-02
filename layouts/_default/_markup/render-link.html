@@ -1,0 +1,16 @@
+{{ $href := .Destination | safeURL }}
+{{ $isContact := or (strings.Contains $href "contact") (strings.Contains .Text "צור קשר") }}
+
+{{ if $isContact }}
+  <a href="{{ $href }}" class="contact-link">
+    {{ .Text | safeHTML }} <span class="contact-icon">»</span>
+  </a>
+{{ else if strings.HasPrefix $href "http" }}
+  <a href="{{ $href }}" target="_blank" rel="noopener noreferrer" class="external-link">
+    {{ .Text | safeHTML }}
+  </a>
+{{ else }}
+  <a href="{{ $href }}" class="internal-link">
+    {{ .Text | safeHTML }}
+  </a>
+{{ end }}

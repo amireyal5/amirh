@@ -65,7 +65,7 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/about/">
+			<a class="menu__link" href="/post/about/">
 				
 				<span class="menu__text">אודות</span>
 				
@@ -124,7 +124,15 @@ in the documentation.</p>
 <h2 id="general-questions">General questions</h2>
 <h3 id="do-i-need-to-have-prior-experience-before-proceeding-with-the-mainroad-theme">Do I need to have prior experience before proceeding with the Mainroad theme?</h3>
 <p><strong>Yes.</strong> You&rsquo;ll need to be familiar with Hugo before proceeding.
-<a href="//localhost:1313/docs/" title="Mainroad theme documentation">Our docs section</a> is intended for intermediate to
+
+
+
+
+  <a href="//localhost:1313/docs/" class="internal-link">
+    Our docs section
+  </a>
+
+ is intended for intermediate to
 advanced users and developers. Our documentation may still be helpful to users with minimal experience, but are not
 comprehensive.</p>
 <h3 id="do-i-need-to-use-the-extended-version-of-hugo">Do I need to use the extended version of Hugo?</h3>
@@ -133,21 +141,61 @@ Hugo is not required (but applicable).</p>
 <h3 id="is-there-a-list-of-all-possible-configuration-options">Is there a list of all possible configuration options?</h3>
 <p><strong>Configuration:</strong></p>
 <ul>
-<li>See <a href="https://gohugo.io/getting-started/configuration/#all-configuration-settings">All Configuration Settings</a>
+<li>See 
+
+
+
+  <a href="https://gohugo.io/getting-started/configuration/#all-configuration-settings" target="_blank" rel="noopener noreferrer" class="external-link">
+    All Configuration Settings
+  </a>
+
+
 for the full list of Hugo-defined variables with their default values.</li>
-<li>See <a href="https://github.com/Vimux/Mainroad#configtoml-example">Mainroad config.toml example</a> for the full list of
+<li>See 
+
+
+
+  <a href="https://github.com/Vimux/Mainroad#configtoml-example" target="_blank" rel="noopener noreferrer" class="external-link">
+    Mainroad config.toml example
+  </a>
+
+ for the full list of
 Mainroad-specific variables.</li>
 </ul>
 <p><strong>Front Matter:</strong></p>
 <ul>
-<li>See <a href="https://gohugo.io/content-management/front-matter#front-matter-variables">Front Matter Variables</a> for the
+<li>See 
+
+
+
+  <a href="https://gohugo.io/content-management/front-matter#front-matter-variables" target="_blank" rel="noopener noreferrer" class="external-link">
+    Front Matter Variables
+  </a>
+
+ for the
 list of Hugo-defined Front Matter variables.</li>
-<li>See <a href="https://github.com/Vimux/Mainroad#front-matter-example">Mainroad Front Matter example</a> for the list of
+<li>See 
+
+
+
+  <a href="https://github.com/Vimux/Mainroad#front-matter-example" target="_blank" rel="noopener noreferrer" class="external-link">
+    Mainroad Front Matter example
+  </a>
+
+ for the list of
 Mainroad-specific Front Matter variables.</li>
 </ul>
 <h3 id="what-if-i-have-more-questions-should-i-create-an-issue">What if I have more questions? Should I create an issue?</h3>
 <p><strong>We don&rsquo;t provide personal technical support.</strong> As stated in our
-<a href="https://github.com/Vimux/Mainroad/blob/master/CONTRIBUTING.md">contributing guidelines</a>, please do not use the issue
+
+
+
+
+  <a href="https://github.com/Vimux/Mainroad/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="external-link">
+    contributing guidelines
+  </a>
+
+, please do not use the issue
 tracker for personal support. This includes reports like: “How do I do this&quot;, “Everything is broken; help me”, “I
 changed something, and it doesn&rsquo;t work anymore”, “It&rsquo;s not a personal issue, but I just want to ask how X or Y works”,
 “I forked your theme, then something broke; fix this immediately”, and so on.</p>
@@ -170,11 +218,27 @@ six-digit hex triplet notation (e.g., <code>#E22D30</code>) to make it work prop
 <pre tabindex="0"><code>a=#E22D30;a=\\x${a:5:2}\\x${a:3:2}\\x${a:1:2};for i in 98 274 578;do printf $a|dd of=static/favicon.ico bs=1 seek=$i conv=notrunc;done
 </code></pre><pre tabindex="0"><code>a=#E22D30;a=$(echo 504C54452A2A2A${a:1:6}|sed -e &#39;s/../\\x&amp;/g&#39;);printf $a|gzip|tail -c8|od -tx4 -N4 -An|xargs|sed -e &#39;s/../\\x&amp;/g&#39;|printf $a$(cat -)|dd of=static/apple-touch-icon.png bs=1 seek=37 conv=notrunc
 </code></pre><h3 id="i-want-to-use-google-programmable-search-engine-as-a-site-search-engine-is-it-possible">I want to use Google Programmable Search Engine as a site search engine. Is it possible?</h3>
-<p><strong>Yes, it is possible to use <a href="https://developers.google.com/custom-search/docs/overview">Google PSE (CSE)</a> as a site
+<p><strong>Yes, it is possible to use 
+
+
+
+  <a href="https://developers.google.com/custom-search/docs/overview" target="_blank" rel="noopener noreferrer" class="external-link">
+    Google PSE (CSE)
+  </a>
+
+ as a site
 search engine.</strong></p>
 <ol>
 <li>
-<p>Create a new search engine with <a href="https://programmablesearchengine.google.com/about/">Google PSE</a>. Google account
+<p>Create a new search engine with 
+
+
+
+  <a href="https://programmablesearchengine.google.com/about/" target="_blank" rel="noopener noreferrer" class="external-link">
+    Google PSE
+  </a>
+
+. Google account
 required.</p>
 </li>
 <li>
@@ -204,8 +268,24 @@ pager: false
 </span></span></code></pre></div></li>
 </ol>
 <p>Google PSE (CSE) should work when it&rsquo;s done. Look and feel will be far from perfect, but you have to solve this problem
-with <a href="https://programmablesearchengine.google.com/controlpanel/all">Google PSE Control Panel</a> and additional CSS.</p>
-<p><a href="https://github.com/vimux/mainroad/blob/master/exampleSite/content/docs/faq.md">Edit this page on GitHub</a></p>
+with 
+
+
+
+  <a href="https://programmablesearchengine.google.com/controlpanel/all" target="_blank" rel="noopener noreferrer" class="external-link">
+    Google PSE Control Panel
+  </a>
+
+ and additional CSS.</p>
+<p>
+
+
+
+  <a href="https://github.com/vimux/mainroad/blob/master/exampleSite/content/docs/faq.md" target="_blank" rel="noopener noreferrer" class="external-link">
+    Edit this page on GitHub
+  </a>
+
+</p>
     </div>
   </article>
 

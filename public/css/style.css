@@ -1317,3 +1317,43 @@ textarea {
 		font-size: .6875rem;
 	}
 }
+.custom-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.custom-link {
+  color: #007acc;
+  text-decoration: underline;
+}
+
+.custom-link:hover {
+  color: #005fa3;
+}
+.internal-link {
+  color: #004466;
+}
+
+.external-link {
+  color: #cc3300;
+}
+a.contact-link {
+  color: #6cbec1;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.2em
+}
+
+a.contact-link:hover {
+  text-decoration: none;
+}
+
+a.contact-link .contact-icon {
+  display: inline-block;
+  margin-right: 0em;
+  font-family: sans-serif;
+  font-size: 1.8em;
+
+}
+

@@ -1,0 +1,6 @@
+<figure class="image-wrapper">
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" class="responsive-image" />
+  {{ with .Title }}
+  <figcaption>{{ . }}</figcaption>
+  {{ end }}
+</figure>

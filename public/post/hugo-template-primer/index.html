@@ -9,7 +9,7 @@
     <meta property="og:url" content="//localhost:1313/post/hugo-template-primer/">
   <meta property="og:site_name" content="עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים">
   <meta property="og:title" content="(Hu)go Template Primer">
-  <meta property="og:description" content="Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.">
+  <meta property="og:description" content="Hugo uses the excellent Gohtml/templatelibrary for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.">
   <meta property="og:locale" content="he">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -70,7 +70,7 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/about/">
+			<a class="menu__link" href="/post/about/">
 				
 				<span class="menu__text">אודות</span>
 				
@@ -126,13 +126,37 @@
 		<img class="thumbnail__image" src="/img/placeholder.png" alt="(Hu)go Template Primer">
 		
 	</figure><div class="content post__content clearfix">
-      <p>Hugo uses the excellent <a href="https://golang.org/">Go</a> <a href="https://golang.org/pkg/html/template/">html/template</a> library for
+      <p>Hugo uses the excellent 
+
+
+
+  <a href="https://golang.org/" target="_blank" rel="noopener noreferrer" class="external-link">
+    Go
+  </a>
+
+ 
+
+
+
+  <a href="https://golang.org/pkg/html/template/" target="_blank" rel="noopener noreferrer" class="external-link">
+    html/template
+  </a>
+
+ library for
 its template engine. It is an extremely lightweight engine that provides a very
 small amount of logic. In our experience that it is just the right amount of
 logic to be able to create a good static website. If you have used other
 template systems from different languages or frameworks you will find a lot of
 similarities in Go templates.</p>
-<p>This document is a brief primer on using Go templates. The <a href="https://golang.org/pkg/html/template/">Go docs</a>
+<p>This document is a brief primer on using Go templates. The 
+
+
+
+  <a href="https://golang.org/pkg/html/template/" target="_blank" rel="noopener noreferrer" class="external-link">
+    Go docs
+  </a>
+
+
 provide more details.</p>
 <h2 id="introduction-to-go-templates">Introduction to Go Templates</h2>
 <p>Go templates provide an extremely simple template language. It adheres to the
@@ -140,7 +164,15 @@ belief that only the most basic of logic belongs in the template or view layer.
 One consequence of this simplicity is that Go templates parse very quickly.</p>
 <p>A unique characteristic of Go templates is they are content aware. Variables and
 content will be sanitized depending on the context of where they are used. More
-details can be found in the <a href="https://golang.org/pkg/html/template/">Go docs</a>.</p>
+details can be found in the 
+
+
+
+  <a href="https://golang.org/pkg/html/template/" target="_blank" rel="noopener noreferrer" class="external-link">
+    Go docs
+  </a>
+
+.</p>
 <h2 id="basic-syntax">Basic Syntax</h2>
 <p>Golang templates are HTML files with the addition of variables and
 functions.</p>
@@ -163,7 +195,15 @@ functions.</p>
 <p>Each Go template has a struct (object) made available to it. In hugo each
 template is passed either a page or a node struct depending on which type of
 page you are rendering. More details are available on the
-<a href="/layout/variables">variables</a> page.</p>
+
+
+
+
+  <a href="/layout/variables" class="internal-link">
+    variables
+  </a>
+
+ page.</p>
 <p>A variable is accessed by referencing the variable name.</p>
 <pre><code>&lt;title&gt;{{ .Title }}&lt;/title&gt;
 </code></pre>
@@ -174,8 +214,16 @@ page you are rendering. More details are available on the
 <h2 id="functions">Functions</h2>
 <p>Go template ship with a few functions which provide basic functionality. The Go
 template system also provides a mechanism for applications to extend the
-available functions with their own. <a href="/layout/functions">Hugo template
-functions</a> provide some additional functionality we believe
+available functions with their own. 
+
+
+
+  <a href="/layout/functions" class="internal-link">
+    Hugo template
+functions
+  </a>
+
+ provide some additional functionality we believe
 are useful for building websites. Functions are called by using their name
 followed by the required parameters separated by spaces. Template
 functions cannot be added without recompiling hugo.</p>
@@ -305,7 +353,15 @@ type (supported by your front matter/config format) and use them however
 you want to inside of your templates.</p>
 <h2 id="using-content-page-parameters">Using Content (page) Parameters</h2>
 <p>In each piece of content you can provide variables to be used by the
-templates. This happens in the <a href="/content/front-matter">front matter</a>.</p>
+templates. This happens in the 
+
+
+
+  <a href="/content/front-matter" class="internal-link">
+    front matter
+  </a>
+
+.</p>
 <p>An example of this is used in this documentation site. Most of the pages
 benefit from having the table of contents provided. Sometimes the TOC just
 doesn&rsquo;t make a lot of sense. We&rsquo;ve defined a variable in our front matter

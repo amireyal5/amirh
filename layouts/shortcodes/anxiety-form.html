@@ -1,0 +1,196 @@
+ <!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="UTF-8" />
+
+
+</head>
+<body>
+
+<div class="anxiety-form-wrapper">
+<form id="anxietyForm">
+  <table>
+    <thead>
+      <tr>
+        <th>פריט</th>
+        <th>פחד או חרדה<br/>(0-כלל לא עד 3-רב מאד)</th>
+        <th>הימנעות<br/>(0-אף פעם לא עד 3-בדרך כלל)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1. להשתמש בטלפון בנוכחות אנשים</td>
+        <td><select name="fear_1" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_1" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>2. להשתתף בפעילות בקבוצה קטנה</td>
+        <td><select name="fear_2" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_2" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>3. לאכול בנוכחות אנשים</td>
+        <td><select name="fear_3" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_3" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>4. לשתות בנוכחות אנשים</td>
+        <td><select name="fear_4" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_4" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>5. לדבר עם בעל סמכות</td>
+        <td><select name="fear_5" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_5" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>6. לפעול להופיע או לדבר בפני קהל</td>
+        <td><select name="fear_6" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_6" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>7. ללכת למסיבה</td>
+        <td><select name="fear_7" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_7" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>8. לעבוד כשצופים בך</td>
+        <td><select name="fear_8" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_8" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>9. לכתוב כשצופים בך</td>
+        <td><select name="fear_9" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_9" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>10. לדבר בטלפון עם מישהו שאינך מכיר היטב</td>
+        <td><select name="fear_10" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_10" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>11. להתייצב בתור במקום ציבורי</td>
+        <td><select name="fear_11" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_11" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>12. לכתוב או לעשות עבודות יד כשצופים בך</td>
+        <td><select name="fear_12" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_12" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>13. לדבר עם אדם חדש</td>
+        <td><select name="fear_13" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_13" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>14. להיות במרכז תשומת הלב</td>
+        <td><select name="fear_14" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_14" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>15. לבקש משהו בשירות או בחנות</td>
+        <td><select name="fear_15" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_15" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>16. לדבר עם מישהו בנוכחות אחרים</td>
+        <td><select name="fear_16" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_16" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>17. לאכול מול אנשים שלא מכירים אותך</td>
+        <td><select name="fear_17" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_17" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>18. לפגוש אנשים חדשים</td>
+        <td><select name="fear_18" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_18" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>19. לדבר בטלפון במקום ציבורי</td>
+        <td><select name="fear_19" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_19" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>20. לשאול שאלות בכיתה או בקבוצה</td>
+        <td><select name="fear_20" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_20" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>21. להתערב בשיחה שקטה</td>
+        <td><select name="fear_21" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_21" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>22. לדבר בפני קבוצה</td>
+        <td><select name="fear_22" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_22" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>23. לעמוד מול אנשים חדשים</td>
+        <td><select name="fear_23" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_23" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+      <tr><td>24. להשתתף בשיחה בנוכחות אחרים</td>
+        <td><select name="fear_24" required>
+          <option value="">בחר</option><option value="0">0 - כלל לא</option><option value="1">1 - מעט</option><option value="2">2 - בינוני</option><option value="3">3 - רב מאד</option></select></td>
+        <td><select name="avoid_24" required>
+          <option value="">בחר</option><option value="0">0 - אף פעם לא</option><option value="1">1 - לפעמים</option><option value="2">2 - לעיתים קרובות</option><option value="3">3 - בדרך כלל</option></select></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="submit">חשב ניקוד</button>
+</form>
+
+<div id="result" class="result"></div>
+
+<script>
+  document.getElementById('anxietyForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    let totalFear = 0;
+    let totalAvoid = 0;
+
+    for(let i=1; i<=24; i++) {
+      const fearVal = parseInt(this['fear_' + i].value);
+      const avoidVal = parseInt(this['avoid_' + i].value);
+      totalFear += fearVal;
+      totalAvoid += avoidVal;
+    }
+
+    const totalScore = totalFear + totalAvoid;
+
+    document.getElementById('result').textContent = 
+      `ניקוד סך הכל: ${totalScore} (פחד או חרדה: ${totalFear}, הימנעות: ${totalAvoid})`;
+  });
+</script>
+
+</body>
+</html>
+
