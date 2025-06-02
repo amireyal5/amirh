@@ -1,4 +1,16 @@
+{{- $actionURL := "/search" -}}  {{/* העמוד פנימי באתר שבו מוצגות התוצאות */}}
+{{- $inputName := "q" -}}       {{/* השם של פרמטר החיפוש שיועבר ב-URL */}}
+
 <div class="widget-search widget">
-    <input class="widget-search__field" type="search" id="search-input" placeholder="{{ T "search_placeholder" }}" value="" aria-label="{{ T "search_placeholder" }}">
-    <ul id="search-results"></ul>
+  <form class="widget-search__form" role="search" method="get" action="{{ $actionURL }}">
+    <input 
+      class="widget-search__field" 
+      type="search" 
+      placeholder="{{ T "search_placeholder" }}" 
+      name="{{ $inputName }}" 
+      aria-label="{{ T "search_placeholder" }}" 
+      required
+    >
+    <input class="widget-search__submit" type="submit" value="חפש">
+  </form>
 </div>

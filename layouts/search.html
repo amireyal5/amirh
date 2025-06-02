@@ -1,0 +1,168 @@
+{{ define "main" }}
+  <h1>חיפוש באתר</h1>
+  <input type="text" id="searchInput" placeholder="הקלד לחיפוש..." autofocus />
+  <ul class="search-results" id="results"></ul>
+  <div class="no-results" id="noResults" style="display:none;">לא נמצאו תוצאות.</div>
+
+  <style>
+    /* העיצוב של התוצאות, מותאם למראה נקי ומשתלב */
+    ul.search-results {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-width: 800px;
+      margin: 20px auto 0;
+    }
+    ul.search-results li {
+      padding: 15px 10px;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+    ul.search-results li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    ul.search-results a {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    ul.search-results a:hover {
+      text-decoration: underline;
+    }
+    .search-summary {
+      margin-top: 6px;
+      font-size: 0.95em;
+      color: #555;
+      line-height: 1.4;
+    }
+    .no-results {
+      text-align: center;
+      font-size: 1.1em;
+      color: #888;
+      margin-top: 40px;
+    }
+    input#searchInput {
+      display: block;
+      width: 60%;
+      max-width: 600px;
+      padding: 12px 12px;
+      font-size: 1.2em;
+      margin: 0 auto 25px auto;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+    input#searchInput:focus {
+      border-color: #0066cc;
+      outline: none;
+    }
+    mark {
+      background-color: #ffeb3b;
+      color: black;
+      font-weight: bold;
+      padding: 0 2px;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <script>
+    let fuse;
+    const resultsList = document.getElementById('results');
+    const noResultsDiv = document.getElementById('noResults');
+    const searchInput = document.getElementById('searchInput');
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param) || '';
+    }
+
+    // הפונקציה שמחזירה תקציר סביב מילת החיפוש
+    function getSnippet(content, query, snippetLength = 160) {
+      const lowerContent = content.toLowerCase();
+      const lowerQuery = query.toLowerCase();
+      const index = lowerContent.indexOf(lowerQuery);
+      if (index === -1) {
+        // אם לא נמצאה המילה, מחזירים את ההתחלה
+        return content.length > snippetLength ? content.substring(0, snippetLength) + '...' : content;
+      }
+      const start = Math.max(0, index - 50);
+      let end = start + snippetLength;
+      if (end > content.length) end = content.length;
+      let snippet = content.substring(start, end);
+      if (start > 0) snippet = '...' + snippet;
+      if (end < content.length) snippet = snippet + '...';
+      return snippet;
+    }
+
+    // פונקציה להדגשת מילת החיפוש בטקסט
+    function highlight(text, query) {
+      if (!query) return text;
+      const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`(${escapedQuery})`, 'gi');
+      return text.replace(regex, '<mark>$1</mark>');
+    }
+
+    fetch('/index.json')
+      .then(res => res.json())
+      .then(data => {
+        fuse = new Fuse(data, {
+          keys: ['title', 'content', 'tags'],
+          includeScore: true,
+          threshold: 0.4,
+          ignoreLocation: true
+        });
+
+        const queryFromURL = getQueryParam('q');
+        if (queryFromURL) {
+          searchInput.value = queryFromURL;
+          doSearch(queryFromURL);
+        }
+      });
+
+    searchInput.addEventListener('input', function() {
+      doSearch(this.value.trim());
+      const params = new URLSearchParams(window.location.search);
+      if (this.value.trim() === '') {
+        params.delete('q');
+      } else {
+        params.set('q', this.value.trim());
+      }
+      const newRelativePathQuery = window.location.pathname + '?' + params.toString();
+      history.replaceState(null, '', newRelativePathQuery);
+    });
+
+    function doSearch(query) {
+      if (!query) {
+        resultsList.innerHTML = '';
+        noResultsDiv.style.display = 'none';
+        return;
+      }
+      const results = fuse.search(query);
+      if (results.length === 0) {
+        resultsList.innerHTML = '';
+        noResultsDiv.style.display = 'block';
+        return;
+      }
+      noResultsDiv.style.display = 'none';
+      resultsList.innerHTML = results.map(result => {
+        const item = result.item;
+        const snippet = getSnippet(item.content, query);
+        return `
+          <li>
+            <a href="${item.url}">${highlight(item.title, query)}</a>
+            <p class="search-summary">${highlight(snippet, query)}</p>
+          </li>
+        `;
+      }).join('');
+    }
+  </script>
+{{ end }}
+
+{{ define "title" }}חיפוש באתר{{ end }}
+
+{{ define "head" }}
+  <meta name="description" content="דף חיפוש באתר" />
+{{ end }}

@@ -9,11 +9,39 @@
     <lastBuildDate>Sat, 31 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>בית</title>
+      <link>//localhost:1313/post/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/post/home/</guid>
+      <description>&lt;h2 id=&#34;לחזור-הביתה-טיפול-רגשי&#34;&gt;לחזור הביתה טיפול רגשי&lt;/h2&gt;&#xA;&lt;p&gt;ליווי רגשי למבוגרים, מתבגרים והורים – בגישה מקצועית, רגישה ומותאמת אישית.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;//localhost:1313/post/home/#%d7%99%d7%a6%d7%99%d7%a8%d7%aa-%d7%a7%d7%a9%d7%a8&#34;&gt;לתיאום שיחת היכרות&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;אודותיי&#34;&gt;אודותיי&lt;/h2&gt;&#xA;&lt;p&gt;שלום, אני עמיר – פסיכותרפיסט מומחה בטיפול רגשי למתבגרים ולמבוגרים.&lt;br&gt;&#xA;מומחה בהתמודדות עם חרדה, דיכאון, קשיים בקשרים בין-אישיים ומשברים רגשיים.&lt;/p&gt;&#xA;&lt;p&gt;אם אתם מרגישים תקועים בתוך מעגל חוזר של מחשבות, רגשות או דפוסי התנהגות – אני כאן בשבילכם.&lt;/p&gt;&#xA;&lt;p&gt;במהלך השנים ליוויתי אנשים רבים בתהליכי שינוי עמוקים, שחיזקו את החוסן הפנימי שלהם והובילו לחיים משמעותיים, שלווים ומדויקים יותר.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Customization</title>
+      <link>//localhost:1313/docs/customization/</link>
+      <pubDate>Mon, 24 Jan 2022 14:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/customization/</guid>
+      <description>&lt;p&gt;Customization page describes common Mainroad configuration parameters which can be specified via configuration file or&#xA;via Front Matter section. That includes logo section tuning, adding a sidebar with widgets, adjusting highlight color,&#xA;and more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>אודות</title>
+      <link>//localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/about/</guid>
+      <description>&lt;p&gt;אני עמיר, פסיכותרפיסט קליני, מלווה כבר למעלה משני עשורים מבוגרים, הורים ומתבגרים במסע פנימי, אמיץ, שמתחיל לא פעם בשאלה פשוטה: האם אפשר אחרת?&lt;/p&gt;&#xA;&lt;h2 id=&#34;מה-מביא-אנשים-אליי&#34;&gt;מה מביא אנשים אליי?&lt;/h2&gt;&#xA;&lt;p&gt;לפעמים זו תחושת תקיעות – כאילו דלת פנימית שנסגרה מזמן לא מצליחה להיפתח.&lt;br&gt;&#xA;לפעמים זו חרדה ששוטפת בלי אזהרה, דיכאון שמערפל את היום, או קשרים שכבר לא מחזיקים כמו פעם.&lt;br&gt;&#xA;ולעיתים זו פשוט התחושה שמשהו לא עובד. שיכול להיות אחרת – אבל איך?&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>אודות</title>
       <link>//localhost:1313/post/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/post/about/</guid>
       <description>&lt;p&gt;אני עמיר, פסיכותרפיסט קליני, מלווה כבר למעלה משני עשורים מבוגרים, הורים ומתבגרים במסע פנימי, אמיץ, שמתחיל לא פעם בשאלה פשוטה: האם אפשר אחרת?&lt;/p&gt;&#xA;&lt;h2 id=&#34;מה-מביא-אנשים-אליי&#34;&gt;מה מביא אנשים אליי?&lt;/h2&gt;&#xA;&lt;p&gt;לפעמים זו תחושת תקיעות – כאילו דלת פנימית שנסגרה מזמן לא מצליחה להיפתח.&lt;br&gt;&#xA;לפעמים זו חרדה ששוטפת בלי אזהרה, דיכאון שמערפל את היום, או קשרים שכבר לא מחזיקים כמו פעם.&lt;br&gt;&#xA;ולעיתים זו פשוט התחושה שמשהו לא עובד. שיכול להיות אחרת – אבל איך?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Frequently asked questions (FAQ)</title>
+      <link>//localhost:1313/docs/faq/</link>
+      <pubDate>Mon, 24 Jan 2022 14:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/faq/</guid>
+      <description>&lt;p&gt;Browse this FAQ page to find answers to frequently asked questions that have not been covered elsewhere&#xA;in the documentation.&lt;/p&gt;</description>
     </item>
     <item>
       <title>צרו קשר</title>
@@ -42,6 +70,27 @@
       <pubDate>Fri, 27 Oct 2023 10:30:00 +0200</pubDate>
       <guid>//localhost:1313/thank-you/</guid>
       <description>&lt;p&gt;&lt;strong&gt;הודעתך התקבלה בהצלחה!&lt;/strong&gt;&#xA;נחזור אליכם בהקדם האפשרי.&lt;/p&gt;&#xA;&lt;p&gt;לחזור ל&lt;a href=&#34;//localhost:1313/&#34;&gt;עמוד הבית&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Basic HTML Elements</title>
+      <link>//localhost:1313/post/basic-elements/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/post/basic-elements/</guid>
+      <description>&lt;p&gt;The main purpose of this article is to make sure that all basic HTML Elements are decorated with CSS so as to not miss any possible elements when creating new themes for Hugo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>//localhost:1313/post/hugo-template-primer/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/post/hugo-template-primer/</guid>
+      <description>&lt;p&gt;Hugo uses the excellent &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; &lt;a href=&#34;https://golang.org/pkg/html/template/&#34;&gt;html/template&lt;/a&gt; library for&#xA;its template engine. It is an extremely lightweight engine that provides a very&#xA;small amount of logic. In our experience that it is just the right amount of&#xA;logic to be able to create a good static website. If you have used other&#xA;template systems from different languages or frameworks you will find a lot of&#xA;similarities in Go templates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>//localhost:1313/post/getting-started-with-hugo/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/post/getting-started-with-hugo/</guid>
+      <description>&lt;h2 id=&#34;step-1-install-hugo&#34;&gt;Step 1. Install Hugo&lt;/h2&gt;&#xA;&lt;p&gt;Go to &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;Hugo releases&lt;/a&gt; and download the&#xA;appropriate version for your OS and architecture.&lt;/p&gt;&#xA;&lt;p&gt;Save it somewhere specific as we will be using it in the next step.&lt;/p&gt;&#xA;&lt;p&gt;More complete instructions are available at &lt;a href=&#34;https://gohugo.io/getting-started/installing/&#34;&gt;Install Hugo&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;step-2-build-the-docs&#34;&gt;Step 2. Build the Docs&lt;/h2&gt;&#xA;&lt;p&gt;Hugo has its own example site which happens to also be the documentation site&#xA;you are reading right now.&lt;/p&gt;&#xA;&lt;p&gt;Follow the following steps:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Clone the &lt;a href=&#34;https://github.com/spf13/hugo&#34;&gt;Hugo repository&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Go into the repo&lt;/li&gt;&#xA;&lt;li&gt;Run hugo in server mode and build the docs&lt;/li&gt;&#xA;&lt;li&gt;Open your browser to http://localhost:1313&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Corresponding pseudo commands:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

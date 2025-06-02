@@ -1,0 +1,12 @@
+[
+  {{- $searchPages := where .Site.RegularPages "Type" "post" -}}
+  {{- range $index, $page := $searchPages -}}
+    {{- if $index }},{{ end }}
+    {
+      "title": {{ $page.Title | jsonify }},
+      "url": {{ $page.Permalink | jsonify }},
+      "content": {{ $page.Plain | jsonify }}
+      {{ with $page.Params.tags }}, "tags": {{ jsonify . }}{{ end }}
+    }
+  {{- end -}}
+]

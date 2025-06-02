@@ -1,0 +1,6 @@
+{
+  "title": {{ .Title | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "content": {{ .PlainContent | jsonify }}
+  {{ with .Params.tags }}, "tags": {{ jsonify . }}{{ end }}
+}

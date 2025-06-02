@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="no-js" lang="he" dir="rtl">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>חיפוש באתר</title>
+  <script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+  <meta name="description" content="">
+    <meta property="og:url" content="//localhost:1313/search/">
+  <meta property="og:site_name" content="עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים">
+  <meta property="og:title" content="חיפוש">
+  <meta property="og:description" content="הבלוג האישי שלי על כל דבר">
+  <meta property="og:locale" content="he">
+  <meta property="og:type" content="article">
+
+  
+        <link rel="stylesheet" href="/css/contact-form.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap">
+
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <link rel="shortcut icon" href="/favicon.ico">
+    
+</head>
+<body class="body">
+  <div class="container container--outer">
+    <header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="הבלוג של עמיר" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/logo.png">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">הבלוג של עמיר</div>
+					<div class="logo__tagline">רק עוד אתר ברשת</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">תפריט</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">בית</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/docs/customization/">
+				
+				<span class="menu__text">Customization</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">אודות</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/docs/faq/">
+				
+				<span class="menu__text">שאלות נפוצות</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/basic-elements/">
+				
+				<span class="menu__text">Basic Elements</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/contact/">
+				
+				<span class="menu__text">צרו קשר</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+    <div class="wrapper flex">
+      <div class="primary">
+      
+  <h1>חיפוש באתר</h1>
+  <input type="text" id="searchInput" placeholder="הקלד לחיפוש..." autofocus />
+  <ul class="search-results" id="results"></ul>
+  <div class="no-results" id="noResults" style="display:none;">לא נמצאו תוצאות.</div>
+
+  <style>
+     
+    ul.search-results {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-width: 800px;
+      margin: 20px auto 0;
+    }
+    ul.search-results li {
+      padding: 15px 10px;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+    ul.search-results li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    ul.search-results a {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    ul.search-results a:hover {
+      text-decoration: underline;
+    }
+    .search-summary {
+      margin-top: 6px;
+      font-size: 0.95em;
+      color: #555;
+      line-height: 1.4;
+    }
+    .no-results {
+      text-align: center;
+      font-size: 1.1em;
+      color: #888;
+      margin-top: 40px;
+    }
+    input#searchInput {
+      display: block;
+      width: 60%;
+      max-width: 600px;
+      padding: 12px 12px;
+      font-size: 1.2em;
+      margin: 0 auto 25px auto;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+    input#searchInput:focus {
+      border-color: #0066cc;
+      outline: none;
+    }
+    mark {
+      background-color: #ffeb3b;
+      color: black;
+      font-weight: bold;
+      padding: 0 2px;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <script>
+    let fuse;
+    const resultsList = document.getElementById('results');
+    const noResultsDiv = document.getElementById('noResults');
+    const searchInput = document.getElementById('searchInput');
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param) || '';
+    }
+
+    
+    function getSnippet(content, query, snippetLength = 160) {
+      const lowerContent = content.toLowerCase();
+      const lowerQuery = query.toLowerCase();
+      const index = lowerContent.indexOf(lowerQuery);
+      if (index === -1) {
+        
+        return content.length > snippetLength ? content.substring(0, snippetLength) + '...' : content;
+      }
+      const start = Math.max(0, index - 50);
+      let end = start + snippetLength;
+      if (end > content.length) end = content.length;
+      let snippet = content.substring(start, end);
+      if (start > 0) snippet = '...' + snippet;
+      if (end < content.length) snippet = snippet + '...';
+      return snippet;
+    }
+
+    
+    function highlight(text, query) {
+      if (!query) return text;
+      const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`(${escapedQuery})`, 'gi');
+      return text.replace(regex, '<mark>$1</mark>');
+    }
+
+    fetch('/index.json')
+      .then(res => res.json())
+      .then(data => {
+        fuse = new Fuse(data, {
+          keys: ['title', 'content', 'tags'],
+          includeScore: true,
+          threshold: 0.4,
+          ignoreLocation: true
+        });
+
+        const queryFromURL = getQueryParam('q');
+        if (queryFromURL) {
+          searchInput.value = queryFromURL;
+          doSearch(queryFromURL);
+        }
+      });
+
+    searchInput.addEventListener('input', function() {
+      doSearch(this.value.trim());
+      const params = new URLSearchParams(window.location.search);
+      if (this.value.trim() === '') {
+        params.delete('q');
+      } else {
+        params.set('q', this.value.trim());
+      }
+      const newRelativePathQuery = window.location.pathname + '?' + params.toString();
+      history.replaceState(null, '', newRelativePathQuery);
+    });
+
+    function doSearch(query) {
+      if (!query) {
+        resultsList.innerHTML = '';
+        noResultsDiv.style.display = 'none';
+        return;
+      }
+      const results = fuse.search(query);
+      if (results.length === 0) {
+        resultsList.innerHTML = '';
+        noResultsDiv.style.display = 'block';
+        return;
+      }
+      noResultsDiv.style.display = 'none';
+      resultsList.innerHTML = results.map(result => {
+        const item = result.item;
+        const snippet = getSnippet(item.content, query);
+        return `
+          <li>
+            <a href="${item.url}">${highlight(item.title, query)}</a>
+            <p class="search-summary">${highlight(snippet, query)}</p>
+          </li>
+        `;
+      }).join('');
+    }
+  </script>
+
+      </div>
+      
+    </div>
+    <footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2025 עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים.
+			<span class="footer__copyright-credits">נבנה עם <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> וערכת העיצוב     <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
+		</div>
+	</div>
+</footer>
+  </div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
