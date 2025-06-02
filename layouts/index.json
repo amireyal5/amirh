@@ -1,0 +1,16 @@
+[
+  {{- $pagesToInclude := slice -}}
+  {{- range .Site.RegularPages -}}
+    {{- $pagesToInclude = $pagesToInclude | append . -}}
+  {{- end -}}
+
+  {{- range $index, $page := $pagesToInclude -}}
+    {{- if $index }},{{ end }}
+    {
+      "title": {{ $page.Title | jsonify }},
+      "url": {{ $page.Permalink | jsonify }},
+      "content": {{ with $page.PlainPages }}{{ . | jsonify }}{{ else }}{{ "" | jsonify }}{{ end }}
+      {{ with $page.Params.tags }}, "tags": {{ jsonify . }}{{ end }}
+    }
+  {{- end -}}
+]

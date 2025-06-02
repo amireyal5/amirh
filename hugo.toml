@@ -5,54 +5,58 @@ defaultContentLanguage = "he"
 defaultContentLanguageInSubdir = false
 
 [Pagination]
-  pagerSize = 10
+pagerSize = 10
 
 theme = "mainroad"
 disqusShortname = ""
 googleAnalytics = ""
 
 [Params]
-  description = "הבלוג האישי שלי על כל דבר"
-  opengraph = true
-  twitter_cards = false
-  readmore = true
-  authorbox = true
-  pager = true
-  post_meta = ["date", "categories"]
-  mainSections = ["post", "docs"]
+description = "הבלוג האישי שלי על כל דבר"
+opengraph = true
+twitter_cards = false
+readmore = true
+authorbox = true
+pager = true
+post_meta = ["date", "categories"]
+mainSections = ["post", "docs"]
 
- [Params.author]
-    name = "עמיר אייל"
-    bio = "בלוגר, מטפל, ומה שביניהם"
-    avatar = "img/avatar-amir.jpg"
+[Params.author]
+name = "עמיר אייל"
+bio = "בלוגר, מטפל, ומה שביניהם"
+avatar = "img/avatar-amir.jpg"
 
-  [Params.logo]
-  image = "img/logo.png"        # נתיב לקובץ התמונה של הלוגו בתיקיית static
-  title = "הבלוג של עמיר"       # טקסט ראשי שמופיע ליד הלוגו
-  subtitle = "רק עוד אתר ברשת"  # טקסט משני (שורת משנה)
+[Params.logo]
+image = "img/logo.png"         # נתיב לקובץ התמונה של הלוגו בתיקיית static
+title = "פסיכותרפיה למבוגרים ומתבגרים והדרכת הורים"          # טקסט ראשי שמופיע ליד הלוגו
+subtitle = "כרמיאל והסביבה ואונליין  "  # טקסט משני (שורת משנה)
 
-  [Params.sidebar]
-    home = "left"
-    list = "right"
-    single = "right"
-    widgets = ["search", "recent", "categories", "taglist"]
+[Params.sidebar]
+home = "left"
+list = "right"
+single = "right"
+widgets = ["search", "recent", "categories", "taglist"]
 
-  [Params.widgets]
-    recent_num = 5
-    tags_counter = false
+[Params.widgets]
+recent_num = 5
+tags_counter = false
 
-   # הוסף כאן את החלק של הגופן:
-  googleFontsLink = "https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;700&display=swap"
+# הוסף כאן את החלק של הגופן:
+googleFontsLink = "https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;700&display=swap"
 
-  [Params.style.vars]
-    highlightColor = "#1e88e5"
-    fontFamilyPrimary = "'Assistant', sans-serif"
-
-
+[Params.style.vars]
+highlightColor = "#1e88e5"
+fontFamilyPrimary = "'Assistant', sans-serif"
 
 [languages]
-  [languages.he]
-    languageName = "עברית"
-    weight = 1
-    direction = "rtl"
-    contentDir = "content"
+[languages.he]
+languageName = "עברית"
+weight = 1
+direction = "rtl"
+contentDir = "content"
+
+# --- התוספת החדשה מתחילה מכאן ---
+[outputs]
+  home = ["HTML", "RSS", "JSON"] # וודא ש"JSON" מופיע כאן!
+  page = ["HTML"]
+# --- התוספת החדשה מסתיימת כאן ---

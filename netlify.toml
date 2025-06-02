@@ -1,0 +1,7 @@
+[build]
+  publish = "public"
+  command = "hugo --gc --minify" # פקודת הבנייה הסטנדרטית של Hugo
+
+[build.environment]
+  HUGO_VERSION = "0.126.2" # זו הגרסה היציבה שהתקנת
+  HUGO_ENABLE_GIT_INFO = "true" # מומלץ אם אתה משתמש במידע מגיט כמו תאריכי עדכון
