@@ -1,19 +1,25 @@
-{{- if $thumbnail := .page.Params.thumbnail }}
-	{{- $class := .class }}
-	{{- $visibility := .page.Site.Params.thumbnail.visibility | default (slice "list" "post") }}
+{{/* שליפת התמונה (thumbnail.jpg -> hero.jpg) */}}
+{{ $thumb := .page.Resources.GetMatch "thumbnail*" }}
+{{ if not $thumb }}
+  {{ $thumb = .page.Resources.GetMatch "hero*" }}
+{{ end }}
 
-	{{- $valueType := printf "%T" $thumbnail -}}
-	{{- $isMap := in $valueType "map" -}}
-	{{- if $isMap }}
-		{{ $visibility = default (slice "list" "post") (default .page.Site.Params.thumbnail.visibility $thumbnail.visibility) }}
-		{{ $thumbnail = $thumbnail.src }}
-	{{- end }}
+{{ if $thumb }}
+  {{/* alt ברירת מחדל */}}
+  {{ $alt := .page.Title }}
 
-	{{- if in $visibility $class }}
-	<figure class="{{ with $class }}{{ . }}__thumbnail {{ end }}thumbnail">
-		{{ if eq $class "list" }}<a class="thumbnail__link" href="{{ .page.RelPermalink }}">{{ end }}
-		<img class="thumbnail__image" src="{{ $thumbnail | relURL }}" alt="{{ .page.Title }}">
-		{{ if eq $class "list" }}</a>{{ end }}
-	</figure>
-	{{- end }}
-{{- end }}
+  {{/* אם יש פרמטר alt מותאם */}}
+  {{ with .page.Params.thumbnail }}
+    {{ if (reflect.IsMap .) }}
+      {{ with .alt }}
+        {{ $alt = . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  <div class="{{ .class }}__thumbnail post__thumbnail">
+    <a href="{{ .page.RelPermalink }}">
+      <img src="{{ $thumb.RelPermalink }}" alt="{{ $alt }}" loading="lazy">
+    </a>
+  </div>
+{{ end }}
