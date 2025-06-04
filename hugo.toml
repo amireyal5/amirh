@@ -17,7 +17,7 @@ theme = "Mainroad" # וודא שזה Mainroad!
   authorbox = true
   pager = true
   post_meta = ["date", "categories"]
-  mainSections = ["post", "docs"]
+  mainSections = ["posts", "docs"]
 
   # *** פרמטרים חברתיים שצריכים להופיע ***
   myEmail = "amir@amireyal.co.il"
