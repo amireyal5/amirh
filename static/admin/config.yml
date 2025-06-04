@@ -6,7 +6,6 @@ media_folder: "static/uploads"
 public_folder: "/uploads"
 
 locale: he
-i18n: {}
 site_url: "https://amireyal5.netlify.app/"
 
 publish_mode: editorial_workflow
