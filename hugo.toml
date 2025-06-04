@@ -40,6 +40,14 @@ googleAnalytics = ""
   [Params.widgets]
     recent_num = 5
     tags_counter = false
+    
+  [params.social]
+  rss = true
+  email = "amir@amireyal.co.il"
+  phone = "tel:+972547509962"
+  whatsapp = "https://wa.me/972547509962"
+  linkedin = "https://linkedin.com/in/amir-psychotherapy"
+  github = ""
 
    # הוסף כאן את החלק של הגופן:
   googleFontsLink = "https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;700&display=swap"
