@@ -23,7 +23,7 @@ googleAnalytics = ""
 
  [Params.author]
     name = "עמיר אייל"
-    bio = "בלוגר, מטפל, ומה שביניהם"
+    bio = "פסיכותרפיסט מוסמך למתבגרים, מבוגרים והורים"
     avatar = "img/avatar-amir.jpg"
 
   [Params.logo]
