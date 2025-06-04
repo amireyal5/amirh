@@ -62,7 +62,7 @@ collections:
           - { label: "כותרת SEO", name: "title", widget: "string", required: false }
           - { label: "תיאור SEO", name: "description", widget: "text", required: false }
           - { label: "מילות מפתח", name: "keywords", widget: "list", required: false }
-      - { label: "פוסטים קשורים", name: "related_posts", widget: "relation", collection: "posts", search_fields: ["title"], value_field: "slug", display_fields: ["title"], multiple: true, required: false }
+     
       - {
           label: "פוסטים קשורים",
           name: "related_posts",
