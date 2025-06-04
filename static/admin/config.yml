@@ -18,11 +18,12 @@ slug:
 collections:
   - name: "posts"
     label: "פוסטים"
-    folder: "post"
+    folder: "posts"  # תיקיית פוסטים ברבים
     create: true
     slug: "{{slug}}"
-    media_folder: "static/uploads/post/{{slug}}"
-    public_folder: "/uploads/post/{{slug}}"
+    # תיקיית המדיה יתווספו בתוך תיקיית כל פוסט (בהתאם לשם הסלאג)
+    media_folder: "static/uploads/posts/{{slug}}"
+    public_folder: "/uploads/posts/{{slug}}"
     editor:
       preview: true
     fields:
