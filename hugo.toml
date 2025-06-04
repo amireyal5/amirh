@@ -43,7 +43,7 @@ googleAnalytics = ""
 
    # הוסף כאן את החלק של הגופן:
   googleFontsLink = "https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;700&display=swap"
-
+  customCSS = ["css/custom.css"]
   [Params.style.vars]
     highlightColor = "#1e88e5"
     fontFamilyPrimary = "'Assistant', sans-serif"

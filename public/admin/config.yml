@@ -1,0 +1,37 @@
+# backend: הגדרות חיבור ל-GitHub דרך Netlify
+backend:
+  name: git-gateway # הדרך המומלצת לחיבור ל-GitHub כשמשתמשים ב-Netlify
+  branch: main     # שים לב: כאן שונה מ-main ל-master
+
+# media_folder: איפה לשמור את קבצי המדיה (תמונות, קבצים)
+media_folder: "static/uploads" # Hugo מפרסם את מה שבתוך static/ לשורש האתר
+
+# public_folder: הנתיב הציבורי לקבצי המדיה באתר
+public_folder: "/uploads"
+
+# collections: הגדרת סוגי התוכן ש-Decap CMS ינהל
+collections:
+  - name: "posts"
+    label: "פוסטים בבלוג"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "כותרת", name: "title", widget: "string"}
+      - {label: "תאריך פרסום", name: "date", widget: "datetime"}
+      - {label: "תמונה ראשית", name: "image", widget: "image", required: false}
+      - {label: "תיאור קצר", name: "description", widget: "string", required: false}
+      - {label: "תוכן הפוסט", name: "body", widget: "markdown"}
+      - {label: "קטגוריות", name: "categories", widget: "list", required: false}
+      - {label: "תגיות", name: "tags", widget: "list", required: false}
+
+  - name: "pages"
+    label: "עמודים"
+    folder: "content"
+    filter: {field: "layout", pattern: "page"}
+    create: true
+    fields:
+      - {label: "כותרת", name: "title", widget: "string"}
+      - {label: "תוכן העמוד", name: "body", widget: "markdown"}
+      - {label: "תבנית עמוד", name: "layout", widget: "hidden", default: "page"}
+      - {label: "Permalink", name: "permalink", widget: "string", required: false}
