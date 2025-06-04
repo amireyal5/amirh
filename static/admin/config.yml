@@ -21,8 +21,8 @@ collections:
     folder: "post"
     create: true
     slug: "{{slug}}"
-    media_folder: "static/uploads/posts/{{slug}}"
-    public_folder: "/uploads/posts/{{slug}}"
+    media_folder: "static/uploads/post/{{slug}}"
+    public_folder: "/uploads/post/{{slug}}"
     editor:
       preview: true
     fields:
