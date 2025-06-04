@@ -18,7 +18,7 @@ slug:
 collections:
   - name: "posts"
     label: "פוסטים"
-    folder: "posts"  # תיקיית פוסטים ברבים
+    folder: "content/posts"  # תיקיית פוסטים ברבים
     create: true
     slug: "{{slug}}"
     # תיקיית המדיה יתווספו בתוך תיקיית כל פוסט (בהתאם לשם הסלאג)
