@@ -28,8 +28,8 @@ googleAnalytics = ""
 
   [Params.logo]
   image = "img/logo.png"        # נתיב לקובץ התמונה של הלוגו בתיקיית static
-  title = "הבלוג של עמיר"       # טקסט ראשי שמופיע ליד הלוגו
-  subtitle = "רק עוד אתר ברשת"  # טקסט משני (שורת משנה)
+  title = "פסיכותרפיה למבוגרים, למתבגרים והדרכת הורים"
+  subtitle = "כרמיאל והסביבה ואונליין"
 
   [Params.sidebar]
     home = "left"
