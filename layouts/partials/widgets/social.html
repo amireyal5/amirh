@@ -1,67 +1,44 @@
-<ul class="social-links">
-  {{ with .Site.Params.social.rss }}
-  <li>
-    <a href="{{ $.Site.BaseURL }}index.xml" title="RSS">
-      <span class="fa-stack fa-lg">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  {{ end }}
+<div class="social-links-widget widget">
+    <h4 class="widget-title">עקבו אחרינו</h4>
 
-  {{ with .Site.Params.social.email }}
-  <li>
-    <a href="mailto:{{ . }}" title="Email">
-      <span class="fa-stack fa-lg">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  {{ end }}
+    <ul class="social-icons-circular"> {{ with .Site.Params.myEmail }}
+        <li>
+            <a href="mailto:{{ . }}" title="דוא ל" class="email-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </li>
+        {{ end }}
 
-  {{ with .Site.Params.social.phone }}
-  <li>
-    <a href="tel:{{ . }}" title="Phone">
-      <span class="fa-stack fa-lg">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-phone fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  {{ end }}
+        {{ with .Site.Params.myPhone }}
+        <li>
+            <a href="tel:{{ . }}" title="טלפון" class="phone-icon">
+                <i class="fas fa-phone"></i>
+            </a>
+        </li>
+        {{ end }}
 
-  {{ with .Site.Params.social.whatsapp }}
-  <li>
-    <a href="{{ . }}" title="WhatsApp" target="_blank" rel="noopener noreferrer">
-      <span class="fa-stack fa-lg">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  {{ end }}
+        {{ with .Site.Params.myWhatsapp }}
+        <li>
+            <a href="{{ . }}" title="וואטסאפ" target="_blank" rel="noopener noreferrer" class="whatsapp-icon">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </li>
+        {{ end }}
 
-  {{ with .Site.Params.social.linkedin }}
-  <li>
-    <a href="{{ . }}" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-      <span class="fa-stack fa-lg">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  {{ end }}
+        {{ with .Site.Params.myLinkedin }}
+        <li>
+            <a href="{{ . }}" title="לינקדאין" target="_blank" rel="noopener noreferrer" class="linkedin-icon">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        {{ end }}
 
-  {{ with .Site.Params.social.github }}
-  <li>
-    <a href="{{ . }}" title="GitHub" target="_blank" rel="noopener noreferrer">
-      <span class="fa-stack fa-lg">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  {{ end }}
-</ul>
+        {{ with .Site.Params.myGithub }}
+        <li>
+            <a href="{{ . }}" title="גיטהאב" target="_blank" rel="noopener noreferrer" class="github-icon">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</div>

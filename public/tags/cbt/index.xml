@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CBT on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
-    <link>//localhost:1313/tags/cbt/</link>
-    <description>Recent content in CBT on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</description>
+    <title>Cbt on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
+    <link>http://localhost:1313/tags/cbt/</link>
+    <description>Recent content in Cbt on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</description>
     <generator>Hugo</generator>
     <language>he</language>
-    <lastBuildDate>Sat, 31 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/cbt/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cbt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>לנהל את הכעס: המפתח לחיים רגועים ומאוזנים</title>
+      <link>http://localhost:1313/posts/%D7%9C%D7%A0%D7%94%D7%9C-%D7%90%D7%AA-%D7%94%D7%9B%D7%A2%D7%A1-%D7%94%D7%9E%D7%A4%D7%AA%D7%97-%D7%9C%D7%97%D7%99%D7%99%D7%9D-%D7%A8%D7%92%D7%95%D7%A2%D7%99%D7%9D-%D7%95%D7%9E%D7%90%D7%95%D7%96%D7%A0%D7%99%D7%9D/</link>
+      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%D7%9C%D7%A0%D7%94%D7%9C-%D7%90%D7%AA-%D7%94%D7%9B%D7%A2%D7%A1-%D7%94%D7%9E%D7%A4%D7%AA%D7%97-%D7%9C%D7%97%D7%99%D7%99%D7%9D-%D7%A8%D7%92%D7%95%D7%A2%D7%99%D7%9D-%D7%95%D7%9E%D7%90%D7%95%D7%96%D7%A0%D7%99%D7%9D/</guid>
+      <description>כעס בלתי מנוהל פוגע במערכות יחסים ובאיכות החיים, אך אינו גזר דין. באמצעות טיפול מקצועי המשלב גישות כמו CBT, טיפול דינמי ומיינדפולנס, ניתן לרכוש כלים אפקטיביים לזיהוי, הבנה וביטוי בריא של רגשות. צעד אחד קטן אליי עשוי להיות המפתח לשינוי משמעותי בחייכם.</description>
+    </item>
     <item>
       <title>חרדה חברתית: מאחורי הקלעים של הפחד החברתי – זיהוי,  ואפשרויות טיפול</title>
-      <link>//localhost:1313/post/social-phobia/</link>
+      <link>http://localhost:1313/posts/social-phobia/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/post/social-phobia/</guid>
+      <guid>http://localhost:1313/posts/social-phobia/</guid>
       <description>&lt;p&gt;חרדה חברתית (Social Anxiety Disorder) היא הרבה מעבר לביישנות. מדובר בהפרעה פסיכולוגית עמוקה וכואבת, שבה החשש מביקורת חברתית גורם לסבל משמעותי, הימנעות מהזדמנויות חיים ולעיתים גם לדיכאון נלווה. החדשות הטובות: ניתן לטפל בה – באופן יעיל ומשנה חיים.&lt;/p&gt;</description>
     </item>
   </channel>

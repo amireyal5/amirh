@@ -16,3 +16,46 @@
   padding: 1rem;
   text-align: center;
 }
+/* עיצוב אייקוני סושיאל עגולים בשורה כמו בתמונה */
+.social-icons-circular {
+    display: flex; /* יגרום ל-li להופיע בשורה */
+    flex-wrap: wrap; /* יאפשר לאייקונים לעבור לשורה הבאה אם אין מקום */
+    gap: 10px; /* רווח בין האייקונים */
+    padding: 0; /* הסרת ריפוד ברירת מחדל של ul */
+    margin: 10px 0; /* שוליים קלים מעל ומתחת לרשימה */
+    list-style: none; /* הסרת כדוריות הרשימה */
+    justify-content: flex-start; /* יישור לשמאל */
+    align-items: center; /* יישור אנכי למרכז */
+}
+
+.social-icons-circular li {
+    margin: 0; /* וודא שאין שוליים סביב li */
+}
+
+.social-icons-circular li a {
+    display: flex; /* יאפשר למרכז את האייקון בתוך העיגול */
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* רוחב העיגול */
+    height: 40px; /* גובה העיגול (יהיה שווה לרוחב ליצירת עיגול מושלם) */
+    border-radius: 50%; /* הופך את הריבוע לעיגול */
+    color: #fff; /* צבע האייקון בתוך העיגול (לבן) */
+    font-size: 20px; /* גודל האייקון עצמו */
+    text-decoration: none; /* הסרת קו תחתון מקישור */
+    transition: transform 0.2s ease-in-out; /* אנימציה למעבר (לדוגמה, הקפצה קלה) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* צל עדין לאייקון */
+}
+
+/* אפקט ריחוף (hover) */
+.social-icons-circular li a:hover {
+    transform: translateY(-3px); /* קפיצה קלה למעלה */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* צל מודגש יותר */
+}
+
+/* צבעים ספציפיים לכל אייקון */
+.email-icon { background-color: #bb001b; } /* אדום למייל */
+.phone-icon { background-color: #25d366; } /* ירוק לוואטסאפ (אבל זה טלפון) */
+.whatsapp-icon { background-color: #25d366; } /* ירוק וואטסאפ */
+.linkedin-icon { background-color: #0077b5; } /* כחול לינקדאין */
+.github-icon { background-color: #333; } /* שחור לגיטהאב */
+.rss-icon { background-color: #ee802f; } /* כתום ל-RSS */

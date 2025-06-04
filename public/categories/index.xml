@@ -2,52 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
-    <link>//localhost:1313/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</description>
     <generator>Hugo</generator>
     <language>he</language>
-    <lastBuildDate>Sat, 31 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>טיפול רגשי</title>
+      <link>http://localhost:1313/categories/%D7%98%D7%99%D7%A4%D7%95%D7%9C-%D7%A8%D7%92%D7%A9%D7%99/</link>
+      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%D7%98%D7%99%D7%A4%D7%95%D7%9C-%D7%A8%D7%92%D7%A9%D7%99/</guid>
+      <description></description>
+    </item>
     <item>
       <title>בריאות הנפש</title>
-      <link>//localhost:1313/categories/%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA-%D7%94%D7%A0%D7%A4%D7%A9/</link>
+      <link>http://localhost:1313/categories/%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA-%D7%94%D7%A0%D7%A4%D7%A9/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA-%D7%94%D7%A0%D7%A4%D7%A9/</guid>
+      <guid>http://localhost:1313/categories/%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA-%D7%94%D7%A0%D7%A4%D7%A9/</guid>
       <description></description>
     </item>
     <item>
       <title>הדרכת הורים</title>
-      <link>//localhost:1313/categories/%D7%94%D7%93%D7%A8%D7%9B%D7%AA-%D7%94%D7%95%D7%A8%D7%99%D7%9D/</link>
+      <link>http://localhost:1313/categories/%D7%94%D7%93%D7%A8%D7%9B%D7%AA-%D7%94%D7%95%D7%A8%D7%99%D7%9D/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/%D7%94%D7%93%D7%A8%D7%9B%D7%AA-%D7%94%D7%95%D7%A8%D7%99%D7%9D/</guid>
+      <guid>http://localhost:1313/categories/%D7%94%D7%93%D7%A8%D7%9B%D7%AA-%D7%94%D7%95%D7%A8%D7%99%D7%9D/</guid>
       <description></description>
     </item>
     <item>
       <title>מתבגרים</title>
-      <link>//localhost:1313/categories/%D7%9E%D7%AA%D7%91%D7%92%D7%A8%D7%99%D7%9D/</link>
+      <link>http://localhost:1313/categories/%D7%9E%D7%AA%D7%91%D7%92%D7%A8%D7%99%D7%9D/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/%D7%9E%D7%AA%D7%91%D7%92%D7%A8%D7%99%D7%9D/</guid>
+      <guid>http://localhost:1313/categories/%D7%9E%D7%AA%D7%91%D7%92%D7%A8%D7%99%D7%9D/</guid>
       <description></description>
     </item>
     <item>
       <title>פסיכותרפיה</title>
-      <link>//localhost:1313/categories/%D7%A4%D7%A1%D7%99%D7%9B%D7%95%D7%AA%D7%A8%D7%A4%D7%99%D7%94/</link>
+      <link>http://localhost:1313/categories/%D7%A4%D7%A1%D7%99%D7%9B%D7%95%D7%AA%D7%A8%D7%A4%D7%99%D7%94/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/%D7%A4%D7%A1%D7%99%D7%9B%D7%95%D7%AA%D7%A8%D7%A4%D7%99%D7%94/</guid>
+      <guid>http://localhost:1313/categories/%D7%A4%D7%A1%D7%99%D7%9B%D7%95%D7%AA%D7%A8%D7%A4%D7%99%D7%94/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
-      <link>//localhost:1313/categories/development/</link>
+      <link>http://localhost:1313/categories/development/</link>
       <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/development/</guid>
+      <guid>http://localhost:1313/categories/development/</guid>
       <description></description>
     </item>
     <item>
       <title>Golang</title>
-      <link>//localhost:1313/categories/golang/</link>
+      <link>http://localhost:1313/categories/golang/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/golang/</guid>
+      <guid>http://localhost:1313/categories/golang/</guid>
       <description></description>
     </item>
   </channel>

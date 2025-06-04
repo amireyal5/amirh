@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>מתבגרים on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
-    <link>//localhost:1313/categories/%D7%9E%D7%AA%D7%91%D7%92%D7%A8%D7%99%D7%9D/</link>
+    <link>http://localhost:1313/categories/%D7%9E%D7%AA%D7%91%D7%92%D7%A8%D7%99%D7%9D/</link>
     <description>Recent content in מתבגרים on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</description>
     <generator>Hugo</generator>
     <language>he</language>
     <lastBuildDate>Sat, 31 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/%D7%9E%D7%AA%D7%91%D7%92%D7%A8%D7%99%D7%9D/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/%D7%9E%D7%AA%D7%91%D7%92%D7%A8%D7%99%D7%9D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>חרדה חברתית: מאחורי הקלעים של הפחד החברתי – זיהוי,  ואפשרויות טיפול</title>
-      <link>//localhost:1313/post/social-phobia/</link>
+      <link>http://localhost:1313/posts/social-phobia/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/post/social-phobia/</guid>
+      <guid>http://localhost:1313/posts/social-phobia/</guid>
       <description>&lt;p&gt;חרדה חברתית (Social Anxiety Disorder) היא הרבה מעבר לביישנות. מדובר בהפרעה פסיכולוגית עמוקה וכואבת, שבה החשש מביקורת חברתית גורם לסבל משמעותי, הימנעות מהזדמנויות חיים ולעיתים גם לדיכאון נלווה. החדשות הטובות: ניתן לטפל בה – באופן יעיל ומשנה חיים.&lt;/p&gt;</description>
     </item>
     <item>
       <title>סמכות הורית – למה גבולות ואהבה לילד חייבים ללכת יד ביד</title>
-      <link>//localhost:1313/post/parental-authority/</link>
+      <link>http://localhost:1313/posts/parental-authority/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/post/parental-authority/</guid>
+      <guid>http://localhost:1313/posts/parental-authority/</guid>
       <description>&lt;p&gt;הורות מזמנת רגעים של קרבה, אהבה ורכות – אבל גם מצבים של תסכול, מאבקי כוח וחוסר אונים.&lt;br&gt;&#xA;אחד האתגרים המרכזיים שכל הורה פוגש הוא שאלת &lt;strong&gt;הסמכות ההורית&lt;/strong&gt;:&lt;br&gt;&#xA;האם אני נתפס בעיני ילדי כמישהו שאפשר לסמוך עליו? שמציב גבולות ברורים, אך גם מבין ואוהב?&lt;/p&gt;</description>
     </item>
   </channel>

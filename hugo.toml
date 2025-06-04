@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "http://localhost:1313/" # שיניתי לקישור מלא ומוחלט לבדיקה
 title = "עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים"
 languageCode = "he"
 defaultContentLanguage = "he"
@@ -7,9 +7,7 @@ defaultContentLanguageInSubdir = false
 [Pagination]
   pagerSize = 10
 
-theme = "mainroad"
-disqusShortname = ""
-googleAnalytics = ""
+theme = "Mainroad" # וודא שזה Mainroad!
 
 [Params]
   description = "הבלוג האישי שלי על כל דבר"
@@ -19,44 +17,52 @@ googleAnalytics = ""
   authorbox = true
   pager = true
   post_meta = ["date", "categories"]
-  mainSections = ["posts", "docs"]
+  mainSections = ["post", "docs"]
 
- [Params.author]
+  # *** פרמטרים חברתיים שצריכים להופיע ***
+  myEmail = "amir@amireyal.co.il"
+  myPhone = "+972547509962"
+  myWhatsapp = "https://wa.me/972547509962"
+  myLinkedin = "https://www.linkedin.com/in/amireyalprofile" # קישור מלא לבדיקה
+  myGithub = "https://github.com/amireyalusername" # קישור מלא לבדיקה
+  myRss = true
+
+  [Params.author]
     name = "עמיר אייל"
-    bio = "פסיכותרפיסט מוסמך למתבגרים, מבוגרים והורים"
+    bio ="פסיכותרפיסט מוסמך למתבגרים, מבוגרים והורים"
     avatar = "img/avatar-amir.jpg"
 
   [Params.logo]
-  image = "img/logo.png"        # נתיב לקובץ התמונה של הלוגו בתיקיית static
-  title = "פסיכותרפיה למבוגרים, למתבגרים והדרכת הורים"
-  subtitle = "כרמיאל והסביבה ואונליין"
+    image = "img/logo.png"
+    title = "הבלוג של עמיר"
+    subtitle = "רק עוד אתר ברשת"
 
   [Params.sidebar]
     home = "left"
-    list = "left"
-    single = "left"
+    list = "right"
+    single = "right"
     widgets = ["search", "social", "recent", "categories", "taglist"]
 
   [Params.widgets]
     recent_num = 5
     tags_counter = false
-    
-  [params.social]
-  rss = true
-  email = "amir@amireyal.co.il"
-  phone = "tel:+972547509962"
-  whatsapp = "https://wa.me/972547509962"
-  linkedin = "https://linkedin.com/in/amir-psychotherapy"
-  github = ""
 
-   # הוסף כאן את החלק של הגופן:
+#   [Params.widgets.social] # השאר את זה מבוטל כדי שלא תהיה התנגשות
+#     facebook = ""
+#     twitter = ""
+#     instagram = ""
+#     linkedin = ""
+#     telegram = ""
+#     github = ""
+#     gitlab = ""
+#     bitbucket = ""
+#     email = ""
+
   googleFontsLink = "https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;700&display=swap"
   customCSS = ["css/custom.css"]
   [Params.style.vars]
     highlightColor = "#1e88e5"
     fontFamilyPrimary = "'Assistant', sans-serif"
-
-
 
 [languages]
   [languages.he]

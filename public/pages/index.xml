@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
+    <link>http://localhost:1313/pages/</link>
+    <description>Recent content in Pages on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</description>
+    <generator>Hugo</generator>
+    <language>he</language>
+    <lastBuildDate>Fri, 27 Oct 2023 10:30:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>אודות</title>
+      <link>http://localhost:1313/pages/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/pages/about/</guid>
+      <description>&lt;p&gt;אני עמיר, פסיכותרפיסט קליני, מלווה כבר למעלה משני עשורים מבוגרים, הורים ומתבגרים במסע פנימי, אמיץ, שמתחיל לא פעם בשאלה פשוטה: האם אפשר אחרת?&lt;/p&gt;&#xA;&lt;h2 id=&#34;מה-מביא-אנשים-אליי&#34;&gt;מה מביא אנשים אליי?&lt;/h2&gt;&#xA;&lt;p&gt;לפעמים זו תחושת תקיעות – כאילו דלת פנימית שנסגרה מזמן לא מצליחה להיפתח.&lt;br&gt;&#xA;לפעמים זו חרדה ששוטפת בלי אזהרה, דיכאון שמערפל את היום, או קשרים שכבר לא מחזיקים כמו פעם.&lt;br&gt;&#xA;ולעיתים זו פשוט התחושה שמשהו לא עובד. שיכול להיות אחרת – אבל איך?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>הודעתך נשלחה בהצלחה</title>
+      <link>http://localhost:1313/pages/thank-you/</link>
+      <pubDate>Fri, 27 Oct 2023 10:30:00 +0200</pubDate>
+      <guid>http://localhost:1313/pages/thank-you/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;הודעתך התקבלה בהצלחה!&lt;/strong&gt;&#xA;נחזור אליכם בהקדם האפשרי.&lt;/p&gt;&#xA;&lt;p&gt;לחזור ל&#xA;&#xA;&#xA;&#xA;  &lt;a href=&#34;http://localhost:1313/&#34; class=&#34;internal-link&#34;&gt;&#xA;    עמוד הבית&#xA;  &lt;/a&gt;&#xA;&#xA;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>חיפוש</title>
+      <link>http://localhost:1313/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/search/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -32,8 +32,7 @@
   {{ range .Site.Params.customCSS -}}
   <link rel="stylesheet" href="{{ . | relURL }}">
   {{- end }}
-
-  {{- with .OutputFormats.Get "rss" }}
+<link rel="stylesheet" href="{{ "css/all.min.css" | relURL }}">   {{- with .OutputFormats.Get "rss" }}
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
   {{- end }}
 
