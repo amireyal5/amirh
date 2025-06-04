@@ -54,6 +54,15 @@ collections:
       - { label: "תמונה ראשית", name: "thumbnail", widget: "image", required: false }
       - { label: "תקציר", name: "summary", widget: "text", required: false }
       - { label: "תוכן", name: "body", widget: "markdown", required: true }
+      - label: "כיוון סיידבר"
+          name: "sidebar"
+        widget: "select"
+        options:
+    - { label: "שמאל", value: "left" }
+    - { label: "ימין", value: "right" }
+    - { label: "ללא", value: "false" }
+        default: "left"
+        required: false
       - label: "SEO"
         name: "seo"
         widget: "object"
