@@ -29,7 +29,7 @@ collections:
       preview: true
     fields:
       - { label: "כותרת", name: "title", widget: "string", required: true }
-      - { label: "תאריך", name: "date", widget: "datetime", required: true, format: "DD-MM-YYYY" }
+      - { label: "תאריך", name: "date", widget: "datetime", required: true, format: "YYYY-MM-DD" }
       - { label: "מחבר", name: "author", widget: "relation", collection: "authors", search_fields: ["name"], value_field: "name", display_fields: ["name"], required: true }
       - { label: "קטגוריות", name: "categories", widget: "list", required: false }
       - { label: "תגיות", name: "tags", widget: "list", required: false }
