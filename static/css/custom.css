@@ -98,18 +98,15 @@
 
 .logo {
   display: flex;
-  flex-direction: row-reverse; /* מימין לשמאל */
+  flex-direction: row-reverse; /* לוגו מימין, טקסט משמאל */
   align-items: center;
-  justify-content: center;     /* למרכז את כל הבלוק */
-  gap: 16px;
-  direction: rtl;              /* כיוון כתיבה RTL */
+  justify-content: center;     /* ממורכז באמצע */
+  gap: 1rem;
+  direction: rtl;              /* טקסט כתוב מימין לשמאל */
+  text-align: right;
 }
 
-.logo__imagebox {
-  flex-shrink: 0;
-}
-
-.logo__img {
+.logo__imagebox img {
   height: 60px;
   width: auto;
   display: block;
@@ -118,7 +115,7 @@
 .logo__text {
   display: flex;
   flex-direction: column;
-  text-align: right; /* טקסט מיושר לימין */
+  justify-content: center;
 }
 
 .logo__title {
