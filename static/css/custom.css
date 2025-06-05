@@ -156,7 +156,7 @@
   }
   @media (max-width: 768px) {
   .my-logo-image {
-    height: 60px; /* יותר מתאים לנייד */
+    height: 80px; /* יותר מתאים לנייד */
   }
     
 }
