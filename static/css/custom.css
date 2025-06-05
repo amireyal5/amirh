@@ -140,6 +140,7 @@
     flex-direction: column; /* תמונה מעל טקסט */
     align-items: center;
     text-align: center;
+    gap: 0;
   }
 
   .my-logo-text {
@@ -157,5 +158,6 @@
   .my-logo-image {
     height: 60px; /* יותר מתאים לנייד */
   }
+    
 }
 
