@@ -34,8 +34,8 @@ theme = "Mainroad" # וודא שזה Mainroad!
 
   [params.logo]
     image = "img/logo.png"
-    title = "הבלוג של עמיר"
-    subtitle = "רק עוד אתר ברשת"
+    title = "עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים"
+    subtitle = "כרמיאל והסביבה ואונליין"
 
   [params.sidebar]
     home = "left"
