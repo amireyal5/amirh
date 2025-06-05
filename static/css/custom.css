@@ -106,9 +106,10 @@
 
 .my-logo-wrapper {
   display: flex;
-  flex-direction: row-reverse; /* תמונה מימין, טקסט משמאל */
+  flex-direction: row; /* תמונה מימין, טקסט משמאל */
   align-items: center;
-  gap: 1rem;
+  gap: 6rem;
+  margin-top: 25px;
 }
 
 .my-logo-image {
