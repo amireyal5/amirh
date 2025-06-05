@@ -113,7 +113,7 @@
 }
 
 .my-logo-image {
-  height: 60px;
+  height: 120px;
   width: auto;
 }
 
@@ -134,3 +134,28 @@
   color: #555;
   margin: 0;
 }
+/* 🌐 התאמה למסכים צרים */
+@media (max-width: 768px) {
+  .my-logo-wrapper {
+    flex-direction: column; /* תמונה מעל טקסט */
+    align-items: center;
+    text-align: center;
+  }
+
+  .my-logo-text {
+    align-items: center;
+  }
+
+  .my-logo-title {
+    font-size: 1.5rem;
+  }
+
+  .my-logo-subtitle {
+    font-size: 0.9rem;
+  }
+  @media (max-width: 768px) {
+  .my-logo-image {
+    height: 60px; /* יותר מתאים לנייד */
+  }
+}
+
