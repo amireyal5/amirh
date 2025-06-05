@@ -41,7 +41,7 @@ theme = "Mainroad" # וודא שזה Mainroad!
     home = "left"
     list = "right"
     single = "right"
-    widgets = ["search", "authorbox", "social", "recent", "categories", "taglist"]
+    widgets = ["search", "author", "social", "recent", "categories", "taglist"]
 
   [params.widgets]
     recent_num = 5
