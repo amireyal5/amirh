@@ -78,7 +78,7 @@
 .custom-authorbox__name {
   font-weight: 600;
   margin-bottom: 10px;
-  font-color: #e0e0e0;
+  color: #aaa;
 }
 
 .custom-authorbox__avatar img {
