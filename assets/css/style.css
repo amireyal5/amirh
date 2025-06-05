@@ -132,11 +132,23 @@ textarea {
 
 /* Button */
 .btn {
-	padding: 5px 10px;
-	font-weight: 700;
-	color: #fff;
-	white-space: pre-line;
-	background: #11746a;
+display: inline-block;
+    border: 1px solid rgba(255, 255, 255, .8);
+    border-radius: 999em;
+    padding: 0 10px;
+    color: #fff;
+    line-height: 24px;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 1px;
+    margin-bottom: 6px;
+
+: 24px;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 1px;
+    margin-bottom: 6px;
+}
 }
 
 .btn:hover {
