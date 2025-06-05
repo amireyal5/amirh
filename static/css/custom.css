@@ -68,36 +68,41 @@
   background-color: #aaa; /* אפור כהה יותר בהובר */
   color: white;
 }
-.authorbox--centered {
+/* ממרכז את כל תיבת המחבר */
+.authorbox {
   text-align: center;
   color: #bfbfbf;
   font-size: 15px;
 }
 
-.authorbox--centered .authorbox__name {
+/* מוודא שהתמונה במרכז */
+.authorbox__avatar {
+  display: inline-block;
+  margin: 0 auto 10px;
+}
+
+/* עיצוב לתמונה עצמה */
+.authorbox__avatar img {
+  border-radius: 50%; /* תמונה עגולה - אופציונלי */
+  display: block;
+  margin: 0 auto;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+/* אפקט ריחוף על התמונה */
+.authorbox__avatar a:hover img {
+  opacity: 0.8;
+}
+
+/* השם - בראש */
+.authorbox__header {
   margin-bottom: 10px;
   font-weight: bold;
 }
 
-.authorbox--centered .authorbox__avatar {
-  margin: 0 auto 10px;
-  display: inline-block;
-}
-
-.authorbox--centered .authorbox__avatar img {
-  border-radius: 50%; /* אופציונלי, תמונה עגולה */
-  display: block;
-  margin: 0 auto;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-.authorbox--centered .authorbox__avatar a:hover img {
-  opacity: 0.8; /* אפקט ריחוף */
-}
-
-.authorbox--centered .authorbox__description {
-  max-width: 300px; /* ניתן לשנות לפי הצורך */
+/* הביו - מתחת, גם במרכז */
+.authorbox__description {
+  max-width: 300px;
   margin: 0 auto;
 }
-
