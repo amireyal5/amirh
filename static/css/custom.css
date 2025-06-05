@@ -76,12 +76,12 @@
 }
 
 .custom-authorbox__name {
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 10px;
+  font-color: #e0e0e0;
 }
 
 .custom-authorbox__avatar img {
-  border-radius: 50%;
   display: block;
   margin: 0 auto 10px;
   transition: 0.3s;
