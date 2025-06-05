@@ -96,36 +96,40 @@
   margin: 0 auto;
 }
 
-.logo {
+.my-header-logo {
   display: flex;
-  flex-direction: row-reverse; /* לוגו מימין, טקסט משמאל */
-  align-items: center;
-  justify-content: center;     /* ממורכז באמצע */
-  gap: 1rem;
-  direction: rtl;              /* טקסט כתוב מימין לשמאל */
+  justify-content: center;  /* ממורכז בתוך ההדר */
+  margin: 20px 0;
+  direction: rtl;
   text-align: right;
 }
 
-.logo__imagebox img {
-  height: 60px;
-  width: auto;
-  display: block;
+.my-logo-wrapper {
+  display: flex;
+  flex-direction: row-reverse; /* תמונה מימין, טקסט משמאל */
+  align-items: center;
+  gap: 1rem;
 }
 
-.logo__text {
+.my-logo-image {
+  height: 60px;
+  width: auto;
+}
+
+.my-logo-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.logo__title {
+.my-logo-title {
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0;
 }
 
-.logo__tagline {
+.my-logo-subtitle {
   font-size: 1rem;
-  color: #666;
+  color: #555;
   margin: 0;
 }
