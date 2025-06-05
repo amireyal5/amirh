@@ -1,27 +1,33 @@
-{{- if .Param "authorbox" }}
-{{- with .Site.Params.author }}
-<div class="authorbox-custom">
+{{- if .Site.Params.authorbox }}
+  {{- with .Site.Params.author }}
+    {{- if or .avatar .name .bio }}
+      <div class="authorbox clearfix">
+        
+        {{- with .avatar }}
+          <figure class="authorbox__avatar">
+            <img alt="{{ $.Site.Params.author.name }} avatar" src="{{ . | relURL }}" class="avatar" height="90" width="90">
+          </figure>
+        {{- end }}
+        
+        <div class="authorbox__content">
+          {{- with .name }}
+            <div class="authorbox__header">
+              <span class="authorbox__name">{{ T "authorbox_name" (dict "Name" .) }}</span>
+            </div>
+          {{- end }}
+          
+          {{- with .bio }}
+            <div class="authorbox__description">
+              {{ . | markdownify }}
+            </div>
+          {{- end }}
+        </div>
 
-  {{- with .name }}
-  <h4 class="authorbox-custom__name">{{ . }}</h4>
+      </div>
+    {{- else }}
+      <p class="authorbox__warning">
+        <strong>WARNING:</strong> Authorbox is activated, but author parameters are not specified.
+      </p>
+    {{- end }}
   {{- end }}
-
-  {{- with .avatar }}
-  <div class="authorbox-custom__avatar">
-    <img alt="{{ $.Site.Params.author.name }} avatar" src="{{ . | relURL }}" />
-  </div>
-  {{- end }}
-
-  {{- with .bio }}
-  <p class="authorbox-custom__bio">
-    {{ . | markdownify }}
-  </p>
-  {{- end }}
-
-  <div class="authorbox-custom__readmore">
-    <a href="{{ "about" | relURL }}" class="btn-circle">קרא עוד</a>
-  </div>
-
-</div>
-{{- end }}
 {{- end }}
