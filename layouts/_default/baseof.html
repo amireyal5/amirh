@@ -30,6 +30,13 @@
   {{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
   {{ range .Site.Params.customCSS -}}
+
+<!-- DEBUG: customCSS param is working -->
+{{ range .Site.Params.customCSS }}
+  <link rel="stylesheet" href="{{ . | relURL }}">
+  <!-- DEBUG: loading {{ . }} -->
+{{ end }}
+  
   <link rel="stylesheet" href="{{ . | relURL }}">
   {{- end }}
 <link rel="stylesheet" href="{{ "css/all.min.css" | relURL }}">   {{- with .OutputFormats.Get "rss" }}
