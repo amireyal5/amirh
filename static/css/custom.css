@@ -49,3 +49,22 @@
   transform: scale(1.1);
   background-color: #bdbdbd; /* כהה יותר בקצת */
 }
+.btn-circle {
+  display: inline-block;
+  background-color: #ddd; /* אפור בהיר */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px; /* עיגול קצה מעוגל */
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  margin-top: 1rem;
+  user-select: none;
+}
+
+.btn-circle:hover {
+  background-color: #aaa; /* אפור כהה יותר בהובר */
+  color: white;
+}
