@@ -2,7 +2,7 @@
   {{- if or .avatar .name .bio }}
     <div class="widget custom-authorbox">
       {{- with .name }}
-        <h3 class="custom-authorbox__name">{{ . }}</h3>
+        <h4 class="custom-authorbox__name">{{ . }}</h4>
       {{- end }}
 
       {{- with .avatar }}
