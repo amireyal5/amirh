@@ -85,6 +85,7 @@
   display: block;
   margin: 0 auto 10px;
   transition: 0.3s;
+  border-radius: 7px;
 }
 
 .custom-authorbox__avatar img:hover {
@@ -102,7 +103,9 @@
   margin: 20px 0;
   direction: rtl;
   text-align: right;
-}
+  font-size: 30px;
+} 
+
 
 .my-logo-wrapper {
   display: flex;
@@ -115,15 +118,17 @@
 .my-logo-image {
   height: 120px;
   width: auto;
+ 
 }
 
-.my-logo-text {
+my-logo-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
+ 
 }
 
-.my-logo-title {
+my-logo-title {
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0;

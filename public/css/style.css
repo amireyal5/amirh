@@ -55,7 +55,7 @@ body {
 .container {
 	position: relative;
 	width: 100%;
-	max-width: 1080px;
+	max-width: 1600px;
 	margin: 0 auto;
 }
 
@@ -125,16 +125,28 @@ textarea {
 
 /* Button */
 .btn {
-	padding: 5px 10px;
-	font-weight: 700;
-	color: #fff;
-	white-space: pre-line;
-	background: #11746a;
+display: inline-block;
+    border: 1px solid  #bfbfbf;
+    border-radius: 999em;
+    padding: 0 10px;
+    color: #bfbfbf;
+    line-height: 24px;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 1px;
+    margin-bottom: 6px;
+
+: 24px;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 1px;
+    margin-bottom: 6px;
+}
 }
 
 .btn:hover {
 	color: #fff;
-	background: #1e88e5;
+	background: #00ACC1;
 }
 
 /* Animation */
@@ -193,7 +205,7 @@ a {
 }
 
 a:hover {
-	color: #1e88e5;
+	color: #00ACC1;
 }
 
 hr {
@@ -299,7 +311,7 @@ blockquote {
 	margin: 0 0 20px;
 	margin: 0 0 1.25rem;
 	line-height: 1.6;
-	border-left: 5px solid #1e88e5;
+	border-left: 5px solid #00ACC1;
 }
 
 blockquote p:last-child {
@@ -431,14 +443,14 @@ select {
 	font-size: .875rem;
 	font-weight: 700;
 	line-height: 1;
-	color: #1e88e5;
+	color: #00ACC1;
 	border-top: 1px solid #ebebeb;
 }
 
 .divider {
 	height: 5px;
 	margin: 0;
-	background: #1e88e5;
+	background: #00ACC1;
 	border: 0;
 }
 
@@ -475,7 +487,7 @@ select {
 }
 
 :focus > .menu__btn-title {
-	box-shadow: inset 0 0 1px 3px #1e88e5;
+	box-shadow: inset 0 0 1px 3px #00ACC1;
 }
 
 button:not(:-moz-focusring):focus > .menu__btn-title {
@@ -488,7 +500,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .js .menu__btn--active {
-	color: #1e88e5;
+	color: #00ACC1;
 }
 
 .menu__list {
@@ -497,7 +509,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .menu__item:hover {
-	background: #1e88e5;
+	background: #00ACC1;
 }
 
 .menu__item:first-child {
@@ -505,7 +517,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .menu__item--active {
-	background: #1e88e5;
+	background: #00ACC1;
 }
 
 .menu__link {
@@ -546,7 +558,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 @media screen and (min-width: 767px) {
 	.menu {
-		border-bottom: 5px solid #1e88e5;
+		border-bottom: 5px solid #00ACC1;
 	}
 
 	.menu__btn {
@@ -600,7 +612,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .meta a:hover {
-	color: #1e88e5;
+	color: #00ACC1;
 }
 
 .meta__item {
@@ -657,13 +669,13 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 .warning a,
 .authorbox__description a {
 	font-weight: 700;
-	color: #1e88e5;
+	color: #00ACC1;
 }
 
 .content a:hover,
 .warning a:hover,
 .authorbox__description a:hover {
-	color: #1e88e5;
+	color: #00ACC1;
 	text-decoration: underline;
 }
 
@@ -746,7 +758,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .tags__item:hover {
-	background: #1e88e5;
+	background: #00ACC1;
 }
 
 .tags__link,
@@ -761,7 +773,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 	height: 32px;
 	padding: 8px;
 	margin-right: 6px;
-	background: #1e88e5;
+	background: #00ACC1;
 	fill: #fff;
 }
 
@@ -823,7 +835,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 .toc__menu a {
 	display: block;
 	padding: 5px 10px;
-	color: #1e88e5;
+	color: #00ACC1;
 	border-bottom: 1px solid #ebebeb;
 }
 
@@ -911,7 +923,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 .pagination__item:hover,
 .pagination__item--current {
 	color: #fff;
-	background: #1e88e5;
+	background: #00ACC1;
 }
 
 /* Pager (prev/next links) navigation */
@@ -1033,7 +1045,7 @@ input[type=reset] {
 
 input[type=submit]:hover,
 input[type=reset]:hover {
-	background: #1e88e5;
+	background: #00ACC1;
 }
 
 textarea {
@@ -1062,7 +1074,7 @@ textarea {
 	font-size: 16px;
 	font-size: 1rem;
 	text-transform: uppercase;
-	border-bottom: 3px solid #1e88e5;
+	border-bottom: 3px solid #00ACC1;
 }
 
 .widget__item {
@@ -1146,7 +1158,7 @@ textarea {
 
 .widget-languages__link:hover .widget-languages__link-btn {
 	color: #fff;
-	background: #1e88e5;
+	background: #00ACC1;
 }
 
 .widget-languages__link-btn {

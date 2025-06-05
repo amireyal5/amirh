@@ -62,7 +62,7 @@ theme = "Mainroad" # וודא שזה Mainroad!
   customCSS = ["css/custom.css"]
 
   [params.style.vars]
-    highlightColor = "#1e88e5"
+    highlightColor = "#00ACC1"
     fontFamilyPrimary = "'Assistant', sans-serif"
 
 [languages]
