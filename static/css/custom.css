@@ -68,41 +68,31 @@
   background-color: #aaa; /* אפור כהה יותר בהובר */
   color: white;
 }
-/* ממרכז את כל תיבת המחבר */
-.authorbox {
+.widget.custom-authorbox {
   text-align: center;
   color: #bfbfbf;
   font-size: 15px;
+  padding: 1em 0;
 }
 
-/* מוודא שהתמונה במרכז */
-.authorbox__avatar {
-  display: inline-block;
-  margin: 0 auto 10px;
+.custom-authorbox__name {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-/* עיצוב לתמונה עצמה */
-.authorbox__avatar img {
-  border-radius: 50%; /* תמונה עגולה - אופציונלי */
+.custom-authorbox__avatar img {
+  border-radius: 50%;
   display: block;
-  margin: 0 auto;
-  transition: opacity 0.3s ease;
-  cursor: pointer;
+  margin: 0 auto 10px;
+  transition: 0.3s;
 }
 
-/* אפקט ריחוף על התמונה */
-.authorbox__avatar a:hover img {
+.custom-authorbox__avatar img:hover {
   opacity: 0.8;
 }
 
-/* השם - בראש */
-.authorbox__header {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-/* הביו - מתחת, גם במרכז */
-.authorbox__description {
-  max-width: 300px;
+.custom-authorbox__bio {
+  max-width: 250px;
   margin: 0 auto;
 }
+
