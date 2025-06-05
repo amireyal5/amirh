@@ -29,7 +29,7 @@ theme = "Mainroad" # וודא שזה Mainroad!
 
   [params.author]
     name = "עמיר אייל"
-    bio ="פסיכותרפיסט מוסמך למתבגרים, מבוגרים והורים"
+    bio = "פסיכותרפיסט מוסמך למתבגרים, מבוגרים והורים"
     avatar = "img/avatar-amir.jpg"
 
   [params.logo]
@@ -47,7 +47,7 @@ theme = "Mainroad" # וודא שזה Mainroad!
     recent_num = 5
     tags_counter = false
 
-#   [Params.widgets.social] # השאר את זה מבוטל כדי שלא תהיה התנגשות
+#   [params.widgets.social] # השאר את זה מבוטל כדי שלא תהיה התנגשות
 #     facebook = ""
 #     twitter = ""
 #     instagram = ""
@@ -60,7 +60,8 @@ theme = "Mainroad" # וודא שזה Mainroad!
 
   googleFontsLink = "https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;700&display=swap"
   customCSS = ["css/custom.css"]
-  [Params.style.vars]
+
+  [params.style.vars]
     highlightColor = "#1e88e5"
     fontFamilyPrimary = "'Assistant', sans-serif"
 
