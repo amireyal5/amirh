@@ -1,21 +1,51 @@
 /* custom.css */
 
-/* צבע רקע שונה לגוף האתר */
-body {
-  background-color: #f0f8ff;
+/* ווידג'ט רשתות חברתיות */
+.social-links-widget {
+  background-color: transparent;
+  padding: 10px 0;
+  text-align: center;
 }
 
-/* שינוי צבע הכותרות */
-h1, h2, h3 {
-  color: #1e88e5;
+.social-links-widget .widget-title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: #333;
 }
 
-/* שינוי גופן */
-body {
-  font-family: 'Assistant', sans-serif;
+/* רשימת אייקונים בשורה אחת */
+.social-icons-circular {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  direction: rtl;
 }
 
-/* הוספת מרווח לפסקאות */
-p {
-  margin-bottom: 1.5em;
+/* קישורים - עיגול אפור ואייקון לבן */
+.social-icons-circular li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #e0e0e0; /* אפור בהיר */
+  color: white;
+  font-size: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* כל האייקונים בצבע לבן */
+.social-icons-circular li a i {
+  color: white;
+}
+
+/* האפקט בריחוף */
+.social-icons-circular li a:hover {
+  transform: scale(1.1);
+  background-color: #bdbdbd; /* כהה יותר בקצת */
 }
