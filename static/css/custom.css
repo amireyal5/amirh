@@ -96,3 +96,39 @@
   margin: 0 auto;
 }
 
+.logo {
+  display: flex;
+  flex-direction: row-reverse; /* מימין לשמאל */
+  align-items: center;
+  justify-content: center;     /* למרכז את כל הבלוק */
+  gap: 16px;
+  direction: rtl;              /* כיוון כתיבה RTL */
+}
+
+.logo__imagebox {
+  flex-shrink: 0;
+}
+
+.logo__img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  text-align: right; /* טקסט מיושר לימין */
+}
+
+.logo__title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.logo__tagline {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
