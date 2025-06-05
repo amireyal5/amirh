@@ -1,25 +1,27 @@
 {{- if .Site.Params.authorbox }}
   {{- with .Site.Params.author }}
     {{- if or .avatar .name .bio }}
-      <div class="authorbox authorbox--centered">
-
-        {{- with .name }}
-          <div class="authorbox__name">{{ T "authorbox_name" (dict "Name" .) }}</div>
-        {{- end }}
-
+      <div class="authorbox clearfix">
+        
         {{- with .avatar }}
           <figure class="authorbox__avatar">
-            <a href="/about" title="About the author">
-              <img alt="{{ $.Site.Params.author.name }} avatar" src="{{ . | relURL }}" class="avatar" height="90" width="90">
-            </a>
+            <img alt="{{ $.Site.Params.author.name }} avatar" src="{{ . | relURL }}" class="avatar" height="90" width="90">
           </figure>
         {{- end }}
-
-        {{- with .bio }}
-          <div class="authorbox__description">
-            {{ . | markdownify }}
-          </div>
-        {{- end }}
+        
+        <div class="authorbox__content">
+          {{- with .name }}
+            <div class="authorbox__header">
+              <span class="authorbox__name">{{ T "authorbox_name" (dict "Name" .) }}</span>
+            </div>
+          {{- end }}
+          
+          {{- with .bio }}
+            <div class="authorbox__description">
+              {{ . | markdownify }}
+            </div>
+          {{- end }}
+        </div>
 
       </div>
     {{- else }}
