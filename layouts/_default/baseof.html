@@ -33,10 +33,9 @@
   {{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
-  {{/* טעינת קבצי CSS מותאמים אישית מהפרמטר customCSS */}}
-  {{ range .Site.Params.customCSS }}
-    <link rel="stylesheet" href="{{ . | relURL }}" />
-  {{ end }}
+{{/* טעינת קובץ custom.css מהתקייה static/css */}}
+<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}" />
+
 
   <link rel="stylesheet" href="{{ "css/all.min.css" | relURL }}" />
 
