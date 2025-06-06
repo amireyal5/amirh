@@ -512,7 +512,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .menu__list {
 	list-style: none;
-	background: #2a2a2a;
+	background: #00ACC1;
 }
 
 .menu__item:hover {
@@ -534,6 +534,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 	font-weight: 500;
 	color: #fff;
 	text-transform: uppercase;
+	font-size: 16px;
 }
 
 .menu__link:hover {
@@ -583,6 +584,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 		border: 0;
 		-webkit-transform: none;
 		transform: none;
+		justify-content: center;
 	}
 
 	.menu__item {

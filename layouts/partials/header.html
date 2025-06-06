@@ -1,12 +1,17 @@
 <header class="header">
   <div class="container header__container">
-       {{ partial "menu.html" . }}
+
+    {{ partial "menu.html" . }}
 
     {{ if .IsHome }}
-      <div class="hero-image">
-        <img src="/img/hero.jpg" alt="Hero Image">
+      <div class="hero-image-container">
+        <img src="/img/hero.jpg" alt="עמיר אייל פסיכותרפיה" class="hero-image-responsive">
+
+
       </div>
     {{ end }}
 
   </div>
 </header>
+
+
