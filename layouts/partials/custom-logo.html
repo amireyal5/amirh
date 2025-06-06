@@ -1,11 +1,13 @@
 <div class="my-header-logo">
-  <div class="my-logo-wrapper">
-    {{ with .Site.Params.logo.image }}
-      <img class="my-logo-image" src="{{ . | relURL }}" alt="לוגו">
-    {{ end }}
-    <div class="my-logo-text">
-      <div class="my-logo-title">{{ .Site.Params.logo.title }}</div>
-      <div class="my-logo-subtitle">{{ .Site.Params.logo.subtitle }}</div>
+  <a href="/" class="my-logo-link">
+    <div class="my-logo-wrapper">
+      {{ with .Site.Params.logo.image }}
+        <img class="my-logo-image" src="{{ . | relURL }}" alt="לוגו">
+      {{ end }}
+      <div class="my-logo-text">
+        <div class="my-logo-title">{{ .Site.Params.logo.title }}</div>
+        <div class="my-logo-subtitle">{{ .Site.Params.logo.subtitle }}</div>
+      </div>
     </div>
-  </div>
+  </a>
 </div>

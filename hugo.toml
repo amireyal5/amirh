@@ -39,8 +39,8 @@ theme = "Mainroad" # וודא שזה Mainroad!
 
   [params.sidebar]
     home = "left"
-    list = "right"
-    single = "right"
+    list = "left"
+    single = "left"
     widgets = ["search", "custom_authorbox", "social", "recent", "categories", "taglist"]
 
   [params.widgets]
