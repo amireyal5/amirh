@@ -1,0 +1,6 @@
+<details class="accordion-item">
+    <summary class="accordion-header">{{ .Get "title" | default "לחץ כאן כדי להרחיב" | markdownify }}</summary>
+    <div class="accordion-content">
+        {{ .Inner | markdownify }}
+    </div>
+</details>

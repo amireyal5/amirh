@@ -86,3 +86,8 @@ theme = "Mainroad"
   name = "מאמרים"
   url = "/posts/"
   weight = 10
+  
+  [[menu.main]]
+  name =  "שאלות נפוצות"
+  url = "pages/faq/"      
+  weight = 30          
