@@ -1377,4 +1377,10 @@ a.contact-link .contact-icon {
   font-size: 1.8em;
 
 }
-
+.header--home {
+  background-image: url('/img/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 800px;
+}

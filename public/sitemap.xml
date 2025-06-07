@@ -5,15 +5,9 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/docs/customization/</loc>
-    <lastmod>2022-01-24T14:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/pages/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/faq/</loc>
-    <lastmod>2022-01-24T14:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/contact/contact/</loc>
+    <loc>http://localhost:1313/contact/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
@@ -112,9 +106,6 @@
     <lastmod>2023-10-27T10:30:00+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/</loc>
-    <lastmod>2022-01-24T14:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/contact/</loc>
   </url><url>
     <loc>http://localhost:1313/questionnaires/</loc>
   </url><url>

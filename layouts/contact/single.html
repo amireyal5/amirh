@@ -1,34 +1,63 @@
 {{ define "main" }}
-  <div class="container">
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
+<main class="main" role="main">
 
-  <form name="contact" method="POST" netlify action="/thank-you/">
-      <p class="hidden">
-        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-      </p>
-      <p>
-        <label for="name">שם:</label>
-        <input type="text" id="name" name="name" required>
-      </p>
-      <p>
-        <label for="email">אימייל:</label>
-        <input type="email" id="email" name="email" required>
-      </p>
-      <p>
-        <label for="phone">טלפון:</label>
-        <input type="tel" id="phone" name="phone"> </p>
-      <p>
-        <label for="subject">נושא:</label>
-        <input type="text" id="subject" name="subject">
-      </p>
-      <p>
-        <label for="message">הודעה:</label>
-        <textarea id="message" name="message" required></textarea>
-      </p>
-      <p>
-        <button type="submit">שלח</button>
-      </p>
-    </form>
-  </div>
+  <article class="post">
+    <header class="post__header">
+      <h1 class="post__title">{{ .Title }}</h1>
+      {{- with .Params.lead }}
+      <p class="post__lead">{{ . }}</p>
+      {{- end }}
+      {{ with partial "post_meta.html" . -}}
+      <div class="post__meta meta">{{ . }}</div>
+      {{- end }}
+    </header>
+
+    {{ partial "post_thumbnail.html" (dict "class" "post" "page" .) }}
+    {{- partial "post_toc.html" . -}}
+
+    <div class="content post__content clearfix">
+      {{ .Content }}
+
+      <!-- טופס יצירת קשר -->
+      <form name="contact" method="POST" netlify action="/thank-you/">
+        <p class="hidden">
+          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+        </p>
+        <p>
+          <label for="name">שם:</label>
+          <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+          <label for="email">אימייל:</label>
+          <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+          <label for="phone">טלפון:</label>
+          <input type="tel" id="phone" name="phone">
+        </p>
+        <p>
+          <label for="subject">נושא:</label>
+          <input type="text" id="subject" name="subject">
+        </p>
+        <p>
+          <label for="message">הודעה:</label>
+          <textarea id="message" name="message" required></textarea>
+        </p>
+        <p>
+          <button type="submit">שלח</button>
+        </p>
+      </form>
+    </div>
+
+    {{- if .Params.tags }}
+    <footer class="post__footer">
+      {{ partial "post_tags.html" . }}
+    </footer>
+    {{- end }}
+  </article>
+
+</main>
+
+{{ partial "pager.html" . }}
+{{ partial "comments.html" . }}
 {{ end }}

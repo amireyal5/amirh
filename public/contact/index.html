@@ -3,17 +3,18 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacts - עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
+  <title>צרו קשר - עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
   <script>
     (function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");
   </script>
   <meta name="description" content="" />
     <meta property="og:url" content="http://localhost:1313/contact/">
   <meta property="og:site_name" content="עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים">
-  <meta property="og:title" content="Contacts">
-  <meta property="og:description" content="הבלוג האישי שלי על כל דבר">
+  <meta property="og:title" content="צרו קשר">
+  <meta property="og:description" content="נא מלאו את הפרטים ונחזור אליכם בהקדם האפשרי">
   <meta property="og:locale" content="he">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:tag" content="צרו קשר">
 
 
   
@@ -30,16 +31,14 @@
 
 
   <link rel="stylesheet" href="/css/all.min.css" />
-    <link rel="alternate" type="application/rss+xml" href="/contact/index.xml" title="עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים">
 
   <link rel="shortcut icon" href="/favicon.ico" />
     
 </head>
 <body class="body">
   <div class="container container--outer">
-    <header class="header">
+    <header class="header ">
   <div class="container header__container">
-
     
 <nav class="menu">
 	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
@@ -54,28 +53,14 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/docs/customization/">
-				
-				<span class="menu__text">Customization</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
 			<a class="menu__link" href="/pages/about/">
 				
 				<span class="menu__text">אודות</span>
 				
 			</a>
 		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="/docs/faq/">
-				
-				<span class="menu__text">שאלות נפוצות</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
-			<a class="menu__link" href="/contact/contact/">
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/contact/">
 				
 				<span class="menu__text">צרו קשר</span>
 				
@@ -84,44 +69,107 @@
 	</ul>
 </nav>
 
-
-    
+    <div class="my-header-logo">
+  <a href="/" class="my-logo-link">
+    <div class="my-logo-wrapper">
+      
+        <img class="my-logo-image" src="/img/logo.png" alt="לוגו">
+      
+      <div class="my-logo-text">
+        <div class="my-logo-title">עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</div>
+        <div class="my-logo-subtitle">כרמיאל והסביבה ואונליין</div>
+      </div>
+    </div>
+  </a>
+</div>
 
   </div>
 </header>
+
     <div class="wrapper flex">
       <div class="primary">
         
-<main class="main list" role="main">
-	<header class="main__header">
-		<h1 class="main__title">Contacts</h1>
-	</header><article class="list__item post">
-	
+<main class="main" role="main">
+
+  <article class="post">
+    <header class="post__header">
+      <h1 class="post__title">צרו קשר</h1>
+      
+    </header>
+
+    
 
 
   
 
 
 
+  
+  
 
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/contact/contact/" rel="bookmark">
-			צרו קשר
-			</a>
-		</h2>
-		
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		<p><strong>נא מלאו את הפרטים ונחזור אליכם בהקדם האפשרי</strong></p>
-	</div>
-</article>
+  
+  
+
+  <div class="post__thumbnail post__thumbnail">
+    <a href="/contact/">
+      <img src="/contact/hero.jpg" alt="צרו קשר" loading="lazy">
+    </a>
+  </div>
+
+<div class="content post__content clearfix">
+      <p><strong>נא מלאו את הפרטים ונחזור אליכם בהקדם האפשרי</strong></p>
+
+
+      
+      <form name="contact" method="POST" netlify action="/thank-you/">
+        <p class="hidden">
+          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+        </p>
+        <p>
+          <label for="name">שם:</label>
+          <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+          <label for="email">אימייל:</label>
+          <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+          <label for="phone">טלפון:</label>
+          <input type="tel" id="phone" name="phone">
+        </p>
+        <p>
+          <label for="subject">נושא:</label>
+          <input type="text" id="subject" name="subject">
+        </p>
+        <p>
+          <label for="message">הודעה:</label>
+          <textarea id="message" name="message" required></textarea>
+        </p>
+        <p>
+          <button type="submit">שלח</button>
+        </p>
+      </form>
+    </div>
+    <footer class="post__footer">
+      
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M4 0h8s2 0 4 2l15 15s2 2 0 4L21 31s-2 2-4 0L2 16s-2-2-2-4V3s0-3 4-3m3 10a3 3 0 0 0 0-6 3 3 0 0 0 0 6"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/%D7%A6%D7%A8%D7%95-%D7%A7%D7%A9%D7%A8/" rel="tag">צרו קשר</a>
+		</li>
+	</ul>
+</div>
+    </footer>
+  </article>
+
 </main>
 
 
+
+
       </div>
-      
-<aside class="sidebar sidebar--left">
+      <aside class="sidebar sidebar--left">
 
 <div class="widget-search widget">
   <form class="widget-search__form" role="search" method="get" action="/search">
@@ -197,8 +245,6 @@
 	<h4 class="widget__title">פוסטים אחרונים</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/docs/customization/">Customization</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/faq/">Frequently asked questions (FAQ)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/%D7%94%D7%AA%D7%9E%D7%95%D7%93%D7%93%D7%95%D7%AA-%D7%A2%D7%9D-%D7%9E%D7%AA%D7%97-%D7%95%D7%9C%D7%97%D7%A5-%D7%94%D7%93%D7%A8%D7%9A-%D7%9C%D7%97%D7%99%D7%99%D7%9D-%D7%A9%D7%9C%D7%95%D7%95%D7%99%D7%9D-%D7%95%D7%9E%D7%90%D7%95%D7%96%D7%A0%D7%99%D7%9D/">התמודדות עם מתח ולחץ: הדרך לחיים שלווים ומאוזנים</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/%D7%9C%D7%A0%D7%94%D7%9C-%D7%90%D7%AA-%D7%94%D7%9B%D7%A2%D7%A1-%D7%94%D7%9E%D7%A4%D7%AA%D7%97-%D7%9C%D7%97%D7%99%D7%99%D7%9D-%D7%A8%D7%92%D7%95%D7%A2%D7%99%D7%9D-%D7%95%D7%9E%D7%90%D7%95%D7%96%D7%A0%D7%99%D7%9D/">לנהל את הכעס: המפתח לחיים רגועים ומאוזנים</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/parental-authority/">סמכות הורית – למה גבולות ואהבה לילד חייבים ללכת יד ביד</a></li>

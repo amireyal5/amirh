@@ -9,6 +9,7 @@ weight: 2
 menu:
   main:
     name: אודות
+sidebar: left
 ---
 
 
