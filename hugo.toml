@@ -7,7 +7,7 @@ defaultContentLanguageInSubdir = false
 [Pagination]
   pagerSize = 10
 
-theme = "Mainroad" # וודא שזה Mainroad!
+theme = "Mainroad"
 
 [params]
   description = "הבלוג האישי שלי על כל דבר"
@@ -78,3 +78,11 @@ theme = "Mainroad" # וודא שזה Mainroad!
 
 [outputs]
   home = ["HTML", "JSON"]
+
+[menu]
+
+  [[menu.main]]
+  identifier = "posts"
+  name = "מאמרים"
+  url = "/posts/"
+  weight = 10

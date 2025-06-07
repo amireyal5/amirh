@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>מאמרים on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
+    <link>http://localhost:1313/pages/articles/</link>
+    <description>Recent content in מאמרים on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</description>
+    <generator>Hugo</generator>
+    <language>he</language>
+    <atom:link href="http://localhost:1313/pages/articles/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
