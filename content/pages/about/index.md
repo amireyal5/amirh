@@ -1,14 +1,7 @@
 ---
-title: אודות 
-description:
-  tdate: 01/01/2025
-authorbox: false
+title: "אודות" 
 sidebar: false
 pager: false
-weight: 2
-menu:
-  main:
-    name: אודות
 sidebar: left
 ---
 
