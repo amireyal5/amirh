@@ -162,7 +162,10 @@ my-logo-title {
   @media (max-width: 768px) {
   .my-logo-image {
     height: 80px; /* יותר מתאים לנייד */
-    
+  }
+}
+
+/* כאן סוגרים את ה־media ואז מתחילים את העיצוב של cta-box */
 .cta-box {
   background-color: #e0f7fa !important;
   border: 2px solid #00838f !important;
@@ -171,5 +174,3 @@ my-logo-title {
   margin: 30px auto !important;
   text-align: center !important;
 }
-
-
