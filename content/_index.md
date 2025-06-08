@@ -26,13 +26,11 @@ sidebar: left
 [קראו עוד אודותיי](/pages/about/)
 
 ---
-{{< cta 
-    title="קבע פגישה עכשיו" 
-    description="השאר פרטים ואחזור אליך בהקדם לטיפול מותאם אישית." 
-    url="/contact/" 
-    button_text="צור קשר" 
->}}
-
+<div class="cta-box">
+  <h2>{{ .Get "title" }}</h2>
+  <p>{{ .Get "description" }}</p>
+  <a href="{{ .Get "url" }}" class="cta-button">{{ .Get "button_text" }}</a>
+</div>
 ## למי אני יכול לעזור
 
 ### 👨‍🦱 מבוגרים  
