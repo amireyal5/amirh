@@ -1,11 +1,9 @@
 ---
-title: "צרו קשר"
-author: " עמיר אייל"
-sidebar: left
-weight: 50
-menu: main
-layout: "contact" 
-sidebar: left
+[menu]
+  [[menu.main]]
+    name = "צרו קשר"
+    url = "/contact/" # או הנתיב הנכון
+    weight = 30
 ---
 
 **נא מלאו את הפרטים ונחזור אליכם בהקדם האפשרי**
