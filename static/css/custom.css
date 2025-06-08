@@ -163,3 +163,62 @@ my-logo-title {
   .my-logo-image {
     height: 80px; /* יותר מתאים לנייד */
   }
+    /* עיצוב בסיסי לעמוד הבית */
+
+.main.homepage {
+  padding: 3rem 1rem;
+  background: #f9f9f9;
+  font-family: 'Assistant', sans-serif;
+  color: #333;
+  direction: rtl;
+  text-align: right;
+}
+
+.main.homepage .content {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.homepage-sections {
+  background: white;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.homepage-sections h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00ACC1; /* הצבע שהגדרת בפרמטרים */
+}
+
+.homepage-sections p {
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.homepage-sections .btn.primary {
+  background-color: #00ACC1;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.homepage-sections .btn.primary:hover {
+  background-color: #007f8c;
+}
+
