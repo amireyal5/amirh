@@ -1,6 +1,5 @@
 ---
     name: "צרו קשר"
-    identifier: "contact-page-link" # מזהה ייחודי
     weight: 30
 ---
 
