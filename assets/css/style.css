@@ -1377,3 +1377,42 @@ a.contact-link .contact-icon {
   background-repeat: no-repeat;
   height: 800px;
 }
+.cta-therapy-box {
+  background-color: #e0f2f1; /* ירוק-כחול עדין */
+  padding: 25px;
+  border-radius: 12px;
+  margin: 25px 0;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: #004d40; /* ירוק כהה */
+}
+
+.cta-therapy-box h2 {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 1.9rem;
+}
+
+.cta-therapy-box p {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #00695c;
+}
+
+.cta-therapy-button {
+  background-color: #00796b; /* ירוק בינוני */
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.cta-therapy-button:hover {
+  background-color: #004d40; /* ירוק כהה */
+}
