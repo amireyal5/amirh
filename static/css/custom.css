@@ -49,6 +49,7 @@
   transform: scale(1.1);
   background-color: #bdbdbd; /* כהה יותר בקצת */
 }
+
 .btn-circle {
   display: inline-block;
   background-color: #ddd; /* אפור בהיר */
@@ -68,6 +69,7 @@
   background-color: #aaa; /* אפור כהה יותר בהובר */
   color: white;
 }
+
 .widget.custom-authorbox {
   text-align: center;
   color: #bfbfbf;
@@ -106,7 +108,6 @@
   font-size: 30px;
 } 
 
-
 .my-logo-wrapper {
   display: flex;
   flex-direction: row; /* תמונה מימין, טקסט משמאל */
@@ -118,17 +119,15 @@
 .my-logo-image {
   height: 120px;
   width: auto;
- 
 }
 
-my-logo-text {
+.my-logo-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
- 
 }
 
-my-logo-title {
+.my-logo-title {
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0;
@@ -139,6 +138,7 @@ my-logo-title {
   color: #555;
   margin: 0;
 }
+
 /* 🌐 התאמה למסכים צרים */
 @media (max-width: 768px) {
   .my-logo-wrapper {
@@ -159,13 +159,13 @@ my-logo-title {
   .my-logo-subtitle {
     font-size: 0.9rem;
   }
-  @media (max-width: 768px) {
+
   .my-logo-image {
     height: 80px; /* יותר מתאים לנייד */
   }
 }
 
-/* כאן סוגרים את ה־media ואז מתחילים את העיצוב של cta-box */
+/* עיצוב קריאה לפעולה - CTA */
 .cta-box {
   background-color: #e0f7fa !important;
   border: 2px solid #00838f !important;
