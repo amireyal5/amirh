@@ -162,40 +162,14 @@ my-logo-title {
   @media (max-width: 768px) {
   .my-logo-image {
     height: 80px; /* יותר מתאים לנייד */
-  }
-.cta-therapy-box {
-  background-color: #f5f5f5;
-  border: 2px solid #ccc;
-  padding: 2rem;
-  margin: 2rem 0;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  direction: rtl;
-}
-
-.cta-therapy-box h2 {
-  font-size: 1.8rem;
-  color: #333;
-}
-
-.cta-therapy-box p {
-  font-size: 1.2rem;
-  margin: 0.5rem 0 1rem;
-}
-
-.cta-therapy-button {
-  display: inline-block;
-  background-color: #0077cc;
-  color: white;
-  padding: 0.7rem 1.5rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.cta-therapy-button:hover {
-  background-color: #005fa3;
+    
+.cta-box {
+  background-color: #e0f7fa !important;
+  border: 2px solid #00838f !important;
+  border-radius: 8px !important;
+  padding: 20px !important;
+  margin: 30px auto !important;
+  text-align: center !important;
 }
 
 
