@@ -214,3 +214,91 @@
   background-color: #0288d1;
   box-shadow: 0 8px 20px rgba(2, 136, 209, 0.7);
 }
+main.homepage {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #f0f4f8, #d9e6f2);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(100, 120, 150, 0.15);
+  font-family: 'Varela Round', sans-serif;
+  color: #2c3e50;
+  line-height: 1.6;
+  transition: background-color 0.3s ease;
+}
+
+main.homepage:hover {
+  background: linear-gradient(135deg, #e1ecf9, #c4d8f4);
+  box-shadow: 0 15px 35px rgba(100, 130, 170, 0.3);
+}
+
+main.homepage h1,
+main.homepage h2,
+main.homepage h3 {
+  color: #1a3e6e;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+main.homepage p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+main.homepage a {
+  color: #1a73e8;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+main.homepage a:hover {
+  color: #0c47a1;
+  border-color: #0c47a1;
+}
+
+/* כפתורים בתוך main.homepage */
+main.homepage .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #1a73e8;
+  color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(26, 115, 232, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  border: none;
+}
+
+main.homepage .btn:hover {
+  background-color: #0c47a1;
+  box-shadow: 0 10px 25px rgba(12, 71, 161, 0.6);
+}
+
+/* תגובות ויזואליות קטנות */
+main.homepage blockquote {
+  border-left: 5px solid #1a73e8;
+  padding-left: 15px;
+  color: #34495e;
+  font-style: italic;
+  background-color: #e8f0fe;
+  margin: 1.5em 0;
+  border-radius: 8px;
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  main.homepage {
+    margin: 20px 10px;
+    padding: 20px 15px;
+  }
+
+  main.homepage .btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
+
