@@ -134,7 +134,7 @@ textarea {
 .btn {
   display: inline-block;
   border: 1px solid #bfbfbf;
- 
+  border-radius: 999em;
   padding: 0 10px;
   color: #bfbfbf;
   line-height: 24px;
