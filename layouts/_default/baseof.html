@@ -32,12 +32,11 @@
 
   {{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-
-{{/* טעינת קובץ custom.css מהתקייה static/css */}}
-<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}" />
-<link rel="stylesheet" href="{{ "/css/accordion.css" | relURL }}">
-
+  <link rel="stylesheet" href="{{ "/css/accordion.css" | relURL }}">
   <link rel="stylesheet" href="{{ "css/all.min.css" | relURL }}" />
+
+  {{/* טעינת קובץ custom.css מהתקייה static/css בסוף כדי שיקח עדיפות */}}
+  <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}" />
 
   {{- with .OutputFormats.Get "rss" }}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
