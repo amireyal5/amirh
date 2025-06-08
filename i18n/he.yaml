@@ -137,3 +137,6 @@
 
 - id: footer_privacy
   translation: "מדיניות פרטיות"
+  
+posts = "מאמרים"
+  
