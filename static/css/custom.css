@@ -163,62 +163,41 @@ my-logo-title {
   .my-logo-image {
     height: 80px; /* יותר מתאים לנייד */
   }
-    /* עיצוב בסיסי לעמוד הבית */
+    /*עיצוב cta */
 
-.main.homepage {
-  padding: 3rem 1rem;
-  background: #f9f9f9;
-  font-family: 'Assistant', sans-serif;
-  color: #333;
-  direction: rtl;
-  text-align: right;
-}
-
-.main.homepage .content {
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-.homepage-sections {
-  background: white;
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+.cta-box {
+  background-color: #ffdd57;
+  padding: 20px;
   text-align: center;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
 }
 
-.homepage-sections h2 {
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #00ACC1; /* הצבע שהגדרת בפרמטרים */
+.cta-box h2 {
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.homepage-sections p {
-  font-weight: 400;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+.cta-box p {
+  margin-bottom: 15px;
   color: #555;
+  font-size: 1.1em;
 }
 
-.homepage-sections .btn.primary {
-  background-color: #00ACC1;
+.cta-button {
+  background-color: #007bff;
   color: white;
-  padding: 0.75rem 2rem;
-  font-weight: 600;
-  font-size: 1.1rem;
-  border-radius: 30px;
+  padding: 12px 25px;
+  border-radius: 5px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
   display: inline-block;
-  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.homepage-sections .btn.primary:hover {
-  background-color: #007f8c;
+.cta-button:hover {
+  background-color: #0056b3;
 }
 
