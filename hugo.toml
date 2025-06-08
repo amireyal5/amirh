@@ -80,19 +80,24 @@ theme = "Mainroad"
   home = ["HTML", "JSON"]
 
 [menu]
-
   [[menu.main]]
   identifier = "posts"
   name = "מאמרים"
   url = "/posts/"
   weight = 10
-
+  
+  [[menu.main]]
+  identifier = "about"
+  name = "אודות"
+  url = "/about/"
+  weight = 20
+  
   [[menu.main]]
   name =  "שאלות נפוצות"
-  url = "pages/faq/"      
-  weight = 20          
+  url = "/pages/faq/"      
+  weight = 30          
 
   [[menu.main]]
   name =  "צרו קשר"
   url = "/contact/"      
-  weight = 60  
+  weight = 40  
