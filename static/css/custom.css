@@ -203,5 +203,7 @@ my-logo-title {
 .cta-therapy-button:hover {
   background-color: #004d40; /* ירוק כהה */
 }
-
+.cta-therapy-box {
+  border: 5px dashed red !important;
+}
 
