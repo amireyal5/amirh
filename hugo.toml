@@ -89,7 +89,7 @@ theme = "Mainroad"
   [[menu.main]]
   identifier = "posts"
   name = "מאמרים"
-  url = "/posts/"
+  url = "/מאמרים/"
   weight = 20
   
   [[menu.main]]
