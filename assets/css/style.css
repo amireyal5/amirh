@@ -132,24 +132,17 @@ textarea {
 
 /* Button */
 .btn {
-display: inline-block;
-    border: 1px solid  #bfbfbf;
-    border-radius: 999em;
-    padding: 0 10px;
-    color: #bfbfbf;
-    line-height: 24px;
-    font-size: 14px;
-    text-decoration: none;
-    margin: 0 1px;
-    margin-bottom: 6px;
+  display: inline-block;
+  border: 1px solid #bfbfbf;
+  border-radius: 999em;
+  padding: 0 10px;
+  color: #bfbfbf;
+  line-height: 24px;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 0 1px 6px;
+}
 
-: 24px;
-    font-size: 14px;
-    text-decoration: none;
-    margin: 0 1px;
-    margin-bottom: 6px;
-}
-}
 
 .btn:hover {
 	color: #fff;
