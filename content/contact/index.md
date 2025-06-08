@@ -1,9 +1,8 @@
 ---
 title: "צרו קשר"
-tags: ["צרו קשר" ]
 author: " עמיר אייל"
 sidebar: left
-weight: 5
+weight: 50
 menu: main
 layout: "contact" 
 sidebar: left
