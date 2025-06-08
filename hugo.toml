@@ -81,15 +81,15 @@ theme = "Mainroad"
 
 [menu]
   [[menu.main]]
-  identifier = "posts"
-  name = "מאמרים"
-  url = "/posts/"
+  identifier = "about"
+  name = "אודות"
+  url = "/pages/about/"
   weight = 10
   
   [[menu.main]]
-  identifier = "about"
-  name = "אודות"
-  url = "/about/"
+  identifier = "posts"
+  name = "מאמרים"
+  url = "/posts/"
   weight = 20
   
   [[menu.main]]
