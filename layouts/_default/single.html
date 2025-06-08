@@ -1,7 +1,5 @@
 {{ define "main" }}
 <main class="main" role="main">
-
-
   <article class="post">
     <header class="post__header">
       <h1 class="post__title">{{ .Title }}</h1>
@@ -15,7 +13,23 @@
     {{ partial "post_thumbnail.html" (dict "class" "post" "page" .) }}
     {{- partial "post_toc.html" . -}}
     <div class="content post__content clearfix">
-      {{ .Content }}
+      {{- $content := .Content -}}
+
+      {{- range $tag := .Site.Taxonomies.tags -}}
+          {{- $tagName := $tag.LinkTitle -}}
+          {{- $tagPermalink := $tag.Permalink -}}
+
+          {{- /* בניית ביטוי רגולרי לחיפוש התגית בתוכן הפוסט. */ -}}
+          {{- $regex := printf "(?i)\\b%s\\b" (urlquery $tagName) -}}
+
+          {{- /* בניית מחרוזת הקישור בפורמט HTML */ -}}
+          {{- $link := printf "<a href=\"%s\">%s</a>" $tagPermalink $tagName -}}
+
+          {{- /* ביצוע ההחלפה */ -}}
+          {{- $content = replaceRE $regex $link $content -}}
+      {{- end -}}
+
+      {{- $content | safeHTML -}}
     </div>
     {{- if .Params.tags }}
     <footer class="post__footer">
@@ -23,7 +37,6 @@
     </footer>
     {{- end }}
   </article>
-
 </main>
 
 {{ partial "pager.html" . }}
