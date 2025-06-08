@@ -1,7 +1,6 @@
 ---
 title: "שאלות נפוצות"
 type: "page"
-layout: single" 
 sidbar: left
 ---
 
