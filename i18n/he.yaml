@@ -138,5 +138,8 @@
 - id: footer_privacy
   translation: "מדיניות פרטיות"
   
+- id: nav_blog
+  translation: "מאמרים"
+  
 
   
