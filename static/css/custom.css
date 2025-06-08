@@ -1,4 +1,102 @@
 /* custom.css */
+/* הגדרות בסיסיות לתיבה */
+.cta-therapy-box {
+  background-color: #e0f2f1; /* ירוק-כחול עדין */
+  padding: 25px; /* נשתמש ביחידות יחסיות מאוחר יותר במידת הצורך */
+  border-radius: 12px;
+  margin: 25px auto; /* שימוש ב-auto למרכוז אופקי */
+  max-width: 90%; /* הגדרת רוחב מקסימלי כדי למנוע מתיחה יתר במסכים גדולים */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: #004d40; /* ירוק כהה */
+}
+
+/* כותרת */
+.cta-therapy-box h2 {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 1.9rem; /* יחידת rem מבוססת על גודל הגופן של אלמנט ה-html */
+}
+
+/* פיסקה */
+.cta-therapy-box p {
+  font-size: 1.15rem; /* יחידת rem */
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #00695c;
+}
+
+/* כפתור */
+.cta-therapy-button {
+  background-color: #00796b; /* ירוק בינוני */
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 1.15rem; /* יחידת rem */
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  white-space: nowrap; /* מונע שבירת שורה בטקסט של הכפתור */
+}
+
+.cta-therapy-button:hover {
+  background-color: #004d40; /* ירוק כהה */
+}
+
+/* --- */
+
+## הוספת Media Queries לרספונסיביות
+
+כדי להתאים את העיצוב לגדלי מסך שונים, נוסיף Media Queries. Media Queries מאפשרים לך להחיל סגנונות CSS ספציפיים רק כאשר תנאים מסוימים מתקיימים (למשל, רוחב מסך מינימלי או מקסימלי).
+
+```css
+/* עבור מסכים קטנים יותר (טלפונים, עד 768px) */
+@media (max-width: 768px) {
+  .cta-therapy-box {
+    padding: 15px; /* הקטנת הריפוד במסכים קטנים יותר */
+    margin: 15px auto; /* הקטנת השוליים */
+    max-width: 95%; /* הגדלת רוחב מקסימלי כדי לתפוס יותר מקום במסכים קטנים */
+  }
+
+  .cta-therapy-box h2 {
+    font-size: 1.6rem; /* הקטנת גודל הכותרת */
+  }
+
+  .cta-therapy-box p {
+    font-size: 1rem; /* הקטנת גודל הטקסט */
+  }
+
+  .cta-therapy-button {
+    padding: 10px 20px; /* הקטנת ריפוד הכפתור */
+    font-size: 1rem; /* הקטנת גודל הגופן של הכפתור */
+  }
+
+
+/* עבור מסכים גדולים יותר (טאבלטים, בין 769px ל-1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cta-therapy-box {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 80%; /* אופטימיזציה לטאבלטים */
+  }
+
+  .cta-therapy-box h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-therapy-box p {
+    font-size: 1.1rem;
+  }
+}
+
+/* עבור מסכים גדולים מאוד (מחשבים שולחניים גדולים, מעל 1200px) */
+@media (min-width: 1200px) {
+  .cta-therapy-box {
+    max-width: 700px; /* רוחב קבוע מקסימלי כדי למנוע מתיחה רבה מדי */
+  }
+}
 
 /* ווידג'ט רשתות חברתיות */
 .social-links-widget {
@@ -163,41 +261,3 @@ my-logo-title {
   .my-logo-image {
     height: 80px; /* יותר מתאים לנייד */
   }
-    /*עיצוב cta */
-
-.cta-box {
-  background-color: #ffdd57;
-  padding: 20px;
-  text-align: center;
-  border-radius: 8px;
-  margin: 20px 0;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  font-family: Arial, sans-serif;
-}
-
-.cta-box h2 {
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.cta-box p {
-  margin-bottom: 15px;
-  color: #555;
-  font-size: 1.1em;
-}
-
-.cta-button {
-  background-color: #007bff;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #0056b3;
-}
-
