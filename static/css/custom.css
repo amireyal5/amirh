@@ -165,12 +165,52 @@
   }
 }
 
-/* עיצוב קריאה לפעולה - CTA */
 .cta-box {
-  background-color: #e0f7fa !important;
-  border: 2px solid #00838f !important;
-  border-radius: 8px !important;
-  padding: 20px !important;
-  margin: 30px auto !important;
-  text-align: center !important;
+  background: linear-gradient(135deg, #81d4fa 0%, #4fc3f7 100%);
+  border-radius: 12px;
+  padding: 30px 40px;
+  margin: 40px auto;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(33, 150, 243, 0.3);
+  color: #fff;
+  font-family: 'Varela Round', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(33, 150, 243, 0.5);
+}
+
+.cta-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.cta-box p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5em;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.cta-box a.cta-button {
+  display: inline-block;
+  background-color: #01579b;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 5px 12px rgba(1, 87, 155, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.cta-box a.cta-button:hover {
+  background-color: #0288d1;
+  box-shadow: 0 8px 20px rgba(2, 136, 209, 0.7);
 }
