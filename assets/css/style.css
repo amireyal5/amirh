@@ -11,7 +11,7 @@
 /* We define default values here for pure CSS context. */
 /* ==================================== */
 :root {
-  --highlight-color: #e22d30; /* Default highlight color */
+  --highlight-color: #00acc1; /* Default highlight color - Updated to #00acc1 */
   --font-family-primary: "Assistant", sans-serif; /* Default primary font */
   --font-family-secondary: "IBM Plex Mono", monospace; /* Default secondary/mono font */
 }
