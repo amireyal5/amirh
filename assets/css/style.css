@@ -166,8 +166,8 @@ textarea {
 }
 
 .btn:hover {
-  background-color: #0c47a1; /* Darker primary color on hover */
-  box-shadow: 0 10px 25px rgba(12, 71, 161, 0.6); /* Enhanced shadow on hover */
+  background-color:none; /* Darker primary color on hover */
+  box-shadow: none;/* Enhanced shadow on hover */
 }
 
 /* Circular button specific styles (from custom.css) */
