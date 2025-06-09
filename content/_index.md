@@ -74,9 +74,3 @@ cta_button_text: "צור קשר"
 🕘 שעות פעילות: ראשון–חמישי, 9:00–19:00  
 📱 אפשר גם ב-[WhatsApp](#)
 
-<div class="cta-box">
-  <h2>{{ .Params.cta_title }}</h2>
-  <p>{{ .Params.cta_description }}</p>
-  <a href="{{ .Params.cta_url }}" class="cta-button">{{ .Params.cta_button_text }}</a>
-</div>
-
