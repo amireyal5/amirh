@@ -1,103 +1,3 @@
-/* custom.css */
-/* הגדרות בסיסיות לתיבה */
-.cta-therapy-box {
-  background-color: #e0f2f1; /* ירוק-כחול עדין */
-  padding: 25px; /* נשתמש ביחידות יחסיות מאוחר יותר במידת הצורך */
-  border-radius: 12px;
-  margin: 25px auto; /* שימוש ב-auto למרכוז אופקי */
-  max-width: 90%; /* הגדרת רוחב מקסימלי כדי למנוע מתיחה יתר במסכים גדולים */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  color: #004d40; /* ירוק כהה */
-}
-
-/* כותרת */
-.cta-therapy-box h2 {
-  margin-bottom: 12px;
-  font-weight: 700;
-  font-size: 1.9rem; /* יחידת rem מבוססת על גודל הגופן של אלמנט ה-html */
-}
-
-/* פיסקה */
-.cta-therapy-box p {
-  font-size: 1.15rem; /* יחידת rem */
-  margin-bottom: 20px;
-  line-height: 1.5;
-  color: #00695c;
-}
-
-/* כפתור */
-.cta-therapy-button {
-  background-color: #00796b; /* ירוק בינוני */
-  color: #ffffff;
-  padding: 14px 30px;
-  border-radius: 8px;
-  font-size: 1.15rem; /* יחידת rem */
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  display: inline-block;
-  white-space: nowrap; /* מונע שבירת שורה בטקסט של הכפתור */
-}
-
-.cta-therapy-button:hover {
-  background-color: #004d40; /* ירוק כהה */
-}
-
-/* --- */
-
-## הוספת Media Queries לרספונסיביות
-
-כדי להתאים את העיצוב לגדלי מסך שונים, נוסיף Media Queries. Media Queries מאפשרים לך להחיל סגנונות CSS ספציפיים רק כאשר תנאים מסוימים מתקיימים (למשל, רוחב מסך מינימלי או מקסימלי).
-
-```css
-/* עבור מסכים קטנים יותר (טלפונים, עד 768px) */
-@media (max-width: 768px) {
-  .cta-therapy-box {
-    padding: 15px; /* הקטנת הריפוד במסכים קטנים יותר */
-    margin: 15px auto; /* הקטנת השוליים */
-    max-width: 95%; /* הגדלת רוחב מקסימלי כדי לתפוס יותר מקום במסכים קטנים */
-  }
-
-  .cta-therapy-box h2 {
-    font-size: 1.6rem; /* הקטנת גודל הכותרת */
-  }
-
-  .cta-therapy-box p {
-    font-size: 1rem; /* הקטנת גודל הטקסט */
-  }
-
-  .cta-therapy-button {
-    padding: 10px 20px; /* הקטנת ריפוד הכפתור */
-    font-size: 1rem; /* הקטנת גודל הגופן של הכפתור */
-  }
-
-
-/* עבור מסכים גדולים יותר (טאבלטים, בין 769px ל-1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .cta-therapy-box {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 80%; /* אופטימיזציה לטאבלטים */
-  }
-
-  .cta-therapy-box h2 {
-    font-size: 1.8rem;
-  }
-
-  .cta-therapy-box p {
-    font-size: 1.1rem;
-  }
-}
-
-/* עבור מסכים גדולים מאוד (מחשבים שולחניים גדולים, מעל 1200px) */
-@media (min-width: 1200px) {
-  .cta-therapy-box {
-    max-width: 700px; /* רוחב קבוע מקסימלי כדי למנוע מתיחה רבה מדי */
-  }
-}
-
 /* ווידג'ט רשתות חברתיות */
 .social-links-widget {
   background-color: transparent;
@@ -147,6 +47,7 @@
   transform: scale(1.1);
   background-color: #bdbdbd; /* כהה יותר בקצת */
 }
+
 .btn-circle {
   display: inline-block;
   background-color: #ddd; /* אפור בהיר */
@@ -166,6 +67,7 @@
   background-color: #aaa; /* אפור כהה יותר בהובר */
   color: white;
 }
+
 .widget.custom-authorbox {
   text-align: center;
   color: #bfbfbf;
@@ -204,7 +106,6 @@
   font-size: 30px;
 } 
 
-
 .my-logo-wrapper {
   display: flex;
   flex-direction: row; /* תמונה מימין, טקסט משמאל */
@@ -216,17 +117,15 @@
 .my-logo-image {
   height: 120px;
   width: auto;
- 
 }
 
-my-logo-text {
+.my-logo-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
- 
 }
 
-my-logo-title {
+.my-logo-title {
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0;
@@ -237,6 +136,7 @@ my-logo-title {
   color: #555;
   margin: 0;
 }
+
 /* 🌐 התאמה למסכים צרים */
 @media (max-width: 768px) {
   .my-logo-wrapper {
@@ -257,7 +157,95 @@ my-logo-title {
   .my-logo-subtitle {
     font-size: 0.9rem;
   }
-  @media (max-width: 768px) {
+
   .my-logo-image {
     height: 80px; /* יותר מתאים לנייד */
   }
+}
+
+
+
+main.homepage {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  border-radius: 0px;
+  
+  font-family: 'Varela Round', sans-serif;
+  color: #2c3e50;
+  line-height: 1.6;
+  transition: background-color 0.3s ease;
+}
+
+
+
+main.homepage h1,
+main.homepage h2,
+main.homepage h3 {
+  color: #1a3e6e;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+main.homepage p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+main.homepage a {
+  color: #1a73e8;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+main.homepage a:hover {
+  color: #0c47a1;
+  border-color: #0c47a1;
+}
+
+/* כפתורים בתוך main.homepage */
+main.homepage .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #1a73e8;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(26, 115, 232, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  border: none;
+}
+
+main.homepage .btn:hover {
+  background-color: #0c47a1;
+  box-shadow: 0 10px 25px rgba(12, 71, 161, 0.6);
+}
+
+/* תגובות ויזואליות קטנות */
+main.homepage blockquote {
+  border-left: 5px solid #1a73e8;
+  padding-left: 15px;
+  color: #34495e;
+  font-style: italic;
+  background-color: #e8f0fe;
+  margin: 1.5em 0;
+  border-radius: 2px;
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  main.homepage {
+    margin: 20px 10px;
+    padding: 20px 15px;
+  }
+
+  main.homepage .btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}

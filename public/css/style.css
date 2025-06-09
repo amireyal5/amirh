@@ -1404,17 +1404,8 @@ a.contact-link .contact-icon {
   background-repeat: no-repeat;
   height: 800px;
 }
-.cta-therapy-box {
-  background-color: #e0f2f1; /* ירוק-כחול עדין */
-  padding: 25px;
-  border-radius: 12px;
-  margin: 25px 0;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  color: #004d40; /* ירוק כהה */
-}
 
+<<<<<<< HEAD
 .cta-therapy-box h2 {
   margin-bottom: 12px;
   font-weight: 700;
@@ -2818,3 +2809,5 @@ a.contact-link .contact-icon {
 .cta-therapy-button:hover {
   background-color: #004d40; /* ירוק כהה */
 }
+=======
+>>>>>>> f0b1ffd42dd2925ba933aa9284b90cc7df6685bb

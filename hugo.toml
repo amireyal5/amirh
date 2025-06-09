@@ -1,5 +1,5 @@
 baseURL = "https://amireyal5.netlify.app/"
-title = "עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים"
+title =  "עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים"
 languageCode = "he"
 defaultContentLanguage = "he"
 defaultContentLanguageInSubdir = false
@@ -34,7 +34,7 @@ theme = "Mainroad"
 
   [params.logo]
     image = "img/logo.png"
-    title = "עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים"
+    title = "מתבגרים, מבוגרים והדרכת הורים"
     subtitle = "כרמיאל והסביבה ואונליין"
 
   [params.sidebar]
