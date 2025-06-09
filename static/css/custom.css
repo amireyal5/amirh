@@ -394,6 +394,12 @@ main.homepage blockquote {
 .list__footer-readmore.btn:hover {
   background-color: #174a84;
 }
+body {
+  font-family: "Assistant", sans-serif;
+}
+code, pre {
+  font-family: "IBM Plex Mono", monospace;
+}
 
 
 
