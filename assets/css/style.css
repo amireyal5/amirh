@@ -895,8 +895,8 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
   height: 40px;
   padding: 8px;
   margin-right: 6px;
-  background: var(--highlight-color); /* Badge background is highlight color */
-  fill: #1a73e8;
+  background: #1a73e8; (--highlight-color);
+  fill: #fffff;
 }
 
 /* Table of Contents */
