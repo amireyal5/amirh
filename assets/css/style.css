@@ -896,7 +896,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
   padding: 8px;
   margin-right: 6px;
   background: #1a73e8; (--highlight-color);
-  fill: #fffff;
+  fill: #fff;
 }
 
 /* Table of Contents */
