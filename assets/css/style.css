@@ -159,7 +159,7 @@ textarea {
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 6px 15px rgba(26, 115, 232, 0.4); /* Soft shadow for depth */
+ 
   transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
   user-select: none; /* Prevent text selection on button */
   border: solid 0.5px #1a73e8; /* Remove default border */
