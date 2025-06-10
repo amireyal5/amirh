@@ -1624,7 +1624,7 @@ a.contact-link .contact-icon {
 }
 
 .header--home {
-  background-image: url('/img/hero.jpg'); /* Hero image for home header */
+  background-image: url('/img/hero.webp'); /* Hero image for home header */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
