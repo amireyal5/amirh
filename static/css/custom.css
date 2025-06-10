@@ -399,49 +399,7 @@ body {
 }
 code, pre {
   font-family: "IBM Plex Mono", monospace;
-}
-/* Styling for the main CTA box container */
-.cta-box {
-    background-color: #f0f8ff; /* Light blue background */
-    border: 1px solid #cceeff;
-    border-radius: 8px;
-    padding: 30px;
-    text-align: center;
-    margin: 40px auto; /* Center the box and add vertical spacing */
-    max-width: 600px; /* Limit box width */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
 
-/* Styling for the CTA box title */
-.cta-box h2 {
-    color: #2c3e50;
-    font-size: 2em;
-    margin-bottom: 15px;
-}
-
-/* Styling for the CTA box description */
-.cta-box p {
-    color: #555;
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* Styling for the CTA button */
-.cta-button {
-    display: inline-block; /* Allows padding and margins */
-    background-color: #3498db; /* Blue button */
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none; /* Remove underline */
-    border-radius: 5px;
-    font-size: 1.1em;
-    font-weight: bold;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-.cta-button:hover {
-    background-color: #2980b9; /* Darker blue on hover */
 }
   }
    
@@ -590,5 +548,110 @@ code, pre {
     }
 }
 
+/* --- CTA Box Styles --- */
 
+.cta-box {
+    /* מיקום וריכוז התיבה */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* ממורכז אנכית אם יש גובה מוגדר */
+    align-items: center;     /* ממורכז אופקית */
+    text-align: center;      /* יישור טקסט פנימי */
+    max-width: 700px;        /* רוחב מקסימלי לתיבה כדי למנוע מתיחה יתר */
+    margin: 50px auto;       /* ריווח עליון/תחתון ואוטו לריכוז אופקי */
+    padding: 30px 20px;      /* ריווח פנימי */
+    
+    /* מראה כללי */
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* רקע גרדיאנט מושך עין */
+    color: #ffffff;           /* צבע טקסט לבן */
+    border-radius: 12px;       /* פינות מעוגלות יותר */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* צל עמוק ומושך */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* אנימציות למעבר עכבר */
+    overflow: hidden;         /* לוודא ששום דבר לא יוצא מהגבולות המעוגלים */
+}
+
+.cta-box:hover {
+    transform: translateY(-5px); /* אפקט קל של הרמה במעבר עכבר */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35); /* צל עמוק יותר במעבר עכבר */
+}
+
+.cta-box h2 {
+    font-size: 2.5em;          /* גודל כותרת גדול וברור */
+    margin-bottom: 15px;       /* ריווח תחתון לכותרת */
+    font-weight: 700;          /* מודגש מאוד */
+    line-height: 1.2;          /* מרווח שורות נוח */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* צל קל לטקסט */
+}
+
+.cta-box p {
+    font-size: 1.2em;          /* גודל פסקה נוח לקריאה */
+    margin-bottom: 25px;       /* ריווח תחתון לפסקה */
+    opacity: 0.9;              /* מעט שקיפות לפסקה */
+    max-width: 600px;          /* רוחב מקסימלי לפסקה בתוך התיבה */
+}
+
+/* --- CTA Button Styles --- */
+
+.cta-button {
+    display: inline-block;     /* מאפשר הגדרת padding ו-margin */
+    background-color: #ffcc00; /* צבע כפתור בולט (צהוב-זהב) */
+    color: #2575fc;            /* צבע טקסט בכפתור (כחול כהה של הגרדיאנט) */
+    padding: 15px 35px;        /* ריווח פנימי גדול לכפתור */
+    text-decoration: none;     /* הסרת קו תחתון מקישור */
+    border-radius: 50px;       /* פינות מעוגלות מאוד (כפתור בצורת "גלולה") */
+    font-weight: 700;          /* טקסט מודגש */
+    font-size: 1.1em;          /* גודל גופן נוח */
+    letter-spacing: 0.5px;     /* ריווח אותיות קל */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* צל לכפתור */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* אנימציות למעבר עכבר */
+    border: none;              /* לוודא שאין גבול לכפתור */
+}
+
+.cta-button:hover {
+    background-color: #e6b800; /* צבע כפתור כהה יותר במעבר עכבר */
+    transform: translateY(-2px); /* אפקט לחיצה קל */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* צל עמוק יותר במעבר עכבר */
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+    .cta-box {
+        margin: 30px 15px; /* מרווח קטן יותר בצדדים במסכים קטנים */
+        padding: 25px 15px;
+    }
+
+    .cta-box h2 {
+        font-size: 2em; /* כותרת מעט קטנה יותר */
+    }
+
+    .cta-box p {
+        font-size: 1em; /* פסקה מעט קטנה יותר */
+    }
+
+    .cta-button {
+        padding: 12px 30px; /* כפתור קטן יותר */
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-box {
+        margin: 20px 10px;
+        padding: 20px 10px;
+    }
+
+    .cta-box h2 {
+        font-size: 1.8em;
+    }
+
+    .cta-box p {
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
+}
 
