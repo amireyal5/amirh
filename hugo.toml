@@ -3,6 +3,7 @@ title =  "עמיר אייל פסיכותרפיה מתבגרים, מבוגרים 
 languageCode = "he"
 defaultContentLanguage = "he"
 defaultContentLanguageInSubdir = false
+ignoreLogs = ['warning-goldmark-raw-html']
 
 [Pagination]
   pagerSize = 10
