@@ -442,8 +442,9 @@ code, pre {
 
 .cta-button:hover {
     background-color: #2980b9; /* Darker blue on hover */
-
-  
+}
+  }
+   
 /* מקטע השירותים עצמו */
 .services-section {
     padding: 60px 20px; /* הגדלנו ריפוד עליון/תחתון */
