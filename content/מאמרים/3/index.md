@@ -4,7 +4,7 @@ type: posts
 date: 2025-06-04
 author: עמיר אייל
 categories:
-  - טיפול רגשי
+   - פסיכותרפיה
 tags:
   - שליטה בכעסים
   - cbt
