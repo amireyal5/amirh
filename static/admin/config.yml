@@ -18,10 +18,10 @@ slug:
 collections:
   - name: "מאמרים"
     label: "מאמרים"
-    folder: "contentמאמרים"
+    folder: "content/מאמרים" # <--- **השינוי העיקרי כאן!**
     create: true
     slug: "{{slug}}"
-    media_folder: "contentמאמרים/{{slug}}" # כאן בוצע השינוי
+    media_folder: "content/מאמרים/{{slug}}" # <--- **וגם כאן, כדי שיתאים לנתיב המעודכן**
     public_folder: "/uploads/מאמרים/{{slug}}"
     path: "{{slug}}/index"
     editor:
