@@ -400,6 +400,48 @@ body {
 code, pre {
   font-family: "IBM Plex Mono", monospace;
 }
+/* Styling for the main CTA box container */
+.cta-box {
+    background-color: #f0f8ff; /* Light blue background */
+    border: 1px solid #cceeff;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    margin: 40px auto; /* Center the box and add vertical spacing */
+    max-width: 600px; /* Limit box width */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
+/* Styling for the CTA box title */
+.cta-box h2 {
+    color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+/* Styling for the CTA box description */
+.cta-box p {
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Styling for the CTA button */
+.cta-button {
+    display: inline-block; /* Allows padding and margins */
+    background-color: #3498db; /* Blue button */
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.cta-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
 
 

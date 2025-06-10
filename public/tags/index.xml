@@ -58,6 +58,13 @@
       <description></description>
     </item>
     <item>
+      <title>יחסים</title>
+      <link>http://localhost:1313/tags/%D7%99%D7%97%D7%A1%D7%99%D7%9D/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/%D7%99%D7%97%D7%A1%D7%99%D7%9D/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>לחץ</title>
       <link>http://localhost:1313/tags/%D7%9C%D7%97%D7%A5/</link>
       <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
@@ -181,6 +188,13 @@
       <link>http://localhost:1313/tags/%D7%92%D7%9C%D7%95%D7%91%D7%95%D7%A1-%D7%94%D7%99%D7%A1%D7%98%D7%A8%D7%99%D7%A7%D7%95%D7%A1/</link>
       <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/%D7%92%D7%9C%D7%95%D7%91%D7%95%D7%A1-%D7%94%D7%99%D7%A1%D7%98%D7%A8%D7%99%D7%A7%D7%95%D7%A1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>מסכים</title>
+      <link>http://localhost:1313/tags/%D7%9E%D7%A1%D7%9B%D7%99%D7%9D/</link>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/%D7%9E%D7%A1%D7%9B%D7%99%D7%9D/</guid>
       <description></description>
     </item>
   </channel>
