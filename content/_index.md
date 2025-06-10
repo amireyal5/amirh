@@ -5,7 +5,7 @@ weight: 1
 menu: main
 sidebar: false
 cta_title: "לקביעת פגישה  ראשונה"
-cta_description: "פגישה ראשונית ללא התחייבות. אני כאן בשבילכם."
+cta_description: "השאירו את הפרטים שלכם ואחזור אליכם."
 cta_url: "/contact/"
 cta_button_text: "צרו קשר"
 ---
