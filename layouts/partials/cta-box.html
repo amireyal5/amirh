@@ -1,7 +1,7 @@
-<div class="cta-box">
-  <h2>{{ .Get "title" }}</h2>
-  <p>{{ .Get "description" }}</p>
-  <a href="{{ .Get "url" }}" class="cta-button">
-    {{ .Get "button_text" }}
+<div class="cta-box {{ .Get "class" }}">
+  <h2>{{ .Get "title" | default .Page.Params.cta_title }}</h2>
+  <p>{{ .Get "description" | default .Page.Params.cta_description }}</p>
+  <a href="{{ .Get "url" | default .Page.Params.cta_url }}" class="cta-button">
+    {{ .Get "button_text" | default .Page.Params.cta_button_text }}
   </a>
 </div>
