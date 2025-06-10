@@ -16,13 +16,13 @@ slug:
   sanitize_replacement: "-"
 
 collections:
-  - name: "posts"
-    label: "פוסטים"
-    folder: "content/posts"
+  - name: "מאמרים"
+    label: "מאמרים"
+    folder: "content/מאמרים" # <--- **השינוי העיקרי כאן!**
     create: true
     slug: "{{slug}}"
-    media_folder: "static/uploads/posts/{{slug}}"
-    public_folder: "/uploads/posts/{{slug}}"
+    media_folder: "content/מאמרים/{{slug}}" # <--- **וגם כאן, כדי שיתאים לנתיב המעודכן**
+    public_folder: "/uploads/מאמרים/{{slug}}"
     path: "{{slug}}/index"
     editor:
       preview: true
@@ -62,12 +62,12 @@ collections:
           - { label: "כותרת SEO", name: "title", widget: "string", required: false }
           - { label: "תיאור SEO", name: "description", widget: "text", required: false }
           - { label: "מילות מפתח", name: "keywords", widget: "list", required: false }
-     
+      
       - {
-          label: "פוסטים קשורים",
+          label: "מאמרים קשורים",
           name: "related_posts",
           widget: "relation",
-          collection: "posts",
+          collection: "מאמרים",
           search_fields: ["title"],
           value_field: "slug",
           display_fields: ["title"],
