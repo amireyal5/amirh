@@ -837,7 +837,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .content ul,
 .content ol {
-  margin: 0 0 20px 40px;
+  margin: 0 40px 20px 40px;
 }
 
 .content ul ul,
@@ -1794,7 +1794,7 @@ a.contact-link .contact-icon {
 
   .content ul,
   .content ol {
-    margin: 0 0 20px 20px;
+    margin: 0 20px 20px 20px;
   }
 
   .content ul ul,
