@@ -445,7 +445,7 @@ code, pre {
 }
   }
    
-/* מקטע השירותים עצמו */
+/* static/css/style.css - עיצוב למקטע השירותים */
 .services-section {
     padding: 60px 20px; /* הגדלנו ריפוד עליון/תחתון */
     text-align: center;
@@ -459,11 +459,12 @@ code, pre {
 
 /* כותרת המקטע */
 .section-title {
-    font-size: 2.8em;
+    font-size: 2.2em; /* הוקטן מעט את הגופן */
     margin-bottom: 40px;
     color: var(--heading-color, #2c3e50); /* צבע כותרת כהה, השתמש במשתנה אם קיים */
+    text-align: center; /* יישור הכותרת למרכז */
     position: relative;
-    display: inline-block;
+    display: inline-block; /* כדי שה-`::after` יעבוד כראוי מתחת לטקסט */
     padding-bottom: 10px; /* רווח לתחתית הקו */
 }
 
@@ -473,7 +474,7 @@ code, pre {
     width: 100px; /* רוחב קו תחתון */
     height: 4px;
     background-color: var(--primary-color, #007bff); /* צבע הדגשה, השתמש במשתנה אם קיים */
-    margin: 10px auto 0;
+    margin: 10px auto 0; /* מרכוז הקו התחתון */
     border-radius: 2px;
 }
 
@@ -525,8 +526,8 @@ code, pre {
     flex-grow: 1; /* יגרום לטקסט למלא את השטח הזמין */
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* יישר את הטקסט לימין בתוך הפריט */
-    text-align: right; /* יישר את הטקסט לימין */
+    align-items: center; /* יישור תוכן התיבה למרכז - **שונה כדי למרכז את הכפתור** */
+    text-align: center; /* יישור טקסט למרכז בתוך התיבה */
 }
 
 .service-text h3 {
@@ -543,23 +544,26 @@ code, pre {
     margin-bottom: 20px;
 }
 
-/* קישור "קרא עוד" */
+/* קישור "קרא עוד" - הכפתור המעודכן */
 .custom-link {
     display: inline-block;
-    background-color: var(--primary-color, #007bff); /* צבע כפתור ראשי */
-    color: white;
+    background-color: transparent; /* רקע שקוף */
+    color: var(--primary-color, #007bff); /* טקסט כחול עדין */
     padding: 12px 20px;
+    border: 1px solid var(--primary-color, #007bff); /* שוליים דקים כחולים */
     border-radius: 8px;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* הוספנו מעבר צבע לכיתוב */
     margin-top: auto; /* ידחוף את הקישור לתחתית התיבה */
     font-weight: 600;
-    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+    box-shadow: none; /* הסרנו צל מהכפתור עצמו */
 }
 
 .custom-link:hover {
-    background-color: var(--primary-color-dark, #0056b3); /* גוון כהה יותר בריחוף */
+    background-color: var(--primary-color, #007bff); /* רקע כחול במעבר עכבר */
+    color: white; /* טקסט לבן במעבר עכבר */
     transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3); /* צל קטן במעבר עכבר */
 }
 
 /* התאמות רספונסיביות */
@@ -573,7 +577,7 @@ code, pre {
         max-width: 350px; /* הגבלת רוחב לכרטיס במובייל */
     }
     .section-title {
-        font-size: 2.2em;
+        font-size: 2em;
         margin-bottom: 30px;
     }
     .services-section {
@@ -585,5 +589,6 @@ code, pre {
         grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 עמודות במסכים רחבים כברירת מחדל */
     }
 }
+
 
 
