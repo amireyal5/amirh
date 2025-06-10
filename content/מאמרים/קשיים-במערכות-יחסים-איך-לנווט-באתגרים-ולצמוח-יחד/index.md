@@ -6,6 +6,7 @@ categories:
   - טיפול במבוגרים
 tags:
   - יחסים
+thumbnail: /uploads/מאמרים/קשיים-במערכות-יחסים-איך-לנווט-באתגרים-ולצמוח-יחד/heder.jpg
 sidebar: left
 ---
  
