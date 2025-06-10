@@ -69,6 +69,10 @@
       </div>
       {{ block "sidebar" . }}{{ partial "sidebar.html" . }}{{ end }}
     </div>
+    {{/* המקום להדביק את הקריאה ל-Partial של השירותים */}}
+    {{ if .IsHome }}
+        {{ partial "services_section.html" . }}
+    {{ end }}
     {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
   </div>
 
