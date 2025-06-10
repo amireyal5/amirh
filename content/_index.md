@@ -3,7 +3,7 @@ title: בית    # וודא שאין רווחים מיותרים אחרי "בי�
 pager: false
 weight: 1
 menu: main
-sidebar: left
+sidebar: false
 cta_title: "צרו קשר עכשיו"
 cta_description: "פגישה ראשונית ללא התחייבות. אני כאן בשבילכם."
 cta_url: "/contact/"
