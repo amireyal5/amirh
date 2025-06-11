@@ -97,74 +97,6 @@
   margin: 0 auto;
 }
 
-.my-header-logo {
-  display: flex;
-  justify-content: center;  /* ממורכז בתוך ההדר */
-  margin: 20px 0;
-  direction: rtl;
-  text-align: right;
-  font-size: 30px;
-} 
-
-.my-logo-wrapper {
-  display: flex;
-  flex-direction: row; /* תמונה מימין, טקסט משמאל */
-  align-items: center;
-  gap: 6rem;
-  margin-top: 25px;
-}
-
-.my-logo-image {
-  height: 120px;
-  width: auto;
-}
-
-.my-logo-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.my-logo-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.my-logo-subtitle {
-  font-size: 1.3rem;
-  color: #0c47a1;
-  margin: 0;
-}
-
-/* 🌐 התאמה למסכים צרים */
-@media (max-width: 768px) {
-  .my-logo-wrapper {
-    flex-direction: column; /* תמונה מעל טקסט */
-    align-items: center;
-    text-align: center;
-    gap: 0;
-  }
-
-  .my-logo-text {
-    align-items: center;
-  }
-
-  .my-logo-title {
-    font-size: 1.5rem;
-  }
-
-  .my-logo-subtitle {
-    font-size: 0.9rem;
-  }
-
-  .my-logo-image {
-    height: 80px; /* יותר מתאים לנייד */
-  }
-}
-
-
-
 main.homepage {
   max-width: 1100px;
   margin: 40px auto;
@@ -177,8 +109,6 @@ main.homepage {
   line-height: 1.6;
   transition: background-color 0.3s ease;
 }
-
-
 
 main.homepage h1,
 main.homepage h2,
@@ -402,7 +332,7 @@ code, pre {
 
 }
   }
-   
+  
 /* static/css/style.css - עיצוב למקטע השירותים */
 .services-section {
     padding: 60px 20px; /* הגדלנו ריפוד עליון/תחתון */
@@ -555,19 +485,19 @@ code, pre {
     display: flex;
     flex-direction: column;
     justify-content: center; /* ממורכז אנכית אם יש גובה מוגדר */
-    align-items: center;     /* ממורכז אופקית */
-    text-align: center;      /* יישור טקסט פנימי */
-    max-width: 700px;        /* רוחב מקסימלי לתיבה כדי למנוע מתיחה יתר */
-    margin: 50px auto;       /* ריווח עליון/תחתון ואוטו לריכוז אופקי */
-    padding: 30px 20px;      /* ריווח פנימי */
+    align-items: center;      /* ממורכז אופקית */
+    text-align: center;       /* יישור טקסט פנימי */
+    max-width: 700px;         /* רוחב מקסימלי לתיבה כדי למנוע מתיחה יתר */
+    margin: 50px auto;        /* ריווח עליון/תחתון ואוטו לריכוז אופקי */
+    padding: 30px 20px;       /* ריווח פנימי */
     
     /* מראה כללי */
     background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* רקע גרדיאנט מושך עין */
-    color: #ffffff;           /* צבע טקסט לבן */
-    border-radius: 12px;       /* פינות מעוגלות יותר */
+    color: #ffffff;            /* צבע טקסט לבן */
+    border-radius: 12px;        /* פינות מעוגלות יותר */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* צל עמוק ומושך */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* אנימציות למעבר עכבר */
-    overflow: hidden;         /* לוודא ששום דבר לא יוצא מהגבולות המעוגלים */
+    overflow: hidden;           /* לוודא ששום דבר לא יוצא מהגבולות המעוגלים */
 }
 
 .cta-box:hover {
@@ -576,35 +506,35 @@ code, pre {
 }
 
 .cta-box h2 {
-    font-size: 2.5em;          /* גודל כותרת גדול וברור */
-    margin-bottom: 15px;       /* ריווח תחתון לכותרת */
-    font-weight: 700;          /* מודגש מאוד */
-    line-height: 1.2;          /* מרווח שורות נוח */
+    font-size: 2.5em;            /* גודל כותרת גדול וברור */
+    margin-bottom: 15px;        /* ריווח תחתון לכותרת */
+    font-weight: 700;            /* מודגש מאוד */
+    line-height: 1.2;            /* מרווח שורות נוח */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* צל קל לטקסט */
 }
 
 .cta-box p {
-    font-size: 1.2em;          /* גודל פסקה נוח לקריאה */
-    margin-bottom: 25px;       /* ריווח תחתון לפסקה */
-    opacity: 0.9;              /* מעט שקיפות לפסקה */
-    max-width: 600px;          /* רוחב מקסימלי לפסקה בתוך התיבה */
+    font-size: 1.2em;            /* גודל פסקה נוח לקריאה */
+    margin-bottom: 25px;        /* ריווח תחתון לפסקה */
+    opacity: 0.9;                /* מעט שקיפות לפסקה */
+    max-width: 600px;            /* רוחב מקסימלי לפסקה בתוך התיבה */
 }
 
 /* --- CTA Button Styles --- */
 
 .cta-button {
-    display: inline-block;     /* מאפשר הגדרת padding ו-margin */
+    display: inline-block;      /* מאפשר הגדרת padding ו-margin */
     background-color: #ffcc00; /* צבע כפתור בולט (צהוב-זהב) */
-    color: #2575fc;            /* צבע טקסט בכפתור (כחול כהה של הגרדיאנט) */
-    padding: 15px 35px;        /* ריווח פנימי גדול לכפתור */
-    text-decoration: none;     /* הסרת קו תחתון מקישור */
-    border-radius: 50px;       /* פינות מעוגלות מאוד (כפתור בצורת "גלולה") */
-    font-weight: 700;          /* טקסט מודגש */
-    font-size: 1.1em;          /* גודל גופן נוח */
-    letter-spacing: 0.5px;     /* ריווח אותיות קל */
+    color: #2575fc;             /* צבע טקסט בכפתור (כחול כהה של הגרדיאנט) */
+    padding: 15px 35px;         /* ריווח פנימי גדול לכפתור */
+    text-decoration: none;      /* הסרת קו תחתון מקישור */
+    border-radius: 50px;        /* פינות מעוגלות מאוד (כפתור בצורת "גלולה") */
+    font-weight: 700;            /* טקסט מודגש */
+    font-size: 1.1em;            /* גודל גופן נוח */
+    letter-spacing: 0.5px;       /* ריווח אותיות קל */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* צל לכפתור */
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* אנימציות למעבר עכבר */
-    border: none;              /* לוודא שאין גבול לכפתור */
+    border: none;                /* לוודא שאין גבול לכפתור */
 }
 
 .cta-button:hover {
@@ -654,4 +584,3 @@ code, pre {
         font-size: 0.9em;
     }
 }
-
