@@ -4,10 +4,10 @@ pager: false
 weight: 1
 menu: main
 sidebar: false
-cta_title: "לקביעת פגישה  ראשונה"
-cta_description: "השאירו פרטים ואחזור אליכם בהקדם."
+cta_title: "צרו קשר עכשיו"
+cta_description: "פגישה ראשונית ללא התחייבות. אני כאן בשבילכם."
 cta_url: "/contact/"
-cta_button_text: "צרו קשר"
+cta_button_text: "צור קשר"
 ---
 
 
@@ -30,7 +30,11 @@ cta_button_text: "צרו קשר"
 [קראו עוד אודותיי](/pages/about/)
 
 ---
-{{< cta-box >}}
+<div class="cta-box">
+  <h2>{{ .Get "title" }}</h2>
+  <p>{{ .Get "description" }}</p>
+  <a href="{{ .Get "url" }}" class="cta-button">{{ .Get "button_text" }}</a>
+</div>
 ## למי אני יכול לעזור
 
 ### 👨‍🦱 מבוגרים  

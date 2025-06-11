@@ -1,14 +1,12 @@
 {{ define "main" }}
 <main class="homepage">
-  {{ with .Content }}
-  <section class="home-content">
-    <div class="content main__content">
-      {{ . | safeHTML }}
-    </div>
-  </section>
-  {{ end }}
-
-
-
+  
+    {{ with .Content }}
+    <section class="home-content">
+        <div class="content main__content">
+            {{ . | safeHTML }}
+        </div>
+    </section>
+    {{ end }}
 </main>
 {{ end }}

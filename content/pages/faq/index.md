@@ -1,7 +1,7 @@
 ---
 title: "שאלות נפוצות"
 type: "page"
-sidbar: false
+sidbar: left
 ---
 
 
