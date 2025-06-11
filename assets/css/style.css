@@ -1826,7 +1826,7 @@ a.contact-link .contact-icon {
 .menu {
     display: flex; /* הופך את ה-nav ל-flex container */
     align-items: center; /* מיישר את הפריטים אנכית למרכז */
-    justify-content: row-reverse; /* 
+    flex-direction: row-reverse;
     background-color: white;
 }
 
