@@ -57,10 +57,6 @@
 <body class="body">
   <div class="container container--outer">
     {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
-    
-    {{/* הוספת קטע ההירו מיד אחרי ההאדר */}}
-    {{ partial "hero-section.html" . }} 
-
     <div class="wrapper flex">
       <div class="primary">
         {{ block "main" . }}
@@ -75,7 +71,7 @@
     </div>
     {{/* המקום להדביק את הקריאה ל-Partial של השירותים */}}
     {{ if .IsHome }}
-      {{ partial "services_section.html" . }}
+        {{ partial "services_section.html" . }}
     {{ end }}
     {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
   </div>
