@@ -1900,3 +1900,17 @@ a.contact-link .contact-icon {
         padding: 10px 15px; /* ריפוד קטן יותר */
     }
 }
+/* בשולחן עבודה */
+.menu__list {
+    display: none; /* הסתר כברירת מחדל */
+    /* שאר העיצוב לתפריט נפתח */
+}
+
+/* במובייל - כשקלאס is-active נוסף על ידי JS */
+@media (max-width: 768px) {
+    .menu__list.is-active { /* שימו לב ל-is-active */
+        display: flex; /* הצג את התפריט כשהוא פעיל */
+        /* שאר העיצוב שלו כשהוא פתוח */
+    }
+    /* וודא ש-menu__btn--active אינו בשימוש אם אינך משתמש בו */
+}
