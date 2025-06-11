@@ -1824,3 +1824,57 @@ a.contact-link .contact-icon {
     font-size: 0.6875rem;
   }
 }
+/* כללי CSS כלליים לכפתורים - יחולו על כפתורי ה-Header וה-Hero */
+.button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; /* כדי לאפשר מיקום בשורה */
+    margin-left: 10px; /* מרווח בין כפתורים */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* אנימציה למעבר עכבר */
+}
+
+.button-primary {
+    background-color: #0e6781; /* צבע כחול-טורקיז */
+    color: white; /* טקסט לבן שיהיה קריא על הרקע הכהה */
+    border: 2px solid #0e6781;
+}
+.button-primary:hover {
+    background-color: #0a4f61; /* גוון כהה יותר למעבר עכבר */
+    border-color: #0a4f61;
+}
+
+.button-secondary {
+    background-color: #fc6c44; /* צבע כתום חדש */
+    color: white; /* טקסט לבן שיהיה קריא על הרקע הכתום */
+    border: 2px solid #fc6c44;
+}
+.button-secondary:hover {
+    background-color: #e35a34; /* גוון כהה יותר למעבר עכבר */
+    border-color: #e35a34;
+}
+
+/* וודא שגם סגנונות הכפתורים בתוך ה-Hero Section מעודכנים באותם צבעים,
+   אם יש להם סגנונות ספציפיים הדורסים את הכלליים. */
+.hero-buttons .button-primary {
+    background-color: #0e6781;
+    color: white;
+    border: 2px solid #0e6781;
+}
+.hero-buttons .button-primary:hover {
+    background-color: #0a4f61;
+    border-color: #0a4f61;
+}
+
+.hero-buttons .button-secondary {
+    background-color: #fc6c44;
+    color: white;
+    border: 2px solid #fc6c44;
+}
+.hero-buttons .button-secondary:hover {
+    background-color: #e35a34;
+    border-color: #e35a34;
+}
+
+/* שאר סגנונות ה-CSS/SCSS שהוגדרו קודם נשארים ללא שינוי */
