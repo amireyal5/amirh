@@ -443,5 +443,152 @@ code, pre {
 .cta-button:hover {
     background-color: #2980b9; /* Darker blue on hover */
 }
+  }
+   
+/* static/css/style.css - עיצוב למקטע השירותים */
+.services-section {
+    padding: 60px 20px; /* הגדלנו ריפוד עליון/תחתון */
+    text-align: center;
+    background-color: var(--theme-background-color, #ffffff); /* השתמש במשתנה CSS אם קיים בתבנית, אחרת לבן */
+    margin: 40px auto; /* מרווח גדול יותר מלמעלה ולמטה */
+    max-width: 1200px;
+    border-radius: 10px; /* פינות מעוגלות עדינות */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* צל עדין יותר */
+    overflow: hidden; /* למניעת גלילה לא רצויה עם צללים */
+}
+
+/* כותרת המקטע */
+.section-title {
+    font-size: 2.2em; /* הוקטן מעט את הגופן */
+    margin-bottom: 40px;
+    color: var(--heading-color, #2c3e50); /* צבע כותרת כהה, השתמש במשתנה אם קיים */
+    text-align: center; /* יישור הכותרת למרכז */
+    position: relative;
+    display: inline-block; /* כדי שה-`::after` יעבוד כראוי מתחת לטקסט */
+    padding-bottom: 10px; /* רווח לתחתית הקו */
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px; /* רוחב קו תחתון */
+    height: 4px;
+    background-color: var(--primary-color, #007bff); /* צבע הדגשה, השתמש במשתנה אם קיים */
+    margin: 10px auto 0; /* מרכוז הקו התחתון */
+    border-radius: 2px;
+}
+
+/* רשת הפריטים */
+.services-grid {
+    display: grid; /* וודא שהרשת תמיד מוצגת */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 300px זה סביר גם למסכים בינוניים */
+    gap: 30px; /* מרווח גדול יותר בין הפריטים */
+    justify-content: center;
+    direction: rtl; /* לוודא שהפריטים נצמדים מימין לשמאל */
+}
+
+/* פריט שירות בודד */
+.service-item {
+    background-color: var(--card-background-color, #ffffff); /* רקע לבן לכרטיס */
+    border-radius: 10px; /* פינות מעוגלות עדינות */
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* צל עדין יותר לכרטיס */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: right;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* אנימציית ריחוף */
+}
+
+.service-item:hover {
+    transform: translateY(-8px); /* תזוזה קלה למעלה בריחוף */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* צל בולט יותר בריחוף */
+}
+
+/* תמונת השירות */
+.service-img {
+    width: 100%;
+    height: 220px; /* גובה קבוע לתמונה */
+    overflow: hidden;
+}
+
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* יבטיח שהתמונה תמלא את השטח ותשמור על פרופורציות */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* טקסט בתוך פריט השירות */
+.service-text {
+    padding: 25px; /* ריפוד גדול יותר */
+    flex-grow: 1; /* יגרום לטקסט למלא את השטח הזמין */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* יישור תוכן התיבה למרכז - **שונה כדי למרכז את הכפתור** */
+    text-align: center; /* יישור טקסט למרכז בתוך התיבה */
+}
+
+.service-text h3 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--secondary-color, #0056b3); /* צבע הדגשה לכותרת השירות */
+    font-weight: 700; /* מודגש */
+}
+
+.service-text p {
+    font-size: 1.05em;
+    color: var(--text-color-light, #555); /* גוון אפור עדין לפסקאות */
+    margin-bottom: 20px;
+}
+
+/* קישור "קרא עוד" - הכפתור המעודכן */
+.custom-link {
+    display: inline-block;
+    background-color: transparent; /* רקע שקוף */
+    color: var(--primary-color, #007bff); /* טקסט כחול עדין */
+    padding: 12px 20px;
+    border: 1px solid var(--primary-color, #007bff); /* שוליים דקים כחולים */
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* הוספנו מעבר צבע לכיתוב */
+    margin-top: auto; /* ידחוף את הקישור לתחתית התיבה */
+    font-weight: 600;
+    box-shadow: none; /* הסרנו צל מהכפתור עצמו */
+}
+
+.custom-link:hover {
+    background-color: var(--primary-color, #007bff); /* רקע כחול במעבר עכבר */
+    color: white; /* טקסט לבן במעבר עכבר */
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3); /* צל קטן במעבר עכבר */
+}
+
+/* התאמות רספונסיביות */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* עמודה אחת במובייל */
+        gap: 20px;
+    }
+    .service-item {
+        margin: 0 auto; /* מרכוז במובייל */
+        max-width: 350px; /* הגבלת רוחב לכרטיס במובייל */
+    }
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .services-section {
+        padding: 40px 15px;
+    }
+}
+@media (min-width: 769px) { /* כללים ספציפיים למסכים רחבים יותר */
+    .services-grid {
+        grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 עמודות במסכים רחבים כברירת מחדל */
+    }
+}
+
 
 

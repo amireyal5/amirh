@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
-    <link>http://localhost:1313/pages/</link>
+    <link>https://amireyal5.netlify.app/pages/</link>
     <description>Recent content in Pages on עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</description>
     <generator>Hugo</generator>
     <language>he</language>
     <lastBuildDate>Fri, 27 Oct 2023 10:30:00 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://amireyal5.netlify.app/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>הודעתך נשלחה בהצלחה</title>
-      <link>http://localhost:1313/pages/thank-you/</link>
+      <link>https://amireyal5.netlify.app/pages/thank-you/</link>
       <pubDate>Fri, 27 Oct 2023 10:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/pages/thank-you/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;הודעתך התקבלה בהצלחה!&lt;/strong&gt;&#xA;נחזור אליכם בהקדם האפשרי.&lt;/p&gt;&#xA;&lt;p&gt;לחזור ל&#xA;&#xA;&#xA;&#xA;  &lt;a href=&#34;http://localhost:1313/&#34; class=&#34;internal-link&#34;&gt;&#xA;    עמוד הבית&#xA;  &lt;/a&gt;&#xA;&#xA;.&lt;/p&gt;</description>
+      <guid>https://amireyal5.netlify.app/pages/thank-you/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;הודעתך התקבלה בהצלחה!&lt;/strong&gt;&#xA;נחזור אליכם בהקדם האפשרי.&lt;/p&gt;&#xA;&lt;p&gt;לחזור ל&#xA;&#xA;&#xA;&#xA;  &lt;a href=&#34;https://amireyal5.netlify.app/&#34; class=&#34;internal-link&#34;&gt;&#xA;    עמוד הבית&#xA;  &lt;/a&gt;&#xA;&#xA;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>אודות</title>
-      <link>http://localhost:1313/pages/about/</link>
+      <link>https://amireyal5.netlify.app/pages/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/pages/about/</guid>
-      <description>&lt;p&gt;אני עמיר, פסיכותרפיסט קליני, מלווה כבר למעלה משני עשורים מבוגרים, הורים ומתבגרים במסע פנימי, אמיץ, שמתחיל לא פעם בשאלה פשוטה: האם אפשר אחרת?&lt;/p&gt;&#xA;&lt;h2 id=&#34;מה-מביא-אנשים-אליי&#34;&gt;מה מביא אנשים אליי?&lt;/h2&gt;&#xA;&lt;p&gt;לפעמים זו תחושת תקיעות – כאילו דלת פנימית שנסגרה מזמן לא מצליחה להיפתח.&lt;br&gt;&#xA;לפעמים זו חרדה ששוטפת בלי אזהרה, דיכאון שמערפל את היום, או קשרים שכבר לא מחזיקים כמו פעם.&lt;br&gt;&#xA;ולעיתים זו פשוט התחושה שמשהו לא עובד. שיכול להיות אחרת – אבל איך?&lt;/p&gt;</description>
+      <guid>https://amireyal5.netlify.app/pages/about/</guid>
+      <description>&lt;h1 id=&#34;עמיר-אייל--פסיכותרפיסט-מוסמך&#34;&gt;עמיר אייל – פסיכותרפיסט מוסמך&lt;/h1&gt;&#xA;&lt;p&gt;אני כאן כדי ללוות אתכם – מבוגרים, הורים ומתבגרים – במסע פנימי, שמתחיל לא פעם בשאלה פשוטה: &lt;strong&gt;&amp;ldquo;האם אפשר אחרת?&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;מה-מביא-אנשים-אליי&#34;&gt;מה מביא אנשים אליי?&lt;/h2&gt;&#xA;&lt;p&gt;לפעמים זו תחושת תקיעות – כאילו דלת פנימית שנסגרה מזמן לא מצליחה להיפתח.&lt;br&gt;&#xA;לפעמים זו חרדה ששוטפת בלי אזהרה, דיכאון שמערפל את היום, או קשרים שכבר לא מחזיקים כמו פעם.&lt;br&gt;&#xA;ולעיתים זו פשוט התחושה שמשהו לא עובד. שיכול להיות אחרת – אבל איך?&lt;/p&gt;</description>
     </item>
     <item>
       <title>חיפוש</title>
-      <link>http://localhost:1313/search/</link>
+      <link>https://amireyal5.netlify.app/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/search/</guid>
+      <guid>https://amireyal5.netlify.app/search/</guid>
       <description></description>
     </item>
     <item>
       <title>שאלות נפוצות</title>
-      <link>http://localhost:1313/pages/faq/</link>
+      <link>https://amireyal5.netlify.app/pages/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/pages/faq/</guid>
+      <guid>https://amireyal5.netlify.app/pages/faq/</guid>
       <description>&lt;p&gt;מחפשים תשובות? הגעתם למקום הנכון!&lt;/p&gt;&#xA;&lt;p&gt;כאן ריכזתי עבורכם את כל השאלות הנפוצות ביותר בנוגע לפסיכותרפיה, תהליך הטיפול ומה שחשוב לדעת לפני שמתחילים. המטרה היא להעניק לכם בהירות וביטחון לקראת המסע הטיפולי.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;details class=&#34;accordion-item&#34;&gt;&#xD;&#xA;    &lt;summary class=&#34;accordion-header&#34;&gt;מהי פסיכותרפיה ואיך היא יכולה לעזור לי?&lt;/summary&gt;&#xD;&#xA;    &lt;div class=&#34;accordion-content&#34;&gt;&#xD;&#xA;        פסיכותרפיה (טיפול בשיחה) היא תהליך שבו אתם עובדים עם מטפל מוסמך כדי לזהות ולהתמודד עם קשיים רגשיים, מחשבתיים או התנהגותיים.&lt;br&gt;&#xA;הטיפול מסייע בהתמודדות עם חרדה, דיכאון, משברי חיים, טראומה, קשיים בין-אישיים ועוד.&lt;br&gt;&#xA;באמצעות הטיפול ניתן להבין לעומק דפוסים אישיים, ולרכוש כלים להתמודדות טובה יותר, צמיחה אישית ושיפור איכות החיים.&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/details&gt;&#xA;&lt;details class=&#34;accordion-item&#34;&gt;&#xD;&#xA;    &lt;summary class=&#34;accordion-header&#34;&gt;כיצד אדע אם אני זקוק/ה לפסיכותרפיה?&lt;/summary&gt;&#xD;&#xA;    &lt;div class=&#34;accordion-content&#34;&gt;&#xD;&#xA;        אם אתם חווים קושי רגשי מתמשך, תחושת תקיעות, מצוקה, בדידות, חרדה או דיכאון – ייתכן שטיפול יכול להועיל לכם.&lt;br&gt;&#xA;גם אם אין קושי &amp;ldquo;חריג&amp;rdquo;, פסיכותרפיה יכולה להיות מקום בטוח לצמיחה והתפתחות.&lt;br&gt;&#xA;פנייה לטיפול אינה סימן לחולשה – אלא לבשלות ואחריות אישית.&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/details&gt;&#xA;&lt;details class=&#34;accordion-item&#34;&gt;&#xD;&#xA;    &lt;summary class=&#34;accordion-header&#34;&gt;מה ההבדל בין פסיכולוג, פסיכיאטר ופסיכותרפיסט?&lt;/summary&gt;&#xD;&#xA;    &lt;div class=&#34;accordion-content&#34;&gt;&#xD;&#xA;        &lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;פסיכולוג:&lt;/strong&gt; בעל תואר מתקדם בפסיכולוגיה. עוסק באבחון ובטיפול רגשי. פסיכולוג קליני מוסמך לעסוק בפסיכותרפיה.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;פסיכיאטר:&lt;/strong&gt; רופא עם התמחות בפסיכיאטריה. עוסק גם בטיפול תרופתי בהפרעות נפשיות, ולעיתים גם בפסיכותרפיה.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;פסיכותרפיסט:&lt;/strong&gt; איש מקצוע שהוסמך בטיפול רגשי (פסיכולוג, פסיכיאטר, עובד סוציאלי קליני, או מטפל בהבעה ויצירה) לאחר הכשרה מתקדמת בפסיכותרפיה.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/details&gt;&#xA;&lt;details class=&#34;accordion-item&#34;&gt;&#xD;&#xA;    &lt;summary class=&#34;accordion-header&#34;&gt;כמה זמן נמשך טיפול פסיכותרפי?&lt;/summary&gt;&#xD;&#xA;    &lt;div class=&#34;accordion-content&#34;&gt;&#xD;&#xA;        משך הטיפול משתנה לפי צרכי המטופל, מטרות הטיפול, עומק הקשיים והקצב האישי.&lt;br&gt;&#xA;ישנם טיפולים קצרי-טווח (למשל, טיפול ממוקד מטרה) ויש טיפולים ארוכי-טווח המאפשרים תהליך עמוק של שינוי.&lt;br&gt;&#xA;תוכלו לקבל הערכה כללית לפגישות הראשונות, בשיח פתוח עם המטפל.&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/details&gt;&#xA;&lt;details class=&#34;accordion-item&#34;&gt;&#xD;&#xA;    &lt;summary class=&#34;accordion-header&#34;&gt;האם הטיפול חסוי לחלוטין?&lt;/summary&gt;&#xD;&#xA;    &lt;div class=&#34;accordion-content&#34;&gt;&#xD;&#xA;        כן. כל מה שנאמר במסגרת הטיפול נשמר בסודיות מלאה, בהתאם לכללי האתיקה וחוקי הסודיות.&lt;br&gt;&#xA;חריגים לכך קיימים רק במצבים חריגים של סכנת חיים (של המטופל או של אחרים) – ויוסברו באופן מלא בפגישה הראשונה.&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/details&gt;&#xA;&lt;details class=&#34;accordion-item&#34;&gt;&#xD;&#xA;    &lt;summary class=&#34;accordion-header&#34;&gt;כיצד נקבעת פגישה ראשונה?&lt;/summary&gt;&#xD;&#xA;    &lt;div class=&#34;accordion-content&#34;&gt;&#xD;&#xA;        פשוט ליצור קשר – בטלפון או בטופס באתר.&lt;br&gt;&#xA;בפגישה הראשונה תינתן לכם הזדמנות לשתף במה שמעסיק אתכם, להבין את אופי העבודה שלי, ולהחליט אם התהליך מתאים לכם.&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/details&gt;&#xA;&lt;h2 id=&#34;מצאו-את-התשובות-לשאלותיכם-ואם-משהו-עדיין-לא-ברור-אל-תהססו-ליצור-איתי-קשר-ישיר&#34;&gt;מצאו את התשובות לשאלותיכם, ואם משהו עדיין לא ברור, אל תהססו ליצור איתי קשר ישיר.&lt;/h2&gt;</description>
     </item>
   </channel>

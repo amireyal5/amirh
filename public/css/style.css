@@ -640,11 +640,11 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 .menu__link {
   display: block;
   padding: 10px 15px;
-  padding: 0.725rem 3rem;
-  font-weight: 500;
+  padding: 0.725rem 1rem;
+  font-weight: 400;
   color: #fff;
   text-transform: uppercase;
-  font-size: 23px;
+  font-size: 20px;
   
 }
 
@@ -837,7 +837,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .content ul,
 .content ol {
-  margin: 0 0 20px 40px;
+  margin: 0 40px 20px 40px;
 }
 
 .content ul ul,
@@ -1624,7 +1624,7 @@ a.contact-link .contact-icon {
 }
 
 .header--home {
-  background-image: url('/img/hero.jpg'); /* Hero image for home header */
+  background-image: url('/img/hero.webp'); /* Hero image for home header */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1794,7 +1794,7 @@ a.contact-link .contact-icon {
 
   .content ul,
   .content ol {
-    margin: 0 0 20px 20px;
+    margin: 0 20px 20px 20px;
   }
 
   .content ul ul,
