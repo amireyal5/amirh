@@ -11,9 +11,15 @@
 /* We define default values here for pure CSS context. */
 /* ==================================== */
 :root {
-  --highlight-color: none; /* Default highlight color - Updated to #00acc1 */
+  --highlight-color: #00acc1; /* Updated highlight color */
   --font-family-primary: "Assistant", sans-serif; /* Default primary font */
   --font-family-secondary: "IBM Plex Mono", monospace; /* Default secondary/mono font */
+  --primary-color: #007bff; /* Added for services and custom-link */
+  --secondary-color: #0056b3; /* Added for services */
+  --heading-color: #2c3e50; /* Added for services */
+  --text-color-light: #555; /* Added for services */
+  --theme-background-color: #ffffff; /* Added for services */
+  --card-background-color: #ffffff; /* Added for services */
 }
 
 /* ==================================== */
@@ -71,6 +77,10 @@ body {
   word-wrap: break-word;
   background: #fff; /* Light grey background for the body */
   -webkit-font-smoothing: antialiased; /* Enhance font rendering on WebKit */
+}
+
+code, pre { /* Prioritized from custom.css, using variables now */
+  font-family: var(--font-family-secondary);
 }
 
 .container {
@@ -148,7 +158,7 @@ textarea {
 /* ==================================== */
 /* Buttons                              */
 /* ==================================== */
-/* General button style (from custom.css) */
+/* General button style */
 .btn {
   display: inline-block;
   padding: 12px 28px;
@@ -501,27 +511,29 @@ select {
   border: 0;
 }
 
-/* Custom header logo (from custom.css) */
+/* Custom header logo (merged and prioritized from custom.css, adapted for menu integration) */
 .my-header-logo {
-  display: flex;
-  justify-content: center; /* Centered within the header */
-  margin: 20px 0;
-  direction: rtl; /* Right-to-left layout */
+  display: flex; /* Kept flex for internal logo image/text layout */
+  justify-content: center; /* Centers content within the logo area */
+  margin: 0; /* RESET: Remove default margins that might conflict with menu's flexbox */
+  direction: rtl; /* Right-to-left layout for logo content */
   text-align: right;
-  font-size: 30px;
+  font-size: 30px; /* Base font size for logo content */
+  /* No top/bottom margin here, controlled by .menu's align-items */
 }
 
 .my-logo-wrapper {
   display: flex;
   flex-direction: row; /* Image on right, text on left */
   align-items: center;
-  gap: 6rem; /* Large gap between image and text */
-  margin-top: 25px;
+  gap: 6rem; /* PRIORITIZED: Larger gap from custom.css */
+  margin: 0; /* RESET: Ensure no extra margin from here */
 }
 
 .my-logo-image {
-  height: 120px;
+  height: 100px; /* PRIORITIZED: Height from custom.css */
   width: auto;
+  margin-right: 0; /* Adjusted to let gap handle spacing */
 }
 
 .my-logo-text {
@@ -531,18 +543,18 @@ select {
 }
 
 .my-logo-title {
-  font-size: 1.8rem;
+  font-size: 1.8rem; /* PRIORITIZED: Larger font from custom.css */
   font-weight: bold;
   margin: 0;
 }
 
 .my-logo-subtitle {
-  font-size: 1rem;
-  color: #555;
+  font-size: 1.3rem; /* PRIORITIZED: Larger font from custom.css */
+  color: #0c47a1; /* Kept dark blue from custom.css */
   margin: 0;
 }
 
-/* Responsive adjustments for header logo on smaller screens */
+/* Responsive adjustments for header logo on smaller screens (merged from custom.css) */
 @media (max-width: 768px) {
   .my-logo-wrapper {
     flex-direction: column; /* Image above text on mobile */
@@ -565,6 +577,7 @@ select {
 
   .my-logo-image {
     height: 80px; /* Smaller image for mobile */
+    margin-right: 0;
   }
 }
 
@@ -572,16 +585,18 @@ select {
 /* Main Menu                            */
 /* ==================================== */
 .menu {
-    /* Existing styles for .menu */
-    background: white; /* As per your last input */
-    
-    /* Added/updated for Flexbox behavior */
     display: flex; /* Makes the menu a flex container */
     align-items: center; /* Vertically centers items */
-    flex-direction: row-reverse; /* Puts logo on the right, menu on the left */
-    justify-content: space-between; /* Spaces out items (e.g., burger/logo or menu/logo) */
+    justify-content: flex-start; /* Aligns items to the start initially */
+    background: white;
     padding: 10px 20px; /* Added some padding around the menu */
 }
+
+/* Rule to push the logo to the far right on desktop */
+.menu .my-header-logo {
+    margin-left: auto; /* Pushes the logo to the far right */
+}
+
 
 .no-js .menu__btn {
   display: none;
@@ -589,7 +604,7 @@ select {
 
 .menu__btn {
   display: block; /* Default to block, will be hidden by media query on desktop */
-  width: 100%;
+  width: 100%; /* For mobile, button takes full width before JS transforms */
   padding: 0;
   font: inherit;
   color: #fff;
@@ -627,16 +642,10 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
   outline: 0;
 }
 
-/* Removed: .js .menu__btn--active as new JS doesn't toggle this */
-/* .js .menu__btn--active {
-  color: var(--highlight-color);
-} */
-
 .menu__list {
   list-style: none;
-  background: none; /* A teal blue color */
-  margin-left: auto; /* Pushes the menu list to the left in row-reverse flex container */
-  /* Added transition from .menu__list--transition */
+  background: none;
+  margin-left: 0; /* Reset for general case, specific rules apply in media queries */
   transition: visibility 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
 }
 
@@ -667,52 +676,77 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 /* Mobile menu default state (hidden) and active state (visible) */
-/* Replaced .js .menu__list and .js .menu__list--active with .menu__list and .menu__list.is-active */
-.menu__list { /* This applies to JS-enabled menus on mobile by default */
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  visibility: hidden; /* Default hidden state */
-  -webkit-transform: scaleY(0); /* Default collapsed state */
-  transform: scaleY(0);
-  -webkit-transform-origin: top left;
-  transform-origin: top left;
-  
-  /* Additional styling for the mobile menu when collapsed/default */
-  top: 100%; /* Position it below the header */
-  left: 0;
-  right: 0;
-  background-color: white; /* Background for the mobile menu dropdown */
-  flex-direction: column; /* Stack items vertically in mobile menu */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  padding: 10px 0;
+@media screen and (max-width: 768px) {
+  .menu {
+      flex-direction: row; /* Burger on left, Logo on right */
+      justify-content: space-between; /* Space out burger and logo */
+      padding: 10px 15px; /* Adjust padding for mobile */
+  }
+
+  .menu__btn {
+      display: block; /* Show burger button on mobile */
+      order: -1; /* Place burger button on the far left */
+      width: auto; /* Allow button to size naturally */
+  }
+
+  /* Reset the logo's auto margin for mobile */
+  .menu .my-header-logo {
+      margin-left: 0; /* Reset auto-margin, let flexbox handle */
+  }
+
+  /* Define the default hidden state of the mobile menu */
+  .menu__list {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      visibility: hidden; /* Hidden by default */
+      -webkit-transform: scaleY(0); /* Collapsed by default */
+      transform: scaleY(0);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      
+      /* Additional styling for the mobile menu when collapsed/default */
+      top: 100%; /* Position it below the header */
+      left: 0;
+      right: 0;
+      background-color: white; /* Background for the mobile menu dropdown */
+      flex-direction: column; /* Stack items vertically in mobile menu */
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      padding: 10px 0;
+  }
+
+  /* Define the active (open) state of the mobile menu using is-active */
+  .menu__list.is-active { /* Replaces .js .menu__list--active */
+      visibility: visible;
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      display: flex; /* Ensure it uses flex layout for its items once active */
+  }
+
+  .menu .menu__item {
+      width: 100%;
+      text-align: center;
+  }
+
+  .menu .menu__link {
+      padding: 10px 20px;
+      display: block;
+  }
 }
 
-.menu__list.is-active { /* This is the new class for the active mobile menu */
-  visibility: visible;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  -webkit-transform: scaleY(1);
-  transform: scaleY(1);
-  display: flex; /* Ensure it uses flex layout for its items once active */
-}
-
-/* Removed: .menu__list--transition as transition property is now on .menu__list directly */
-/* .menu__list--transition {
-  transition: visibility 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
-} */
-
+/* Desktop screen styles (min-width: 767px) - ensures proper reset from mobile styles */
 @media screen and (min-width: 767px) {
   .menu {
-    border-bottom: 0px solid var(--highlight-color); /* Highlight colored bottom border */
-    flex-direction: row-reverse; /* Ensure logo on right, menu on left for desktop */
+    border-bottom: 0px solid var(--highlight-color);
+    flex-direction: row; /* Ensure default direction for desktop */
+    justify-content: flex-start; /* Aligns menu items and button to the left */
   }
 
   .menu__btn {
     display: none; /* Hide burger button on desktop */
   }
 
-  .menu__list { /* This applies to both .menu__list and .js .menu__list implicitly */
+  .menu__list {
     position: relative;
     display: -webkit-flex;
     display: flex;
@@ -722,15 +756,21 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
     border: 0;
     -webkit-transform: none; /* No scale transform on desktop */
     transform: none;
-    justify-content: flex-start; /* Or space-between, depending on desired layout */
+    justify-content: flex-start;
     /* Reset mobile-specific styles for desktop */
-    background: none; /* As per original */
-    box-shadow: none; /* No shadow on desktop */
-    padding: 0; /* No padding on desktop */
-    top: auto; /* Reset position for desktop */
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    top: auto;
     left: auto;
     right: auto;
     flex-direction: row; /* Menu items in a row on desktop */
+    margin-left: initial; /* Reset any unwanted margin for menu list on desktop */
+  }
+
+  /* Re-apply auto-margin for logo on desktop to push it right */
+  .menu .my-header-logo {
+      margin-left: auto; /* Pushes the logo to the far right on desktop */
   }
 
   .menu__item {
@@ -896,7 +936,6 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
   margin-bottom: 20px;
   margin-bottom: 1.25rem;
   font-size: 12px;
-  font-size: 0.75rem;
   line-height: 1;
   color: #fff;
   display: flex;
@@ -930,7 +969,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
   height: 40px;
   padding: 8px;
   margin-right: 6px;
-  background: #1a73e8; (--highlight-color);
+  background: #1a73e8; /* (custom.css override) */
   fill: #fff;
 }
 
@@ -1026,7 +1065,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
   font-weight: 700;
 }
 
-/* Custom Author Box (from custom.css) */
+/* Custom Author Box (merged from custom.css) */
 .widget.custom-authorbox {
   text-align: center;
   color: #bfbfbf;
@@ -1059,50 +1098,13 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 /* ==================================== */
 /* List Content                           */
 /* ==================================== */
-.list__item {
-  padding-bottom: 20px;
-  padding-bottom: 1.25rem;
-  margin-bottom: 20px;
-  margin-bottom: 1.25rem;
-  border-bottom: 1px solid #ebebeb;
-}
-
-.list__header {
-  margin-bottom: 10px;
-  margin-bottom: 0.625rem;
-}
-
-.list__title {
-  font-size: 20px;
-  font-size: 1.25rem;
-}
-
-.list__meta {
-  margin-top: 5px;
-}
-
-.list__thumbnail {
-  float: left;
-  margin: 0 20px 0 0;
-}
-
-.list__thumbnail img {
-  width: 100%;
-  max-width: 235px;
-}
-
-.list__footer-readmore {
-  float: right;
-  margin-top: 10px;
-}
-
-/* Post list item styling (from custom.css) */
+/* Post list item styling (merged and prioritized from custom.css) */
 .list__item.post {
-  background: #f9f9f9; /* Slightly off-white background */
+  background: #ffffff; /* Explicitly white from custom.css */
   border-radius: 12px; /* More rounded corners */
   padding: 1.5rem;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Lighter shadow */
   transition: box-shadow 0.3s ease;
 }
 
@@ -1113,10 +1115,10 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 /* Post title in list */
 .list__title.post__title {
-  font-size: 1.8rem; /* Larger font for post title */
+  font-size: 1.6rem; /* PRIORITIZED: Larger font from custom.css */
   margin-bottom: 0.5rem;
   font-weight: 700;
-  color: #1a3e6e; /* Dark blue title color */
+  color: #1a3e6e; /* Dark blue title color from custom.css */
 }
 
 .list__title.post__title a {
@@ -1126,7 +1128,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .list__title.post__title a:hover {
-  color: #0c47a1; /* Darker blue on hover */
+  color: #0c47a1; /* Darker blue on hover from custom.css */
 }
 
 /* Post lead/short description */
@@ -1145,27 +1147,28 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 /* Post excerpt/content summary */
 .list__excerpt.post__content {
-  color: #555; /* Dark grey text */
-  font-size: 1.1rem; /* Slightly larger excerpt font */
+  font-size: 1.1rem; /* PRIORITIZED: Larger excerpt font from custom.css */
+  color: #1a3e6e; /* Dark grey text from custom.css */
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-/* "Read more" button for list items */
+/* "Read more" button for list items (merged and prioritized from custom.css) */
 .list__footer-readmore.btn {
-  background-color: #1f5fa9; /* A slightly different shade of blue for this button */
+  background-color: #1a73e8; /* PRIORITIZED: Specific blue from custom.css */
   color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  display: inline-block;
+  padding: 10px 20px; /* Adjusted padding */
+  border-radius: 5px; /* Less rounded corners */
+  font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 10px rgba(26, 115, 232, 0.4); /* Re-added shadow for consistency */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(26, 115, 232, 0.4);
+  display: inline-block; /* Ensure display is set */
 }
 
 .list__footer-readmore.btn:hover {
-  background-color: #174a84; /* Darker shade on hover */
-  box-shadow: 0 6px 15px rgba(12, 71, 161, 0.5); /* Re-added shadow on hover */
+  background-color: #0c47a1; /* Darker shade on hover */
+  box-shadow: 0 6px 15px rgba(12, 71, 161, 0.5);
 }
 
 /* ==================================== */
@@ -1246,7 +1249,7 @@ video {
   max-width: 100%;
 }
 
-/* Custom image styling (from user's input) */
+/* Custom image styling */
 .custom-image img {
   max-width: 100%;
   border-radius: 8px;
@@ -1403,7 +1406,7 @@ textarea {
   outline: 2px solid #005fcc;
 }
 
-/* Social links widget (from custom.css) */
+/* Social links widget (merged from custom.css) */
 .social-links-widget {
   background-color: transparent;
   padding: 10px 0;
@@ -1434,7 +1437,7 @@ textarea {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background-color: #e0e0e0;
+  background-color: #e0e0e0; /* אפור בהיר */
   color: white;
   font-size: 20px;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -1446,7 +1449,7 @@ textarea {
 
 .social-icons-circular li a:hover {
   transform: scale(1.1);
-  background-color: #bdbdbd;
+  background-color: #bdbdbd; /* כהה יותר בקצת */
 }
 
 /* Social widget (Generic, from base theme) */
@@ -1489,7 +1492,7 @@ textarea {
   display: inline-block;
 }
 
-/* Custom sidebar (from custom.css) */
+/* Custom sidebar (merged from custom.css) */
 .sidebar-custom {
   background: transparent;
   padding: 20px;
@@ -1550,16 +1553,16 @@ textarea {
 }
 
 /* ==================================== */
-/* Homepage Main Content (from custom.css) */
+/* Homepage Main Content (merged and prioritized from custom.css) */
 /* ==================================== */
 main.homepage {
   max-width: 1100px;
   margin: 40px auto;
   padding: 30px 20px;
   background: linear-gradient(135deg, #ffffff, #ffffff); /* Solid white background */
-  border-radius: 0px; /* No specific rounding, can be customized */
+  border-radius: 0px;
   font-family: 'Varela Round', sans-serif;
-  color: #2c3e50; /* Dark grey text */
+  color: #2c3e50;
   line-height: 1.6;
   transition: background-color 0.3s ease;
 }
@@ -1567,9 +1570,9 @@ main.homepage {
 main.homepage h1,
 main.homepage h2,
 main.homepage h3 {
-  color: #1a3e6e; /* Dark blue heading color */
+  color: #1a3e6e;
   margin-bottom: 1rem;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Subtle white text shadow */
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 main.homepage p {
@@ -1578,13 +1581,13 @@ main.homepage p {
 }
 
 main.homepage a {
-  color: #1a73e8; /* Blue for links in homepage main content */
+  color: #1a73e8;
   text-decoration: none;
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 main.homepage a:hover {
-  color: #0c47a1; /* Darker blue on hover */
+  color: #0c47a1;
   border-color: #0c47a1;
 }
 
@@ -1611,11 +1614,11 @@ main.homepage .btn:hover {
 
 /* Blockquotes in homepage main content */
 main.homepage blockquote {
-  border-left: 5px solid #1a73e8; /* Blue left border */
+  border-left: 5px solid #1a73e8;
   padding-left: 15px;
   color: #34495e;
   font-style: italic;
-  background-color: #e8f0fe; /* Light blue background */
+  background-color: #e8f0fe;
   margin: 1.5em 0;
   border-radius: 2px;
 }
@@ -1624,13 +1627,28 @@ main.homepage blockquote {
 /* Specific Custom Links & CTAs         */
 /* ==================================== */
 .custom-link {
-  color: #007acc; /* Blue for custom links */
-  text-decoration: underline;
+  /* This custom-link is used both in services-section and as a general link.
+     Prioritizing services-section specific styling from custom.css */
+  display: inline-block;
+  background-color: transparent; /* Transparent background */
+  color: var(--primary-color, #007bff); /* Subtle blue text */
+  padding: 12px 20px;
+  border: 1px solid var(--primary-color, #007bff); /* Thin blue border */
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  margin-top: auto; /* Pushes link to bottom of container */
+  font-weight: 600;
+  box-shadow: none; /* Removed shadow from button itself */
 }
 
 .custom-link:hover {
-  color: #005fa3;
+  background-color: var(--primary-color, #007bff); /* Blue background on hover */
+  color: white; /* White text on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3); /* Small shadow on hover */
 }
+
 
 .internal-link {
   color: #004466; /* Darker blue for internal links */
@@ -1693,6 +1711,227 @@ a.contact-link .contact-icon {
 
 .cta-therapy-button:hover {
   background-color: #004d40; /* Dark green on hover */
+}
+
+/* --- CTA Box Styles (merged from custom.css) --- */
+.cta-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centered vertically if height is defined */
+    align-items: center;    /* Centered horizontally */
+    text-align: center;     /* Aligns internal text */
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Eye-catching gradient background */
+    color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.cta-box:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35); /* Deeper shadow on hover */
+}
+
+.cta-box h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cta-box p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    max-width: 600px;
+}
+
+/* --- CTA Button Styles (merged from custom.css) --- */
+.cta-button {
+    display: inline-block;
+    background-color: #ffcc00; /* Prominent button color (yellow-gold) */
+    color: #2575fc; /* Text color matching gradient blue */
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.cta-button:hover {
+    background-color: #e6b800; /* Darker button color on hover */
+    transform: translateY(-2px); /* Slight press effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+/* --- Responsive Adjustments for CTA (merged from custom.css) --- */
+@media (max-width: 768px) {
+    .cta-box {
+        margin: 30px 15px;
+        padding: 25px 15px;
+    }
+
+    .cta-box h2 {
+        font-size: 2em;
+    }
+
+    .cta-box p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-box {
+        margin: 20px 10px;
+        padding: 20px 10px;
+    }
+
+    .cta-box h2 {
+        font-size: 1.8em;
+    }
+
+    .cta-box p {
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
+}
+
+/* ==================================== */
+/* Services Section (merged from custom.css) */
+/* ==================================== */
+.services-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--theme-background-color, #ffffff);
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: var(--heading-color, #2c3e50);
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: var(--primary-color, #007bff);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    direction: rtl;
+}
+
+.service-item {
+    background-color: var(--card-background-color, #ffffff);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: right; /* Text aligned right within item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-img {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.service-text {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centered content within text box */
+    text-align: center; /* Centered text within text box */
+}
+
+.service-text h3 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--secondary-color, #0056b3);
+    font-weight: 700;
+}
+
+.service-text p {
+    font-size: 1.05em;
+    color: var(--text-color-light, #555);
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments for Services (merged from custom.css) */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+    .service-item {
+        margin: 0 auto;
+        max-width: 350px;
+    }
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .services-section {
+        padding: 40px 15px;
+    }
+}
+@media (min-width: 769px) { /* Specific rules for wider screens */
+    .services-grid {
+        grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 columns on wide screens by default */
+    }
 }
 
 /* ==================================== */
@@ -1761,18 +2000,25 @@ a.contact-link .contact-icon {
   }
 
   .list__excerpt.post__content {
-    font-size: 1rem; /* Completed the font-size property here */
+    font-size: 0.95rem; /* Prioritized from custom.css */
   }
 
   /* Menu specific overrides for mobile */
   .menu {
       flex-direction: row; /* Burger on left, Logo on right */
       justify-content: space-between; /* Space out burger and logo */
+      padding: 10px 15px; /* Adjust padding for mobile */
   }
 
   .menu__btn {
       display: block; /* Show burger button on mobile */
       order: -1; /* Place burger button on the far left */
+      width: auto; /* Allow button to size naturally */
+  }
+
+  /* Reset the logo's auto margin for mobile */
+  .menu .my-header-logo {
+      margin-left: 0; /* Reset auto-margin, let flexbox handle */
   }
 
   /* Define the default hidden state of the mobile menu */
@@ -1819,15 +2065,15 @@ a.contact-link .contact-icon {
 @media screen and (min-width: 767px) {
   .menu {
     border-bottom: 0px solid var(--highlight-color);
-    flex-direction: row-reverse; /* Important: Override mobile's row direction to maintain logo on right, menu on left */
-    justify-content: flex-start; /* Adjust as needed, e.g., flex-start or space-between */
+    flex-direction: row; /* Ensure default direction for desktop */
+    justify-content: flex-start; /* Aligns menu items and button to the left */
   }
 
   .menu__btn {
     display: none; /* Hide burger button on desktop */
   }
 
-  .menu__list { /* This targets the menu list on desktop */
+  .menu__list {
     position: relative;
     display: -webkit-flex;
     display: flex;
@@ -1839,14 +2085,19 @@ a.contact-link .contact-icon {
     transform: none;
     justify-content: flex-start;
     /* Reset mobile-specific styles for desktop */
-    background: none; /* As per original */
-    box-shadow: none; /* No shadow on desktop */
-    padding: 0; /* No padding on desktop */
-    top: auto; /* Reset position for desktop */
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    top: auto;
     left: auto;
     right: auto;
     flex-direction: row; /* Menu items in a row on desktop */
-    margin-left: initial; /* Reset the auto margin for desktop */
+    margin-left: initial; /* Reset any unwanted margin for menu list on desktop */
+  }
+
+  /* Re-apply auto-margin for logo on desktop to push it right */
+  .menu .my-header-logo {
+      margin-left: auto; /* Pushes the logo to the far right on desktop */
   }
 
   .menu__item {
