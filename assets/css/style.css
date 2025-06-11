@@ -2021,3 +2021,25 @@ a.contact-link .contact-icon {
         font-size: 1em;
     }
 }
+/* עבור המבורגר עצמו */
+.hamburger-menu-toggle {
+  display: none; /* נסתר כברירת מחדל בדסקטופ */
+  /* עיצוב כפתור */
+}
+
+/* עבור התפריט */
+.mobile-nav-menu {
+  display: none; /* נסתר כברירת מחדל */
+  /* עיצוב התפריט כשהוא סגור */
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu-toggle {
+    display: block; /* מוצג במובייל */
+  }
+
+  .mobile-nav-menu.is-open { /* מחלקה שנוספת ע"י JS */
+    display: flex; /* או block, grid - לפי סוג התפריט */
+    /* עיצוב התפריט כשהוא פתוח */
+  }
+}
