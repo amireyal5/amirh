@@ -6,7 +6,6 @@
 	<ul class="menu__list">
 		{{- $currentNode := . }}
 		{{- range .Site.Menus.main }}
-		{{- if .Name }}
 		<li class="menu__item{{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} menu__item--active{{ end }}">
 			<a class="menu__link" href="{{ .URL }}">
 				{{ .Pre }}
@@ -15,8 +14,8 @@
 			</a>
 		</li>
 		{{- end }}
-		{{- end }}
 	</ul>
+    {{ partial "custom-logo" . }} <!- -- הלוגו יתווסף כאן, בתוך ה-nav -->
 </nav>
 {{ else -}}
 <div class="divider"></div>
