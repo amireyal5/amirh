@@ -36,7 +36,7 @@ theme = "Mainroad"
   [params.logo]
     image = "img/logo.png"
     title = ""
-    subtitle ""
+    subtitle = ""
 
   [params.sidebar]
     home = "left"
