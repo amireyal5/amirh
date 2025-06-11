@@ -84,7 +84,7 @@ body {
   -webkit-font-smoothing: antialiased; /* Enhance font rendering on WebKit */
   /* Updated padding-top to account for fixed top-bar and main-header-row */
   /* יש לכייל את הערך הזה במדויק לאחר בדיקה בדפדפן - סכום גובה ה-top-bar וה-main-header-row */
-  
+  padding-top: calc(30px + 80px); /* 30px משוער לגובה top-bar, 80px משוער לגובה main-header */
 }
 
 .container {
@@ -623,7 +623,7 @@ select {
 
 /* --- New Header Structure Styles (Fixed Header) --- */
 .site-header {
-    position: absolute;
+    position: fixed; /* ה-Header מקובע לחלק העליון של המסך */
     top: 0;          /* צמוד לחלק העליון */
     width: 100%;     /* תופס את כל הרוחב */
     z-index: 1000;   /* וודא שהוא מעל שאר התוכן */
@@ -1804,7 +1804,7 @@ a.contact-link .contact-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 650px;
+    min-height: 450px;
     overflow: hidden;
     font-family: var(--font-family-primary); /* Use primary font for consistency */
 }
@@ -2020,26 +2020,4 @@ a.contact-link .contact-icon {
     .hero-content .subtitle {
         font-size: 1em;
     }
-}
-/* עבור המבורגר עצמו */
-.hamburger-menu-toggle {
-  display: none; /* נסתר כברירת מחדל בדסקטופ */
-  /* עיצוב כפתור */
-}
-
-/* עבור התפריט */
-.mobile-nav-menu {
-  display: none; /* נסתר כברירת מחדל */
-  /* עיצוב התפריט כשהוא סגור */
-}
-
-@media (max-width: 768px) {
-  .hamburger-menu-toggle {
-    display: block; /* מוצג במובייל */
-  }
-
-  .mobile-nav-menu.is-open { /* מחלקה שנוספת ע"י JS */
-    display: flex; /* או block, grid - לפי סוג התפריט */
-    /* עיצוב התפריט כשהוא פתוח */
-  }
 }
