@@ -694,7 +694,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
     border: 0;
     -webkit-transform: none;
     transform: none;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .menu__item {
