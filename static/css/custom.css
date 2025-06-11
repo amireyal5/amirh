@@ -99,7 +99,7 @@
 
 .my-header-logo {
   display: flex;
-  justify-content: center;  /* ממורכז בתוך ההדר */
+  justify-content: flex-start;* ממורכז בתוך ההדר */
   margin: 20px 0;
   direction: rtl;
   text-align: right;
@@ -109,7 +109,7 @@
 .my-logo-wrapper {
   display: flex;
   flex-direction: row; /* תמונה מימין, טקסט משמאל */
-  align-items: center;
+  
   gap: 6rem;
   margin-top: 25px;
 }
@@ -588,7 +588,287 @@ code, pre {
     .services-grid {
         grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 עמודות במסכים רחבים כברירת מחדל */
     }
+  }
+  /* הגדרת משתנה עבור פונט ראשי, אם לא הוגדר במקום אחר */
+:root {
+    --font-family-primary: sans-serif; /* פונט לדוגמה */
+}
+/* הגדרת משתנה עבור פונט ראשי, אם לא הוגדר במקום אחר */
+:root {
+    --font-family-primary: sans-serif; /* פונט לדוגמה */
+}
+
+/* ==================================== */
+/* Hero Section Styles (New)            */
+/* ==================================== */
+.hero-section {
+    /* תמונת רקע מנתיב img/hero.webp */
+    background-image: url('img/hero.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+    overflow: hidden;
+    font-family: var(--font-family-primary); /* שימוש בפונט ראשי לעקביות */
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: white; /* ודא שכותרות ה-Hero לבנות */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* צל עדין לקריאות טובה יותר */
+}
+
+.hero-content .subtitle {
+    font-size: 1.5em; /* תת-כותרת גדולה יותר כמו בדוגמה */
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: white; /* ודא שתת-כותרות ב-Hero לבנות */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* רווח בין כפתורים */
+    margin-bottom: 20px; /* רווח מתחת לכפתורים */
+}
+
+/* סגנון כפתור ראשי בצבע #FC6C44 - מתאים ל-`.button-primary` */
+.hero-buttons .button-primary {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
+    background-color: #FC6C44;
+    color: white;
+    border: 2px solid #FC6C44;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none; /* הסרת קו תחתון מקישור */
+    cursor: pointer;
+}
+
+.hero-buttons .button-primary:hover {
+    background-color: #e65c3b; /* גוון כהה יותר בריחוף */
+    border-color: #e65c3b;
+}
+
+/* סגנון כפתור משני בצבע #0E6781 - מתאים ל-`.button-secondary` */
+.hero-buttons .button-secondary {
+    padding: 12px 25px; /* שמירה על גודל זהה לכפתור הראשי */
+    font-size: 1.1em;
+    border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
+    background-color: #0E6781;
+    color: white;
+    border: 2px solid #0E6781;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none; /* הסרת קו תחתון מקישור */
+    cursor: pointer;
+}
+
+.hero-buttons .button-secondary:hover {
+    background-color: #0a4f61; /* גוון כהה יותר בריחוף */
+    border-color: #0a4f61;
 }
 
 
+.hero-description {
+    font-size: 1.1em;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.5;
+    color: white; /* ודא שהתיאור ב-Hero לבן */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* ==================================== */
+/* Media Queries (Responsive Design)    */
+/* ==================================== */
+/* כלל כללי ל-main-header-row כדי לוודא z-index גבוה תמיד */
+.main-header-row {
+    position: relative; /* חיוני עבור z-index */
+    z-index: 10; /* ודא שהוא מעל Hero content שיש לו z-index: 1 */
+}
+
+@media screen and (max-width: 1475px) {
+  .container--outer {
+    width: 95%; /* התאמת רוחב קונטיינר חיצוני */
+  }
+}
+
+@media screen and (max-width: 992px) { /* עבור טאבלטים ומטה */
+    .main-navigation-menu .menu__item {
+        margin: 0 10px; /* רווח קטן יותר בין פריטי תפריט */
+    }
+    .header-nav-and-buttons {
+        gap: 10px; /* רווח קטן יותר בין ניווט וכפתורי אקשן */
+    }
+}
+
+@media screen and (max-width: 768px) {
+  /* התאמות ל-Body Padding */
+  body {
+    /* כייל את הערך הזה במדויק לאחר בדיקה במובייל */
+    padding-top: calc(30px + 60px); /* גובה משוער ל-top-bar ו-main-header במובייל */
+  }
+
+  /* התאמות רספונסיביות ללוגו בהאדר */
+  .my-logo-wrapper {
+    flex-direction: column; /* תמונה מעל טקסט במובייל */
+    align-items: center;
+    text-align: center;
+    gap: 0; /* הסרת רווח כשהם מוערמים */
+    margin-top: 0;
+  }
+
+  .my-logo-text {
+    align-items: center;
+  }
+
+  .my-logo-title {
+    font-size: 1.3rem; /* קטן יותר למובייל */
+  }
+
+  .my-logo-subtitle {
+    font-size: 0.7rem; /* קטן יותר למובייל */
+  }
+
+  .my-logo-image {
+    height: 50px; /* תמונה קטנה יותר עבור האדר במובייל */
+  }
+
+  /* התאמות ל-Top Bar במובייל */
+  .top-bar {
+    font-size: 0.75em;
+    padding: 3px 0;
+  }
+  .top-bar__links {
+    flex-direction: column; /* קישורים מוערמים אחד מתחת לשני */
+    align-items: flex-end; /* יישור לימין */
+    gap: 5px;
+  }
+  .top-bar__links a {
+    margin-left: 0;
+    margin-right: 15px; /* מרווח מהקצה הימני */
+  }
+
+  /* התאמות ל-Main Header Row במובייל */
+  .main-header-row {
+    padding: 10px 0;
+    /* הוספת z-index גבוה כדי למנוע דריסה על ידי ה-Hero Section */
+    position: relative; /* חיוני עבור z-index */
+    z-index: 10; /* ודא שהוא מעל Hero content שיש לו z-index: 1 */
+  }
+  .main-header__container {
+    flex-direction: column; /* לוגו ושאר התוכן מוערמים */
+    align-items: center;
+  }
+  .header-nav-and-buttons {
+    flex-direction: column; /* ניווט וכפתורים מוערמים */
+    margin-top: 15px;
+    width: 100%;
+    gap: 15px;
+  }
+
+  /* התאמות לתפריט במובייל */
+  .main-navigation-menu {
+    width: 100%;
+    text-align: center;
+  }
+  .main-navigation-menu .menu__btn {
+    display: block; /* הצגת כפתור המבורגר */
+    width: calc(100% - 40px); /* התאמת רוחב */
+    margin: 0 auto; /* מרכוז */
+    background: var(--color-main-header-bg); /* רקע תואם האדר */
+    border: 1px solid #ccc;
+    color: var(--color-menu-link);
+    padding: 8px 15px;
+    border-radius: 4px;
+  }
+  .main-navigation-menu .menu__list {
+    flex-direction: column; /* פריטי תפריט מוערמים */
+    display: none; /* מוסתר כברירת מחדל, JS יטפל בהצגה */
+    width: 100%;
+    background-color: var(--color-main-header-bg); /* רקע תואם האדר */
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    position: relative; /* חיוני עבור z-index */
+    z-index: 999; /* ודא שהוא מעל הכל כשנפתח */
+  }
+  .main-navigation-menu .menu__item {
+    margin: 5px 0;
+  }
+  .main-navigation-menu .menu__link {
+    padding: 8px 15px;
+    color: var(--color-menu-link);
+  }
+  /* קלאס .js .menu__list--active יטופל ע"י JS שיוסיף את הקלאס הזה */
+
+  /* התאמות לכפתורי האקשן בהאדר במובייל */
+  .header-action-buttons {
+    flex-direction: column; /* כפתורים מוערמים */
+    width: 80%;
+    margin: 0 auto;
+  }
+  .header-action-buttons .button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  /* התאמות ל-Hero Section במובייל */
+  .hero-section {
+    padding: 60px 15px;
+    min-height: 350px;
+  }
+  .hero-content h1 {
+    font-size: 2em;
+  }
+  .hero-content .subtitle {
+    font-size: 1.2em;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero-buttons .button {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .hero-description {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) { /* טלפונים קטנים יותר */
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+    .hero-content .subtitle {
+        font-size: 1em;
+    }
+}
 
