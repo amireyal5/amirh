@@ -1,20 +1,8 @@
 <header class="site-header">
     <div class="main-header-row">
         <div class="header-container main-header__container">
-            <div class="my-header-logo">
-                <a href="/" class="my-logo-link">
-                    <div class="my-logo-wrapper">
-                        {{ with .Site.Params.logo.image }}
-                            <img class="my-logo-image" src="{{ . | relURL }}" alt="לוגו">
-                        {{ end }}
-                        <div class="my-logo-text">
-                            <div class="my-logo-title">{{ .Site.Params.logo.title }}</div>
-                            <div class="my-logo-subtitle">{{ .Site.Params.logo.subtitle }}</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
+            {# הלוגו היה כאן והוסר #}
+
             <div class="header-nav-and-buttons">
                 {{- if .Site.Menus.main }}
                 <nav class="menu main-navigation-menu">
@@ -40,10 +28,7 @@
                 <div class="divider"></div>
                 {{- end }}
 
-                <div class="header-action-buttons">
-                    <a href="tel:(512) 956-6463" class="button button-action-primary">Call Now: (512) 956-6463</a>
-                    <a href="/book-an-appointment" class="button button-action-secondary">Book An Appointment</a>
-                </div>
+                {# הכפתורים היו כאן והוסרו #}
             </div>
         </div>
     </div>
