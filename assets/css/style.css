@@ -146,7 +146,7 @@ textarea {
 }
 
 /* ==================================== */
-/* Buttons                            */
+/* Buttons                              */
 /* ==================================== */
 /* General button style (from custom.css) */
 .btn {
@@ -158,7 +158,7 @@ textarea {
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
- 
+  
   transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
   user-select: none; /* Prevent text selection on button */
   border: solid 0.5px #1a73e8; /* Remove default border */
@@ -571,12 +571,24 @@ select {
 /* ==================================== */
 /* Main Menu                            */
 /* ==================================== */
+.menu {
+    /* Existing styles for .menu */
+    background: white; /* As per your last input */
+    
+    /* Added/updated for Flexbox behavior */
+    display: flex; /* Makes the menu a flex container */
+    align-items: center; /* Vertically centers items */
+    flex-direction: row-reverse; /* Puts logo on the right, menu on the left */
+    justify-content: space-between; /* Spaces out items (e.g., burger/logo or menu/logo) */
+    padding: 10px 20px; /* Added some padding around the menu */
+}
+
 .no-js .menu__btn {
   display: none;
 }
 
 .menu__btn {
-  display: block;
+  display: block; /* Default to block, will be hidden by media query on desktop */
   width: 100%;
   padding: 0;
   font: inherit;
@@ -615,13 +627,17 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
   outline: 0;
 }
 
-.js .menu__btn--active {
+/* Removed: .js .menu__btn--active as new JS doesn't toggle this */
+/* .js .menu__btn--active {
   color: var(--highlight-color);
-}
+} */
 
 .menu__list {
   list-style: none;
   background: none; /* A teal blue color */
+  margin-left: auto; /* Pushes the menu list to the left in row-reverse flex container */
+  /* Added transition from .menu__list--transition */
+  transition: visibility 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
 }
 
 .menu__item:hover {
@@ -632,7 +648,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
   border: 0;
 }
 
-.menu__item--active {
+.menu__item--active { /* This class is for current active page, not JS toggle */
   background: var(--highlight-color); /* Highlight color for active item */
 }
 
@@ -644,57 +660,77 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
   color: #514c4c;
   text-transform: uppercase;
   font-size: 16px;
-  
 }
 
 .menu__link:hover {
   color: #fff;
 }
 
-.js .menu__list {
+/* Mobile menu default state (hidden) and active state (visible) */
+/* Replaced .js .menu__list and .js .menu__list--active with .menu__list and .menu__list.is-active */
+.menu__list { /* This applies to JS-enabled menus on mobile by default */
   position: absolute;
   z-index: 1;
   width: 100%;
-  visibility: hidden;
-  -webkit-transform: scaleY(0);
+  visibility: hidden; /* Default hidden state */
+  -webkit-transform: scaleY(0); /* Default collapsed state */
   transform: scaleY(0);
   -webkit-transform-origin: top left;
   transform-origin: top left;
+  
+  /* Additional styling for the mobile menu when collapsed/default */
+  top: 100%; /* Position it below the header */
+  left: 0;
+  right: 0;
+  background-color: white; /* Background for the mobile menu dropdown */
+  flex-direction: column; /* Stack items vertically in mobile menu */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  padding: 10px 0;
 }
 
-.js .menu__list--active {
+.menu__list.is-active { /* This is the new class for the active mobile menu */
   visibility: visible;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
+  display: flex; /* Ensure it uses flex layout for its items once active */
 }
 
-.menu__list--transition {
+/* Removed: .menu__list--transition as transition property is now on .menu__list directly */
+/* .menu__list--transition {
   transition: visibility 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
-}
+} */
 
 @media screen and (min-width: 767px) {
   .menu {
     border-bottom: 0px solid var(--highlight-color); /* Highlight colored bottom border */
+    flex-direction: row-reverse; /* Ensure logo on right, menu on left for desktop */
   }
 
   .menu__btn {
-    display: none;
+    display: none; /* Hide burger button on desktop */
   }
 
-  .menu__list,
-  .js .menu__list {
+  .menu__list { /* This applies to both .menu__list and .js .menu__list implicitly */
     position: relative;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
-    visibility: visible;
+    visibility: visible; /* Always visible on desktop */
     border: 0;
-    -webkit-transform: none;
+    -webkit-transform: none; /* No scale transform on desktop */
     transform: none;
-    justify-content: flex-start;
+    justify-content: flex-start; /* Or space-between, depending on desired layout */
+    /* Reset mobile-specific styles for desktop */
+    background: none; /* As per original */
+    box-shadow: none; /* No shadow on desktop */
+    padding: 0; /* No padding on desktop */
+    top: auto; /* Reset position for desktop */
+    left: auto;
+    right: auto;
+    flex-direction: row; /* Menu items in a row on desktop */
   }
 
   .menu__item {
@@ -1021,7 +1057,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 /* ==================================== */
-/* List Content                         */
+/* List Content                           */
 /* ==================================== */
 .list__item {
   padding-bottom: 20px;
@@ -1698,6 +1734,7 @@ a.contact-link .contact-icon {
   }
 }
 
+/* Mobile-specific adjustments: 768px and below */
 @media screen and (max-width: 768px) {
   /* Responsive adjustments for homepage main content */
   main.homepage {
@@ -1724,193 +1761,95 @@ a.contact-link .contact-icon {
   }
 
   .list__excerpt.post__content {
-    font-size: 0.95rem;
+    font-size: 1rem; /* Completed the font-size property here */
   }
 
-  .wrapper {
-    display: block;
+  /* Menu specific overrides for mobile */
+  .menu {
+      flex-direction: row; /* Burger on left, Logo on right */
+      justify-content: space-between; /* Space out burger and logo */
   }
 
-  .sidebar {
-    float: none;
-    width: 100%;
-    margin: 0;
+  .menu__btn {
+      display: block; /* Show burger button on mobile */
+      order: -1; /* Place burger button on the far left */
   }
 
-  .logo {
-    text-align: center;
+  /* Define the default hidden state of the mobile menu */
+  .menu__list {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      visibility: hidden; /* Hidden by default */
+      -webkit-transform: scaleY(0); /* Collapsed by default */
+      transform: scaleY(0);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      
+      /* Additional styling for the mobile menu when collapsed/default */
+      top: 100%; /* Position it below the header */
+      left: 0;
+      right: 0;
+      background-color: white; /* Background for the mobile menu dropdown */
+      flex-direction: column; /* Stack items vertically in mobile menu */
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      padding: 10px 0;
   }
 
-  .logo__link {
-    margin: 0 auto;
+  /* Define the active (open) state of the mobile menu using is-active */
+  .menu__list.is-active { /* Replaces .js .menu__list--active */
+      visibility: visible;
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      display: flex; /* Ensure it uses flex layout for its items once active */
   }
 
-  .logo__title {
-    font-size: 24px;
-    font-size: 1.5rem;
+  .menu .menu__item {
+      width: 100%;
+      text-align: center;
   }
 
-  .sidebar {
-    margin-top: 20px;
-  }
-}
-
-@media screen and (max-width: 620px) {
-  input[type=text],
-  input[type=email],
-  input[type=tel],
-  input[type=url] {
-    width: 88%;
-  }
-
-  .meta__item {
-    display: block;
-    margin-left: 0;
-  }
-
-  .authorbox {
-    text-align: center;
-  }
-
-  .authorbox__avatar {
-    display: inline-block;
-    float: none;
-    margin: 0 0 20px;
-  }
-
-  .pager {
-    display: block;
-  }
-
-  .pager__item {
-    min-width: 100%;
-    text-align: center;
-  }
-
-  .pager__item--prev {
-    padding-bottom: 25px;
-  }
-
-  .content ul,
-  .content ol {
-    margin: 0 20px 20px 20px;
-  }
-
-  .content ul ul,
-  .content ol ol,
-  .content ol ul,
-  .content ul ol {
-    margin: 0 0 0 20px;
-  }
-
-  .list__thumbnail {
-    max-width: 80px;
-  }
-
-  .list__title {
-    font-size: 16px;
-    font-size: 1rem;
-  }
-
-  .list__lead {
-    font-size: 14px;
-    font-size: 0.875rem;
-  }
-
-  .list__meta {
-    display: block;
-    font-size: 11px;
-    font-size: 0.6875rem;
+  .menu .menu__link {
+      padding: 10px 20px;
+      display: block;
   }
 }
-.menu {
-    display: flex; /* הופך את ה-nav ל-flex container */
-    align-items: center; /* יישור פריטים אנכית למרכז (שינוי מ-flex-end כדי שיהיה יותר נפוץ ונקי) */
-    flex-direction: row-reverse; /* הלוגו יהיה מימין, התפריט משמאל לו */
-    background-color: white;
-    padding: 10px 20px; /* הוספת ריפוד קטן לנוחות */
-    justify-content: space-between; /* כדי לדחוף את כפתור הבורגר (אם הוא בתוך ה-nav) לצד אחד, ואת השאר לצד השני */
-}
 
-.menu .menu__list {
-    margin-left: auto; /* דוחף את רשימת התפריט הכי שמאלה שאפשר (בהינתן ה-row-reverse, זה יהיה ליד הלוגו) */
-}
+/* Desktop screen styles (min-width: 767px) - ensures proper reset from mobile styles */
+@media screen and (min-width: 767px) {
+  .menu {
+    border-bottom: 0px solid var(--highlight-color);
+    flex-direction: row-reverse; /* Important: Override mobile's row direction to maintain logo on right, menu on left */
+    justify-content: flex-start; /* Adjust as needed, e.g., flex-start or space-between */
+  }
 
-/* הסתרת כפתור הבורגר בשולחן עבודה */
-.menu__btn {
-    display: none;
-}
+  .menu__btn {
+    display: none; /* Hide burger button on desktop */
+  }
 
-/* ---------------------------------------------------- */
-/* רספונסיביות למסכים קטנים (טאבלטים ומובייל) */
-/* ---------------------------------------------------- */
+  .menu__list { /* This targets the menu list on desktop */
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    visibility: visible; /* Always visible on desktop */
+    border: 0;
+    -webkit-transform: none; /* No scale transform on desktop */
+    transform: none;
+    justify-content: flex-start;
+    /* Reset mobile-specific styles for desktop */
+    background: none; /* As per original */
+    box-shadow: none; /* No shadow on desktop */
+    padding: 0; /* No padding on desktop */
+    top: auto; /* Reset position for desktop */
+    left: auto;
+    right: auto;
+    flex-direction: row; /* Menu items in a row on desktop */
+    margin-left: initial; /* Reset the auto margin for desktop */
+  }
 
-@media (max-width: 768px) { /* עבור מסכים ברוחב 768px ומטה */
-    .menu {
-        flex-direction: row; /* מחזירים את הכיוון הרגיל: כפתור בורגר משמאל, לוגו מימין */
-        justify-content: space-between; /* מרווח בין האלמנטים */
-    }
-
-    .menu .menu__list {
-        display: none; /* מסתיר את רשימת התפריט כברירת מחדל במסכים קטנים */
-        /* הוסף כאן CSS עבור תפריט נפתח - למשל, באמצעות JavaScript */
-
-        position: absolute; /* ממקם את התפריט מחוץ לזרימה הרגילה */
-        top: 100%; /* ממקם אותו מתחת לכותרת */
-        left: 0;
-        right: 0;
-        background-color: white;
-        flex-direction: column; /* פריטי התפריט יהיו אחד מתחת לשני */
-        width: 100%;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        z-index: 1000;
-        padding: 10px 0;
-    }
-
-    .menu__list.is-active { /* קלאס שיתווסף ע"י JavaScript כשהתפריט פתוח */
-        display: flex; /* מציג את התפריט כשהוא פעיל */
-    }
-
-    .menu .menu__item {
-        width: 100%; /* לוודא שפריטי התפריט תופסים את כל הרוחב בתפריט הנפתח */
-        text-align: center; /* ליישר את הטקסט למרכז */
-    }
-
-    .menu .menu__link {
-        padding: 10px 20px; /* ריפוד לפריטי התפריט */
-        display: block; /* לוודא שהקישור תופס את כל השטח של ה-li */
-    }
-
-    /* הצגת כפתור הבורגר במסכים קטנים */
-    .menu__btn {
-        display: block; /* מציג את כפתור הבורגר */
-        order: -1; /* ממקם את כפתור הבורגר בקצה השמאלי ביותר */
-    }
-
-    /* אם הלוגו צריך להיות במרכז במסכים קטנים, אפשר לשנות: */
-    /*
-    .menu .custom-logo-wrapper { // יש להחליף את 'custom-logo-wrapper' בקלאס האמיתי של עוטף הלוגו
-        margin: 0 auto; // מרכז את הלוגו
-    }
-    */
-}
-
-@media (max-width: 480px) { /* עבור מסכים קטנים מאוד (טלפונים) */
-    .menu {
-        padding: 10px 15px; /* ריפוד קטן יותר */
-    }
-}
-/* בשולחן עבודה */
-.menu__list {
-    display: none; /* הסתר כברירת מחדל */
-    /* שאר העיצוב לתפריט נפתח */
-}
-
-/* במובייל - כשקלאס is-active נוסף על ידי JS */
-@media (max-width: 768px) {
-    .menu__list.is-active { /* שימו לב ל-is-active */
-        display: flex; /* הצג את התפריט כשהוא פעיל */
-        /* שאר העיצוב שלו כשהוא פתוח */
-    }
-    /* וודא ש-menu__btn--active אינו בשימוש אם אינך משתמש בו */
+  .menu__item {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }
