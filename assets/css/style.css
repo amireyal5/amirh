@@ -1827,9 +1827,7 @@ a.contact-link .contact-icon {
     display: flex; /* הופך את ה-nav ל-flex container */
     align-items: center; /* מיישר את הפריטים אנכית למרכז */
     justify-content: space-between; /* מרווח שווה בין קבוצת התפריט (ul) ללוגו. הלוגו יהיה מימין, התפריט משמאל */
-    /* אם אתה רוצה שהלוגו יהיה צמוד לימין וכל התפריט משמאל לו, אפשר גם: */
-    /* justify-content: flex-start;  // מיישר את הכל לשמאל
-       flex-direction: row-reverse; // הופך את הסדר הוויזואלי - הלוגו יופיע ראשון מימין, אחריו התפריט */
+    background-color: white;
 }
 
 /* אם כפתור התפריט (בורגר) נמצא מחוץ ל-ul ואתה רוצה שהוא יהיה משמאל,
