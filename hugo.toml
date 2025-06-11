@@ -35,8 +35,8 @@ theme = "Mainroad"
 
   [params.logo]
     image = "img/logo.png"
-    title = "מתבגרים, מבוגרים והדרכת הורים"
-    subtitle = "כרמיאל והסביבה ואונליין"
+    title = ""
+    subtitle ""
 
   [params.sidebar]
     home = "left"
