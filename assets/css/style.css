@@ -1825,7 +1825,7 @@ a.contact-link .contact-icon {
 }
 .menu {
     display: flex; /* הופך את ה-nav ל-flex container */
-    align-items: center; /* מיישר את הפריטים אנכית למרכז */
+    align-items: flex-end;
     flex-direction: row-reverse;
     background-color: white;
 }
