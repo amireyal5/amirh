@@ -1,5 +1,6 @@
 {{- if .Site.Menus.main }}
 <nav class="menu">
+  {{ partial "custom-logo" . }} 
   <button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
     <span class="menu__btn-title" tabindex="-1">{{ T "menu_label" }}</span>
   </button>
@@ -15,9 +16,7 @@
     </li>
     {{- end }}
   </ul>
-  {{ partial "custom-logo" . }} 
 </nav>
 {{ else }}
 <div class="divider"></div>
 {{- end }}
-
