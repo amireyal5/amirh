@@ -1825,18 +1825,78 @@ a.contact-link .contact-icon {
 }
 .menu {
     display: flex; /* הופך את ה-nav ל-flex container */
-    align-items: flex-end;
-    flex-direction: row-reverse;
+    align-items: center; /* יישור פריטים אנכית למרכז (שינוי מ-flex-end כדי שיהיה יותר נפוץ ונקי) */
+    flex-direction: row-reverse; /* הלוגו יהיה מימין, התפריט משמאל לו */
     background-color: white;
+    padding: 10px 20px; /* הוספת ריפוד קטן לנוחות */
+    justify-content: space-between; /* כדי לדחוף את כפתור הבורגר (אם הוא בתוך ה-nav) לצד אחד, ואת השאר לצד השני */
 }
 
-/* אם כפתור התפריט (בורגר) נמצא מחוץ ל-ul ואתה רוצה שהוא יהיה משמאל,
-   וכשאתה רוצה שהלוגו וה-ul יהיו ביחד מימין:
-   אתה יכול לעטוף את ה-ul והלוגו ב-div נוסף ולתת ל-nav justify-content: space-between;
-   או לתת ללוגו ול-ul order ב-Flexbox
-*/
-
-/* דוגמה אם הלוגו והתפריט צריכים להיות קבוצה אחת שמתיישרת לימין והכפתור (בורגר) נשאר לשמאל: */
 .menu .menu__list {
-    margin-left: auto; /* ידחוף את הרשימה לימין */
+    margin-left: auto; /* דוחף את רשימת התפריט הכי שמאלה שאפשר (בהינתן ה-row-reverse, זה יהיה ליד הלוגו) */
+}
+
+/* הסתרת כפתור הבורגר בשולחן עבודה */
+.menu__btn {
+    display: none;
+}
+
+/* ---------------------------------------------------- */
+/* רספונסיביות למסכים קטנים (טאבלטים ומובייל) */
+/* ---------------------------------------------------- */
+
+@media (max-width: 768px) { /* עבור מסכים ברוחב 768px ומטה */
+    .menu {
+        flex-direction: row; /* מחזירים את הכיוון הרגיל: כפתור בורגר משמאל, לוגו מימין */
+        justify-content: space-between; /* מרווח בין האלמנטים */
+    }
+
+    .menu .menu__list {
+        display: none; /* מסתיר את רשימת התפריט כברירת מחדל במסכים קטנים */
+        /* הוסף כאן CSS עבור תפריט נפתח - למשל, באמצעות JavaScript */
+
+        position: absolute; /* ממקם את התפריט מחוץ לזרימה הרגילה */
+        top: 100%; /* ממקם אותו מתחת לכותרת */
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column; /* פריטי התפריט יהיו אחד מתחת לשני */
+        width: 100%;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1000;
+        padding: 10px 0;
+    }
+
+    .menu__list.is-active { /* קלאס שיתווסף ע"י JavaScript כשהתפריט פתוח */
+        display: flex; /* מציג את התפריט כשהוא פעיל */
+    }
+
+    .menu .menu__item {
+        width: 100%; /* לוודא שפריטי התפריט תופסים את כל הרוחב בתפריט הנפתח */
+        text-align: center; /* ליישר את הטקסט למרכז */
+    }
+
+    .menu .menu__link {
+        padding: 10px 20px; /* ריפוד לפריטי התפריט */
+        display: block; /* לוודא שהקישור תופס את כל השטח של ה-li */
+    }
+
+    /* הצגת כפתור הבורגר במסכים קטנים */
+    .menu__btn {
+        display: block; /* מציג את כפתור הבורגר */
+        order: -1; /* ממקם את כפתור הבורגר בקצה השמאלי ביותר */
+    }
+
+    /* אם הלוגו צריך להיות במרכז במסכים קטנים, אפשר לשנות: */
+    /*
+    .menu .custom-logo-wrapper { // יש להחליף את 'custom-logo-wrapper' בקלאס האמיתי של עוטף הלוגו
+        margin: 0 auto; // מרכז את הלוגו
+    }
+    */
+}
+
+@media (max-width: 480px) { /* עבור מסכים קטנים מאוד (טלפונים) */
+    .menu {
+        padding: 10px 15px; /* ריפוד קטן יותר */
+    }
 }
