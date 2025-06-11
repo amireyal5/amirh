@@ -676,7 +676,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 @media screen and (min-width: 767px) {
   .menu {
-    border-bottom: 15px solid var(--highlight-color); /* Highlight colored bottom border */
+    border-bottom: 0px solid var(--highlight-color); /* Highlight colored bottom border */
   }
 
   .menu__btn {
