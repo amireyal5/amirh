@@ -1,25 +1,30 @@
-'use strict';
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('.menu__btn');
+    const menuList = document.querySelector('.menu__list');
 
-(function iifeMenu(document, window, undefined) {
-	var menuBtn = document.querySelector('.menu__btn');
-	var	menu = document.querySelector('.menu__list');
+    if (menuBtn && menuList) {
+        menuBtn.addEventListener('click', function() {
+            menuList.classList.toggle('is-active');
 
-	function toggleMenu() {
-		menu.classList.toggle('menu__list--active');
-		menu.classList.toggle('menu__list--transition');
-		this.classList.toggle('menu__btn--active');
-		this.setAttribute(
-			'aria-expanded',
-			this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
-		);
-	}
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+        });
 
-	function removeMenuTransition() {
-		this.classList.remove('menu__list--transition');
-	}
+        // (אופציונלי) סגור את התפריט בלחיצה מחוץ לו או בעת שינוי גודל חלון
+        document.addEventListener('click', function(event) {
+            if (!menuBtn.contains(event.target) && !menuList.contains(event.target)) {
+                if (menuList.classList.contains('is-active')) {
+                    menuList.classList.remove('is-active');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
 
-	if (menuBtn && menu) {
-		menuBtn.addEventListener('click', toggleMenu, false);
-		menu.addEventListener('transitionend', removeMenuTransition, false);
-	}
-}(document, window));
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && menuList.classList.contains('is-active')) {
+                menuList.classList.remove('is-active');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+});
