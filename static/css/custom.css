@@ -590,7 +590,7 @@ code, pre {
     }
 }
 /* ==================================== */
-/* Hero Section Styles (New)            */
+/* Hero Section Styles (New)          */
 /* ==================================== */
 .hero-section {
     /* תמונת רקע מנתיב img/hero.webp */
@@ -616,14 +616,16 @@ code, pre {
     left: 0;
     right: 0;
     bottom: 0;
-    
+    /* שכבת שחור שקופה כדי לשפר קריאות טקסט על רקע תמונה */
+    background-color: rgba(0, 0, 0, 0.4); /* הגדלתי מעט את השקיפות כדי לשפר קריאות */
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 0;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 15px; /* הוסף ריפוד פנימי כדי למנוע הדבקה לשוליים במסכים קטנים */
 }
 
 .hero-content h1 {
@@ -647,6 +649,7 @@ code, pre {
     justify-content: center;
     gap: 15px; /* רווח בין כפתורים */
     margin-bottom: 20px; /* רווח מתחת לכפתורים */
+    flex-wrap: wrap; /* מאפשר לכפתורים לעבור שורה במסכים קטנים */
 }
 
 /* סגנון כפתור ראשי בצבע #FC6C44 - מתאים ל-`.button-primary` */
@@ -660,6 +663,7 @@ code, pre {
     transition: background-color 0.3s ease, border-color 0.3s ease;
     text-decoration: none; /* הסרת קו תחתון מקישור */
     cursor: pointer;
+    white-space: nowrap; /* מונע שבירת שורה בתוך הכפתור */
 }
 
 .hero-buttons .button-primary:hover {
@@ -678,13 +682,13 @@ code, pre {
     transition: background-color 0.3s ease, border-color 0.3s ease;
     text-decoration: none; /* הסרת קו תחתון מקישור */
     cursor: pointer;
+    white-space: nowrap; /* מונע שבירת שורה בתוך הכפתור */
 }
 
 .hero-buttons .button-secondary:hover {
     background-color: #0a4f61; /* גוון כהה יותר בריחוף */
     border-color: #0a4f61;
 }
-
 
 .hero-description {
     font-size: 1.1em;
@@ -695,5 +699,132 @@ code, pre {
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
+---
+### רספונסיביות לכל המסכים (Media Queries)
+
+נוסיף את ה-Media Queries הבאים בסוף קובץ ה-CSS שלך, כדי להתאים את ה-Hero למסכים שונים:
+
+```css
+/* ==================================== */
+/* Media Queries for Responsiveness   */
+/* ==================================== */
+
+/* עבור מסכים גדולים (טאבלטים לרוחב, מחשבים ניידים) */
+@media (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1.4em;
+    }
+}
+
+/* עבור מסכים בינוניים (טאבלטים לאורך) */
+@media (max-width: 992px) {
+    .hero-section {
+        padding: 80px 15px;
+        min-height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1.3em;
+    }
+}
+
+/* עבור מסכים קטנים (טלפונים לרוחב) */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 10px;
+        min-height: 350px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1.2em;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* כפתורים אחד מתחת לשני */
+        gap: 10px; /* צמצם רווח בין כפתורים */
+    }
+
+    .hero-buttons .button-primary,
+    .hero-buttons .button-secondary {
+        width: 80%; /* תופס יותר רוחב */
+        max-width: 300px; /* הגבל רוחב מקסימלי */
+        margin: 0 auto; /* מרכז את הכפתורים */
+    }
+
+    .hero-description {
+        font-size: 1em;
+    }
+}
+
+/* עבור מסכים קטנים מאוד (טלפונים לאורך) */
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 50px 10px;
+        min-height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .hero-buttons .button-primary,
+    .hero-buttons .button-secondary {
+        font-size: 1em;
+        padding: 10px 20px;
+        width: 90%; /* תופס עוד יותר רוחב */
+    }
+
+    .hero-description {
+        font-size: 0.95em;
+    }
+}
+
+/* עבור מסכים עם גובה קטן (כאשר יש מעט מקום לגובה, למשל טלפונים במצב אופקי) */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 250px; /* צמצם את הגובה המינימלי */
+        padding: 40px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-content .subtitle {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+    }
+
+    .hero-buttons {
+        gap: 8px;
+    }
+
+    .hero-buttons .button-primary,
+    .hero-buttons .button-secondary {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .hero-description {
+        font-size: 0.85em;
+    }
+}
 
 
