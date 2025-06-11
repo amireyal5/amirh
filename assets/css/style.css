@@ -640,7 +640,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 .menu__link {
   display: block;
   padding: 10px 15px;
-  padding: 0.725rem 3rem;
+  padding: 0.725rem 1rem;
   font-weight: 500;
   color: #fff;
   text-transform: uppercase;
