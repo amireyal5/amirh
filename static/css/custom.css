@@ -1,59 +1,191 @@
-/* ווידג'ט רשתות חברתיות */
-.social-links-widget {
-  background-color: transparent;
-  padding: 10px 0;
-  text-align: center;
+/*
+ * unified-style.css
+ * This file consolidates the custom styling for your Hugo website,
+ * ensuring a consistent and modern look across all elements.
+ * It combines the custom.css content with the Hugo theme's base styles.
+ */
+
+/* ==================================== */
+/* Hugo Variables - Default Fallbacks */
+/* Note: Hugo will replace these dynamically based on site parameters. */
+/* We define default values here for pure CSS context. */
+/* ==================================== */
+:root {
+  --highlight-color: #00acc1; /* Updated highlight color */
+  --font-family-primary: "Assistant", sans-serif; /* Default primary font */
+  --font-family-secondary: "IBM Plex Mono", monospace; /* Default secondary/mono font */
+  --primary-color: #007bff; /* Added for services and custom-link */
+  --secondary-color: #0056b3; /* Added for services */
+  --heading-color: #2c3e50; /* Added for services */
+  --text-color-light: #555; /* Added for services */
+  --theme-background-color: #ffffff; /* Added for services */
+  --card-background-color: #ffffff; /* Added for services */
 }
 
-.social-links-widget .widget-title {
-  font-size: 1.2em;
-  margin-bottom: 1em;
-  color: #333;
+/* ==================================== */
+/* Global Resets & Structure            */
+/* ==================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Standard box model */
 }
 
-/* רשימת אייקונים בשורה אחת */
-.social-icons-circular {
-  list-style: none;
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block; /* Ensure HTML5 elements behave as blocks */
+}
+
+/* Clear placeholder text on focus */
+:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+:focus::-moz-placeholder {
+  color: transparent;
+}
+
+:focus:-moz-placeholder {
+  color: transparent;
+}
+
+:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+html {
+  font-size: 100%; /* Base font size for responsive scaling */
+  -ms-text-size-adjust: none; /* Prevent text size adjustment on mobile IE */
+  -webkit-text-size-adjust: none; /* Prevent text size adjustment on WebKit mobile */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-primary); /* Use primary font from variables */
+  font-size: 14px;
+  font-size: 1rem; /* Equivalent to 14px */
+  line-height: 1.6; /* Standard line height for readability */
+  word-wrap: break-word;
+  background: #fff; /* Light grey background for the body */
+  -webkit-font-smoothing: antialiased; /* Enhance font rendering on WebKit */
+}
+
+code, pre { /* Prioritized from custom.css, using variables now */
+  font-family: var(--font-family-secondary);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1600px; /* Max width for main content area */
+  margin: 0 auto; /* Center the container */
+}
+
+.container--outer {
+  box-shadow: 0 0 10px rgba(50, 50, 50, 0.17); /* Soft shadow for outer container */
+}
+
+.wrapper {
+  padding: 25px;
+  background: #fff; /* White background for content wrappers */
+}
+
+.flex {
+  display: -webkit-flex; /* Safari */
+  display: flex; /* Flexbox utility class */
+}
+
+.primary {
+  -webkit-flex: 1 0 65.83%;
+  flex: 1 0 65.83%; /* Primary content area takes ~66% width */
+  -webkit-order: 1;
+  order: 1;
+  min-width: 0; /* Allow content to shrink */
+}
+
+.sidebar {
+  -webkit-flex: 1 0 31.66%;
+  flex: 1 0 31.66%; /* Sidebar takes ~31% width */
+  -webkit-order: 2;
+  order: 2;
+  min-width: 0;
+  margin: 0 0 0 2.5%; /* Space between primary and sidebar */
+}
+
+.sidebar--left {
+  -webkit-order: 0; /* Override order for left sidebar */
+  order: 0;
+  margin: 2px 2.5% 0 0; /* Adjust margin for left sidebar */
+}
+
+.clearfix {
+  display: block;
+}
+
+/* Clearfix hack for floating elements */
+.clearfix::after {
+  display: block;
+  height: 0;
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  direction: rtl;
+  clear: both;
+  line-height: 0;
+  visibility: hidden;
+  content: "";
 }
 
-/* קישורים - עיגול אפור ואייקון לבן */
-.social-icons-circular li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background-color: #e0e0e0; /* אפור בהיר */
+/* Basic styling for form elements */
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit; /* Inherit font from parent */
+  font-size: inherit; /* Inherit font size from parent */
+  line-height: inherit; /* Inherit line height from parent */
+}
+
+/* ==================================== */
+/* Buttons                              */
+/* ==================================== */
+/* General button style */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color:unset ; /* Primary button background */
   color: white;
-  font-size: 20px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  user-select: none; /* Prevent text selection on button */
+  border: solid 0.5px #1a73e8; /* Remove default border */
 }
 
-/* כל האייקונים בצבע לבן */
-.social-icons-circular li a i {
-  color: white;
+.btn:hover {
+  background-color:none; /* Darker primary color on hover */
+  box-shadow: none;/* Enhanced shadow on hover */
 }
 
-/* האפקט בריחוף */
-.social-icons-circular li a:hover {
-  transform: scale(1.1);
-  background-color: #bdbdbd; /* כהה יותר בקצת */
-}
-
+/* Circular button specific styles (from custom.css) */
 .btn-circle {
   display: inline-block;
-  background-color: #ddd; /* אפור בהיר */
+  background-color: #ddd; /* Light grey for circular buttons */
   color: white;
   padding: 10px 20px;
-  border-radius: 25px; /* עיגול קצה מעוגל */
+  border-radius: 25px; /* Pill-shaped button */
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
@@ -64,10 +196,876 @@
 }
 
 .btn-circle:hover {
-  background-color: #aaa; /* אפור כהה יותר בהובר */
+  background-color: #aaa; /* Darker grey on hover */
   color: white;
 }
 
+/* Additional transition for all menu items and buttons */
+.menu__item,
+.btn {
+  transition: background-color 0.25s ease-out;
+}
+
+/* ==================================== */
+/* Typography                           */
+/* ==================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 20px; /* Standard bottom margin */
+  margin: 0 0 1.25rem; /* Equivalent to 20px */
+  font-weight: 700; /* Bold headings */
+  line-height: 1.3;
+  color: #000; /* Default black for headings */
+}
+
+h1 {
+  font-size: 32px;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+/* Base link styling */
+a {
+  color: #1a73e8; /* A vibrant blue for links, consistent with custom.css */
+  text-decoration: none;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+a:hover {
+  color: var(--highlight-color); /* Highlight color on hover for general links */
+}
+
+hr {
+  margin: 0 0 20px;
+  border: 0;
+  border-top: 1px solid #dadada; /* Light grey horizontal rule */
+}
+
+p {
+  margin: 0 0 20px;
+  margin: 0 0 1.25rem;
+}
+
+b,
+strong {
+  font: inherit;
+  font-weight: 700; /* Bold text */
+}
+
+i,
+em {
+  font: inherit;
+  font-style: italic; /* Italic text */
+}
+
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+small {
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+mark {
+  background-color: #fd5; /* Highlight background for marked text */
+}
+
+figure {
+  margin: 0 0 20px;
+  margin: 0 0 1.25rem;
+}
+
+figcaption {
+  margin-top: 4px;
+  margin-top: 0.25rem;
+  color: #666;
+}
+
+figcaption h4 {
+  margin: 0;
+  color: inherit;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--font-family-secondary); /* Use secondary/mono font */
+  font-size: inherit;
+}
+
+pre,
+code {
+  background-color: #f5f5f5; /* Light grey background for code blocks */
+  border: 1px solid #ebebeb; /* Light border for code blocks */
+}
+
+code {
+  padding: 0 5px;
+  color: #c33; /* Reddish color for inline code */
+}
+
+pre {
+  display: block;
+  padding: 0;
+  padding: 1.25rem;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  overflow: auto; /* Enable scrolling for long code blocks */
+  color: #000;
+}
+
+pre code {
+  padding: 0;
+  color: inherit;
+  white-space: inherit;
+  background: inherit;
+  border: 0;
+}
+
+kbd {
+  padding: 2px 3px;
+  color: #fff;
+  background-color: #2a2a2a; /* Dark background for keyboard input */
+}
+
+blockquote {
+  display: block;
+  padding: 5px 0 5px 15px;
+  margin: 0 0 20px;
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+  border-left: 5px solid var(--highlight-color); /* Highlight colored left border */
+}
+
+blockquote p:last-child {
+  margin: 0;
+}
+
+blockquote footer {
+  text-align: right;
+}
+
+sup,
+sub {
+  font-size: 10px;
+  font-size: 0.625rem;
+  font-style: normal;
+}
+
+sup {
+  vertical-align: super;
+}
+
+sub {
+  vertical-align: sub;
+}
+
+abbr[title] {
+  text-decoration: none;
+  cursor: help;
+  border-bottom: 1px dotted #000;
+}
+
+q {
+  font-style: italic;
+}
+
+address {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  font-family: "Consolas", Courier New, Courier, monospace;
+  line-height: 1.5;
+}
+
+dl {
+  margin: 0 0 10px 20px;
+}
+
+dt,
+dd {
+  display: list-item;
+}
+
+dt {
+  font-weight: bold;
+  list-style-type: square;
+}
+
+dd {
+  margin-left: 20px;
+  list-style-type: circle;
+}
+
+select {
+  max-width: 100%;
+}
+
+.warning {
+  padding: 20px 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.warning__icon {
+  margin-bottom: 20px;
+  fill: #ddd;
+}
+
+/* ==================================== */
+/* Header                               */
+/* ==================================== */
+.header {
+  background: #fff; /* White background for header */
+}
+
+.logo {
+  padding: 25px;
+}
+
+.logo__link {
+  display: inline-block;
+}
+
+.logo__item {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logo__img {
+  max-height: 256px;
+}
+
+.logo__text {
+  text-transform: uppercase;
+}
+
+.logo--mixed .logo__item {
+  margin: 0.5rem auto;
+}
+
+.logo--mixed .logo__img {
+  max-width: 128px;
+  max-height: 128px;
+}
+
+.logo--mixed .logo__text {
+  padding: 0 1rem;
+}
+
+.logo__title {
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+}
+
+.logo__tagline {
+  display: inline-block;
+  padding-top: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--highlight-color); /* Tagline uses highlight color */
+  border-top: 1px solid #ebebeb;
+}
+
+.divider {
+  height: 5px;
+  margin: 0;
+  background: var(--highlight-color); /* Divider uses highlight color */
+  border: 0;
+}
+
+/* Custom header logo (merged and prioritized from custom.css, adapted for menu integration) */
+.my-header-logo {
+  display: flex; /* Kept flex for internal logo image/text layout */
+  justify-content: center; /* Centers content within the logo area */
+  margin: 0; /* RESET: Remove default margins that might conflict with menu's flexbox */
+  direction: rtl; /* Right-to-left layout for logo content */
+  text-align: right;
+  font-size: 30px; /* Base font size for logo content */
+  /* No top/bottom margin here, controlled by .menu's align-items */
+}
+
+.my-logo-wrapper {
+  display: flex;
+  flex-direction: row; /* Image on right, text on left */
+  align-items: center;
+  gap: 6rem; /* PRIORITIZED: Larger gap from custom.css */
+  margin: 0; /* RESET: Ensure no extra margin from here */
+}
+
+.my-logo-image {
+  height: 100px; /* PRIORITIZED: Height from custom.css */
+  width: auto;
+  margin-right: 0; /* Adjusted to let gap handle spacing */
+}
+
+.my-logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.my-logo-title {
+  font-size: 1.8rem; /* PRIORITIZED: Larger font from custom.css */
+  font-weight: bold;
+  margin: 0;
+}
+
+.my-logo-subtitle {
+  font-size: 1.3rem; /* PRIORITIZED: Larger font from custom.css */
+  color: #0c47a1; /* Kept dark blue from custom.css */
+  margin: 0;
+}
+
+/* Responsive adjustments for header logo on smaller screens (merged from custom.css) */
+@media (max-width: 768px) {
+  .my-logo-wrapper {
+    flex-direction: column; /* Image above text on mobile */
+    align-items: center;
+    text-align: center;
+    gap: 0;
+  }
+
+  .my-logo-text {
+    align-items: center;
+  }
+
+  .my-logo-title {
+    font-size: 1.5rem;
+  }
+
+  .my-logo-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .my-logo-image {
+    height: 80px; /* Smaller image for mobile */
+    margin-right: 0;
+  }
+}
+
+/* ==================================== */
+/* Main Menu                            */
+/* ==================================== */
+.menu {
+    display: flex; /* Makes the menu a flex container */
+    align-items: center; /* Vertically centers items */
+    justify-content: flex-start; /* Aligns items to the start initially */
+    background: white;
+    padding: 10px 20px; /* Added some padding around the menu */
+}
+
+/* Rule to push the logo to the far right on desktop */
+.menu .my-header-logo {
+    margin-left: auto; /* Pushes the logo to the far right */
+}
+
+
+.no-js .menu__btn {
+  display: none;
+}
+
+.menu__btn {
+  display: block; /* Default to block, will be hidden by media query on desktop */
+  width: 100%; /* For mobile, button takes full width before JS transforms */
+  padding: 0;
+  font: inherit;
+  color: #fff;
+  background: #00ACC1;
+  border: 0;
+  outline: 0;
+}
+
+.menu__btn-title {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  padding: 0.625rem 0.9375rem;
+  font-weight: 700;
+  text-align: right;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+:focus > .menu__btn-title {
+  box-shadow: inset 0 0 1px 3px var(--highlight-color);
+}
+
+button:not(:-moz-focusring):focus > .menu__btn-title {
+  box-shadow: none;
+}
+
+.menu__btn:focus,
+.menu__btn-title:focus {
+  outline: 0;
+}
+
+.menu__list {
+  list-style: none;
+  background: none;
+  margin-left: 0; /* Reset for general case, specific rules apply in media queries */
+  transition: visibility 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
+}
+
+.menu__item:hover {
+  background: var(--highlight-color); /* Highlight color on hover */
+}
+
+.menu__item:first-child {
+  border: 0;
+}
+
+.menu__item--active { /* This class is for current active page, not JS toggle */
+  background: var(--highlight-color); /* Highlight color for active item */
+}
+
+.menu__link {
+  display: block;
+  padding: 10px 15px;
+  padding: 0.725rem 1rem;
+  font-weight: 600;
+  color: #514c4c;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.menu__link:hover {
+  color: #fff;
+}
+
+/* Mobile menu default state (hidden) and active state (visible) */
+@media screen and (max-width: 768px) {
+  .menu {
+      flex-direction: row; /* Burger on left, Logo on right */
+      justify-content: space-between; /* Space out burger and logo */
+      padding: 10px 15px; /* Adjust padding for mobile */
+  }
+
+  .menu__btn {
+      display: block; /* Show burger button on mobile */
+      order: -1; /* Place burger button on the far left */
+      width: auto; /* Allow button to size naturally */
+  }
+
+  /* Reset the logo's auto margin for mobile */
+  .menu .my-header-logo {
+      margin-left: 0; /* Reset auto-margin, let flexbox handle */
+  }
+
+  /* Define the default hidden state of the mobile menu */
+  .menu__list {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      visibility: hidden; /* Hidden by default */
+      -webkit-transform: scaleY(0); /* Collapsed by default */
+      transform: scaleY(0);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      
+      /* Additional styling for the mobile menu when collapsed/default */
+      top: 100%; /* Position it below the header */
+      left: 0;
+      right: 0;
+      background-color: white; /* Background for the mobile menu dropdown */
+      flex-direction: column; /* Stack items vertically in mobile menu */
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      padding: 10px 0;
+  }
+
+  /* Define the active (open) state of the mobile menu using is-active */
+  .menu__list.is-active { /* Replaces .js .menu__list--active */
+      visibility: visible;
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      display: flex; /* Ensure it uses flex layout for its items once active */
+  }
+
+  .menu .menu__item {
+      width: 100%;
+      text-align: center;
+  }
+
+  .menu .menu__link {
+      padding: 10px 20px;
+      display: block;
+  }
+}
+
+/* Desktop screen styles (min-width: 767px) - ensures proper reset from mobile styles */
+@media screen and (min-width: 767px) {
+  .menu {
+    border-bottom: 0px solid var(--highlight-color);
+    flex-direction: row; /* Ensure default direction for desktop */
+    justify-content: flex-start; /* Aligns menu items and button to the left */
+  }
+
+  .menu__btn {
+    display: none; /* Hide burger button on desktop */
+  }
+
+  .menu__list {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    visibility: visible; /* Always visible on desktop */
+    border: 0;
+    -webkit-transform: none; /* No scale transform on desktop */
+    transform: none;
+    justify-content: flex-start;
+    /* Reset mobile-specific styles for desktop */
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    top: auto;
+    left: auto;
+    right: auto;
+    flex-direction: row; /* Menu items in a row on desktop */
+    margin-left: initial; /* Reset any unwanted margin for menu list on desktop */
+  }
+
+  /* Re-apply auto-margin for logo on desktop to push it right */
+  .menu .my-header-logo {
+      margin-left: auto; /* Pushes the logo to the far right on desktop */
+  }
+
+  .menu__item {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ==================================== */
+/* Posts / Pages (General)              */
+/* ==================================== */
+.post__header,
+.main__header {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.main__title {
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+
+.main__content {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.meta {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  vertical-align: baseline;
+}
+
+.meta,
+.meta a {
+  color: #666;
+}
+
+.meta a:hover {
+  color: var(--highlight-color);
+}
+
+.meta__item {
+  display: inline;
+  margin-left: 15px;
+}
+
+.meta__item:first-child {
+  margin-left: 0;
+}
+
+.meta__icon {
+  margin-right: 5px;
+  vertical-align: middle;
+  fill: #c4c4c4;
+}
+
+.meta__text {
+  vertical-align: middle;
+}
+
+.post__title {
+  margin: 0;
+}
+
+.post__meta {
+  padding: 5px 0;
+  margin-top: 10px;
+  margin-top: 0.625rem;
+  border-top: 1px dotted #ebebeb;
+  border-bottom: 1px dotted #ebebeb;
+}
+
+.post__lead {
+  margin-top: 4px;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.post__thumbnail {
+  max-width: 1030px;
+  margin: 0 0 20px;
+  margin-bottom: 0 0 1.25rem;
+}
+
+.post__thumbnail img {
+  width: 100%;
+}
+
+.content a,
+.warning a,
+.authorbox__description a {
+  font-weight: 700;
+  color: var(--highlight-color); /* Highlight color for links in content/warning/authorbox */
+}
+
+.content a:hover,
+.warning a:hover,
+.authorbox__description a:hover {
+  color: var(--highlight-color);
+  text-decoration: underline;
+}
+
+.content .alignnone {
+  display: block;
+  margin: 20px 0;
+  margin: 1.25rem 0;
+}
+
+.content .aligncenter {
+  display: block;
+  margin: 20px auto;
+  margin: 1.25rem auto;
+}
+
+.content .alignleft {
+  display: inline;
+  float: left;
+  margin: 5px 20px 20px 0;
+  margin: 0.3125rem 1.25rem 1.25rem 0;
+}
+
+.content .alignright {
+  display: inline;
+  float: right;
+  margin: 5px 0 20px 20px;
+  margin: 0.3125rem 0 1.25rem 1.25rem;
+}
+
+.content ul {
+  list-style: square;
+}
+
+.content ol {
+  list-style: decimal;
+}
+
+.content ul,
+.content ol {
+  margin: 0 40px 20px 40px;
+}
+
+.content ul ul,
+.content ol ol,
+.content ol ul,
+.content ul ol {
+  margin: 0 0 0 40px;
+}
+
+.content li {
+  margin-bottom: 5px;
+}
+
+.post__footer {
+  margin-top: 20px;
+  margin-top: 1.25rem;
+}
+
+/* Post tags */
+.tags {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  font-size: 12px;
+  line-height: 1;
+  color: #fff;
+  display: flex;
+}
+
+.tags__list {
+  list-style: none;
+}
+
+.tags__item {
+  float: left;
+  margin: 0 6px 6px 0;
+  margin: 0 0.375rem 0.375rem 0;
+  text-transform: uppercase;
+  background: var(--highlight-color); /* Tags background is highlight color */
+}
+
+.tags__item:hover {
+  background: var(--highlight-color); /* Maintain highlight color on hover */
+}
+
+.tags__link,
+.tags__link:hover {
+  display: block;
+  padding: 10px 15px;
+}
+
+.tags__badge {
+  float: left;
+  width: 45px;
+  height: 40px;
+  padding: 8px;
+  margin-right: 6px;
+  background: #1a73e8; /* (custom.css override) */
+  fill: #fff;
+}
+
+/* Table of Contents */
+.toc {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #7a8288;
+  background: #fff;
+  border-color: #ebebeb;
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 0;
+  border-left-width: 1px;
+}
+
+.toc__title {
+  padding: 5px 10px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  background: #2a2a2a;
+}
+
+.toc__menu ul {
+  margin: 0;
+  list-style: none;
+}
+
+.toc__menu li li a {
+  padding-left: 25px;
+}
+
+.toc__menu li li li a {
+  padding-left: 45px;
+}
+
+.toc__menu li li li li a {
+  padding-left: 65px;
+}
+
+.toc__menu li li li li li a {
+  padding-left: 85px;
+}
+
+.toc__menu li li li li li li a {
+  padding-left: 105px;
+}
+
+.toc__menu li {
+  margin: 0;
+}
+
+.toc__menu a {
+  display: block;
+  padding: 5px 10px;
+  color: var(--highlight-color); /* TOC links use highlight color */
+  border-bottom: 1px solid #ebebeb;
+}
+
+.toc__menu a:hover {
+  text-decoration: underline;
+}
+
+/* Author Box (Generic) */
+.authorbox {
+  padding: 25px 0;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.authorbox__avatar {
+  float: left;
+  padding: 3px;
+  margin: 0 25px 0 0;
+  border: 1px solid #ebebeb;
+}
+
+.authorbox__header {
+  margin-bottom: 10px;
+}
+
+.authorbox__name {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Custom Author Box (merged from custom.css) */
 .widget.custom-authorbox {
   text-align: center;
   color: #bfbfbf;
@@ -97,89 +1095,477 @@
   margin: 0 auto;
 }
 
-.my-header-logo {
-  display: flex;
-  justify-content: center;  /* ממורכז בתוך ההדר */
-  margin: 20px 0;
-  direction: rtl;
+/* ==================================== */
+/* List Content                           */
+/* ==================================== */
+/* Post list item styling (merged and prioritized from custom.css) */
+.list__item.post {
+  background: #ffffff; /* Explicitly white from custom.css */
+  border-radius: 12px; /* More rounded corners */
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect for post cards */
+.list__item.post:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+/* Post title in list */
+.list__title.post__title {
+  font-size: 1.6rem; /* PRIORITIZED: Larger font from custom.css */
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #1a3e6e; /* Dark blue title color from custom.css */
+}
+
+.list__title.post__title a {
+  color: inherit; /* Inherit color from parent */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.list__title.post__title a:hover {
+  color: #0c47a1; /* Darker blue on hover from custom.css */
+}
+
+/* Post lead/short description */
+.list__lead.post__lead {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+/* Post metadata (from custom.css, overrides general meta if applied to post lists) */
+.list__meta.meta {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 1rem;
+}
+
+/* Post excerpt/content summary */
+.list__excerpt.post__content {
+  font-size: 1.1rem; /* PRIORITIZED: Larger excerpt font from custom.css */
+  color: #1a3e6e; /* Dark grey text from custom.css */
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* "Read more" button for list items (merged and prioritized from custom.css) */
+.list__footer-readmore.btn {
+  background-color: #1a73e8; /* PRIORITIZED: Specific blue from custom.css */
+  color: white;
+  padding: 10px 20px; /* Adjusted padding */
+  border-radius: 5px; /* Less rounded corners */
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(26, 115, 232, 0.4);
+  display: inline-block; /* Ensure display is set */
+}
+
+.list__footer-readmore.btn:hover {
+  background-color: #0c47a1; /* Darker shade on hover */
+  box-shadow: 0 6px 15px rgba(12, 71, 161, 0.5);
+}
+
+/* ==================================== */
+/* Pagination                           */
+/* ==================================== */
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination__item {
+  display: inline-block;
+  padding: 10px 15px;
+  font-weight: 700;
+  color: #000;
+  background: #f5f5f5;
+}
+
+.pagination__item:hover,
+.pagination__item--current {
+  color: #fff;
+  background: var(--highlight-color);
+}
+
+/* Pager (prev/next links) navigation */
+.pager {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.pager__subtitle {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.pager__title {
+  margin-bottom: 0;
+  overflow: hidden;
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+
+.pager__item {
+  -webkit-flex: 1 1 50%;
+  flex: 1 1 50%;
+  max-width: 48%;
+}
+
+.pager__item--next {
+  margin-left: auto;
   text-align: right;
-  font-size: 30px;
-} 
-
-.my-logo-wrapper {
-  display: flex;
-  flex-direction: row; /* תמונה מימין, טקסט משמאל */
-  align-items: center;
-  gap: 6rem;
-  margin-top: 25px;
 }
 
-.my-logo-image {
-  height: 100px;
-  width: auto;
-  margin-right: 25px;
+.pager__link {
+  display: block;
 }
 
-.my-logo-text {
+/* ==================================== */
+/* Images / Video                       */
+/* ==================================== */
+img {
+  width: auto\9; /* IE8 fallback */
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+iframe,
+embed,
+object,
+video {
+  max-width: 100%;
+}
+
+/* Custom image styling */
+.custom-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================================== */
+/* Table                                */
+/* ==================================== */
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-top: 1px solid #ebebeb;
+  border-left: 1px solid #ebebeb;
+}
+
+td,
+th {
+  padding: 5px 10px;
+  border-right: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+th {
+  font-weight: 700;
+}
+
+/* ==================================== */
+/* Forms                                */
+/* ==================================== */
+input {
+  padding: 5px;
+  font-size: 12px;
+  vertical-align: middle;
+  background: #f5f5f5;
+  border: 1px solid #ebebeb;
+  transition: all 0.25s ease-in-out;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=url] {
+  width: 60%;
+}
+
+input[type=text]:hover,
+input[type=email]:hover,
+input[type=tel]:hover,
+input[type=url]:hover,
+textarea:hover {
+  border: 1px solid #aaa;
+}
+
+input[type=submit],
+input[type=reset] {
+  display: inline-block;
+  min-width: 150px;
+  padding: 10px 15px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #2a2a2a;
+  border: 0;
+  transition: all 0.1s linear;
+  -webkit-appearance: none;
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover {
+  background: var(--highlight-color);
+}
+
+textarea {
+  width: 96%;
+  padding: 5px;
+  overflow: auto;
+  line-height: 1.5;
+  resize: vertical;
+  background: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ==================================== */
+/* Widgets                              */
+/* ==================================== */
+.widget {
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.widget:last-child {
+  margin-bottom: 0;
+}
+
+.widget__title {
+  position: relative;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--highlight-color); /* Widget title border uses highlight color */
+}
+
+.widget__item {
+  display: block;
+  padding: 5px 0;
+  border-bottom: 1px dotted #ebebeb;
+}
+
+.widget__item:first-child {
+  padding-top: 0;
+}
+
+.widget__counter--bubble {
+  display: inline-block;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  color: #666;
+  text-align: center;
+  background: #ebebeb;
+  border-radius: 2em;
+}
+
+/* Search widget */
+.widget-search__form {
+  padding: 16px 24px;
+  background: #f5f5f5;
+}
+
+.widget-search__submit[type=submit] {
+  display: none;
+}
+
+.widget-search__field {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 13px;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  outline-offset: -2px;
+  transition: none;
+  -webkit-appearance: none;
+}
+
+.widget-search__field:active,
+.widget-search__field:focus {
+  cursor: text;
+  outline: 2px solid #005fcc;
+}
+
+/* Social links widget (merged from custom.css) */
+.social-links-widget {
+  background-color: transparent;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.social-links-widget .widget-title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.social-icons-circular {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  direction: rtl;
 }
 
-.my-logo-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin: 0;
+.social-icons-circular li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #e0e0e0; /* אפור בהיר */
+  color: white;
+  font-size: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.my-logo-subtitle {
-  font-size: 1.3rem;
+.social-icons-circular li a i {
+  color: white;
+}
+
+.social-icons-circular li a:hover {
+  transform: scale(1.1);
+  background-color: #bdbdbd; /* כהה יותר בקצת */
+}
+
+/* Social widget (Generic, from base theme) */
+.widget-social__item {
+  padding: 0;
+  border: 0;
+}
+
+.widget-social__link {
+  display: block;
+  margin: 0 0 8px;
+  white-space: normal;
+}
+
+.widget-social__link-icon {
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+  fill: #fff;
+}
+
+/* Tags Widget */
+.widget-taglist__link {
+  display: inline-block;
+  margin: 0 4px 8px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* Languages Widget */
+.widget-languages__link {
+  display: block;
+}
+
+.widget-languages__link:hover .widget-languages__link-btn {
+  color: #fff;
+  background: var(--highlight-color);
+}
+
+.widget-languages__link-btn {
+  display: inline-block;
+}
+
+/* Custom sidebar (merged from custom.css) */
+.sidebar-custom {
+  background: transparent;
+  padding: 20px;
+  font-family: 'Varela Round', sans-serif;
+  color: #2c3e50;
+}
+
+.sidebar-custom h2,
+.sidebar-custom h3 {
+  color: #1a3e6e;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.sidebar-custom a {
+  color: #1a73e8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar-custom a:hover {
   color: #0c47a1;
-  margin: 0;
 }
 
-/* 🌐 התאמה למסכים צרים */
-@media (max-width: 768px) {
-  .my-logo-wrapper {
-    flex-direction: column; /* תמונה מעל טקסט */
-    align-items: center;
-    text-align: center;
-    gap: 0;
-  }
-
-  .my-logo-text {
-    align-items: center;
-  }
-
-  .my-logo-title {
-    font-size: 1.5rem;
-  }
-
-  .my-logo-subtitle {
-    font-size: 0.9rem;
-  }
-
-  .my-logo-image {
-    height: 80px; /* יותר מתאים לנייד */
-  }
+/* ==================================== */
+/* Footer                               */
+/* ==================================== */
+.footer {
+  padding: 10px 25px;
+  font-size: 12px;
+  font-size: 0.75rem;
+  color: #999;
+  background: #2a2a2a; /* Dark background for footer */
+  border-top: 3px solid #999; /* Grey top border */
 }
 
+.footer__container {
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
 
+.footer__links {
+  -webkit-order: 1;
+  order: 1;
+}
 
+.footer a {
+  color: #fff; /* White links in footer */
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer__copyright {
+  /* No specific styles provided in current input, but often used for copyright text alignment */
+}
+
+/* ==================================== */
+/* Homepage Main Content (merged and prioritized from custom.css) */
+/* ==================================== */
 main.homepage {
   max-width: 1100px;
   margin: 40px auto;
   padding: 30px 20px;
-  background: linear-gradient(135deg, #ffffff, #ffffff);
+  background: linear-gradient(135deg, #ffffff, #ffffff); /* Solid white background */
   border-radius: 0px;
-  
   font-family: 'Varela Round', sans-serif;
   color: #2c3e50;
   line-height: 1.6;
   transition: background-color 0.3s ease;
 }
-
-
 
 main.homepage h1,
 main.homepage h2,
@@ -197,7 +1583,6 @@ main.homepage p {
 main.homepage a {
   color: #1a73e8;
   text-decoration: none;
-  
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
@@ -206,7 +1591,7 @@ main.homepage a:hover {
   border-color: #0c47a1;
 }
 
-/* כפתורים בתוך main.homepage */
+/* Buttons within main.homepage */
 main.homepage .btn {
   display: inline-block;
   padding: 12px 28px;
@@ -227,7 +1612,7 @@ main.homepage .btn:hover {
   box-shadow: 0 10px 25px rgba(12, 71, 161, 0.6);
 }
 
-/* תגובות ויזואליות קטנות */
+/* Blockquotes in homepage main content */
 main.homepage blockquote {
   border-left: 5px solid #1a73e8;
   padding-left: 15px;
@@ -238,400 +1623,173 @@ main.homepage blockquote {
   border-radius: 2px;
 }
 
-/* רספונסיביות */
-@media (max-width: 768px) {
-  main.homepage {
-    margin: 20px 10px;
-    padding: 20px 15px;
-  }
-
-  main.homepage .btn {
-    padding: 10px 24px;
-    font-size: 0.9rem;
-  }
-}
-.sidebar-custom {
-  background: transparent;
-  padding: 20px;
-  font-family: 'Varela Round', sans-serif;
-  color: #2c3e50;
-}
-
-.sidebar-custom h2, 
-.sidebar-custom h3 {
-  color: #1a3e6e;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-}
-
-.sidebar-custom a {
-  color: #1a73e8;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.sidebar-custom a:hover {
-  color: #0c47a1;
-}
-/* עיצוב כללי לרשומות */
-.list__item.post {
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease;
-}
-
-/* האפקט בריחוף */
-.list__item.post:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-}
-
-/* כותרת הפוסט */
-.list__title.post__title {
-  font-size: 1.6rem;
-  margin-bottom: 0.5rem;
-  color: #1a3e6e;
-}
-
-.list__title.post__title a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.list__title.post__title a:hover {
-  color: #0c47a1;
-}
-
-/* תיאור קצר */
-.list__lead.post__lead {
-  font-size: 1.05rem;
-  color: #555;
-  margin-bottom: 0.8rem;
-}
-
-/* מטאדאטה */
-.list__meta.meta {
-  font-size: 0.9rem;
-  color: #999;
-  margin-bottom: 1rem;
-}
-
-/* תקציר הפוסט */
-.list__excerpt.post__content {
-  font-size: 1.1rem;
-  color: #1a3e6e;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-/* כפתור "קרא עוד" */
-.list__footer-readmore.btn {
-  background-color: #1a73e8;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(26, 115, 232, 0.4);
-}
-
-.list__footer-readmore.btn:hover {
-  background-color: #0c47a1;
-  box-shadow: 0 6px 15px rgba(12, 71, 161, 0.5);
-}
-
-/* רספונסיביות */
-@media (max-width: 768px) {
-  .list__item.post {
-    padding: 15px;
-  }
-
-  .list__title.post__title {
-    font-size: 1.3rem;
-  }
-
-  .list__lead.post__lead {
-    font-size: 1rem;
-  }
-
-  .list__excerpt.post__content {
-    font-size: 0.95rem;
-  }
-/* עיצוב לכרטיס פוסט ברשימה */
-.list__item.post {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-/* כותרת הפוסט */
-.list__title.post__title {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-}
-
-/* תקציר */
-.list__excerpt.post__content {
-  color: #555;
-  font-size: 1.1rem;
-}
-
-/* כפתור "קרא עוד" */
-.list__footer-readmore.btn {
-  background-color: #1f5fa9;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  display: inline-block;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-.list__footer-readmore.btn:hover {
-  background-color: #174a84;
-}
-body {
-  font-family: "Assistant", sans-serif;
-}
-code, pre {
-  font-family: "IBM Plex Mono", monospace;
-
-}
-  }
-   
-/* static/css/style.css - עיצוב למקטע השירותים */
-.services-section {
-    padding: 60px 20px; /* הגדלנו ריפוד עליון/תחתון */
-    text-align: center;
-    background-color: var(--theme-background-color, #ffffff); /* השתמש במשתנה CSS אם קיים בתבנית, אחרת לבן */
-    margin: 40px auto; /* מרווח גדול יותר מלמעלה ולמטה */
-    max-width: 1200px;
-    border-radius: 10px; /* פינות מעוגלות עדינות */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* צל עדין יותר */
-    overflow: hidden; /* למניעת גלילה לא רצויה עם צללים */
-}
-
-/* כותרת המקטע */
-.section-title {
-    font-size: 2.2em; /* הוקטן מעט את הגופן */
-    margin-bottom: 40px;
-    color: var(--heading-color, #2c3e50); /* צבע כותרת כהה, השתמש במשתנה אם קיים */
-    text-align: center; /* יישור הכותרת למרכז */
-    position: relative;
-    display: inline-block; /* כדי שה-`::after` יעבוד כראוי מתחת לטקסט */
-    padding-bottom: 10px; /* רווח לתחתית הקו */
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 100px; /* רוחב קו תחתון */
-    height: 4px;
-    background-color: var(--primary-color, #007bff); /* צבע הדגשה, השתמש במשתנה אם קיים */
-    margin: 10px auto 0; /* מרכוז הקו התחתון */
-    border-radius: 2px;
-}
-
-/* רשת הפריטים */
-.services-grid {
-    display: grid; /* וודא שהרשת תמיד מוצגת */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 300px זה סביר גם למסכים בינוניים */
-    gap: 30px; /* מרווח גדול יותר בין הפריטים */
-    justify-content: center;
-    direction: rtl; /* לוודא שהפריטים נצמדים מימין לשמאל */
-}
-
-/* פריט שירות בודד */
-.service-item {
-    background-color: var(--card-background-color, #ffffff); /* רקע לבן לכרטיס */
-    border-radius: 10px; /* פינות מעוגלות עדינות */
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* צל עדין יותר לכרטיס */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: right;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* אנימציית ריחוף */
-}
-
-.service-item:hover {
-    transform: translateY(-8px); /* תזוזה קלה למעלה בריחוף */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* צל בולט יותר בריחוף */
-}
-
-/* תמונת השירות */
-.service-img {
-    width: 100%;
-    height: 220px; /* גובה קבוע לתמונה */
-    overflow: hidden;
-}
-
-.service-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* יבטיח שהתמונה תמלא את השטח ותשמור על פרופורציות */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-/* טקסט בתוך פריט השירות */
-.service-text {
-    padding: 25px; /* ריפוד גדול יותר */
-    flex-grow: 1; /* יגרום לטקסט למלא את השטח הזמין */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* יישור תוכן התיבה למרכז - **שונה כדי למרכז את הכפתור** */
-    text-align: center; /* יישור טקסט למרכז בתוך התיבה */
-}
-
-.service-text h3 {
-    font-size: 1.6em;
-    margin-top: 0;
-    margin-bottom: 12px;
-    color: var(--secondary-color, #0056b3); /* צבע הדגשה לכותרת השירות */
-    font-weight: 700; /* מודגש */
-}
-
-.service-text p {
-    font-size: 1.05em;
-    color: var(--text-color-light, #555); /* גוון אפור עדין לפסקאות */
-    margin-bottom: 20px;
-}
-
-/* קישור "קרא עוד" - הכפתור המעודכן */
+/* ==================================== */
+/* Specific Custom Links & CTAs         */
+/* ==================================== */
 .custom-link {
-    display: inline-block;
-    background-color: transparent; /* רקע שקוף */
-    color: var(--primary-color, #007bff); /* טקסט כחול עדין */
-    padding: 12px 20px;
-    border: 1px solid var(--primary-color, #007bff); /* שוליים דקים כחולים */
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* הוספנו מעבר צבע לכיתוב */
-    margin-top: auto; /* ידחוף את הקישור לתחתית התיבה */
-    font-weight: 600;
-    box-shadow: none; /* הסרנו צל מהכפתור עצמו */
+  /* This custom-link is used both in services-section and as a general link.
+     Prioritizing services-section specific styling from custom.css */
+  display: inline-block;
+  background-color: transparent; /* Transparent background */
+  color: var(--primary-color, #007bff); /* Subtle blue text */
+  padding: 12px 20px;
+  border: 1px solid var(--primary-color, #007bff); /* Thin blue border */
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  margin-top: auto; /* Pushes link to bottom of container */
+  font-weight: 600;
+  box-shadow: none; /* Removed shadow from button itself */
 }
 
 .custom-link:hover {
-    background-color: var(--primary-color, #007bff); /* רקע כחול במעבר עכבר */
-    color: white; /* טקסט לבן במעבר עכבר */
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3); /* צל קטן במעבר עכבר */
+  background-color: var(--primary-color, #007bff); /* Blue background on hover */
+  color: white; /* White text on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3); /* Small shadow on hover */
 }
 
-/* התאמות רספונסיביות */
-@media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: 1fr; /* עמודה אחת במובייל */
-        gap: 20px;
-    }
-    .service-item {
-        margin: 0 auto; /* מרכוז במובייל */
-        max-width: 350px; /* הגבלת רוחב לכרטיס במובייל */
-    }
-    .section-title {
-        font-size: 2em;
-        margin-bottom: 30px;
-    }
-    .services-section {
-        padding: 40px 15px;
-    }
-}
-@media (min-width: 769px) { /* כללים ספציפיים למסכים רחבים יותר */
-    .services-grid {
-        grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 עמודות במסכים רחבים כברירת מחדל */
-    }
+
+.internal-link {
+  color: #004466; /* Darker blue for internal links */
 }
 
-/* --- CTA Box Styles --- */
+.external-link {
+  color: #cc3300; /* Red for external links */
+}
 
+a.contact-link {
+  color: #6cbec1; /* Teal for contact links */
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.2em
+}
+
+a.contact-link:hover {
+  text-decoration: none;
+}
+
+a.contact-link .contact-icon {
+  display: inline-block;
+  margin-right: 0em;
+  font-family: sans-serif;
+  font-size: 1.8em;
+}
+
+.header--home {
+  background-image: url('/img/hero.webp'); /* Hero image for home header */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 800px;
+}
+
+.cta-therapy-box h2 {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 1.9rem;
+}
+
+.cta-therapy-box p {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #00695c; /* Dark green for CTA paragraph */
+}
+
+.cta-therapy-button {
+  background-color: #00796b; /* Medium green for CTA button */
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.cta-therapy-button:hover {
+  background-color: #004d40; /* Dark green on hover */
+}
+
+/* --- CTA Box Styles (merged from custom.css) --- */
 .cta-box {
-    /* מיקום וריכוז התיבה */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* ממורכז אנכית אם יש גובה מוגדר */
-    align-items: center;     /* ממורכז אופקית */
-    text-align: center;      /* יישור טקסט פנימי */
-    max-width: 700px;        /* רוחב מקסימלי לתיבה כדי למנוע מתיחה יתר */
-    margin: 50px auto;       /* ריווח עליון/תחתון ואוטו לריכוז אופקי */
-    padding: 30px 20px;      /* ריווח פנימי */
-    
-    /* מראה כללי */
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* רקע גרדיאנט מושך עין */
-    color: #ffffff;           /* צבע טקסט לבן */
-    border-radius: 12px;       /* פינות מעוגלות יותר */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* צל עמוק ומושך */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* אנימציות למעבר עכבר */
-    overflow: hidden;         /* לוודא ששום דבר לא יוצא מהגבולות המעוגלים */
+    justify-content: center; /* Centered vertically if height is defined */
+    align-items: center;    /* Centered horizontally */
+    text-align: center;     /* Aligns internal text */
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Eye-catching gradient background */
+    color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
 .cta-box:hover {
-    transform: translateY(-5px); /* אפקט קל של הרמה במעבר עכבר */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35); /* צל עמוק יותר במעבר עכבר */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35); /* Deeper shadow on hover */
 }
 
 .cta-box h2 {
-    font-size: 2.5em;          /* גודל כותרת גדול וברור */
-    margin-bottom: 15px;       /* ריווח תחתון לכותרת */
-    font-weight: 700;          /* מודגש מאוד */
-    line-height: 1.2;          /* מרווח שורות נוח */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* צל קל לטקסט */
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .cta-box p {
-    font-size: 1.2em;          /* גודל פסקה נוח לקריאה */
-    margin-bottom: 25px;       /* ריווח תחתון לפסקה */
-    opacity: 0.9;              /* מעט שקיפות לפסקה */
-    max-width: 600px;          /* רוחב מקסימלי לפסקה בתוך התיבה */
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    max-width: 600px;
 }
 
-/* --- CTA Button Styles --- */
-
+/* --- CTA Button Styles (merged from custom.css) --- */
 .cta-button {
-    display: inline-block;     /* מאפשר הגדרת padding ו-margin */
-    background-color: #ffcc00; /* צבע כפתור בולט (צהוב-זהב) */
-    color: #2575fc;            /* צבע טקסט בכפתור (כחול כהה של הגרדיאנט) */
-    padding: 15px 35px;        /* ריווח פנימי גדול לכפתור */
-    text-decoration: none;     /* הסרת קו תחתון מקישור */
-    border-radius: 50px;       /* פינות מעוגלות מאוד (כפתור בצורת "גלולה") */
-    font-weight: 700;          /* טקסט מודגש */
-    font-size: 1.1em;          /* גודל גופן נוח */
-    letter-spacing: 0.5px;     /* ריווח אותיות קל */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* צל לכפתור */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* אנימציות למעבר עכבר */
-    border: none;              /* לוודא שאין גבול לכפתור */
+    display: inline-block;
+    background-color: #ffcc00; /* Prominent button color (yellow-gold) */
+    color: #2575fc; /* Text color matching gradient blue */
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
 }
 
 .cta-button:hover {
-    background-color: #e6b800; /* צבע כפתור כהה יותר במעבר עכבר */
-    transform: translateY(-2px); /* אפקט לחיצה קל */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* צל עמוק יותר במעבר עכבר */
+    background-color: #e6b800; /* Darker button color on hover */
+    transform: translateY(-2px); /* Slight press effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
 }
 
-/* --- Responsive Adjustments --- */
-
+/* --- Responsive Adjustments for CTA (merged from custom.css) --- */
 @media (max-width: 768px) {
     .cta-box {
-        margin: 30px 15px; /* מרווח קטן יותר בצדדים במסכים קטנים */
+        margin: 30px 15px;
         padding: 25px 15px;
     }
 
     .cta-box h2 {
-        font-size: 2em; /* כותרת מעט קטנה יותר */
+        font-size: 2em;
     }
 
     .cta-box p {
-        font-size: 1em; /* פסקה מעט קטנה יותר */
+        font-size: 1em;
     }
 
     .cta-button {
-        padding: 12px 30px; /* כפתור קטן יותר */
+        padding: 12px 30px;
         font-size: 1em;
     }
 }
@@ -656,3 +1814,293 @@ code, pre {
     }
 }
 
+/* ==================================== */
+/* Services Section (merged from custom.css) */
+/* ==================================== */
+.services-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--theme-background-color, #ffffff);
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: var(--heading-color, #2c3e50);
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: var(--primary-color, #007bff);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    direction: rtl;
+}
+
+.service-item {
+    background-color: var(--card-background-color, #ffffff);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: right; /* Text aligned right within item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-img {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.service-text {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centered content within text box */
+    text-align: center; /* Centered text within text box */
+}
+
+.service-text h3 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--secondary-color, #0056b3);
+    font-weight: 700;
+}
+
+.service-text p {
+    font-size: 1.05em;
+    color: var(--text-color-light, #555);
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments for Services (merged from custom.css) */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+    .service-item {
+        margin: 0 auto;
+        max-width: 350px;
+    }
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .services-section {
+        padding: 40px 15px;
+    }
+}
+@media (min-width: 769px) { /* Specific rules for wider screens */
+    .services-grid {
+        grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 columns on wide screens by default */
+    }
+}
+
+/* ==================================== */
+/* Media Queries (Responsive Design)    */
+/* ==================================== */
+@media screen and (max-width: 1475px) {
+  .container--outer {
+    width: 95%; /* Adjust outer container width */
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container--outer {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .wrapper,
+  .logo {
+    padding: 20px;
+  }
+
+  .widget {
+    margin-bottom: 20px;
+  }
+
+  .footer__container {
+    display: block;
+  }
+
+  .footer__links {
+    padding-bottom: 8px;
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .footer__copyright {
+    text-align: center;
+  }
+}
+
+/* Mobile-specific adjustments: 768px and below */
+@media screen and (max-width: 768px) {
+  /* Responsive adjustments for homepage main content */
+  main.homepage {
+    margin: 20px 10px;
+    padding: 20px 15px;
+  }
+
+  main.homepage .btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive adjustments for post list items */
+  .list__item.post {
+    padding: 15px;
+  }
+
+  .list__title.post__title {
+    font-size: 1.3rem;
+  }
+
+  .list__lead.post__lead {
+    font-size: 1rem;
+  }
+
+  .list__excerpt.post__content {
+    font-size: 0.95rem; /* Prioritized from custom.css */
+  }
+
+  /* Menu specific overrides for mobile */
+  .menu {
+      flex-direction: row; /* Burger on left, Logo on right */
+      justify-content: space-between; /* Space out burger and logo */
+      padding: 10px 15px; /* Adjust padding for mobile */
+  }
+
+  .menu__btn {
+      display: block; /* Show burger button on mobile */
+      order: -1; /* Place burger button on the far left */
+      width: auto; /* Allow button to size naturally */
+  }
+
+  /* Reset the logo's auto margin for mobile */
+  .menu .my-header-logo {
+      margin-left: 0; /* Reset auto-margin, let flexbox handle */
+  }
+
+  /* Define the default hidden state of the mobile menu */
+  .menu__list {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      visibility: hidden; /* Hidden by default */
+      -webkit-transform: scaleY(0); /* Collapsed by default */
+      transform: scaleY(0);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      
+      /* Additional styling for the mobile menu when collapsed/default */
+      top: 100%; /* Position it below the header */
+      left: 0;
+      right: 0;
+      background-color: white; /* Background for the mobile menu dropdown */
+      flex-direction: column; /* Stack items vertically in mobile menu */
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      padding: 10px 0;
+  }
+
+  /* Define the active (open) state of the mobile menu using is-active */
+  .menu__list.is-active { /* Replaces .js .menu__list--active */
+      visibility: visible;
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      display: flex; /* Ensure it uses flex layout for its items once active */
+  }
+
+  .menu .menu__item {
+      width: 100%;
+      text-align: center;
+  }
+
+  .menu .menu__link {
+      padding: 10px 20px;
+      display: block;
+  }
+}
+
+/* Desktop screen styles (min-width: 767px) - ensures proper reset from mobile styles */
+@media screen and (min-width: 767px) {
+  .menu {
+    border-bottom: 0px solid var(--highlight-color);
+    flex-direction: row; /* Ensure default direction for desktop */
+    justify-content: flex-start; /* Aligns menu items and button to the left */
+  }
+
+  .menu__btn {
+    display: none; /* Hide burger button on desktop */
+  }
+
+  .menu__list {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    visibility: visible; /* Always visible on desktop */
+    border: 0;
+    -webkit-transform: none; /* No scale transform on desktop */
+    transform: none;
+    justify-content: flex-start;
+    /* Reset mobile-specific styles for desktop */
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    top: auto;
+    left: auto;
+    right: auto;
+    flex-direction: row; /* Menu items in a row on desktop */
+    margin-left: initial; /* Reset any unwanted margin for menu list on desktop */
+  }
+
+  /* Re-apply auto-margin for logo on desktop to push it right */
+  .menu .my-header-logo {
+      margin-left: auto; /* Pushes the logo to the far right on desktop */
+  }
+
+  .menu__item {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
