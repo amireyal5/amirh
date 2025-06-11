@@ -1,19 +1,5 @@
 <header class="site-header">
     <div class="header-container">
-        <div class="my-header-logo">
-            <a href="/" class="my-logo-link">
-                <div class="my-logo-wrapper">
-                    {{ with .Site.Params.logo.image }}
-                        <img class="my-logo-image" src="{{ . | relURL }}" alt="לוגו">
-                    {{ end }}
-                    <div class="my-logo-text">
-                        <div class="my-logo-title">{{ .Site.Params.logo.title }}</div>
-                        <div class="my-logo-subtitle">{{ .Site.Params.logo.subtitle }}</div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
         {{- if .Site.Menus.main }}
         <nav class="menu">
             <button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
