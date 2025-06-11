@@ -1,7 +1,7 @@
 ---
 title: "אודות" 
 pager: false
-sidebar: left
+sidebar: false
 ---
 # עמיר אייל – פסיכותרפיסט מוסמך
 
