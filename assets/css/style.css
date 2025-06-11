@@ -84,7 +84,7 @@ body {
   -webkit-font-smoothing: antialiased; /* Enhance font rendering on WebKit */
   /* Updated padding-top to account for fixed top-bar and main-header-row */
   /* יש לכייל את הערך הזה במדויק לאחר בדיקה בדפדפן - סכום גובה ה-top-bar וה-main-header-row */
-  padding-top: calc(30px + 80px); /* 30px משוער לגובה top-bar, 80px משוער לגובה main-header */
+  
 }
 
 .container {
