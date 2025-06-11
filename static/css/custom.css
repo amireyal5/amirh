@@ -1,191 +1,59 @@
-/*
- * unified-style.css
- * This file consolidates the custom styling for your Hugo website,
- * ensuring a consistent and modern look across all elements.
- * It combines the custom.css content with the Hugo theme's base styles.
- */
-
-/* ==================================== */
-/* Hugo Variables - Default Fallbacks */
-/* Note: Hugo will replace these dynamically based on site parameters. */
-/* We define default values here for pure CSS context. */
-/* ==================================== */
-:root {
-  --highlight-color: #00acc1; /* Updated highlight color */
-  --font-family-primary: "Assistant", sans-serif; /* Default primary font */
-  --font-family-secondary: "IBM Plex Mono", monospace; /* Default secondary/mono font */
-  --primary-color: #007bff; /* Added for services and custom-link */
-  --secondary-color: #0056b3; /* Added for services */
-  --heading-color: #2c3e50; /* Added for services */
-  --text-color-light: #555; /* Added for services */
-  --theme-background-color: #ffffff; /* Added for services */
-  --card-background-color: #ffffff; /* Added for services */
+/* ווידג'ט רשתות חברתיות */
+.social-links-widget {
+  background-color: transparent;
+  padding: 10px 0;
+  text-align: center;
 }
 
-/* ==================================== */
-/* Global Resets & Structure            */
-/* ==================================== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box; /* Standard box model */
+.social-links-widget .widget-title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: #333;
 }
 
-article,
-aside,
-dialog,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section {
-  display: block; /* Ensure HTML5 elements behave as blocks */
-}
-
-/* Clear placeholder text on focus */
-:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-:focus::-moz-placeholder {
-  color: transparent;
-}
-
-:focus:-moz-placeholder {
-  color: transparent;
-}
-
-:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-html {
-  font-size: 100%; /* Base font size for responsive scaling */
-  -ms-text-size-adjust: none; /* Prevent text size adjustment on mobile IE */
-  -webkit-text-size-adjust: none; /* Prevent text size adjustment on WebKit mobile */
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-family-primary); /* Use primary font from variables */
-  font-size: 14px;
-  font-size: 1rem; /* Equivalent to 14px */
-  line-height: 1.6; /* Standard line height for readability */
-  word-wrap: break-word;
-  background: #fff; /* Light grey background for the body */
-  -webkit-font-smoothing: antialiased; /* Enhance font rendering on WebKit */
-}
-
-code, pre { /* Prioritized from custom.css, using variables now */
-  font-family: var(--font-family-secondary);
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 1600px; /* Max width for main content area */
-  margin: 0 auto; /* Center the container */
-}
-
-.container--outer {
-  box-shadow: 0 0 10px rgba(50, 50, 50, 0.17); /* Soft shadow for outer container */
-}
-
-.wrapper {
-  padding: 25px;
-  background: #fff; /* White background for content wrappers */
-}
-
-.flex {
-  display: -webkit-flex; /* Safari */
-  display: flex; /* Flexbox utility class */
-}
-
-.primary {
-  -webkit-flex: 1 0 65.83%;
-  flex: 1 0 65.83%; /* Primary content area takes ~66% width */
-  -webkit-order: 1;
-  order: 1;
-  min-width: 0; /* Allow content to shrink */
-}
-
-.sidebar {
-  -webkit-flex: 1 0 31.66%;
-  flex: 1 0 31.66%; /* Sidebar takes ~31% width */
-  -webkit-order: 2;
-  order: 2;
-  min-width: 0;
-  margin: 0 0 0 2.5%; /* Space between primary and sidebar */
-}
-
-.sidebar--left {
-  -webkit-order: 0; /* Override order for left sidebar */
-  order: 0;
-  margin: 2px 2.5% 0 0; /* Adjust margin for left sidebar */
-}
-
-.clearfix {
-  display: block;
-}
-
-/* Clearfix hack for floating elements */
-.clearfix::after {
-  display: block;
-  height: 0;
+/* רשימת אייקונים בשורה אחת */
+.social-icons-circular {
+  list-style: none;
   padding: 0;
   margin: 0;
-  clear: both;
-  line-height: 0;
-  visibility: hidden;
-  content: "";
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  direction: rtl;
 }
 
-/* Basic styling for form elements */
-input,
-button,
-select,
-optgroup,
-textarea {
-  margin: 0;
-  font-family: inherit; /* Inherit font from parent */
-  font-size: inherit; /* Inherit font size from parent */
-  line-height: inherit; /* Inherit line height from parent */
-}
-
-/* ==================================== */
-/* Buttons                              */
-/* ==================================== */
-/* General button style */
-.btn {
-  display: inline-block;
-  padding: 12px 28px;
-  background-color:unset ; /* Primary button background */
+/* קישורים - עיגול אפור ואייקון לבן */
+.social-icons-circular li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #e0e0e0; /* אפור בהיר */
   color: white;
-  border-radius: 50px;
-  font-weight: 500;
-  font-size: 1rem;
-  cursor: pointer;
-  
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  user-select: none; /* Prevent text selection on button */
-  border: solid 0.5px #1a73e8; /* Remove default border */
+  font-size: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn:hover {
-  background-color:none; /* Darker primary color on hover */
-  box-shadow: none;/* Enhanced shadow on hover */
+/* כל האייקונים בצבע לבן */
+.social-icons-circular li a i {
+  color: white;
 }
 
-/* Circular button specific styles (from custom.css) */
+/* האפקט בריחוף */
+.social-icons-circular li a:hover {
+  transform: scale(1.1);
+  background-color: #bdbdbd; /* כהה יותר בקצת */
+}
+
 .btn-circle {
   display: inline-block;
-  background-color: #ddd; /* Light grey for circular buttons */
+  background-color: #ddd; /* אפור בהיר */
   color: white;
   padding: 10px 20px;
-  border-radius: 25px; /* Pill-shaped button */
+  border-radius: 25px; /* עיגול קצה מעוגל */
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
@@ -196,344 +64,59 @@ textarea {
 }
 
 .btn-circle:hover {
-  background-color: #aaa; /* Darker grey on hover */
+  background-color: #aaa; /* אפור כהה יותר בהובר */
   color: white;
 }
 
-/* Additional transition for all menu items and buttons */
-.menu__item,
-.btn {
-  transition: background-color 0.25s ease-out;
-}
-
-/* ==================================== */
-/* Typography                           */
-/* ==================================== */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 20px; /* Standard bottom margin */
-  margin: 0 0 1.25rem; /* Equivalent to 20px */
-  font-weight: 700; /* Bold headings */
-  line-height: 1.3;
-  color: #000; /* Default black for headings */
-}
-
-h1 {
-  font-size: 32px;
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 24px;
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 20px;
-  font-size: 1.25rem;
-}
-
-h4 {
-  font-size: 18px;
-  font-size: 1.125rem;
-}
-
-h5 {
-  font-size: 16px;
-  font-size: 1rem;
-}
-
-h6 {
-  font-size: 16px;
-  font-size: 1rem;
-}
-
-/* Base link styling */
-a {
-  color: #1a73e8; /* A vibrant blue for links, consistent with custom.css */
-  text-decoration: none;
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-a:hover {
-  color: var(--highlight-color); /* Highlight color on hover for general links */
-}
-
-hr {
-  margin: 0 0 20px;
-  border: 0;
-  border-top: 1px solid #dadada; /* Light grey horizontal rule */
-}
-
-p {
-  margin: 0 0 20px;
-  margin: 0 0 1.25rem;
-}
-
-b,
-strong {
-  font: inherit;
-  font-weight: 700; /* Bold text */
-}
-
-i,
-em {
-  font: inherit;
-  font-style: italic; /* Italic text */
-}
-
-ol,
-ul {
-  padding: 0;
-  margin: 0;
-}
-
-small {
-  font-size: 12px;
-  font-size: 0.75rem;
-}
-
-mark {
-  background-color: #fd5; /* Highlight background for marked text */
-}
-
-figure {
-  margin: 0 0 20px;
-  margin: 0 0 1.25rem;
-}
-
-figcaption {
-  margin-top: 4px;
-  margin-top: 0.25rem;
-  color: #666;
-}
-
-figcaption h4 {
-  margin: 0;
-  color: inherit;
-}
-
-pre,
-code,
-kbd,
-samp {
-  font-family: var(--font-family-secondary); /* Use secondary/mono font */
-  font-size: inherit;
-}
-
-pre,
-code {
-  background-color: #f5f5f5; /* Light grey background for code blocks */
-  border: 1px solid #ebebeb; /* Light border for code blocks */
-}
-
-code {
-  padding: 0 5px;
-  color: #c33; /* Reddish color for inline code */
-}
-
-pre {
-  display: block;
-  padding: 0;
-  padding: 1.25rem;
-  margin-bottom: 20px;
-  margin-bottom: 1.25rem;
-  overflow: auto; /* Enable scrolling for long code blocks */
-  color: #000;
-}
-
-pre code {
-  padding: 0;
-  color: inherit;
-  white-space: inherit;
-  background: inherit;
-  border: 0;
-}
-
-kbd {
-  padding: 2px 3px;
-  color: #fff;
-  background-color: #2a2a2a; /* Dark background for keyboard input */
-}
-
-blockquote {
-  display: block;
-  padding: 5px 0 5px 15px;
-  margin: 0 0 20px;
-  margin: 0 0 1.25rem;
-  line-height: 1.6;
-  border-left: 5px solid var(--highlight-color); /* Highlight colored left border */
-}
-
-blockquote p:last-child {
-  margin: 0;
-}
-
-blockquote footer {
-  text-align: right;
-}
-
-sup,
-sub {
-  font-size: 10px;
-  font-size: 0.625rem;
-  font-style: normal;
-}
-
-sup {
-  vertical-align: super;
-}
-
-sub {
-  vertical-align: sub;
-}
-
-abbr[title] {
-  text-decoration: none;
-  cursor: help;
-  border-bottom: 1px dotted #000;
-}
-
-q {
-  font-style: italic;
-}
-
-address {
-  margin-bottom: 20px;
-  margin-bottom: 1.25rem;
-  font-family: "Consolas", Courier New, Courier, monospace;
-  line-height: 1.5;
-}
-
-dl {
-  margin: 0 0 10px 20px;
-}
-
-dt,
-dd {
-  display: list-item;
-}
-
-dt {
-  font-weight: bold;
-  list-style-type: square;
-}
-
-dd {
-  margin-left: 20px;
-  list-style-type: circle;
-}
-
-select {
-  max-width: 100%;
-}
-
-.warning {
-  padding: 20px 10px;
+.widget.custom-authorbox {
   text-align: center;
-  border: 1px solid #ddd;
+  color: #bfbfbf;
+  font-size: 15px;
+  padding: 1em 0;
 }
 
-.warning__icon {
-  margin-bottom: 20px;
-  fill: #ddd;
+.custom-authorbox__name {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #aaa;
 }
 
-/* ==================================== */
-/* Header                               */
-/* ==================================== */
-.header {
-  background: #fff; /* White background for header */
+.custom-authorbox__avatar img {
+  display: block;
+  margin: 0 auto 10px;
+  transition: 0.3s;
+  border-radius: 7px;
 }
 
-.logo {
-  padding: 25px;
+.custom-authorbox__avatar img:hover {
+  opacity: 0.8;
 }
 
-.logo__link {
-  display: inline-block;
+.custom-authorbox__bio {
+  max-width: 250px;
+  margin: 0 auto;
 }
 
-.logo__item {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.logo__img {
-  max-height: 256px;
-}
-
-.logo__text {
-  text-transform: uppercase;
-}
-
-.logo--mixed .logo__item {
-  margin: 0.5rem auto;
-}
-
-.logo--mixed .logo__img {
-  max-width: 128px;
-  max-height: 128px;
-}
-
-.logo--mixed .logo__text {
-  padding: 0 1rem;
-}
-
-.logo__title {
-  font-size: 32px;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1;
-  color: #000;
-}
-
-.logo__tagline {
-  display: inline-block;
-  padding-top: 10px;
-  margin-top: 10px;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--highlight-color); /* Tagline uses highlight color */
-  border-top: 1px solid #ebebeb;
-}
-
-.divider {
-  height: 5px;
-  margin: 0;
-  background: var(--highlight-color); /* Divider uses highlight color */
-  border: 0;
-}
-
-/* Custom header logo (merged and prioritized from custom.css, adapted for menu integration) */
 .my-header-logo {
-  display: flex; /* Kept flex for internal logo image/text layout */
-  justify-content: center; /* Centers content within the logo area */
-  margin: 0; /* RESET: Remove default margins that might conflict with menu's flexbox */
-  direction: rtl; /* Right-to-left layout for logo content */
+  display: flex;
+  justify-content: center;  /* ממורכז בתוך ההדר */
+  margin: 20px 0;
+  direction: rtl;
   text-align: right;
-  font-size: 30px; /* Base font size for logo content */
-  /* No top/bottom margin here, controlled by .menu's align-items */
-}
+  font-size: 30px;
+} 
 
 .my-logo-wrapper {
   display: flex;
-  flex-direction: row; /* Image on right, text on left */
+  flex-direction: row; /* תמונה מימין, טקסט משמאל */
   align-items: center;
-  gap: 6rem; /* PRIORITIZED: Larger gap from custom.css */
-  margin: 0; /* RESET: Ensure no extra margin from here */
+  gap: 6rem;
+  margin-top: 25px;
 }
 
 .my-logo-image {
-  height: 100px; /* PRIORITIZED: Height from custom.css */
+  height: 120px;
   width: auto;
-  margin-right: 0; /* Adjusted to let gap handle spacing */
 }
 
 .my-logo-text {
@@ -543,21 +126,21 @@ select {
 }
 
 .my-logo-title {
-  font-size: 1.8rem; /* PRIORITIZED: Larger font from custom.css */
+  font-size: 1.8rem;
   font-weight: bold;
   margin: 0;
 }
 
 .my-logo-subtitle {
-  font-size: 1.3rem; /* PRIORITIZED: Larger font from custom.css */
-  color: #0c47a1; /* Kept dark blue from custom.css */
+  font-size: 1.3rem;
+  color: #0c47a1;
   margin: 0;
 }
 
-/* Responsive adjustments for header logo on smaller screens (merged from custom.css) */
+/* 🌐 התאמה למסכים צרים */
 @media (max-width: 768px) {
   .my-logo-wrapper {
-    flex-direction: column; /* Image above text on mobile */
+    flex-direction: column; /* תמונה מעל טקסט */
     align-items: center;
     text-align: center;
     gap: 0;
@@ -576,223 +159,499 @@ select {
   }
 
   .my-logo-image {
-    height: 80px; /* Smaller image for mobile */
-    margin-right: 0;
+    height: 80px; /* יותר מתאים לנייד */
   }
 }
 
-/* ==================================== */
-/* Main Menu                            */
-/* ==================================== */
-.menu {
-    display: flex; /* Makes the menu a flex container */
-    align-items: center; /* Vertically centers items */
-    justify-content: flex-start; /* Aligns items to the start initially */
-    background: white;
-    padding: 10px 20px; /* Added some padding around the menu */
+
+
+main.homepage {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  border-radius: 0px;
+  
+  font-family: 'Varela Round', sans-serif;
+  color: #2c3e50;
+  line-height: 1.6;
+  transition: background-color 0.3s ease;
 }
 
-/* Rule to push the logo to the far right on desktop */
-.menu .my-header-logo {
-    margin-left: auto; /* Pushes the logo to the far right */
+
+
+main.homepage h1,
+main.homepage h2,
+main.homepage h3 {
+  color: #1a3e6e;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
-
-.no-js .menu__btn {
-  display: none;
+main.homepage p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
-.menu__btn {
-  display: block; /* Default to block, will be hidden by media query on desktop */
-  width: auto; /* Allow the button to size based on its content */
-  padding: 10px 15px; /* Add some padding to the button */
-  font: inherit;
-  color: #fff;
-  background: #00ACC1;
-  border: 0;
-  outline: 0;
-  cursor: pointer; /* Ensure it's clickable */
-  /* This button will now display the text, not flex the content inside */
+main.homepage a {
+  color: #1a73e8;
+  text-decoration: none;
+  
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
-.menu__btn-title {
-  position: relative;
-  display: block; /* Keep block display for text */
-  padding: 0; /* Remove padding here, handled by .menu__btn */
-  font-weight: 700;
-  text-align: right; /* Text align right */
-  text-transform: uppercase;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  color: white; /* Ensure text color is white */
-  /* margin-right: 8px; Removed, no icon to space from */
+main.homepage a:hover {
+  color: #0c47a1;
+  border-color: #0c47a1;
 }
 
-/* Removed .hamburger-icon styles as no icon is desired */
-
-
-:focus > .menu__btn-title {
-  box-shadow: inset 0 0 1px 3px var(--highlight-color);
-}
-
-button:not(:-moz-focusring):focus > .menu__btn-title {
-  box-shadow: none;
-}
-
-.menu__btn:focus,
-.menu__btn-title:focus {
-  outline: 0;
-}
-
-.menu__list {
-  list-style: none;
-  background: none;
-  margin-left: 0; /* Reset for general case, specific rules apply in media queries */
-  transition: visibility 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
-}
-
-.menu__item:hover {
-  background: var(--highlight-color); /* Highlight color on hover */
-}
-
-.menu__item:first-child {
-  border: 0;
-}
-
-.menu__item--active { /* This class is for current active page, not JS toggle */
-  background: var(--highlight-color); /* Highlight color for active item */
-}
-
-.menu__link {
-  display: block;
-  padding: 10px 15px;
-  padding: 0.725rem 1rem;
+/* כפתורים בתוך main.homepage */
+main.homepage .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #1a73e8;
+  color: white;
+  border-radius: 5px;
   font-weight: 600;
-  color: #514c4c;
-  text-transform: uppercase;
-  font-size: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(26, 115, 232, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  border: none;
 }
 
-.menu__link:hover {
-  color: #fff;
+main.homepage .btn:hover {
+  background-color: #0c47a1;
+  box-shadow: 0 10px 25px rgba(12, 71, 161, 0.6);
 }
 
-/* Mobile menu default state (hidden) and active state (visible) */
-@media screen and (max-width: 768px) {
-  .menu {
-      flex-direction: row; /* Burger on left, Logo on right */
-      justify-content: space-between; /* Space out burger and logo */
-      padding: 10px 15px; /* Adjust padding for mobile */
-  }
-
-  .menu__btn {
-      display: block; /* Show burger button on mobile - now it's just the text button */
-      order: -1; /* Place burger button on the far left */
-      width: auto; /* Allow button to size naturally based on text */
-      background: #00ACC1; /* Example background for button */
-      color: white; /* Text color for the button */
-      padding: 8px 12px; /* Adjust padding for mobile button */
-      border-radius: 5px; /* Slight rounded corners */
-  }
-
-  .menu__btn-title {
-      display: block; /* IMPORTANT: Ensure the "תפריט" text is visible on mobile */
-      color: white; /* Ensure text color is white on the button background */
-      margin-right: 0; /* No margin if no icon */
-  }
-
-  /* Removed .hamburger-icon styles for mobile as no icon is desired */
-
-
-  /* Reset the logo's auto margin for mobile */
-  .menu .my-header-logo {
-      margin-left: 0; /* Reset auto-margin, let flexbox handle */
-  }
-
-  /* Define the default hidden state of the mobile menu */
-  .menu__list {
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      visibility: hidden; /* Hidden by default */
-      -webkit-transform: scaleY(0); /* Collapsed by default */
-      transform: scaleY(0);
-      -webkit-transform-origin: top left;
-      transform-origin: top left;
-      
-      /* Additional styling for the mobile menu when collapsed/default */
-      top: 100%; /* Position it below the header */
-      left: 0;
-      right: 0;
-      background-color: white; /* Background for the mobile menu dropdown */
-      flex-direction: column; /* Stack items vertically in mobile menu */
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      padding: 10px 0;
-  }
-
-  /* Define the active (open) state of the mobile menu using is-active */
-  .menu__list.is-active { /* Replaces .js .menu__list--active */
-      visibility: visible;
-      -webkit-transform: scaleY(1);
-      transform: scaleY(1);
-      display: flex; /* Ensure it uses flex layout for its items once active */
-  }
-
-  .menu .menu__item {
-      width: 100%;
-      text-align: center;
-  }
-
-  .menu .menu__link {
-      padding: 10px 20px;
-      display: block;
-  }
+/* תגובות ויזואליות קטנות */
+main.homepage blockquote {
+  border-left: 5px solid #1a73e8;
+  padding-left: 15px;
+  color: #34495e;
+  font-style: italic;
+  background-color: #e8f0fe;
+  margin: 1.5em 0;
+  border-radius: 2px;
 }
 
-/* Desktop screen styles (min-width: 767px) - ensures proper reset from mobile styles */
-@media screen and (min-width: 767px) {
-  .menu {
-    border-bottom: 0px solid var(--highlight-color);
-    flex-direction: row; /* Ensure default direction for desktop */
-    justify-content: flex-start; /* Aligns menu items and button to the left */
+/* רספונסיביות */
+@media (max-width: 768px) {
+  main.homepage {
+    margin: 20px 10px;
+    padding: 20px 15px;
   }
 
-  .menu__btn {
-    display: none; /* Hide burger button on desktop */
+  main.homepage .btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
+.sidebar-custom {
+  background: transparent;
+  padding: 20px;
+  font-family: 'Varela Round', sans-serif;
+  color: #2c3e50;
+}
+
+.sidebar-custom h2, 
+.sidebar-custom h3 {
+  color: #1a3e6e;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.sidebar-custom a {
+  color: #1a73e8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar-custom a:hover {
+  color: #0c47a1;
+}
+/* עיצוב כללי לרשומות */
+.list__item.post {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+/* האפקט בריחוף */
+.list__item.post:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* כותרת הפוסט */
+.list__title.post__title {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #1a3e6e;
+}
+
+.list__title.post__title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.list__title.post__title a:hover {
+  color: #0c47a1;
+}
+
+/* תיאור קצר */
+.list__lead.post__lead {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+/* מטאדאטה */
+.list__meta.meta {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 1rem;
+}
+
+/* תקציר הפוסט */
+.list__excerpt.post__content {
+  font-size: 1.1rem;
+  color: #1a3e6e;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* כפתור "קרא עוד" */
+.list__footer-readmore.btn {
+  background-color: #1a73e8;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(26, 115, 232, 0.4);
+}
+
+.list__footer-readmore.btn:hover {
+  background-color: #0c47a1;
+  box-shadow: 0 6px 15px rgba(12, 71, 161, 0.5);
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  .list__item.post {
+    padding: 15px;
   }
 
-  .menu__list {
+  .list__title.post__title {
+    font-size: 1.3rem;
+  }
+
+  .list__lead.post__lead {
+    font-size: 1rem;
+  }
+
+  .list__excerpt.post__content {
+    font-size: 0.95rem;
+  }
+/* עיצוב לכרטיס פוסט ברשימה */
+.list__item.post {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* כותרת הפוסט */
+.list__title.post__title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+/* תקציר */
+.list__excerpt.post__content {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* כפתור "קרא עוד" */
+.list__footer-readmore.btn {
+  background-color: #1f5fa9;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.list__footer-readmore.btn:hover {
+  background-color: #174a84;
+}
+body {
+  font-family: "Assistant", sans-serif;
+}
+code, pre {
+  font-family: "IBM Plex Mono", monospace;
+
+}
+  }
+   
+/* static/css/style.css - עיצוב למקטע השירותים */
+.services-section {
+    padding: 60px 20px; /* הגדלנו ריפוד עליון/תחתון */
+    text-align: center;
+    background-color: var(--theme-background-color, #ffffff); /* השתמש במשתנה CSS אם קיים בתבנית, אחרת לבן */
+    margin: 40px auto; /* מרווח גדול יותר מלמעלה ולמטה */
+    max-width: 1200px;
+    border-radius: 10px; /* פינות מעוגלות עדינות */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* צל עדין יותר */
+    overflow: hidden; /* למניעת גלילה לא רצויה עם צללים */
+}
+
+/* כותרת המקטע */
+.section-title {
+    font-size: 2.2em; /* הוקטן מעט את הגופן */
+    margin-bottom: 40px;
+    color: var(--heading-color, #2c3e50); /* צבע כותרת כהה, השתמש במשתנה אם קיים */
+    text-align: center; /* יישור הכותרת למרכז */
     position: relative;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    visibility: visible; /* Always visible on desktop */
-    border: 0;
-    -webkit-transform: none; /* No scale transform on desktop */
-    transform: none;
-    justify-content: flex-start;
-    /* Reset mobile-specific styles for desktop */
-    background: none;
-    box-shadow: none;
-    padding: 0;
-    top: auto;
-    left: auto;
-    right: auto;
-    flex-direction: row; /* Menu items in a row on desktop */
-    margin-left: initial; /* Reset any unwanted margin for menu list on desktop */
-  }
-
-  /* Re-apply auto-margin for logo on desktop to push it right */
-  .menu .my-header-logo {
-      margin-left: auto; /* Pushes the logo to the far right on desktop */
-  }
-
-  .menu__item {
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-  }
+    display: inline-block; /* כדי שה-`::after` יעבוד כראוי מתחת לטקסט */
+    padding-bottom: 10px; /* רווח לתחתית הקו */
 }
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px; /* רוחב קו תחתון */
+    height: 4px;
+    background-color: var(--primary-color, #007bff); /* צבע הדגשה, השתמש במשתנה אם קיים */
+    margin: 10px auto 0; /* מרכוז הקו התחתון */
+    border-radius: 2px;
+}
+
+/* רשת הפריטים */
+.services-grid {
+    display: grid; /* וודא שהרשת תמיד מוצגת */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 300px זה סביר גם למסכים בינוניים */
+    gap: 30px; /* מרווח גדול יותר בין הפריטים */
+    justify-content: center;
+    direction: rtl; /* לוודא שהפריטים נצמדים מימין לשמאל */
+}
+
+/* פריט שירות בודד */
+.service-item {
+    background-color: var(--card-background-color, #ffffff); /* רקע לבן לכרטיס */
+    border-radius: 10px; /* פינות מעוגלות עדינות */
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* צל עדין יותר לכרטיס */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: right;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* אנימציית ריחוף */
+}
+
+.service-item:hover {
+    transform: translateY(-8px); /* תזוזה קלה למעלה בריחוף */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* צל בולט יותר בריחוף */
+}
+
+/* תמונת השירות */
+.service-img {
+    width: 100%;
+    height: 220px; /* גובה קבוע לתמונה */
+    overflow: hidden;
+}
+
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* יבטיח שהתמונה תמלא את השטח ותשמור על פרופורציות */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* טקסט בתוך פריט השירות */
+.service-text {
+    padding: 25px; /* ריפוד גדול יותר */
+    flex-grow: 1; /* יגרום לטקסט למלא את השטח הזמין */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* יישור תוכן התיבה למרכז - **שונה כדי למרכז את הכפתור** */
+    text-align: center; /* יישור טקסט למרכז בתוך התיבה */
+}
+
+.service-text h3 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--secondary-color, #0056b3); /* צבע הדגשה לכותרת השירות */
+    font-weight: 700; /* מודגש */
+}
+
+.service-text p {
+    font-size: 1.05em;
+    color: var(--text-color-light, #555); /* גוון אפור עדין לפסקאות */
+    margin-bottom: 20px;
+}
+
+/* קישור "קרא עוד" - הכפתור המעודכן */
+.custom-link {
+    display: inline-block;
+    background-color: transparent; /* רקע שקוף */
+    color: var(--primary-color, #007bff); /* טקסט כחול עדין */
+    padding: 12px 20px;
+    border: 1px solid var(--primary-color, #007bff); /* שוליים דקים כחולים */
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* הוספנו מעבר צבע לכיתוב */
+    margin-top: auto; /* ידחוף את הקישור לתחתית התיבה */
+    font-weight: 600;
+    box-shadow: none; /* הסרנו צל מהכפתור עצמו */
+}
+
+.custom-link:hover {
+    background-color: var(--primary-color, #007bff); /* רקע כחול במעבר עכבר */
+    color: white; /* טקסט לבן במעבר עכבר */
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3); /* צל קטן במעבר עכבר */
+}
+
+/* התאמות רספונסיביות */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* עמודה אחת במובייל */
+        gap: 20px;
+    }
+    .service-item {
+        margin: 0 auto; /* מרכוז במובייל */
+        max-width: 350px; /* הגבלת רוחב לכרטיס במובייל */
+    }
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .services-section {
+        padding: 40px 15px;
+    }
+}
+@media (min-width: 769px) { /* כללים ספציפיים למסכים רחבים יותר */
+    .services-grid {
+        grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 עמודות במסכים רחבים כברירת מחדל */
+    }
+}
+
+/* --- CTA Box Styles --- */
+
+.cta-box {
+    /* מיקום וריכוז התיבה */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* ממורכז אנכית אם יש גובה מוגדר */
+    align-items: center;     /* ממורכז אופקית */
+    text-align: center;      /* יישור טקסט פנימי */
+    max-width: 700px;        /* רוחב מקסימלי לתיבה כדי למנוע מתיחה יתר */
+    margin: 50px auto;       /* ריווח עליון/תחתון ואוטו לריכוז אופקי */
+    padding: 30px 20px;      /* ריווח פנימי */
+    
+    /* מראה כללי */
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* רקע גרדיאנט מושך עין */
+    color: #ffffff;           /* צבע טקסט לבן */
+    border-radius: 12px;       /* פינות מעוגלות יותר */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* צל עמוק ומושך */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* אנימציות למעבר עכבר */
+    overflow: hidden;         /* לוודא ששום דבר לא יוצא מהגבולות המעוגלים */
+}
+
+.cta-box:hover {
+    transform: translateY(-5px); /* אפקט קל של הרמה במעבר עכבר */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35); /* צל עמוק יותר במעבר עכבר */
+}
+
+.cta-box h2 {
+    font-size: 2.5em;          /* גודל כותרת גדול וברור */
+    margin-bottom: 15px;       /* ריווח תחתון לכותרת */
+    font-weight: 700;          /* מודגש מאוד */
+    line-height: 1.2;          /* מרווח שורות נוח */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* צל קל לטקסט */
+}
+
+.cta-box p {
+    font-size: 1.2em;          /* גודל פסקה נוח לקריאה */
+    margin-bottom: 25px;       /* ריווח תחתון לפסקה */
+    opacity: 0.9;              /* מעט שקיפות לפסקה */
+    max-width: 600px;          /* רוחב מקסימלי לפסקה בתוך התיבה */
+}
+
+/* --- CTA Button Styles --- */
+
+.cta-button {
+    display: inline-block;     /* מאפשר הגדרת padding ו-margin */
+    background-color: #ffcc00; /* צבע כפתור בולט (צהוב-זהב) */
+    color: #2575fc;            /* צבע טקסט בכפתור (כחול כהה של הגרדיאנט) */
+    padding: 15px 35px;        /* ריווח פנימי גדול לכפתור */
+    text-decoration: none;     /* הסרת קו תחתון מקישור */
+    border-radius: 50px;       /* פינות מעוגלות מאוד (כפתור בצורת "גלולה") */
+    font-weight: 700;          /* טקסט מודגש */
+    font-size: 1.1em;          /* גודל גופן נוח */
+    letter-spacing: 0.5px;     /* ריווח אותיות קל */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* צל לכפתור */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* אנימציות למעבר עכבר */
+    border: none;              /* לוודא שאין גבול לכפתור */
+}
+
+.cta-button:hover {
+    background-color: #e6b800; /* צבע כפתור כהה יותר במעבר עכבר */
+    transform: translateY(-2px); /* אפקט לחיצה קל */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* צל עמוק יותר במעבר עכבר */
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+    .cta-box {
+        margin: 30px 15px; /* מרווח קטן יותר בצדדים במסכים קטנים */
+        padding: 25px 15px;
+    }
+
+    .cta-box h2 {
+        font-size: 2em; /* כותרת מעט קטנה יותר */
+    }
+
+    .cta-box p {
+        font-size: 1em; /* פסקה מעט קטנה יותר */
+    }
+
+    .cta-button {
+        padding: 12px 30px; /* כפתור קטן יותר */
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-box {
+        margin: 20px 10px;
+        padding: 20px 10px;
+    }
+
+    .cta-box h2 {
+        font-size: 1.8em;
+    }
+
+    .cta-box p {
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
+}
+
