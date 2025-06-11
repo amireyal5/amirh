@@ -623,7 +623,7 @@ select {
 
 /* --- New Header Structure Styles (Fixed Header) --- */
 .site-header {
-    position: fixed; /* ה-Header מקובע לחלק העליון של המסך */
+    position: absolute;
     top: 0;          /* צמוד לחלק העליון */
     width: 100%;     /* תופס את כל הרוחב */
     z-index: 1000;   /* וודא שהוא מעל שאר התוכן */
