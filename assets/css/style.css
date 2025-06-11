@@ -1823,58 +1823,366 @@ a.contact-link .contact-icon {
     font-size: 11px;
     font-size: 0.6875rem;
   }
+}/* --- כללי CSS כלליים --- */
+body {
+    font-family: 'Varela Round', sans-serif; /* וודא שהפונט הזה נטען */
+    margin: 0; /* הסר שוליים כברירת מחדל מהגוף */
+    padding-top: calc(30px + 80px); /* גובה ה-top-bar + גובה ה-main-header */
+    /* ייתכן שיהיה צורך לכייל את הערך הזה במדויק לאחר בדיקה */
 }
-/* כללי CSS כלליים לכפתורים - יחולו על כפתורי ה-Header וה-Hero */
+
+.header-container {
+    max-width: 1200px; /* רוחב מרבי לתוכן בתוך ההאדר */
+    margin: 0 auto;    /* ממורכז */
+    padding: 0 20px;   /* ריפוד פנימי בצדדים */
+    box-sizing: border-box; /* וודא שריפוד וגבולות לא מגדילים את הרוחב הכולל */
+}
+
+/* --- סגנונות כפתורים כלליים --- */
 .button {
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    display: inline-block; /* כדי לאפשר מיקום בשורה */
-    margin-left: 10px; /* מרווח בין כפתורים */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* אנימציה למעבר עכבר */
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+    white-space: nowrap; /* מונע שבירת שורה בטקסט הכפתור */
 }
 
-.button-primary {
-    background-color: #0e6781; /* צבע כחול-טורקיז */
-    color: white; /* טקסט לבן שיהיה קריא על הרקע הכהה */
-    border: 2px solid #0e6781;
+.button-primary { /* צבע לכפתורים ב-Hero Section וכפתורים כלליים */
+    background-color: #fc6c44; /* כתום מהדוגמה שלך */
+    color: white;
+    border: 2px solid #fc6c44;
 }
 .button-primary:hover {
-    background-color: #0a4f61; /* גוון כהה יותר למעבר עכבר */
-    border-color: #0a4f61;
-}
-
-.button-secondary {
-    background-color: #fc6c44; /* צבע כתום חדש */
-    color: white; /* טקסט לבן שיהיה קריא על הרקע הכתום */
-    border: 2px solid #fc6c44;
-}
-.button-secondary:hover {
-    background-color: #e35a34; /* גוון כהה יותר למעבר עכבר */
-    border-color: #e35a34;
-}
-
-/* וודא שגם סגנונות הכפתורים בתוך ה-Hero Section מעודכנים באותם צבעים,
-   אם יש להם סגנונות ספציפיים הדורסים את הכלליים. */
-.hero-buttons .button-primary {
-    background-color: #0e6781;
-    color: white;
-    border: 2px solid #0e6781;
-}
-.hero-buttons .button-primary:hover {
-    background-color: #0a4f61;
-    border-color: #0a4f61;
-}
-
-.hero-buttons .button-secondary {
-    background-color: #fc6c44;
-    color: white;
-    border: 2px solid #fc6c44;
-}
-.hero-buttons .button-secondary:hover {
     background-color: #e35a34;
     border-color: #e35a34;
 }
 
-/* שאר סגנונות ה-CSS/SCSS שהוגדרו קודם נשארים ללא שינוי */
+.button-secondary { /* צבע לכפתורים ב-Hero Section וכפתורים כלליים */
+    background-color: #0e6781; /* כחול-טורקיז מהדוגמה שלך */
+    color: white;
+    border: 2px solid #0e6781;
+}
+.button-secondary:hover {
+    background-color: #0a4f61;
+    border-color: #0a4f61;
+}
+
+/* --- סגנונות Header --- */
+.site-header {
+    position: fixed; /* Header קבוע לחלק העליון של המסך */
+    top: 0;          /* צמוד לחלק העליון */
+    width: 100%;     /* תופס את כל הרוחב */
+    z-index: 1000;   /* ודא שהוא מעל שאר התוכן */
+    /* ה-background-color וה-box-shadow יהיו על ה-main-header-row */
+}
+
+/* Top Bar - שורת התמיכה והפורטל */
+.top-bar {
+    background-color: #f0f0f0; /* צבע רקע בהיר, כמו בדוגמה */
+    color: #555;
+    font-size: 0.85em;
+    padding: 5px 0; /* ריפוד עליון ותחתון */
+    border-bottom: 1px solid #ddd; /* קו הפרדה עדין */
+}
+
+.top-bar__container {
+    display: flex;
+    justify-content: flex-end; /* יישור לימין */
+    align-items: center;
+}
+
+.top-bar__links a {
+    color: #555;
+    text-decoration: none;
+    margin-left: 20px; /* מרווח בין הקישורים */
+}
+.top-bar__links a:hover {
+    color: #0e6781; /* או צבע אחר לפי העיצוב שלך */
+}
+
+/* Main Header Row - ההאדר הראשי (מתחת ל-top-bar) */
+.main-header-row {
+    background-color: white; /* רקע לבן */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* צל קטן */
+    padding: 15px 0; /* ריפוד פנימי */
+}
+
+.main-header__container {
+    display: flex;
+    justify-content: space-between; /* לוגו מימין, ניווט וכפתורים משמאל */
+    align-items: center; /* יישור אנכי למרכז */
+}
+
+/* סגנונות ללוגו */
+.my-header-logo img.my-logo-image {
+    max-height: 50px; /* גובה מקסימלי לתמונת הלוגו */
+    width: auto;
+}
+.my-header-logo .my-logo-text {
+    margin-right: 10px; /* רווח בין תמונה לטקסט אם שניהם קיימים */
+}
+.my-logo-wrapper {
+    display: flex; /* כדי לסדר תמונה וטקסט של הלוגו זה ליד זה */
+    align-items: center;
+}
+
+/* סגנונות לאזור הניווט והכפתורים בהאדר */
+.header-nav-and-buttons {
+    display: flex;
+    align-items: center; /* יישור אנכי למרכז */
+    gap: 20px; /* רווח בין הניווט לכפתורים */
+}
+
+/* סגנונות לתפריט הניווט בתוך ההאדר */
+.main-navigation-menu {
+    /* אין צורך בצבע רקע או רוחב מלא, כי הוא חלק מהשורה */
+}
+
+.main-navigation-menu .menu__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* יישור פריטי תפריט */
+}
+
+.main-navigation-menu .menu__item {
+    margin: 0 15px; /* מרווח בין פריטי התפריט */
+}
+
+.main-navigation-menu .menu__link {
+    color: #333; /* צבע טקסט רגיל לתפריט */
+    text-decoration: none;
+    padding: 5px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+.main-navigation-menu .menu__link:hover,
+.main-navigation-menu .menu__item--active .menu__link {
+    color: #0e6781; /* צבע אקטיבי / מעבר עכבר */
+}
+/* הסתרת כפתור ה"המבורגר" של התפריט בשולחן העבודה */
+.main-navigation-menu .menu__btn {
+    display: none;
+}
+
+/* סגנונות לכפתורי האקשן בהאדר */
+.header-action-buttons {
+    display: flex;
+    gap: 10px; /* רווח בין כפתורי האקשן */
+}
+
+.button-action-primary { /* צבע לכפתור ה-Call Now בהאדר */
+    background-color: #fc6c44; /* כתום */
+    color: white;
+    border: 2px solid #fc6c44;
+}
+.button-action-primary:hover {
+    background-color: #e35a34;
+    border-color: #e35a34;
+}
+
+.button-action-secondary { /* צבע לכפתור ה-Book An Appointment בהאדר */
+    background-color: #0e6781; /* כחול-טורקיז */
+    color: white;
+    border: 2px solid #0e6781;
+}
+.button-action-secondary:hover {
+    background-color: #0a4f61;
+    border-color: #0a4f61;
+}
+
+
+/* --- סגנונות Hero Section --- */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px; /* ריפוד גדול */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px; /* גובה מינימלי לסקשן */
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* 40% שחור עם שקיפות */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.hero-content .subtitle {
+    font-size: 1.5em; /* גודל גדול יותר כמו בדוגמה */
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    display: flex; /* כדי שהכפתורים יהיו זה ליד זה */
+    justify-content: center;
+    gap: 15px; /* רווח בין כפתורים */
+    margin-bottom: 20px; /* רווח מתחת לכפתורים */
+}
+
+.hero-buttons .button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    /* יורש את סגנונות ה-button-primary/secondary הכלליים */
+}
+
+.hero-description {
+    font-size: 1.1em;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+
+/* --- רספונסיביות (למכשירים קטנים יותר) --- */
+@media (max-width: 992px) { /* עבור טאבלטים ומטה */
+    .main-navigation-menu .menu__item {
+        margin: 0 10px; /* מרווח קטן יותר בין פריטים בתפריט */
+    }
+    .header-nav-and-buttons {
+        gap: 10px; /* רווח קטן יותר בין הניווט לכפתורים */
+    }
+}
+
+@media (max-width: 768px) {
+    /* שינויים ל-Body Padding */
+    body {
+        padding-top: calc(30px + 60px); /* התאם את הגובה במובייל */
+    }
+
+    /* Top Bar במובייל */
+    .top-bar {
+        font-size: 0.75em;
+        padding: 3px 0;
+    }
+    .top-bar__links {
+        display: flex;
+        flex-direction: column; /* קישורים אחד מתחת לשני */
+        align-items: flex-end; /* יישור לימין */
+        gap: 5px; /* רווח קטן יותר */
+    }
+    .top-bar__links a {
+        margin-left: 0; /* בטל מרווח אופקי */
+        margin-right: 15px; /* מרווח מצד ימין */
+    }
+
+    /* Main Header Row במובייל */
+    .main-header__container {
+        flex-direction: column; /* לוגו והשאר אחד מתחת לשני */
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .header-nav-and-buttons {
+        flex-direction: column; /* ניווט וכפתורים אחד מתחת לשני */
+        margin-top: 15px; /* מרווח מהלוגו */
+        width: 100%;
+        gap: 15px;
+    }
+    
+    /* תפריט ניווט במובייל - הצגת כפתור המבורגר והסתרת התפריט */
+    .main-navigation-menu {
+        width: 100%;
+        text-align: center;
+    }
+    .main-navigation-menu .menu__btn {
+        display: block; /* הצג כפתור "המבורגר" במובייל */
+        background: none;
+        border: 1px solid #ccc; /* גבול עדין לכפתור המבורגר */
+        color: #333;
+        font-size: 1em;
+        cursor: pointer;
+        padding: 8px 15px;
+        border-radius: 4px;
+        width: calc(100% - 40px); /* רוחב כפתור ההמבורגר */
+        margin: 0 auto; /* מרכוז */
+    }
+    .main-navigation-menu .menu__list {
+        flex-direction: column; /* פריטי תפריט אחד מתחת לשני */
+        display: none; /* הסתר את רשימת התפריט כברירת מחדל במובייל (יוצג ע"י JS) */
+        width: 100%;
+        background-color: #f8f8f8; /* רקע לתפריט הנפתח */
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+    }
+    .main-navigation-menu .menu__item {
+        margin: 5px 0;
+    }
+    .main-navigation-menu .menu__link {
+        padding: 8px 15px;
+        color: #333;
+    }
+    .main-navigation-menu .menu__list.is-open { /* קלאס שיצורף עם JavaScript כשפותחים את התפריט */
+        display: flex; /* הצג את התפריט */
+    }
+
+    .header-action-buttons {
+        flex-direction: column; /* כפתורים אחד מתחת לשני במובייל */
+        width: 80%; /* רוחב כפתורים */
+        margin: 0 auto; /* מרכוז */
+    }
+    .header-action-buttons .button {
+        width: 100%; /* תופס את כל הרוחב */
+        margin: 5px 0; /* מרווחים אנכיים */
+    }
+
+    /* Hero Section במובייל */
+    .hero-section {
+        padding: 60px 15px;
+        min-height: 350px;
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2em;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero-buttons .button {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .hero-description {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) { /* טלפונים קטנים יותר */
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+    .hero-content .subtitle {
+        font-size: 1em;
+    }
+}
