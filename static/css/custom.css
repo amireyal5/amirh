@@ -1,3 +1,5 @@
+/* General CSS for your Hugo theme */
+
 /* ווידג'ט רשתות חברתיות */
 .social-links-widget {
   background-color: transparent;
@@ -97,25 +99,108 @@
   margin: 0 auto;
 }
 
+/* --- NEW: Header Top Bar Styling --- */
+.header-top-bar {
+    background-color: #f7f7f7; /* Light grey, similar to image */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+    gap: 15px; /* Space between elements */
+    font-size: 0.9em;
+    border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+.header-top-bar a {
+    text-decoration: none;
+    color: #007bff; /* Example blue for links */
+    white-space: nowrap; /* Keep text on one line */
+}
+
+.header-top-bar .call-button {
+    background-color: #ff7f50; /* Orange-red from image */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.header-top-bar .call-button:hover {
+    background-color: #e66a3d; /* Darker orange on hover */
+}
+
+.header-top-bar .appointment-button {
+    background-color: #216a7e; /* Dark teal from image */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.header-top-bar .appointment-button:hover {
+    background-color: #1a5462; /* Darker teal on hover */
+}
+
+/* --- NEW: Main Header Area (Logo + Main Nav) --- */
+/* The overall header container from your baseof.html */
+header.header {
+    width: 100%; /* Ensure it spans full width */
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure it's above other content */
+    background-color: #fff; /* Ensure white background for the whole header */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for the whole header */
+}
+
+/* The inner container that holds the logo and nav (inside header.html) */
+.header__container {
+    max-width: 1200px; /* Adjust max-width as needed */
+    margin: 0 auto;
+    padding: 0 20px; /* Horizontal padding for responsiveness */
+}
+
+/* This is the div that contains your logo and the main nav for layout */
+.main-header {
+    display: flex;
+    justify-content: space-between; /* Logo left, nav right */
+    align-items: center;
+    padding: 20px 0; /* Adjust padding as needed, or remove if .header__container handles it */
+}
+
+/* --- UPDATED: Your specific Logo Styling (merged with new layout needs) --- */
 .my-header-logo {
   display: flex;
-  justify-content: center;  /* ממורכז בתוך ההדר */
-  margin: 20px 0;
-  direction: rtl;
+  justify-content: center; /* This might be overridden by flexbox of .main-header */
+  margin: 0; /* Remove existing margin to be controlled by flexbox */
+  direction: rtl; /* This implies content inside is RTL, might need adjustment for LTR layout */
   text-align: right;
-  font-size: 30px;
-} 
+  font-size: 30px; /* This font-size will affect inherited text, be mindful */
+}
+
+.my-logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* Make the link a flex container */
+    align-items: center; /* Vertically align items inside the link */
+    direction: ltr; /* Ensure the link content itself is LTR for image-text order */
+}
 
 .my-logo-wrapper {
   display: flex;
-  flex-direction: row; /* תמונה מימין, טקסט משמאל */
+  flex-direction: row; /* Image to the right, text to the left by default (LTR context) */
   align-items: center;
-  gap: 6rem;
-  margin-top: 25px;
+  gap: 20px; /* Adjusted gap for better desktop spacing */
+  margin-top: 0; /* Remove existing margin */
 }
 
 .my-logo-image {
-  height: 120px;
+  height: 80px; /* Adjusted height for desktop header */
   width: auto;
 }
 
@@ -129,41 +214,96 @@
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0;
+  white-space: nowrap; /* Prevent title from breaking */
 }
 
 .my-logo-subtitle {
   font-size: 1.3rem;
   color: #0c47a1;
   margin: 0;
+  white-space: nowrap; /* Prevent subtitle from breaking */
 }
 
-/* 🌐 התאמה למסכים צרים */
-@media (max-width: 768px) {
-  .my-logo-wrapper {
-    flex-direction: column; /* תמונה מעל טקסט */
+/* --- NEW: Navigation Menu (Common styles) --- */
+.menu {
+    display: flex;
     align-items: center;
-    text-align: center;
-    gap: 0;
-  }
-
-  .my-logo-text {
-    align-items: center;
-  }
-
-  .my-logo-title {
-    font-size: 1.5rem;
-  }
-
-  .my-logo-subtitle {
-    font-size: 0.9rem;
-  }
-
-  .my-logo-image {
-    height: 80px; /* יותר מתאים לנייד */
-  }
+    /* Since .my-header-logo has direction: rtl, the .menu needs to be LTR for standard layout */
+    direction: ltr; 
 }
 
+/* Hamburger button styling (hidden on desktop) */
+.menu__btn {
+    display: none; /* Hamburger button hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 5px;
+    color: #333;
+    direction: ltr; /* Ensure button content is LTR */
+}
 
+.menu__btn-title {
+    /* Hide button text for accessibility if using icon */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Hamburger Icon (three lines) */
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+}
+
+.hamburger-icon span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #333; /* Color of the hamburger lines */
+    border-radius: 2px;
+}
+
+/* Menu List Styling (Desktop - horizontal) */
+.menu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal display on desktop */
+    gap: 30px; /* Space between menu items */
+    direction: ltr; /* Ensure menu items are LTR */
+}
+
+.menu__item a.menu__link {
+    text-decoration: none;
+    color: #555; /* Dark grey text color */
+    font-weight: bold;
+    padding: 10px 0;
+    display: block;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.menu__item a.menu__link:hover {
+    color: #216a7e; /* Dark teal on hover */
+}
+
+.menu__item--active a.menu__link {
+    color: #216a7e; /* Active link color */
+    border-bottom: 2px solid #216a7e; /* Underline for active link */
+}
+
+/* --- Your existing content styles below, adjusted for new header structure --- */
 
 main.homepage {
   max-width: 1100px;
@@ -171,14 +311,11 @@ main.homepage {
   padding: 30px 20px;
   background: linear-gradient(135deg, #ffffff, #ffffff);
   border-radius: 0px;
-  
   font-family: 'Varela Round', sans-serif;
   color: #2c3e50;
   line-height: 1.6;
   transition: background-color 0.3s ease;
 }
-
-
 
 main.homepage h1,
 main.homepage h2,
@@ -196,7 +333,6 @@ main.homepage p {
 main.homepage a {
   color: #1a73e8;
   text-decoration: none;
-  
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
@@ -249,6 +385,7 @@ main.homepage blockquote {
     font-size: 0.9rem;
   }
 }
+
 .sidebar-custom {
   background: transparent;
   padding: 20px;
@@ -256,7 +393,7 @@ main.homepage blockquote {
   color: #2c3e50;
 }
 
-.sidebar-custom h2, 
+.sidebar-custom h2,
 .sidebar-custom h3 {
   color: #1a3e6e;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
@@ -271,6 +408,7 @@ main.homepage blockquote {
 .sidebar-custom a:hover {
   color: #0c47a1;
 }
+
 /* עיצוב כללי לרשומות */
 .list__item.post {
   background: #ffffff;
@@ -359,6 +497,8 @@ main.homepage blockquote {
   .list__excerpt.post__content {
     font-size: 0.95rem;
   }
+}
+
 /* עיצוב לכרטיס פוסט ברשימה */
 .list__item.post {
   background: #f9f9f9;
@@ -394,12 +534,17 @@ main.homepage blockquote {
 .list__footer-readmore.btn:hover {
   background-color: #174a84;
 }
+
+/* Body font settings */
 body {
   font-family: "Assistant", sans-serif;
 }
+
+/* Code font settings */
 code, pre {
   font-family: "IBM Plex Mono", monospace;
 }
+
 /* Styling for the main CTA box container */
 .cta-box {
     background-color: #f0f8ff; /* Light blue background */
@@ -443,8 +588,7 @@ code, pre {
 .cta-button:hover {
     background-color: #2980b9; /* Darker blue on hover */
 }
-  }
-   
+    
 /* static/css/style.css - עיצוב למקטע השירותים */
 .services-section {
     padding: 60px 20px; /* הגדלנו ריפוד עליון/תחתון */
@@ -566,34 +710,8 @@ code, pre {
     box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3); /* צל קטן במעבר עכבר */
 }
 
-/* התאמות רספונסיביות */
-@media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: 1fr; /* עמודה אחת במובייל */
-        gap: 20px;
-    }
-    .service-item {
-        margin: 0 auto; /* מרכוז במובייל */
-        max-width: 350px; /* הגבלת רוחב לכרטיס במובייל */
-    }
-    .section-title {
-        font-size: 2em;
-        margin-bottom: 30px;
-    }
-    .services-section {
-        padding: 40px 15px;
-    }
-}
-@media (min-width: 769px) { /* כללים ספציפיים למסכים רחבים יותר */
-    .services-grid {
-        grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 עמודות במסכים רחבים כברירת מחדל */
-    }
-}
-/* ==================================== */
-/* Hero Section Styles (New)          */
-/* ==================================== */
+/* Hero Section Styles */
 .hero-section {
-    /* תמונת רקע מנתיב img/hero.webp */
     background-image: url('img/hero.webp');
     background-size: cover;
     background-position: center;
@@ -606,7 +724,7 @@ code, pre {
     justify-content: center;
     min-height: 450px;
     overflow: hidden;
-    font-family: var(--font-family-primary); /* שימוש בפונט ראשי לעקביות */
+    font-family: var(--font-family-primary);
 }
 
 .hero-section::before {
@@ -616,8 +734,7 @@ code, pre {
     left: 0;
     right: 0;
     bottom: 0;
-    /* שכבת שחור שקופה כדי לשפר קריאות טקסט על רקע תמונה */
-    background-color: rgba(0, 0, 0, 0.4); /* הגדלתי מעט את השקיפות כדי לשפר קריאות */
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .hero-content {
@@ -625,68 +742,66 @@ code, pre {
     z-index: 0;
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 15px; /* הוסף ריפוד פנימי כדי למנוע הדבקה לשוליים במסכים קטנים */
+    padding: 0 15px;
 }
 
 .hero-content h1 {
     font-size: 3em;
     margin-bottom: 10px;
     line-height: 1.2;
-    color: white; /* ודא שכותרות ה-Hero לבנות */
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* צל עדין לקריאות טובה יותר */
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero-content .subtitle {
-    font-size: 1.5em; /* תת-כותרת גדולה יותר כמו בדוגמה */
+    font-size: 1.5em;
     margin-bottom: 30px;
     line-height: 1.5;
-    color: white; /* ודא שתת-כותרות ב-Hero לבנות */
+    color: white;
     text-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
 
 .hero-buttons {
     display: flex;
     justify-content: center;
-    gap: 15px; /* רווח בין כפתורים */
-    margin-bottom: 20px; /* רווח מתחת לכפתורים */
-    flex-wrap: wrap; /* מאפשר לכפתורים לעבור שורה במסכים קטנים */
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
-/* סגנון כפתור ראשי בצבע #FC6C44 - מתאים ל-`.button-primary` */
 .hero-buttons .button-primary {
     padding: 12px 25px;
     font-size: 1.1em;
-    border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
+    border-radius: 25px;
     background-color: #FC6C44;
     color: white;
     border: 2px solid #FC6C44;
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    text-decoration: none; /* הסרת קו תחתון מקישור */
+    text-decoration: none;
     cursor: pointer;
-    white-space: nowrap; /* מונע שבירת שורה בתוך הכפתור */
+    white-space: nowrap;
 }
 
 .hero-buttons .button-primary:hover {
-    background-color: #e65c3b; /* גוון כהה יותר בריחוף */
+    background-color: #e65c3b;
     border-color: #e65c3b;
 }
 
-/* סגנון כפתור משני בצבע #0E6781 - מתאים ל-`.button-secondary` */
 .hero-buttons .button-secondary {
-    padding: 12px 25px; /* שמירה על גודל זהה לכפתור הראשי */
+    padding: 12px 25px;
     font-size: 1.1em;
-    border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
+    border-radius: 25px;
     background-color: #0E6781;
     color: white;
     border: 2px solid #0E6781;
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    text-decoration: none; /* הסרת קו תחתון מקישור */
+    text-decoration: none;
     cursor: pointer;
-    white-space: nowrap; /* מונע שבירת שורה בתוך הכפתור */
+    white-space: nowrap;
 }
 
 .hero-buttons .button-secondary:hover {
-    background-color: #0a4f61; /* גוון כהה יותר בריחוף */
+    background-color: #0a4f61;
     border-color: #0a4f61;
 }
 
@@ -695,49 +810,193 @@ code, pre {
     max-width: 500px;
     margin: 0 auto;
     line-height: 1.5;
-    color: white; /* ודא שהתיאור ב-Hero לבן */
+    color: white;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
----
-### רספונסיביות לכל המסכים (Media Queries)
-
-נוסיף את ה-Media Queries הבאים בסוף קובץ ה-CSS שלך, כדי להתאים את ה-Hero למסכים שונים:
-
-```css
 /* ==================================== */
 /* Media Queries for Responsiveness   */
 /* ==================================== */
 
-/* עבור מסכים גדולים (טאבלטים לרוחב, מחשבים ניידים) */
-@media (max-width: 1200px) {
-    .hero-content h1 {
-        font-size: 2.8em;
-    }
-
-    .hero-content .subtitle {
-        font-size: 1.4em;
-    }
-}
-
-/* עבור מסכים בינוניים (טאבלטים לאורך) */
-@media (max-width: 992px) {
-    .hero-section {
-        padding: 80px 15px;
-        min-height: 400px;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-
-    .hero-content .subtitle {
-        font-size: 1.3em;
-    }
-}
-
-/* עבור מסכים קטנים (טלפונים לרוחב) */
+/* --- Mobile Specific Header Styles (max-width: 768px) --- */
 @media (max-width: 768px) {
+    /* Top Bar Mobile Adjustments */
+    .header-top-bar {
+        flex-direction: column; /* Items stack vertically */
+        align-items: flex-start; /* Align to the left */
+        gap: 8px; /* Reduced gap */
+        padding: 10px; /* Adjusted padding */
+    }
+
+    .header-top-bar a {
+        display: block; /* Links become full width blocks */
+        width: 100%;
+        text-align: center; /* Centered text */
+    }
+
+    .header-top-bar .call-button,
+    .header-top-bar .appointment-button {
+        width: 100%; /* Full width buttons */
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Main Header Mobile Adjustments */
+    .main-header {
+        flex-direction: row; /* Logo and hamburger side-by-side */
+        justify-content: space-between;
+        padding: 15px; /* More compact padding */
+    }
+
+    /* Updated Logo Mobile Styles (using your specific classes) */
+    .my-header-logo {
+        padding-right: 15px; /* Adjust spacing on mobile if needed */
+        /* direction: ltr; This might be needed if your logo text flips */
+    }
+
+    .my-logo-wrapper {
+        flex-direction: row; /* Keep image and text side-by-side on mobile based on your image */
+        align-items: center;
+        gap: 8px; /* Slightly less gap on mobile */
+    }
+    
+    /* Override existing media query for .my-logo-wrapper to keep row direction */
+    .my-logo-wrapper {
+        flex-direction: row !important; 
+    }
+
+    .my-logo-text {
+        align-items: flex-start; /* Align text to the left */
+        text-align: left; /* Align text to the left */
+    }
+
+    .my-logo-image {
+        height: 60px; /* Adjusted height for mobile logo image */
+    }
+
+    .my-logo-title {
+        font-size: 1.2em; /* Smaller title font size on mobile */
+    }
+
+    .my-logo-subtitle {
+        font-size: 0.8em; /* Smaller subtitle font size on mobile */
+    }
+
+    /* Show hamburger button on mobile */
+    .menu__btn {
+        display: block; /* Display hamburger button */
+    }
+
+    /* Hide the main menu list by default on mobile */
+    .menu__list {
+        display: none; /* Menu hidden by default */
+        flex-direction: column; /* Items stack vertically */
+        position: absolute; /* Absolute positioning below header */
+        top: 100%; /* Below the header */
+        left: 0;
+        width: 100%; /* Full width */
+        background-color: #fff; /* White background */
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1); /* Shadow */
+        z-index: 999; /* Ensure it's above other content */
+        padding: 0; /* Remove default list padding */
+        margin: 0; /* Remove default list margin */
+        direction: rtl; /* Ensure menu items are RTL */
+    }
+
+    /* Class added by JS when menu is open */
+    .menu__list--open {
+        display: flex !important; /* Display menu when open */
+    }
+
+    /* Individual menu item styling for mobile (when open) */
+    .menu__item {
+        border-bottom: 1px solid #eee; /* Separator line between items */
+        width: 100%; /* Full width */
+        box-sizing: border-box; /* Include padding and border in width */
+    }
+
+    .menu__item:last-child {
+        border-bottom: none; /* No border on the last item */
+    }
+
+    .menu__item a.menu__link {
+        display: flex; /* Use flexbox for text and icon alignment */
+        justify-content: space-between; /* Push icon to the right */
+        align-items: center;
+        padding: 15px 20px; /* Generous padding for touch targets */
+        color: #333; /* Darker text color */
+        font-weight: normal; /* Normal font weight */
+        font-size: 1.1em; /* Slightly larger font */
+        text-decoration: none;
+        white-space: normal; /* Allow text to wrap if long */
+    }
+
+    .menu__item a.menu__link:hover {
+        background-color: #f7f7f7; /* Subtle hover effect */
+    }
+
+    .menu__item--active a.menu__link {
+        color: #216a7e; /* Highlight active link */
+        border-bottom: none; /* Remove underline on mobile */
+    }
+
+    /* Styling for the .Post element if it contains an icon (like 'v' or arrow) */
+    .menu__item .menu__link .menu__post {
+        margin-left: 10px; /* Space between text and icon */
+        font-size: 0.9em; /* Adjust icon size */
+        color: #888; /* Lighter icon color */
+        transition: transform 0.3s ease; /* Rotation animation */
+    }
+
+    /* Rotate icon if JS adds expanded class */
+    .menu__item.menu__item--expanded .menu__link .menu__post {
+        transform: rotate(180deg);
+    }
+
+    /* --- Your existing Media Queries for other sections --- */
+    main.homepage {
+        margin: 20px 10px;
+        padding: 20px 15px;
+    }
+
+    main.homepage .btn {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+
+    .list__item.post {
+        padding: 15px;
+    }
+
+    .list__title.post__title {
+        font-size: 1.3rem;
+    }
+
+    .list__lead.post__lead {
+        font-size: 1rem;
+    }
+
+    .list__excerpt.post__content {
+        font-size: 0.95rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+    .service-item {
+        margin: 0 auto; /* Center on mobile */
+        max-width: 350px; /* Limit card width on mobile */
+    }
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .services-section {
+        padding: 40px 15px;
+    }
+    
+    /* Hero section specific media queries for mobile */
     .hero-section {
         padding: 60px 10px;
         min-height: 350px;
@@ -752,15 +1011,15 @@ code, pre {
     }
 
     .hero-buttons {
-        flex-direction: column; /* כפתורים אחד מתחת לשני */
-        gap: 10px; /* צמצם רווח בין כפתורים */
+        flex-direction: column; /* Buttons stack vertically */
+        gap: 10px;
     }
 
     .hero-buttons .button-primary,
     .hero-buttons .button-secondary {
-        width: 80%; /* תופס יותר רוחב */
-        max-width: 300px; /* הגבל רוחב מקסימלי */
-        margin: 0 auto; /* מרכז את הכפתורים */
+        width: 80%; /* Take more width */
+        max-width: 300px;
+        margin: 0 auto; /* Center buttons */
     }
 
     .hero-description {
@@ -768,38 +1027,116 @@ code, pre {
     }
 }
 
-/* עבור מסכים קטנים מאוד (טלפונים לאורך) */
-@media (max-width: 576px) {
-    .hero-section {
-        padding: 50px 10px;
-        min-height: 300px;
+/* --- Desktop Styles (min-width: 769px) - Ensures overrides for mobile are reverted --- */
+@media (min-width: 769px) {
+    /* Top Bar Desktop Adjustments */
+    .header-top-bar {
+        flex-direction: row; /* Horizontal */
+        justify-content: flex-end; /* Align right */
+        gap: 15px; /* Restore desktop gap */
+        padding: 10px 20px; /* Restore desktop padding */
     }
 
+    .header-top-bar a {
+        width: auto; /* Auto width */
+        text-align: left; /* Restore default text alignment */
+    }
+
+    .header-top-bar .call-button,
+    .header-top-bar .appointment-button {
+        width: auto;
+    }
+
+    /* Main Header Desktop Adjustments */
+    .main-header {
+        padding: 20px 0; /* Restore desktop padding */
+    }
+
+    /* Logo Desktop Adjustments */
+    .my-header-logo {
+        padding-right: 20px; /* Restore desktop spacing */
+        /* direction: rtl; If you want the logo wrapper to be RTL on desktop */
+    }
+    
+    .my-logo-wrapper {
+        flex-direction: row; /* Ensure image is on the right, text on left for desktop */
+        gap: 20px; /* Restore desktop gap */
+    }
+
+    .my-logo-image {
+        height: 80px; /* Restore desktop logo height */
+    }
+
+    .my-logo-title {
+        font-size: 1.8rem; /* Restore desktop font size */
+    }
+
+    .my-logo-subtitle {
+        font-size: 1.3rem; /* Restore desktop font size */
+    }
+
+
+    /* Hamburger button hidden on desktop */
+    .menu__btn {
+        display: none;
+    }
+
+    /* Menu list always visible and horizontal on desktop */
+    .menu__list {
+        display: flex !important; /* Ensure menu is always visible */
+        flex-direction: row; /* Horizontal */
+        position: static; /* Remove absolute positioning */
+        background-color: transparent;
+        box-shadow: none;
+        direction: ltr; /* Ensure menu items are LTR */
+    }
+
+    .menu__item {
+        border-bottom: none; /* Remove borders on desktop */
+    }
+
+    .menu__item a.menu__link {
+        padding: 10px 0; /* Restore desktop padding */
+    }
+
+    .menu__item--active a.menu__link {
+        border-bottom: 2px solid #216a7e; /* Restore underline for active link */
+    }
+    
+    /* Hero section specific media queries for desktop */
+    .hero-buttons {
+        flex-direction: row; /* Buttons side-by-side */
+        gap: 15px;
+    }
+
+    .hero-buttons .button-primary,
+    .hero-buttons .button-secondary {
+        width: auto;
+        max-width: none;
+        margin: 0;
+    }
+
+    /* Services grid for desktop */
+    .services-grid {
+        grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 columns on larger screens */
+    }
+}
+
+/* For larger desktops (e.g., > 1200px) */
+@media (min-width: 1201px) {
     .hero-content h1 {
-        font-size: 1.8em;
+        font-size: 3em;
     }
 
     .hero-content .subtitle {
-        font-size: 1em;
-        margin-bottom: 20px;
-    }
-
-    .hero-buttons .button-primary,
-    .hero-buttons .button-secondary {
-        font-size: 1em;
-        padding: 10px 20px;
-        width: 90%; /* תופס עוד יותר רוחב */
-    }
-
-    .hero-description {
-        font-size: 0.95em;
+        font-size: 1.5em;
     }
 }
 
-/* עבור מסכים עם גובה קטן (כאשר יש מעט מקום לגובה, למשל טלפונים במצב אופקי) */
+/* For screens with small height (e.g., landscape phones) */
 @media (max-height: 500px) and (orientation: landscape) {
     .hero-section {
-        min-height: 250px; /* צמצם את הגובה המינימלי */
+        min-height: 250px;
         padding: 40px 10px;
     }
 
@@ -826,5 +1163,3 @@ code, pre {
         font-size: 0.85em;
     }
 }
-
-
