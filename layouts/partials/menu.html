@@ -6,7 +6,7 @@
 </div>
 
 <div class="main-header">
-    {{ partial "custom-logo" . }} 
+    {{ partial "custom-logo.html" . }} 
 
     <nav class="menu">
         <button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
@@ -25,7 +25,8 @@
                 <a class="menu__link" href="{{ .URL }}">
                     {{ .Pre }}
                     <span class="menu__text">{{ .Name }}</span>
-                    {{ .Post }} </a>
+                    {{ .Post }}
+                </a>
             </li>
             {{- end }}
             {{- end }}
