@@ -7,99 +7,44 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuButton && menuList) {
         console.log('JS: Hamburger button and menu list found. Initializing menu logic.');
 
-        // --- CRITICAL INITIALIZATION FIX ---
-        // Ensure menu is closed visually and programmatically on load for mobile
-        if (window.innerWidth <= 768) { // Assuming 768px is the mobile breakpoint
-            menuList.classList.remove('menu__list--open'); // Ensure class is removed
-            menuList.style.display = 'none'; // Force hide visually
-            menuButton.setAttribute('aria-expanded', 'false'); // Set aria-expanded to false
-            console.log('JS: Initializing menu as hidden and aria-expanded=false on mobile.');
-        } else {
-            // On desktop, ensure menu is visible and aria-expanded is true (or remove it, as it's not used)
-            menuList.style.display = ''; // Let CSS control display
-            menuList.classList.remove('menu__list--open'); // Ensure no mobile open class
-            menuButton.removeAttribute('aria-expanded'); // Remove aria-expanded on desktop as it's not relevant
-            console.log('JS: Initializing menu for desktop, resetting mobile states.');
-        }
-        // --- END CRITICAL INITIALIZATION FIX ---
-
-
         // Add click event listener to the hamburger button
         menuButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default button action (e.g., form submission)
-            event.stopPropagation(); // Stop event from bubbling up immediately (prevents document click from closing it)
-
-            // --- CRITICAL DEBUGGER STATEMENT ---
-            // This line will pause execution right here if the click event registers.
-            // If the debugger doesn't stop, the click is not reaching this listener.
-            debugger; 
-            // --- END CRITICAL DEBUGGER STATEMENT ---
+            // Prevent default action (e.g., if button is part of a form, prevent submit)
+            event.preventDefault(); 
+            event.stopPropagation(); // Stop event from bubbling up to document click handler immediately
 
             console.log('JS: Hamburger button clicked!');
             const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
             this.setAttribute('aria-expanded', !isExpanded);
             
-            // Toggle the CSS class (still good practice for other styling)
+            // Toggle the class that makes the menu visible
             menuList.classList.toggle('menu__list--open');
-
-            // Directly control the display property for maximum certainty
-            if (menuList.classList.contains('menu__list--open')) {
-                menuList.style.display = 'flex'; // Force display to flex
-                console.log('JS: Menu opened via direct style.display = "flex".');
-            } else {
-                menuList.style.display = 'none'; // Force display to none
-                console.log('JS: Menu closed via direct style.display = "none".');
-            }
+            console.log('JS: menu__list--open class toggled. Current state:', menuList.classList.contains('menu__list--open') ? 'OPEN' : 'CLOSED');
         });
 
         // Add click event listeners to all menu item links to close the menu
         menuList.querySelectorAll('.menu__item a.menu__link').forEach(link => {
             link.addEventListener('click', function() {
-                console.log('JS: Menu item link clicked. Closing menu.');
+                console.log('JS: Menu item link clicked.');
                 menuButton.setAttribute('aria-expanded', 'false');
-                menuList.classList.remove('menu__list--open');
-                // Only hide display if we are on mobile (desktop menu should stay visible)
-                if (window.innerWidth <= 768) {
-                    menuList.style.display = 'none';
-                }
+                menuList.classList.remove('menu__list--open'); // Remove the open class
             });
         });
 
         // Add click event listener to the whole document to close menu if clicked outside
         document.addEventListener('click', function(event) {
-            // Only attempt to close if the menu is currently open
+            // Check if the click was outside of the menu list AND outside of the menu button
+            // Only close if the menu is currently open
             if (menuList.classList.contains('menu__list--open')) {
-                // Check if the click was outside of the menu list AND outside of the menu button
                 if (!menuList.contains(event.target) && !menuButton.contains(event.target)) {
                     menuButton.setAttribute('aria-expanded', 'false');
                     menuList.classList.remove('menu__list--open');
-                    // Only hide display if we are on mobile
-                    if (window.innerWidth <= 768) {
-                        menuList.style.display = 'none';
-                    }
                     console.log('JS: Clicked outside menu. Menu closed.');
                 }
             }
         });
 
-        // Handle window resize to ensure correct display on breakpoint change
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                // On desktop, ensure menu is visible and remove mobile-specific styles
-                menuList.style.display = ''; // Reset to default (CSS controlled)
-                menuList.classList.remove('menu__list--open'); // Ensure class is removed
-                menuButton.removeAttribute('aria-expanded'); // Remove aria-expanded on desktop
-                console.log('JS: Resized to desktop, menu reset.');
-            } else {
-                // On mobile, if menu is not open, hide it
-                if (!menuList.classList.contains('menu__list--open')) {
-                    menuList.style.display = 'none';
-                    console.log('JS: Resized to mobile, menu hidden if not open.');
-                }
-            }
-        });
-
     } else {
-        console.error('JS ERROR: Could not find hamburger button (.menu__btn) or menu list (.menu__list). Please check your HTML classes and ensure they are correct.');
+        console.error('JS ERROR: Could not find hamburger button (.menu__btn) or menu list (.menu__list). Please check your HTML classes.');
     }
 });
