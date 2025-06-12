@@ -35,7 +35,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 
-
   {{/* Load main theme CSS file */}}
   {{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
@@ -44,14 +43,13 @@
   <link rel="stylesheet" href="{{ "/css/accordion.css" | relURL }}">
   <link rel="stylesheet" href="{{ "css/all.min.css" | relURL }}" />
 
-  {{/* Load our NEW custom menu CSS last to ensure it overrides everything */}}
-  {{ $customMenuCss := resources.Get "css/custom-menu.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $customMenuCss.RelPermalink }}" integrity="{{ $customMenuCss.Data.Integrity }}">
-  
   {{/* Your old custom.css from static, if still needed for other custom styles, load it before custom-menu.css */}}
   <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}" />
 
-
+  <!-- Load our NEW custom menu CSS last to ensure it overrides everything -->
+  {{ $customMenuCss := resources.Get "css/custom-menu.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $customMenuCss.RelPermalink }}" integrity="{{ $customMenuCss.Data.Integrity }}">
+  
   {{- with .OutputFormats.Get "rss" }}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
   {{- end }}
