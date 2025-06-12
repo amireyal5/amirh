@@ -1,1 +1,2322 @@
+/*
+ * unified-style.css
+ * This file consolidates the custom styling for your Hugo website,
+ * ensuring a consistent and modern look across all elements.
+ * It combines the custom.css content with the Hugo theme's base styles.
+ */
+
+/* ==================================== */
+/* Hugo Variables - Default Fallbacks */
+/* Note: Hugo will replace these dynamically based on site parameters. */
+/* We define default values here for pure CSS context. */
+/* ==================================== */
+:root {
+  --highlight-color: #00acc1; /* Default highlight color - Updated to #00acc1 */
+  --font-family-primary: "Assistant", sans-serif; /* Default primary font */
+  --font-family-secondary: "IBM Plex Mono", monospace; /* Default secondary/mono font */
+
+  /* Define primary/secondary colors for new elements to ensure consistency */
+  --primary-color: #007bff; /* General primary blue */
+  --secondary-color: #0056b3; /* Darker blue */
+  --heading-color: #2c3e50; /* Dark grey for headings */
+  --text-color-light: #555; /* Light grey for text */
+  --card-background-color: #ffffff; /* White for card backgrounds */
+  --theme-background-color: #ffffff; /* White for main theme background */
+}
+
+/* ==================================== */
+/* Global Resets & Structure            */
+/* ==================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Standard box model */
+}
+
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block; /* Ensure HTML5 elements behave as blocks */
+}
+
+/* Clear placeholder text on focus */
+:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+:focus::-moz-placeholder {
+  color: transparent;
+}
+
+:focus:-moz-placeholder {
+  color: transparent;
+}
+
+:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+html {
+  font-size: 100%; /* Base font size for responsive scaling */
+  -ms-text-size-adjust: none; /* Prevent text size adjustment on mobile IE */
+  -webkit-text-size-adjust: none; /* Prevent text size adjustment on WebKit mobile */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-primary); /* Use primary font from variables */
+  font-size: 14px;
+  font-size: 1rem; /* Equivalent to 14px */
+  line-height: 1.6; /* Standard line height for readability */
+  word-wrap: break-word;
+  background: #fff; /* Light grey background for the body */
+  -webkit-font-smoothing: antialiased; /* Enhance font rendering on WebKit */
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 2000px; /* Max width for main content area */
+  margin: 0 auto; /* Center the container */
+}
+
+.container--outer {
+  margin: 25px auto;
+}
+
+.wrapper {
+  padding: 25px;
+  background: #fff; /* White background for content wrappers */
+}
+
+.flex {
+  display: -webkit-flex; /* Safari */
+  display: flex; /* Flexbox utility class */
+}
+
+.primary {
+  -webkit-flex: 1 0 65.83%;
+  flex: 1 0 65.83%; /* Primary content area takes ~66% width */
+  -webkit-order: 1;
+  order: 1;
+  min-width: 0; /* Allow content to shrink */
+}
+
+.sidebar {
+  -webkit-flex: 1 0 31.66%;
+  flex: 1 0 31.66%; /* Sidebar takes ~31% width */
+  -webkit-order: 2;
+  order: 2;
+  min-width: 0;
+  margin: 0 0 0 2.5%; /* Space between primary and sidebar */
+}
+
+.sidebar--left {
+  -webkit-order: 0; /* Override order for left sidebar */
+  order: 0;
+  margin: 2px 2.5% 0 0; /* Adjust margin for left sidebar */
+}
+
+.clearfix {
+  display: block;
+}
+
+/* Clearfix hack for floating elements */
+.clearfix::after {
+  display: block;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  clear: both;
+  line-height: 0;
+  visibility: hidden;
+  content: "";
+}
+
+/* Basic styling for form elements */
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit; /* Inherit font from parent */
+  font-size: inherit; /* Inherit font size from parent */
+  line-height: inherit; /* Inherit line height from parent */
+}
+
+/* ==================================== */
+/* Buttons                            */
+/* ==================================== */
+/* General button style (from custom.css) */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color:unset ; /* Primary button background */
+  color: white;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  user-select: none; /* Prevent text selection on button */
+  border: solid 0.5px #1a73e8; /* Remove default border */
+}
+
+.btn:hover {
+  background-color:none; /* Darker primary color on hover */
+  box-shadow: none;/* Enhanced shadow on hover */
+}
+
+/* Circular button specific styles (from custom.css) */
+.btn-circle {
+  display: inline-block;
+  background-color: #ddd; /* Light grey for circular buttons */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px; /* Pill-shaped button */
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  margin-top: 1rem;
+  user-select: none;
+}
+
+.btn-circle:hover {
+  background-color: #aaa; /* Darker grey on hover */
+  color: white;
+}
+
+/* Additional transition for all menu items and buttons */
+.menu__item,
+.btn {
+  transition: background-color 0.25s ease-out;
+}
+
+/* ==================================== */
+/* Typography                           */
+/* ==================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 20px; /* Standard bottom margin */
+  margin: 0 0 1.25rem; /* Equivalent to 20px */
+  font-weight: 700; /* Bold headings */
+  line-height: 1.3;
+  color: #000; /* Default black for headings */
+}
+
+h1 {
+  font-size: 32px;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+/* Base link styling */
+a {
+  color: #1a73e8; /* A vibrant blue for links, consistent with custom.css */
+  text-decoration: none;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+a:hover {
+  color: var(--highlight-color); /* Highlight color on hover for general links */
+}
+
+hr {
+  margin: 0 0 20px;
+  border: 0;
+  border-top: 1px solid #dadada; /* Light grey horizontal rule */
+}
+
+p {
+  margin: 0 0 20px;
+  margin: 0 0 1.25rem;
+}
+
+b,
+strong {
+  font: inherit;
+  font-weight: 700; /* Bold text */
+}
+
+i,
+em {
+  font: inherit;
+  font-style: italic; /* Italic text */
+}
+
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+small {
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+mark {
+  background-color: #fd5; /* Highlight background for marked text */
+}
+
+figure {
+  margin: 0 0 20px;
+  margin: 0 0 1.25rem;
+}
+
+figcaption {
+  margin-top: 4px;
+  margin-top: 0.25rem;
+  color: #666;
+}
+
+figcaption h4 {
+  margin: 0;
+  color: inherit;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--font-family-secondary); /* Use secondary/mono font */
+  font-size: inherit;
+}
+
+pre,
+code {
+  background-color: #f5f5f5; /* Light grey background for code blocks */
+  border: 1px solid #ebebeb; /* Light border for code blocks */
+}
+
+code {
+  padding: 0 5px;
+  color: #c33; /* Reddish color for inline code */
+}
+
+pre {
+  display: block;
+  padding: 0;
+  padding: 1.25rem;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  overflow: auto; /* Enable scrolling for long code blocks */
+  color: #000;
+}
+
+pre code {
+  padding: 0;
+  color: inherit;
+  white-space: inherit;
+  background: inherit;
+  border: 0;
+}
+
+kbd {
+  padding: 2px 3px;
+  color: #fff;
+  background-color: #2a2a2a; /* Dark background for keyboard input */
+}
+
+blockquote {
+  display: block;
+  padding: 5px 0 5px 15px;
+  margin: 0 0 20px;
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+  border-left: 5px solid var(--highlight-color); /* Highlight colored left border */
+}
+
+blockquote p:last-child {
+  margin: 0;
+}
+
+blockquote footer {
+  text-align: right;
+}
+
+sup,
+sub {
+  font-size: 10px;
+  font-size: 0.625rem;
+  font-style: normal;
+}
+
+sup {
+  vertical-align: super;
+}
+
+sub {
+  vertical-align: sub;
+}
+
+abbr[title] {
+  text-decoration: none;
+  cursor: help;
+  border-bottom: 1px dotted #000;
+}
+
+q {
+  font-style: italic;
+}
+
+address {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  font-family: "Consolas", Courier New, Courier, monospace;
+  line-height: 1.5;
+}
+
+dl {
+  margin: 0 0 10px 20px;
+}
+
+dt,
+dd {
+  display: list-item;
+}
+
+dt {
+  font-weight: bold;
+  list-style-type: square;
+}
+
+dd {
+  margin-left: 20px;
+  list-style-type: circle;
+}
+
+select {
+  max-width: 100%;
+}
+
+.warning {
+  padding: 20px 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.warning__icon {
+  margin-bottom: 20px;
+  fill: #ddd;
+}
+
+/* ==================================== */
+/* Header                               */
+/* ==================================== */
+/* Original theme header styles */
+.header {
+  background: #fff; /* White background for header */
+}
+
+.logo {
+  padding: 25px;
+}
+
+.logo__link {
+  display: inline-block;
+}
+
+.logo__item {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logo__img {
+  max-height: 256px;
+}
+
+.logo__text {
+  text-transform: uppercase;
+}
+
+.logo--mixed .logo__item {
+  margin: 0.5rem auto;
+}
+
+.logo--mixed .logo__img {
+  max-width: 128px;
+  max-height: 128px;
+}
+
+.logo--mixed .logo__text {
+  padding: 0 1rem;
+}
+
+.logo__title {
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+}
+
+.logo__tagline {
+  display: inline-block;
+  padding-top: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--highlight-color); /* Tagline uses highlight color */
+  border-top: 1px solid #ebebeb;
+}
+
+.divider {
+  height: 5px;
+  margin: 0;
+  background: var(--highlight-color); /* Divider uses highlight color */
+  border: 0;
+}
+
+/* --- NEW: Header Top Bar Styling --- */
+.header-top-bar {
+    background-color: #f7f7f7; /* Light grey, similar to image */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+    gap: 15px; /* Space between elements */
+    font-size: 0.9em;
+    border-bottom: 1px solid #eee; /* Subtle separator */
+    position: relative; /* Added for z-index context */
+    z-index: 1010; /* Higher z-index */
+}
+
+.header-top-bar a {
+    text-decoration: none;
+    color: #007bff; /* Example blue for links */
+    white-space: nowrap; /* Keep text on one line */
+}
+
+.header-top-bar .call-button {
+    background-color: #ff7f50; /* Orange-red from image */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.header-top-bar .call-button:hover {
+    background-color: #e66a3d; /* Darker orange on hover */
+}
+
+.header-top-bar .appointment-button {
+    background-color: #216a7e; /* Dark teal from image */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.header-top-bar .appointment-button:hover {
+    background-color: #1a5462; /* Darker teal on hover */
+}
+
+/* The overall header container from your baseof.html */
+/* This overrides and extends the .header class above */
+header.header {
+    width: 100%; /* Ensure it spans full width */
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure it's above other content */
+    background-color: #fff; /* Ensure white background for the whole header */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for the whole header */
+}
+
+/* The inner container that holds the logo and nav (inside header.html) */
+.header__container {
+    max-width: 1200px; /* Adjust max-width as needed */
+    margin: 0 auto;
+    padding: 0 20px; /* Horizontal padding for responsiveness */
+    position: relative; /* Added for z-index context */
+    z-index: 1005; /* Slightly higher than header.header if needed */
+}
+
+/* This is the div that contains your logo and the main nav for layout */
+.main-header {
+    display: flex;
+    justify-content: space-between; /* Logo left, nav right */
+    align-items: center;
+    padding: 20px 0; /* Adjust padding as needed, or remove if .header__container handles it */
+    position: relative; /* Added for z-index context */
+    z-index: 1006; /* Even higher */
+}
+
+/* --- UPDATED: Your specific Logo Styling (merged with new layout needs) --- */
+/* The existing .my-header-logo has direction: rtl and a gap.
+   To achieve LTR image-text order, we set direction: ltr on parent link or wrapper,
+   and control gap with flexbox on the wrapper. */
+.my-header-logo {
+  display: flex; /* Make it a flex container */
+  /* justify-content: center; /* Removed - this is handled by .main-header justify-content: space-between */
+  margin: 0; /* Remove existing margin to be controlled by .main-header */
+  /* direction: rtl; /* Removed - handled by my-logo-link */
+  text-align: left; /* Align text left within its container */
+  font-size: 30px; /* This font-size will affect inherited text, be mindful */
+  position: relative; /* Added for z-index context */
+  z-index: 1007; /* Higher than main-header */
+}
+
+.my-logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* Make the link a flex container */
+    align-items: center; /* Vertically align items inside the link */
+    direction: ltr; /* Force LTR direction for image-text order within the logo */
+}
+
+.my-logo-wrapper {
+  display: flex;
+  flex-direction: row; /* Image then Text (LTR order) */
+  align-items: center;
+  gap: 20px; /* Adjusted gap for better desktop spacing */
+  margin-top: 0; /* Remove existing margin */
+}
+
+.my-logo-image {
+  height: 80px; /* Adjusted height for desktop header */
+  width: auto;
+}
+
+.my-logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.my-logo-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap; /* Prevent title from breaking */
+}
+
+.my-logo-subtitle {
+  font-size: 1.3rem;
+  color: #0c47a1;
+  margin: 0;
+  white-space: nowrap; /* Prevent subtitle from breaking */
+}
+
+/* --- NEW: Navigation Menu (Common styles) --- */
+.menu {
+    display: flex;
+    align-items: center;
+    direction: ltr; /* Ensure menu content is LTR */
+    position: relative; /* Added for z-index context */
+    z-index: 1008; /* Highest z-index for the nav itself */
+}
+
+/* Hamburger button styling */
+.menu__btn {
+    /* Overrides existing .menu__btn from base theme */
+    display: none; /* Hidden on desktop by default */
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 2em; /* Icon size */
+    cursor: pointer;
+    padding: 5px;
+    color: #333; /* Icon color */
+    direction: ltr; /* Ensure button content is LTR */
+    position: relative; /* Needed for z-index */
+    z-index: 1009; /* Very high z-index to ensure it's clickable */
+    outline: 0; /* Remove focus outline */
+}
+/* Overrides existing :focus rules from base theme for hamburger button */
+.menu__btn:focus,
+.menu__btn-title:focus,
+.menu__btn:focus > .menu__btn-title {
+    box-shadow: none !important;
+    outline: 0 !important;
+}
+
+.menu__btn-title {
+    /* Hide button text for accessibility if using icon */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    /* Overrides original menu__btn-title styles */
+    display: block; /* Ensure it's block if hidden by absolute positioning */
+    text-align: left; /* Align text left (for screen readers) */
+    text-transform: none; /* No uppercase */
+    padding: 0; /* No padding */
+    font-weight: normal; /* Normal font weight */
+    color: transparent; /* Text hidden */
+    cursor: pointer;
+    user-select: none;
+}
+
+
+/* Hamburger Icon (three lines) */
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+}
+
+.hamburger-icon span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #333; /* Color of the hamburger lines */
+    border-radius: 2px;
+}
+
+/* Menu List Styling (Desktop - horizontal) */
+.menu__list {
+    /* Overrides existing .menu__list from base theme */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal display on desktop */
+    gap: 30px; /* Space between menu items */
+    direction: ltr; /* Ensure menu items are LTR */
+    background: transparent !important; /* Override any background from base theme */
+    position: relative !important; /* Override absolute position from base theme */
+    z-index: auto !important; /* Reset z-index for desktop */
+    visibility: visible !important; /* Always visible on desktop */
+    transform: none !important; /* No transform on desktop */
+    -webkit-transform: none !important;
+    border: 0 !important; /* Remove any borders */
+}
+
+.menu__item a.menu__link {
+    text-decoration: none;
+    color: #555; /* Dark grey text color */
+    font-weight: bold;
+    padding: 10px 0;
+    display: block;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.menu__item a.menu__link:hover {
+    color: #216a7e; /* Dark teal on hover */
+    background: transparent !important; /* Override base theme hover background */
+}
+
+.menu__item--active {
+    background: transparent !important; /* Override base theme active background */
+}
+
+.menu__item--active a.menu__link {
+    color: #216a7e; /* Active link color */
+    border-bottom: 2px solid #216a7e; /* Underline for active link */
+}
+/* Ensure no background on hover for active item either */
+.menu__item--active a.menu__link:hover {
+    background: transparent !important;
+}
+
+/* Overrides from base theme for menu items */
+.menu__item:hover {
+    background: transparent !important; /* Ensure no highlight background on hover */
+}
+.menu__item:first-child {
+    border: 0 !important; /* Remove border from first child */
+}
+
+
+/* ==================================== */
+/* Posts / Pages (General)              */
+/* ==================================== */
+.post__header,
+.main__header {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.main__title {
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+
+.main__content {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.meta {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  vertical-align: baseline;
+}
+
+.meta,
+.meta a {
+  color: #666;
+}
+
+.meta a:hover {
+  color: var(--highlight-color);
+}
+
+.meta__item {
+  display: inline;
+  margin-left: 15px;
+}
+
+.meta__item:first-child {
+  margin-left: 0;
+}
+
+.meta__icon {
+  margin-right: 5px;
+  vertical-align: middle;
+  fill: #c4c4c4;
+}
+
+.meta__text {
+  vertical-align: middle;
+}
+
+.post__title {
+  margin: 0;
+}
+
+.post__meta {
+  padding: 5px 0;
+  margin-top: 10px;
+  margin-top: 0.625rem;
+  border-top: 1px dotted #ebebeb;
+  border-bottom: 1px dotted #ebebeb;
+}
+
+.post__lead {
+  margin-top: 4px;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.post__thumbnail {
+  max-width: 1030px;
+  margin: 0 0 20px;
+  margin-bottom: 0 0 1.25rem;
+}
+
+.post__thumbnail img {
+  width: 100%;
+}
+
+.content a,
+.warning a,
+.authorbox__description a {
+  font-weight: 700;
+  color: var(--highlight-color); /* Highlight color for links in content/warning/authorbox */
+}
+
+.content a:hover,
+.warning a:hover,
+.authorbox__description a:hover {
+  color: var(--highlight-color);
+  text-decoration: underline;
+}
+
+.content .alignnone {
+  display: block;
+  margin: 20px 0;
+  margin: 1.25rem 0;
+}
+
+.content .aligncenter {
+  display: block;
+  margin: 20px auto;
+  margin: 1.25rem auto;
+}
+
+.content .alignleft {
+  display: inline;
+  float: left;
+  margin: 5px 20px 20px 0;
+  margin: 0.3125rem 1.25rem 1.25rem 0;
+}
+
+.content .alignright {
+  display: inline;
+  float: right;
+  margin: 5px 0 20px 20px;
+  margin: 0.3125rem 0 1.25rem 1.25rem;
+}
+
+.content ul {
+  list-style: square;
+}
+
+.content ol {
+  list-style: decimal;
+}
+
+.content ul,
+.content ol {
+  margin: 0 40px 20px 40px;
+}
+
+.content ul ul,
+.content ol ol,
+.content ol ul,
+.content ul ol {
+  margin: 0 0 0 40px;
+}
+
+.content li {
+  margin-bottom: 5px;
+}
+
+.post__footer {
+  margin-top: 20px;
+  margin-top: 1.25rem;
+}
+
+/* Post tags */
+.tags {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #fff;
+  display: flex;
+}
+
+.tags__list {
+  list-style: none;
+}
+
+.tags__item {
+  float: left;
+  margin: 0 6px 6px 0;
+  margin: 0 0.375rem 0.375rem 0;
+  text-transform: uppercase;
+  background: var(--highlight-color); /* Tags background is highlight color */
+}
+
+.tags__item:hover {
+  background: var(--highlight-color); /* Maintain highlight color on hover */
+}
+
+.tags__link,
+.tags__link:hover {
+  display: block;
+  padding: 10px 15px;
+}
+
+.tags__badge {
+  float: left;
+  width: 45px;
+  height: 40px;
+  padding: 8px;
+  margin-right: 6px;
+  background: #1a73e8; (--highlight-color);
+  fill: #fff;
+}
+
+/* Table of Contents */
+.toc {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #7a8288;
+  background: #fff;
+  border-color: #ebebeb;
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 0;
+  border-left-width: 1px;
+}
+
+.toc__title {
+  padding: 5px 10px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  background: #2a2a2a;
+}
+
+.toc__menu ul {
+  margin: 0;
+  list-style: none;
+}
+
+.toc__menu li li a {
+  padding-left: 25px;
+}
+
+.toc__menu li li li a {
+  padding-left: 45px;
+}
+
+.toc__menu li li li li a {
+  padding-left: 65px;
+}
+
+.toc__menu li li li li li a {
+  padding-left: 85px;
+}
+
+.toc__menu li li li li li li a {
+  padding-left: 105px;
+}
+
+.toc__menu li {
+  margin: 0;
+}
+
+.toc__menu a {
+  display: block;
+  padding: 5px 10px;
+  color: var(--highlight-color); /* TOC links use highlight color */
+  border-bottom: 1px solid #ebebeb;
+}
+
+.toc__menu a:hover {
+  text-decoration: underline;
+}
+
+/* Author Box (Generic) */
+.authorbox {
+  padding: 25px 0;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.authorbox__avatar {
+  float: left;
+  padding: 3px;
+  margin: 0 25px 0 0;
+  border: 1px solid #ebebeb;
+}
+
+.authorbox__header {
+  margin-bottom: 10px;
+}
+
+.authorbox__name {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Custom Author Box (from custom.css) */
+.widget.custom-authorbox {
+  text-align: center;
+  color: #bfbfbf;
+  font-size: 15px;
+  padding: 1em 0;
+}
+
+.custom-authorbox__name {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #aaa;
+}
+
+.custom-authorbox__avatar img {
+  display: block;
+  margin: 0 auto 10px;
+  transition: 0.3s;
+  border-radius: 7px;
+}
+
+.custom-authorbox__avatar img:hover {
+  opacity: 0.8;
+}
+
+.custom-authorbox__bio {
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+/* ==================================== */
+/* List Content                           */
+/* ==================================== */
+.list__item {
+  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.list__header {
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
+}
+
+.list__title {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+.list__meta {
+  margin-top: 5px;
+}
+
+.list__thumbnail {
+  float: left;
+  margin: 0 20px 0 0;
+}
+
+.list__thumbnail img {
+  width: 100%;
+  max-width: 235px;
+}
+
+.list__footer-readmore {
+  float: right;
+  margin-top: 10px;
+}
+
+/* Post list item styling (from custom.css) */
+.list__item.post {
+  background: #f9f9f9; /* Slightly off-white background */
+  border-radius: 12px; /* More rounded corners */
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect for post cards */
+.list__item.post:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+/* Post title in list */
+.list__title.post__title {
+  font-size: 1.8rem; /* Larger font for post title */
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #1a3e6e; /* Dark blue title color */
+}
+
+.list__title.post__title a {
+  color: inherit; /* Inherit color from parent */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.list__title.post__title a:hover {
+  color: #0c47a1; /* Darker blue on hover */
+}
+
+/* Post lead/short description */
+.list__lead.post__lead {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+/* Post metadata (from custom.css, overrides general meta if applied to post lists) */
+.list__meta.meta {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 1rem;
+}
+
+/* Post excerpt/content summary */
+.list__excerpt.post__content {
+  color: #555; /* Dark grey text */
+  font-size: 1.1rem; /* Slightly larger excerpt font */
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* "Read more" button for list items */
+.list__footer-readmore.btn {
+  background-color: #1f5fa9; /* A slightly different shade of blue for this button */
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(26, 115, 232, 0.4); /* Re-added shadow for consistency */
+}
+
+.list__footer-readmore.btn:hover {
+  background-color: #174a84; /* Darker shade on hover */
+  box-shadow: 0 6px 15px rgba(12, 71, 161, 0.5); /* Re-added shadow on hover */
+}
+
+/* ==================================== */
+/* Pagination                           */
+/* ==================================== */
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination__item {
+  display: inline-block;
+  padding: 10px 15px;
+  font-weight: 700;
+  color: #000;
+  background: #f5f5f5;
+}
+
+.pagination__item:hover,
+.pagination__item--current {
+  color: #fff;
+  background: var(--highlight-color);
+}
+
+/* Pager (prev/next links) navigation */
+.pager {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.pager__subtitle {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.pager__title {
+  margin-bottom: 0;
+  overflow: hidden;
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+
+.pager__item {
+  -webkit-flex: 1 1 50%;
+  flex: 1 1 50%;
+  max-width: 48%;
+}
+
+.pager__item--next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.pager__link {
+  display: block;
+}
+
+/* ==================================== */
+/* Images / Video                       */
+/* ==================================== */
+img {
+  width: auto\9; /* IE8 fallback */
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+iframe,
+embed,
+object,
+video {
+  max-width: 100%;
+}
+
+/* Custom image styling (from user's input) */
+.custom-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================================== */
+/* Table                                */
+/* ==================================== */
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-top: 1px solid #ebebeb;
+  border-left: 1px solid #ebebeb;
+}
+
+td,
+th {
+  padding: 5px 10px;
+  border-right: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+th {
+  font-weight: 700;
+}
+
+/* ==================================== */
+/* Forms                                */
+/* ==================================== */
+input {
+  padding: 5px;
+  font-size: 12px;
+  vertical-align: middle;
+  background: #f5f5f5;
+  border: 1px solid #ebebeb;
+  transition: all 0.25s ease-in-out;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=url] {
+  width: 60%;
+}
+
+input[type=text]:hover,
+input[type=email]:hover,
+input[type=tel]:hover,
+input[type=url]:hover,
+textarea:hover {
+  border: 1px solid #aaa;
+}
+
+input[type=submit],
+input[type=reset] {
+  display: inline-block;
+  min-width: 150px;
+  padding: 10px 15px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #2a2a2a;
+  border: 0;
+  transition: all 0.1s linear;
+  -webkit-appearance: none;
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover {
+  background: var(--highlight-color);
+}
+
+textarea {
+  width: 96%;
+  padding: 5px;
+  overflow: auto;
+  line-height: 1.5;
+  resize: vertical;
+  background: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ==================================== */
+/* Widgets                              */
+/* ==================================== */
+.widget {
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.widget:last-child {
+  margin-bottom: 0;
+}
+
+.widget__title {
+  position: relative;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--highlight-color); /* Widget title border uses highlight color */
+}
+
+.widget__item {
+  display: block;
+  padding: 5px 0;
+  border-bottom: 1px dotted #ebebeb;
+}
+
+.widget__item:first-child {
+  padding-top: 0;
+}
+
+.widget__counter--bubble {
+  display: inline-block;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  color: #666;
+  text-align: center;
+  background: #ebebeb;
+  border-radius: 2em;
+}
+
+/* Search widget */
+.widget-search__form {
+  padding: 16px 24px;
+  background: #f5f5f5;
+}
+
+.widget-search__submit[type=submit] {
+  display: none;
+}
+
+.widget-search__field {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 13px;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  outline-offset: -2px;
+  transition: none;
+  -webkit-appearance: none;
+}
+
+.widget-search__field:active,
+.widget-search__field:focus {
+  cursor: text;
+  outline: 2px solid #005fcc;
+}
+
+/* Social links widget (from custom.css) */
+.social-links-widget {
+  background-color: transparent;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.social-links-widget .widget-title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.social-icons-circular {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  direction: rtl;
+}
+
+.social-icons-circular li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: white;
+  font-size: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons-circular li a i {
+  color: white;
+}
+
+.social-icons-circular li a:hover {
+  transform: scale(1.1);
+  background-color: #bdbdbd;
+}
+
+/* Social widget (Generic, from base theme) */
+.widget-social__item {
+  padding: 0;
+  border: 0;
+}
+
+.widget-social__link {
+  display: block;
+  margin: 0 0 8px;
+  white-space: normal;
+}
+
+.widget-social__link-icon {
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+  fill: #fff;
+}
+
+/* Tags Widget */
+.widget-taglist__link {
+  display: inline-block;
+  margin: 0 4px 8px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* Languages Widget */
+.widget-languages__link {
+  display: block;
+}
+
+.widget-languages__link:hover .widget-languages__link-btn {
+  color: #fff;
+  background: var(--highlight-color);
+}
+
+.widget-languages__link-btn {
+  display: inline-block;
+}
+
+/* Custom sidebar (from custom.css) */
+.sidebar-custom {
+  background: transparent;
+  padding: 20px;
+  font-family: 'Varela Round', sans-serif;
+  color: #2c3e50;
+}
+
+.sidebar-custom h2,
+.sidebar-custom h3 {
+  color: #1a3e6e;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.sidebar-custom a {
+  color: #1a73e8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar-custom a:hover {
+  color: #0c47a1;
+}
+
+/* ==================================== */
+/* Footer                               */
+/* ==================================== */
+.footer {
+  padding: 10px 25px;
+  font-size: 12px;
+  font-size: 0.75rem;
+  color: #999;
+  background: #2a2a2a; /* Dark background for footer */
+  border-top: 3px solid #999; /* Grey top border */
+}
+
+.footer__container {
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.footer__links {
+  -webkit-order: 1;
+  order: 1;
+}
+
+.footer a {
+  color: #fff; /* White links in footer */
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer__copyright {
+  /* No specific styles provided in current input, but often used for copyright text alignment */
+}
+
+/* ==================================== */
+/* Homepage Main Content (from custom.css) */
+/* ==================================== */
+main.homepage {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #ffffff, #ffffff); /* Solid white background */
+  border-radius: 0px; /* No specific rounding, can be customized */
+  font-family: 'Varela Round', sans-serif;
+  color: #2c3e50; /* Dark grey text */
+  line-height: 1.6;
+  transition: background-color 0.3s ease;
+}
+
+main.homepage h1,
+main.homepage h2,
+main.homepage h3 {
+  color: #1a3e6e; /* Dark blue heading color */
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Subtle white text shadow */
+}
+
+main.homepage p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+main.homepage a {
+  color: #1a73e8; /* Blue for links in homepage main content */
+  text-decoration: none;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+main.homepage a:hover {
+  color: #0c47a1; /* Darker blue on hover */
+  border-color: #0c47a1;
+}
+
+/* Buttons within main.homepage */
+main.homepage .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #1a73e8;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(26, 115, 232, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  border: none;
+}
+
+main.homepage .btn:hover {
+  background-color: #0c47a1;
+  box-shadow: 0 10px 25px rgba(12, 71, 161, 0.6);
+}
+
+/* Blockquotes in homepage main content */
+main.homepage blockquote {
+  border-left: 5px solid #1a73e8; /* Blue left border */
+  padding-left: 15px;
+  color: #34495e;
+  font-style: italic;
+  background-color: #e8f0fe; /* Light blue background */
+  margin: 1.5em 0;
+  border-radius: 2px;
+}
+
+/* ==================================== */
+/* Specific Custom Links & CTAs         */
+/* ==================================== */
+.custom-link {
+  color: #007acc; /* Blue for custom links */
+  text-decoration: underline;
+}
+
+.custom-link:hover {
+  color: #005fa3;
+}
+
+.internal-link {
+  color: #004466; /* Darker blue for internal links */
+}
+
+.external-link {
+  color: #cc3300; /* Red for external links */
+}
+
+a.contact-link {
+  color: #6cbec1; /* Teal for contact links */
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.2em
+}
+
+a.contact-link:hover {
+  text-decoration: none;
+}
+
+a.contact-link .contact-icon {
+  display: inline-block;
+  margin-right: 0em;
+  font-family: sans-serif;
+  font-size: 1.8em;
+}
+
+
+.cta-therapy-box h2 {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 1.9rem;
+}
+
+.cta-therapy-box p {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #00695c; /* Dark green for CTA paragraph */
+}
+
+.cta-therapy-button {
+  background-color: #00796b; /* Medium green for CTA button */
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.cta-therapy-button:hover {
+  background-color: #004d40; /* Dark green on hover */
+}
+
+/* ==================================== */
+/* Media Queries (Responsive Design)    */
+/* ==================================== */
+@media screen and (max-width: 1475px) {
+  .container--outer {
+    width: 95%; /* Adjust outer container width */
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container--outer {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .wrapper,
+  .logo {
+    padding: 20px;
+  }
+
+  .widget {
+    margin-bottom: 20px;
+  }
+
+  .footer__container {
+    display: block;
+  }
+
+  .footer__links {
+    padding-bottom: 8px;
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .footer__copyright {
+    text-align: center;
+  }
+}
+
+/* @media screen and (max-width: 768px) { ... } will override some of these for smaller screens */
+
+/* ==================================== */
+/* Hero Section Styles (New)            */
+/* ==================================== */
+.hero-section {
+    /* תמונת רקע מנתיב img/hero.webp */
+    background-image: url('img/hero.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+    overflow: hidden;
+    font-family: var(--font-family-primary); /* שימוש בפונט ראשי לעקביות */
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* שכבת שחור שקופה כדי לשפר קריאות טקסט על רקע תמונה */
+    background-color: rgba(0, 0, 0, 0.4); /* הגדלתי מעט את השקיפות כדי לשפר קריאות */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px; /* הוסף ריפוד פנימי כדי למנוע הדבקה לשוליים במסכים קטנים */
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: white; /* ודא שכותרות ה-Hero לבנות */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* צל עדין לקריאות טובה יותר */
+}
+
+.hero-content .subtitle {
+    font-size: 1.5em; /* תת-כותרת גדולה יותר כמו בדוגמה */
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: white; /* ודא שתת-כותרות ב-Hero לבנות */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* רווח בין כפתורים */
+    margin-bottom: 20px; /* רווח מתחת לכפתורים */
+    flex-wrap: wrap; /* מאפשר לכפתורים לעבור שורה במסכים קטנים */
+}
+
+/* סגנון כפתור ראשי בצבע #FC6C44 - מתאים ל-`.button-primary` */
+.hero-buttons .button-primary {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
+    background-color: #FC6C44;
+    color: white;
+    border: 2px solid #FC6C44;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none; /* הסרת קו תחתון מקישור */
+    cursor: pointer;
+    white-space: nowrap; /* מונע שבירת שורה בתוך הכפתור */
+}
+
+.hero-buttons .button-primary:hover {
+    background-color: #e65c3b; /* גוון כהה יותר בריחוף */
+    border-color: #e65c3b;
+}
+
+/* סגנון כפתור משני בצבע #0E6781 - מתאים ל-`.button-secondary` */
+.hero-buttons .button-secondary {
+    padding: 12px 25px; /* שמירה על גודל זהה לכפתור הראשי */
+    font-size: 1.1em;
+    border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
+    background-color: #0E6781;
+    color: white;
+    border: 2px solid #0E6781;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none; /* הסרת קו תחתון מקישור */
+    cursor: pointer;
+    white-space: nowrap; /* מונע שבירת שורה בתוך הכפתור */
+}
+
+.hero-buttons .button-secondary:hover {
+    background-color: #0a4f61; /* גוון כהה יותר בריחוף */
+    border-color: #0a4f61;
+}
+
+.hero-description {
+    font-size: 1.1em;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.5;
+    color: white; /* ודא שהתיאור ב-Hero לבן */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* ==================================== */
+/* Media Queries for Responsive Design  */
+/* ==================================== */
+
+/* Original theme media queries, combined and adjusted */
+@media screen and (max-width: 768px) {
+  /* Global responsive adjustments */
+  .container--outer {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .wrapper,
+  .logo {
+    padding: 20px;
+  }
+
+  .widget {
+    margin-bottom: 20px;
+  }
+
+  .footer__container {
+    display: block;
+  }
+
+  .footer__links {
+    padding-bottom: 8px;
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .footer__copyright {
+    text-align: center;
+  }
+
+  .wrapper {
+    display: block;
+  }
+
+  .sidebar {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Original logo mobile alignment */
+  .logo {
+    text-align: center;
+  }
+
+  .logo__link {
+    margin: 0 auto;
+  }
+
+  .logo__title {
+    /* This rule is incomplete in the provided code, so I'm commenting it out */
+    /* font-size: ...; */
+  }
+
+  /* --- NEW: Header Top Bar Mobile Adjustments --- */
+    .header-top-bar {
+        flex-direction: column; /* Items stack vertically */
+        align-items: flex-start; /* Align to the left */
+        gap: 8px; /* Reduced gap */
+        padding: 10px; /* Adjusted padding */
+        z-index: 1010; /* Ensure this is still high */
+    }
+
+    .header-top-bar a {
+        display: block; /* Links become full width blocks */
+        width: 100%;
+        text-align: center; /* Centered text */
+    }
+
+    .header-top-bar .call-button,
+    .header-top-bar .appointment-button {
+        width: 100%; /* Full width buttons */
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* --- NEW: Main Header Mobile Adjustments --- */
+    .main-header {
+        flex-direction: row; /* Logo and hamburger side-by-side */
+        justify-content: space-between;
+        padding: 15px; /* More compact padding */
+        z-index: 1006; /* Ensure this z-index is maintained */
+    }
+
+    /* --- UPDATED: Your specific Logo Mobile Styling --- */
+    .my-header-logo {
+        padding-right: 15px; /* Adjust spacing on mobile if needed */
+        font-size: 25px; /* Adjusted font size for mobile logo */
+        text-align: left; /* Align text left within its container */
+    }
+
+    .my-logo-wrapper {
+        flex-direction: row; /* Keep image and text side-by-side on mobile as per your image */
+        align-items: center;
+        gap: 8px; /* Slightly less gap on mobile */
+    }
+    
+    .my-logo-text {
+        align-items: flex-start; /* Align text to the left */
+        text-align: left; /* Align text to the left */
+    }
+
+    .my-logo-image {
+        height: 60px; /* Adjusted height for mobile logo image */
+    }
+
+    .my-logo-title {
+        font-size: 1.2em; /* Smaller title font size on mobile */
+    }
+
+    .my-logo-subtitle {
+        font-size: 0.8em; /* Smaller subtitle font size on mobile */
+    }
+
+    /* --- NEW: Hamburger button styling for mobile --- */
+    .menu__btn {
+        display: block; /* Display hamburger button */
+        /* Overrides existing .menu__btn display: none from desktop media query */
+        position: relative; /* Needed for z-index */
+        z-index: 1009; /* Ensure it's clickable */
+    }
+
+    /* --- NEW: Mobile Menu List Styling --- */
+    .menu__list {
+        /* Overrides existing .menu__list and .js .menu__list */
+        display: none; /* Menu hidden by default */
+        flex-direction: column; /* Items stack vertically */
+        position: absolute; /* Absolute positioning below header */
+        top: 100%; /* Position right below the header */
+        left: 0;
+        width: 100%; /* Full width */
+        background-color: #fff; /* White background */
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1); /* Shadow */
+        z-index: 999; /* Ensure it's above page content but below hamburger button */
+        padding: 0; /* Remove default list padding */
+        margin: 0; /* Remove default list margin */
+        direction: rtl; /* Ensure menu items are RTL if site is RTL */
+        /* Overrides the transition properties from the base theme to ensure immediate display change */
+        transition: none !important; 
+        -webkit-transform: none !important; 
+        transform: none !important;
+        visibility: visible !important; /* This is handled by JS class toggle, but a fallback if JS fails to hide */
+    }
+
+    /* CRITICAL: Class added by JS when menu is open */
+    .menu__list--open {
+        display: flex !important; /* Force display to flex when open */
+        visibility: visible !important; /* Ensure visibility */
+    }
+
+    /* Individual menu item styling for mobile (when open) */
+    .menu__item {
+        border-bottom: 1px solid #eee; /* Separator line between items */
+        width: 100%; /* Full width */
+        box-sizing: border-box; /* Include padding and border in width */
+        background: transparent !important; /* No background on hover/active */
+    }
+
+    .menu__item:last-child {
+        border-bottom: none; /* No border on the last item */
+    }
+
+    .menu__item a.menu__link {
+        display: flex; /* For text and icon alignment */
+        justify-content: space-between; /* Push icon to the right */
+        align-items: center;
+        padding: 15px 20px; /* Generous padding for touch targets */
+        color: #333; /* Darker text color */
+        font-weight: normal; /* Normal font weight */
+        font-size: 1.1em; /* Slightly larger font */
+        text-decoration: none;
+        white-space: normal; /* Allow text to wrap if long */
+    }
+
+    .menu__item a.menu__link:hover {
+        background-color: #f7f7f7; /* Subtle hover effect */
+    }
+
+    .menu__item--active a.menu__link {
+        color: #216a7e; /* Highlight active link */
+        border-bottom: none; /* Remove underline on mobile */
+    }
+
+    /* Styling for the .Post element if it contains an icon (like 'v' or arrow) */
+    .menu__item .menu__link .menu__post {
+        margin-left: 10px; /* Space between text and icon */
+        font-size: 0.9em; /* Adjust icon size */
+        color: #888; /* Lighter icon color */
+        transition: transform 0.3s ease; /* Rotation animation */
+    }
+
+    /* Rotate icon if JS adds expanded class */
+    .menu__item.menu__item--expanded .menu__link .menu__post {
+        transform: rotate(180deg);
+    }
+    
+    /* Responsive adjustments for homepage main content */
+    main.homepage {
+        margin: 20px 10px;
+        padding: 20px 15px;
+    }
+
+    main.homepage .btn {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments for post list items */
+    .list__item.post {
+        padding: 15px;
+    }
+
+    .list__title.post__title {
+        font-size: 1.3rem;
+    }
+
+    .list__lead.post__lead {
+        font-size: 1rem;
+    }
+
+    .list__excerpt.post__content {
+        font-size: 0.95rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+    .service-item {
+        margin: 0 auto; /* Center on mobile */
+        max-width: 350px; /* Limit card width on mobile */
+    }
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .services-section {
+        padding: 40px 15px;
+    }
+    
+    /* Hero section specific media queries for mobile */
+    .hero-section {
+        padding: 60px 10px;
+        min-height: 350px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1.2em;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Buttons stack vertically */
+        gap: 10px;
+    }
+
+    .hero-buttons .button-primary,
+    .hero-buttons .button-secondary {
+        width: 80%; /* Take more width */
+        max-width: 300px;
+        margin: 0 auto; /* Center buttons */
+    }
+
+    .hero-description {
+        font-size: 1em;
+    }
+}
+
+/* --- Desktop Styles (min-width: 769px) - Ensures overrides for mobile are reverted --- */
+/* This media query covers screens from 769px and up */
+@media screen and (min-width: 769px) {
+    /* Overrides for Header and Menu to ensure desktop layout */
+    header.header {
+        position: sticky; /* Keep sticky */
+        z-index: 1000; /* Main header z-index */
+    }
+
+    .header-top-bar {
+        flex-direction: row; /* Horizontal */
+        justify-content: flex-end; /* Align right */
+        gap: 15px; /* Restore desktop gap */
+        padding: 10px 20px; /* Restore desktop padding */
+        z-index: 1010; /* Ensure high z-index */
+    }
+
+    .header-top-bar a {
+        width: auto; /* Auto width */
+        text-align: left; /* Restore default text alignment */
+    }
+
+    .header-top-bar .call-button,
+    .header-top-bar .appointment-button {
+        width: auto;
+    }
+
+    .main-header {
+        padding: 20px 0; /* Restore desktop padding */
+        z-index: 1006; /* Restore z-index */
+    }
+
+    .my-header-logo {
+        padding-right: 20px; /* Restore desktop spacing */
+        font-size: 30px; /* Restore desktop font size */
+        text-align: right; /* Restore original text align */
+    }
+    
+    .my-logo-wrapper {
+        flex-direction: row; /* Ensure image is on the right, text on left for desktop */
+        gap: 20px; /* Restore desktop gap */
+    }
+
+    .my-logo-image {
+        height: 80px; /* Restore desktop logo height */
+    }
+
+    .my-logo-title {
+        font-size: 1.8rem; /* Restore desktop font size */
+    }
+
+    .my-logo-subtitle {
+        font-size: 1.3rem; /* Restore desktop font size */
+    }
+
+    .menu__btn {
+        display: none; /* Hide hamburger on desktop */
+    }
+
+    .menu__list {
+        /* Overrides any mobile-specific display/positioning */
+        display: flex !important; /* Ensure menu is always visible */
+        flex-direction: row; /* Horizontal */
+        position: static !important; /* Remove absolute positioning */
+        background-color: transparent !important; /* No background */
+        box-shadow: none !important;
+        z-index: auto !important; /* Reset z-index */
+        visibility: visible !important; /* Ensure visible */
+        transform: none !important;
+        -webkit-transform: none !important;
+        border: 0 !important; /* Remove any borders */
+        justify-content: center; /* As per original theme desktop menu */
+    }
+
+    .menu__item {
+        border-bottom: none !important; /* Remove borders on desktop */
+        border-left: 1px solid rgba(255, 255, 255, 0.1); /* Original theme border */
+    }
+    .menu__item:first-child {
+        border-left: 0 !important; /* Remove border from first item */
+    }
+    
+    .menu__item a.menu__link {
+        padding: 10px 15px; /* Restore original padding */
+        text-transform: uppercase; /* Restore original text transform */
+        font-size: 23px; /* Restore original font size */
+        color: #000 !important; /* Restore original color */
+    }
+    .menu__item a.menu__link:hover {
+        color: #fff !important; /* Original theme hover color */
+        background: var(--highlight-color) !important; /* Original theme hover background */
+    }
+    .menu__item--active {
+        background: var(--highlight-color) !important; /* Original theme active background */
+    }
+    .menu__item--active a.menu__link {
+        color: #fff !important; /* Original theme active color */
+        border-bottom: 0 !important; /* Remove underline on active item */
+    }
+    .menu__item--active a.menu__link:hover {
+        color: #fff !important;
+        background: var(--highlight-color) !important;
+    }
+
+    .menu {
+        border-bottom: 15px solid var(--highlight-color); /* Restore original theme border */
+    }
+
+
+    /* Hero section specific media queries for desktop */
+    .hero-buttons {
+        flex-direction: row; /* Buttons side-by-side */
+        gap: 15px;
+    }
+
+    .hero-buttons .button-primary,
+    .hero-buttons .button-secondary {
+        width: auto;
+        max-width: none;
+        margin: 0;
+    }
+
+    /* Services grid for desktop */
+    .services-grid {
+        grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 columns on larger screens */
+    }
+}
+
+/* For larger desktops (e.g., > 1200px) */
+@media (min-width: 1201px) {
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1.5em;
+    }
+}
+
+/* For screens with small height (e.g., landscape phones) */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 250px;
+        padding: 40px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-content .subtitle {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+    }
+
+    .hero-buttons {
+        gap: 8px;
+    }
+
+    .hero-buttons .button-primary,
+    .hero-buttons .button-secondary {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .hero-description {
+        font-size: 0.85em;
+    }
+}
 
