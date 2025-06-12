@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 
   {{/* Load main theme CSS file */}}
-  {{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
+  {{ $style := resources.Get "css/style.css" | minify -}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
   {{/* Load other theme-specific CSS */}}
