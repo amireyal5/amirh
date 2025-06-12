@@ -164,7 +164,7 @@ textarea {
 .btn {
   display: inline-block;
   padding: 12px 28px;
-  background-color: var(--primary-color); /* Updated to primary color */
+  background-color: transparent;
   color: white;
   border-radius: 50px;
   font-weight: 500;
@@ -1510,7 +1510,8 @@ a.contact-link .contact-icon {
 }
 
 .hero-content .subtitle {
-    font-size: 1.5em; /* תת-כותרת גדולה יותר כמו בדוגמה */
+    font-size: 1.7em; /* תת-כותרת גדולה יותר כמו בדוגמה */
+    font-weight: 600;
     margin-bottom: 30px;
     line-height: 1.5;
     color: white; /* ודא שתת-כותרות ב-Hero לבנות */
@@ -1528,7 +1529,7 @@ a.contact-link .contact-icon {
 /* סגנון כפתור ראשי בצבע #FC6C44 - מתאים ל-`.button-primary` */
 .hero-buttons .button.button-primary {
     padding: 12px 25px;
-    font-size: 1.1em;
+    font-size: 1.2em;
     border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
     background-color: #FC6C44; /* Kept specific orange for hero button */
     color: white;
@@ -1547,7 +1548,7 @@ a.contact-link .contact-icon {
 /* סגנון כפתור משני בצבע #0E6781 - מתאים ל-`.button-secondary` */
 .hero-buttons .button.button-secondary {
     padding: 12px 25px; /* שמירה על גודל זהה לכפתור הראשי */
-    font-size: 1.1em;
+    font-size: 1.2em;
     border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
     background-color: #0E6781; /* Kept specific blue-turquoise for hero button */
     color: white;
@@ -1775,7 +1776,7 @@ a.contact-link .contact-icon {
     
     /* Hero section specific media queries for mobile */
     .hero-section {
-        padding: 60px 10px;
+        padding: 10px 10px;
         min-height: 350px;
         /* CRITICAL FIX: Ensure hero section still takes full width on mobile after structure change */
         width: 100vw;
@@ -1798,7 +1799,7 @@ a.contact-link .contact-icon {
 
     .hero-buttons .button.button-primary,
     .hero-buttons .button.button-secondary {
-        width: 80%; /* Take more width */
+        width: 90%;
         max-width: 300px;
         margin: 0 auto; /* Center buttons */
     }

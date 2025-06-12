@@ -62,6 +62,7 @@
     z-index: 1005;
     direction: rtl; /* Set RTL direction for the main header content */
     flex-wrap: nowrap; /* Prevent wrapping on desktop, handle in mobile media query */
+    flex-direction: row-reverse;
 }
 
 .custom-logo-link {
@@ -215,7 +216,7 @@
     }
 
     .custom-logo-image {
-        height: 60px; /* Smaller logo on mobile */
+        height: 50px; /* Smaller logo on mobile */
     }
 
     .custom-logo-text {
