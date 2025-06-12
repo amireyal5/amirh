@@ -1,0 +1,304 @@
+/* assets/css/custom-menu.css */
+
+/* Ensure full viewport width for top-level header components */
+.custom-site-header,
+.custom-top-bar,
+.custom-main-header,
+.hero-section { /* Also ensure hero section is full width */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Global header and nav styling */
+.custom-site-header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative; /* Not sticky, but needed for z-index context */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.custom-top-bar {
+    background-color: #f7f7f7;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.9em;
+    border-bottom: 1px solid #eee;
+    z-index: 1010; /* Highest z-index for top bar */
+}
+
+.custom-top-bar a {
+    text-decoration: none;
+    color: #007bff;
+    white-space: nowrap;
+}
+
+.custom-top-bar .custom-call-button {
+    background-color: #ff7f50;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.custom-top-bar .custom-appointment-button {
+    background-color: #216a7e;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.custom-main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px; /* Padding for logo and nav */
+    z-index: 1005;
+}
+
+.custom-logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    direction: ltr; /* Ensure LTR direction for logo elements */
+}
+
+.custom-logo-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.custom-logo-image {
+    height: 80px;
+    width: auto;
+}
+
+.custom-logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.custom-logo-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.custom-logo-subtitle {
+    font-size: 1.3rem;
+    color: #0c47a1;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* --- Navigation Menu (Desktop) --- */
+.custom-main-nav {
+    display: flex;
+    align-items: center;
+    direction: ltr;
+    position: relative;
+    z-index: 1008;
+}
+
+.custom-menu-toggle { /* Hamburger button */
+    display: none; /* Hidden by default on desktop */
+}
+
+.custom-menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal display on desktop */
+    gap: 30px;
+    direction: ltr;
+}
+
+.custom-menu-item a.custom-menu-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    padding: 10px 0;
+    display: block;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.custom-menu-item a.custom-menu-link:hover {
+    color: #216a7e;
+}
+
+.custom-menu-item--active a.custom-menu-link {
+    color: #216a7e;
+    border-bottom: 2px solid #216a7e;
+}
+
+/* ==================================== */
+/* Media Queries (Responsive Design)    */
+/* ==================================== */
+
+@media screen and (max-width: 768px) {
+    /* Ensure body can scroll */
+    body {
+        overflow-y: auto;
+        min-height: 100vh;
+    }
+
+    .custom-top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .custom-top-bar a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .custom-top-bar .custom-call-button,
+    .custom-top-bar .custom-appointment-button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .custom-main-header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    .custom-logo-wrapper {
+        flex-direction: row;
+        gap: 8px;
+    }
+    
+    .custom-logo-image {
+        height: 60px;
+    }
+
+    .custom-logo-title {
+        font-size: 1.2em;
+    }
+
+    .custom-logo-subtitle {
+        font-size: 0.8em;
+    }
+
+    /* --- Hamburger button styling for mobile --- */
+    .custom-menu-toggle {
+        display: block !important; /* Force display */
+        position: relative !important;
+        z-index: 99999 !important; /* Extremely high z-index to be on top */
+        background-color: red !important; /* DEBUGGING: Make it visible */
+        width: 60px !important; /* Make it large for easy clicking */
+        height: 60px !important; /* Make it large for easy clicking */
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        box-shadow: 0 0 0 5px yellow !important; /* DEBUGGING: Highlight with yellow border */
+    }
+
+    .custom-menu-toggle-text {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .custom-hamburger-icon span {
+        background-color: white !important; /* Make lines visible on red background */
+    }
+
+    /* --- Mobile Menu List Styling --- */
+    .custom-menu-list {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Position right below the header */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 999; /* Below hamburger, above content */
+        padding: 0;
+        margin: 0;
+        direction: rtl; /* If RTL site, keep items RTL */
+        transition: none !important; /* No transition for display change */
+    }
+
+    /* Class added by JS when menu is open */
+    .custom-menu-list.open { /* Note: JS adds 'open' class directly, not 'custom-menu-list--open' */
+        display: flex !important; /* Force display to flex when open */
+        visibility: visible !important;
+    }
+
+    .custom-menu-item {
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .custom-menu-item:last-child {
+        border-bottom: none;
+    }
+
+    .custom-menu-item a.custom-menu-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        color: #333;
+        font-weight: normal;
+        font-size: 1.1em;
+        text-decoration: none;
+        white-space: normal;
+    }
+
+    .custom-menu-item a.custom-menu-link:hover {
+        background-color: #f7f7f7;
+    }
+
+    .custom-menu-item--active a.custom-menu-link {
+        color: #216a7e;
+        border-bottom: none;
+    }
+} /* End of @media screen and (max-width: 768px) */
+
+/* --- Desktop Styles (min-width: 769px) - Ensures overrides for mobile are reverted --- */
+@media screen and (min-width: 769px) {
+    /* Reset mobile debug styles for desktop */
+    .custom-menu-toggle {
+        display: none !important;
+    }
+
+    .custom-menu-list {
+        display: flex !important; /* Always visible on desktop */
+        position: static !important;
+        flex-direction: row !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        z-index: auto !important;
+        visibility: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}
