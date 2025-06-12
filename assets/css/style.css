@@ -79,6 +79,8 @@ body {
   word-wrap: break-word;
   background: #fff; /* Light grey background for the body */
   -webkit-font-smoothing: antialiased; /* Enhance font rendering on WebKit */
+  min-height: 100vh; /* Ensure body takes full height for scrolling */
+  overflow-y: auto; /* Allow vertical scrolling on body */
 }
 
 .container {
@@ -520,6 +522,9 @@ select {
     gap: 15px; /* Space between elements */
     font-size: 0.9em;
     border-bottom: 1px solid #eee; /* Subtle separator */
+    width: 100vw; /* Ensure full viewport width */
+    margin-left: calc(50% - 50vw); /* Compensate for potential container centering */
+    margin-right: calc(50% - 50vw); /* Compensate for potential container centering */
     position: relative; /* Added for z-index context */
     z-index: 1010; /* Higher z-index */
 }
@@ -563,9 +568,11 @@ select {
 /* The overall header container from your baseof.html */
 /* This overrides and extends the .header class above */
 header.header {
-    width: 100%; /* Ensure it spans full width */
-    position: sticky; /* Make header sticky */
-    top: 0;
+    width: 100vw; /* Ensure it spans full viewport width */
+    margin-left: calc(50% - 50vw); /* Compensate for potential container centering */
+    margin-right: calc(50% - 50vw); /* Compensate for potential container centering */
+    position: relative; /* No longer sticky, but keep for z-index context */
+    top: auto; /* Remove top constraint */
     z-index: 1000; /* Ensure it's above other content */
     background-color: #fff; /* Ensure white background for the whole header */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for the whole header */
@@ -1782,6 +1789,9 @@ a.contact-link .contact-icon {
     min-height: 450px;
     overflow: hidden;
     font-family: var(--font-family-primary); /* שימוש בפונט ראשי לעקביות */
+    width: 100vw; /* Ensure full viewport width */
+    margin-left: calc(50% - 50vw); /* Compensate for potential container centering */
+    margin-right: calc(50% - 50vw); /* Compensate for potential container centering */
 }
 
 .hero-section::before {
@@ -2168,8 +2178,12 @@ a.contact-link .contact-icon {
 @media screen and (min-width: 769px) {
     /* Overrides for Header and Menu to ensure desktop layout */
     header.header {
-        position: sticky; /* Keep sticky */
+        position: relative; /* Changed from sticky */
+        top: auto; /* Remove top constraint */
         z-index: 1000; /* Main header z-index */
+        width: 100vw; /* Ensure full viewport width */
+        margin-left: calc(50% - 50vw); /* Compensate for potential container centering */
+        margin-right: calc(50% - 50vw); /* Compensate for potential container centering */
     }
 
     .header-top-bar {
@@ -2178,6 +2192,9 @@ a.contact-link .contact-icon {
         gap: 15px; /* Restore desktop gap */
         padding: 10px 20px; /* Restore desktop padding */
         z-index: 1010; /* Ensure high z-index */
+        width: 100vw; /* Ensure full viewport width */
+        margin-left: calc(50% - 50vw); /* Compensate for potential container centering */
+        margin-right: calc(50% - 50vw); /* Compensate for potential container centering */
     }
 
     .header-top-bar a {
