@@ -1,0 +1,44 @@
+<!-- layouts/partials/custom-header.html -->
+<header class="custom-site-header">
+    <div class="custom-top-bar">
+        <a href="/patient-support">Patient Support</a>
+        <a href="/patient-portal">Patient Portal</a>
+        <a href="tel:323-555-6463" class="custom-call-button">Call Now! (323) 555-6463</a>
+        <a href="/book-appointment" class="custom-appointment-button">Book An Appointment</a>
+    </div>
+
+    <div class="custom-main-header">
+        <a href="{{ .Site.BaseURL }}" class="custom-logo-link">
+            <div class="custom-logo-wrapper">
+                <img src="/img/logo.png" alt="{{ .Site.Title }} Logo" class="custom-logo-image">
+                <div class="custom-logo-text">
+                    <h1 class="custom-logo-title">{{ .Site.Title }}</h1>
+                    <p class="custom-logo-subtitle">שירותי פסיכותרפיה ופסיכיאטריה</p>
+                </div>
+            </div>
+        </a>
+
+        <nav class="custom-main-nav">
+            <button class="custom-menu-toggle" aria-controls="custom-menu-list" aria-expanded="false" tabindex="0">
+                <span class="custom-menu-toggle-text">{{ T "menu_label" }}</span>
+                <div class="custom-hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <ul id="custom-menu-list" class="custom-menu-list">
+                {{- $currentNode := . }}
+                {{- range .Site.Menus.main }}
+                <li class="custom-menu-item{{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} custom-menu-item--active{{ end }}">
+                    <a class="custom-menu-link" href="{{ .URL }}">
+                        {{ .Pre }}
+                        <span class="custom-menu-text">{{ .Name }}</span>
+                        {{ .Post }}
+                    </a>
+                </li>
+                {{- end }}
+            </ul>
+        </nav>
+    </div>
+</header>
