@@ -109,6 +109,8 @@
     gap: 15px; /* Space between elements */
     font-size: 0.9em;
     border-bottom: 1px solid #eee; /* Subtle separator */
+    position: relative; /* Added for z-index context */
+    z-index: 1010; /* Higher z-index */
 }
 
 .header-top-bar a {
@@ -163,6 +165,8 @@ header.header {
     max-width: 1200px; /* Adjust max-width as needed */
     margin: 0 auto;
     padding: 0 20px; /* Horizontal padding for responsiveness */
+    position: relative; /* Added for z-index context */
+    z-index: 1005; /* Slightly higher than header.header if needed */
 }
 
 /* This is the div that contains your logo and the main nav for layout */
@@ -171,6 +175,8 @@ header.header {
     justify-content: space-between; /* Logo left, nav right */
     align-items: center;
     padding: 20px 0; /* Adjust padding as needed, or remove if .header__container handles it */
+    position: relative; /* Added for z-index context */
+    z-index: 1006; /* Even higher */
 }
 
 /* --- UPDATED: Your specific Logo Styling (merged with new layout needs) --- */
@@ -181,6 +187,8 @@ header.header {
   direction: rtl; /* This implies content inside is RTL, might need adjustment for LTR layout */
   text-align: right;
   font-size: 30px; /* This font-size will affect inherited text, be mindful */
+  position: relative; /* Added for z-index context */
+  z-index: 1007; /* Higher than main-header */
 }
 
 .my-logo-link {
@@ -230,6 +238,8 @@ header.header {
     align-items: center;
     /* Since .my-header-logo has direction: rtl, the .menu needs to be LTR for standard layout */
     direction: ltr; 
+    position: relative; /* Added for z-index context */
+    z-index: 1008; /* Highest z-index for the nav itself */
 }
 
 /* Hamburger button styling (hidden on desktop) */
@@ -242,6 +252,8 @@ header.header {
     padding: 5px;
     color: #333;
     direction: ltr; /* Ensure button content is LTR */
+    position: relative; /* Added for z-index context */
+    z-index: 1009; /* Make sure the button is clickable */
 }
 
 .menu__btn-title {
