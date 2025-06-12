@@ -19,14 +19,14 @@
 }
 
 .custom-top-bar {
-    background-color: #f7f7f7;
-    padding: 10px 20px;
+    background-color: #fff;
+    padding: 0px 20px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     gap: 15px;
     font-size: 0.9em;
-    border-bottom: 1px solid #eee;
+    border-bottom: none;
     z-index: 1010; /* Highest z-index for top bar */
 }
 
@@ -110,14 +110,15 @@
 .custom-main-nav {
     display: flex;
     align-items: center;
-    direction: ltr; /* Navigation should be LTR for menu items, overriding parent RTL */
+    direction: rtl; /* Navigation should be LTR for menu items, overriding parent RTL */
     position: relative;
     z-index: 1008;
     min-width: fit-content; /* Allow content to define minimum width */
     margin-right: 0; /* Ensure no unwanted margin on right */
     /* CRITICAL FIX: Add margin-left for spacing from right edge in RTL desktop layout */
     margin-left: 20px; /* Adjust as needed for desktop spacing */
-}
+    
+}   
 
 .custom-menu-toggle { /* Hamburger button */
     display: none; /* Hidden by default on desktop */
@@ -129,7 +130,8 @@
     padding: 0;
     display: flex; /* Horizontal display on desktop */
     gap: 30px;
-    direction: ltr; /* Ensure LTR for menu items */
+    direction: rtl; /* Ensure LTR for menu items */
+    
 }
 
 .custom-menu-item a.custom-menu-link {
@@ -148,7 +150,7 @@
 
 .custom-menu-item--active a.custom-menu-link {
     color: #216a7e;
-    border-bottom: 2px solid #216a7e;
+    border-bottom: none;
 }
 
 /* ==================================== */
@@ -161,7 +163,7 @@
         flex-direction: row; /* CRITICAL FIX: Make buttons horizontal */
         justify-content: center; /* CRITICAL FIX: Center buttons horizontally */
         gap: 0; /* CRITICAL FIX: No gap to make them stick together initially */
-        padding: 5px; /* Adjust padding for mobile top bar */
+        padding: 0px; /* Adjust padding for mobile top bar */
         flex-wrap: wrap; /* Allow buttons to wrap if screen is very narrow */
         padding-left: 0; /* Remove default padding for full width */
         padding-right: 0; /* Remove default padding for full width */
@@ -177,25 +179,31 @@
     }
     /* Specific adjustments for button border-radius if they should be slightly rounded on ends */
     .custom-top-bar .custom-call-button {
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
     .custom-top-bar .custom-appointment-button {
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
 
 
     .custom-main-header {
-        flex-direction: row;
         justify-content: space-between; /* Keep space-between for mobile */
         padding: 15px 10px; /* Reduced padding for smaller screens */
-        flex-wrap: nowrap; /* Ensure no wrapping, let overflow-x handle it globally */
-    }
+        flex-wrap: wrap; /* Ensure no wrapping, let overflow-x handle it globally */
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 20px;
+        z-index: 1005;
+        direction: rtl;
+    
+    
 
     .custom-logo-link {
         margin-right: 0; /* Remove auto-margin on mobile */
@@ -280,10 +288,10 @@
         transform: translateY(-9px) rotate(-45deg);
     }
 
-    /* --- Mobile Menu List Styling --- */
+   /* --- Mobile Menu List Styling --- */
     .custom-menu-list {
         display: none; /* Hidden by default */
-        flex-direction: column-reverse; /* CRITICAL FIX: Reverse order for RTL display (בית ימני) */
+        flex-direction: column; /* Updated to column for standard top-to-bottom order */
         position: fixed; /* CRITICAL FIX: Fixed position for full screen overlay */
         top: var(--custom-header-height); /* Position right below the header */
         right: 0; /* For RTL, align to right edge */
@@ -303,7 +311,6 @@
         overflow-y: auto; /* Allow scrolling if menu content is long */
         align-items: flex-end; /* CRITICAL FIX: Align all menu items to the right */
     }
-
     /* Class added by JS when menu is open */
     .custom-menu-list.open {
         display: flex; /* Force display to flex when open */
@@ -324,7 +331,7 @@
 
     .custom-menu-item a.custom-menu-link {
         display: flex;
-        justify-content: flex-end; /* CRITICAL FIX: Justify to end for RTL alignment of content within link */
+        justify-content: flex-start; 
         align-items: center;
         padding: 15px 20px; /* Adjust padding for better spacing */
         color: #333;
@@ -336,7 +343,7 @@
         width: 100%; /* CRITICAL FIX: Ensure link fills its parent item */
     }
 
-    .custom-menu-item a.custom-menu-link:hover {
+    .custom-menu-item a.custom-menu-link:hover
         background-color: #f7f7f7;
     }
 
@@ -356,7 +363,7 @@
     .custom-menu-list {
         display: flex; /* Always visible on desktop */
         position: static; /* Reset to static for desktop */
-        flex-direction: row; /* Reset to row for desktop */
+        flex-direction: row-reverse; /* Reset to row for desktop */
         background-color: transparent;
         box-shadow: none;
         z-index: auto;
