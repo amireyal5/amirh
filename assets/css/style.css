@@ -1928,9 +1928,9 @@ a.contact-link .contact-icon {
     margin: 0 auto;
   }
 
+  /* Fixed the missing closing brace for logo__title */
   .logo__title {
-    /* This rule is incomplete in the provided code, so I'm commenting it out */
-    /* font-size: ...; */
+    font-size: 1.5rem; /* Example size, adjust as needed */
   }
 
   /* --- NEW: Header Top Bar Mobile Adjustments --- */
@@ -1995,16 +1995,28 @@ a.contact-link .contact-icon {
 
     /* --- NEW: Hamburger button styling for mobile --- */
     .menu__btn {
-        display: block; /* Display hamburger button */
-        /* Overrides existing .menu__btn display: none from desktop media query */
-        position: relative; /* Needed for z-index */
-        z-index: 1009; /* Ensure it's clickable */
+        display: block !important; /* Force display */
+        position: relative !important; /* Ensure positioning context */
+        z-index: 99999 !important; /* Extremely high z-index to be on top */
+        background-color: red !important; /* For debugging: make it visible and distinct */
+        width: 80px !important; /* Make it large for easy clicking */
+        height: 80px !important; /* Make it large for easy clicking */
+        border-radius: 50% !important; /* Make it a circle for distinctness */
+        display: flex !important; /* To center the hamburger icon */
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important; /* Remove padding if it affects size calculation */
+        box-shadow: 0 0 0 5px yellow !important; /* Add a distinct border for debugging */
+    }
+
+    .hamburger-icon span {
+        background-color: white !important; /* Make lines visible on red background */
     }
 
     /* --- NEW: Mobile Menu List Styling --- */
     .menu__list {
         /* Overrides existing .menu__list and .js .menu__list */
-        display: none; /* Menu hidden by default */
+        display: none; /* Menu hidden by default by CSS, JS will toggle */
         flex-direction: column; /* Items stack vertically */
         position: absolute; /* Absolute positioning below header */
         top: 100%; /* Position right below the header */
@@ -2148,7 +2160,8 @@ a.contact-link .contact-icon {
     .hero-description {
         font-size: 1em;
     }
-}
+} /* Closing brace for @media screen and (max-width: 768px) */
+
 
 /* --- Desktop Styles (min-width: 769px) - Ensures overrides for mobile are reverted --- */
 /* This media query covers screens from 769px and up */
