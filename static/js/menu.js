@@ -7,14 +7,22 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuButton && menuList) {
         console.log('JS: Hamburger button and menu list found. Initializing menu logic.');
 
-        // Initialize menu state for mobile: hide it explicitly if on mobile
-        // This handles cases where CSS might not hide it properly initially
+        // --- CRITICAL INITIALIZATION FIX ---
+        // Ensure menu is closed visually and programmatically on load for mobile
         if (window.innerWidth <= 768) { // Assuming 768px is the mobile breakpoint
-            menuList.style.display = 'none';
-            console.log('JS: Initializing menu as hidden on mobile.');
+            menuList.classList.remove('menu__list--open'); // Ensure class is removed
+            menuList.style.display = 'none'; // Force hide visually
+            menuButton.setAttribute('aria-expanded', 'false'); // Set aria-expanded to false
+            console.log('JS: Initializing menu as hidden and aria-expanded=false on mobile.');
         } else {
-            menuList.style.display = ''; // Reset for desktop (let CSS control)
+            // On desktop, ensure menu is visible and aria-expanded is true (or remove it, as it's not used)
+            menuList.style.display = ''; // Let CSS control display
+            menuList.classList.remove('menu__list--open'); // Ensure no mobile open class
+            menuButton.removeAttribute('aria-expanded'); // Remove aria-expanded on desktop as it's not relevant
+            console.log('JS: Initializing menu for desktop, resetting mobile states.');
         }
+        // --- END CRITICAL INITIALIZATION FIX ---
+
 
         // Add click event listener to the hamburger button
         menuButton.addEventListener('click', function(event) {
@@ -74,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // On desktop, ensure menu is visible and remove mobile-specific styles
                 menuList.style.display = ''; // Reset to default (CSS controlled)
                 menuList.classList.remove('menu__list--open'); // Ensure class is removed
-                menuButton.setAttribute('aria-expanded', 'false'); // Reset aria attribute
+                menuButton.removeAttribute('aria-expanded'); // Remove aria-expanded on desktop
                 console.log('JS: Resized to desktop, menu reset.');
             } else {
                 // On mobile, if menu is not open, hide it
