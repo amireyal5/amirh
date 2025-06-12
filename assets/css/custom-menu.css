@@ -1,10 +1,10 @@
 /* assets/css/custom-menu.css */
 
 /* Ensure full viewport width for top-level header components */
+/* These properties override any container padding/margins */
 .custom-site-header,
 .custom-top-bar,
-.custom-main-header,
-.hero-section { /* Also ensure hero section is full width */
+.custom-main-header {
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
@@ -149,53 +149,6 @@
 /* ==================================== */
 
 @media screen and (max-width: 768px) {
-    /* Ensure body can scroll */
-    body {
-        overflow-y: auto;
-        min-height: 100vh;
-    }
-
-    .custom-top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        padding: 10px;
-    }
-
-    .custom-top-bar a {
-        width: 100%;
-        text-align: center;
-    }
-
-    .custom-top-bar .custom-call-button,
-    .custom-top-bar .custom-appointment-button {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .custom-main-header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 15px;
-    }
-
-    .custom-logo-wrapper {
-        flex-direction: row;
-        gap: 8px;
-    }
-    
-    .custom-logo-image {
-        height: 60px;
-    }
-
-    .custom-logo-title {
-        font-size: 1.2em;
-    }
-
-    .custom-logo-subtitle {
-        font-size: 0.8em;
-    }
-
     /* --- Hamburger button styling for mobile --- */
     .custom-menu-toggle {
         display: block !important; /* Force display */
@@ -234,8 +187,13 @@
         flex-direction: column;
         position: absolute;
         top: 100%; /* Position right below the header */
+        /* CRITICAL FIX: Ensure full width for mobile menu */
         left: 0;
-        width: 100%;
+        width: 100vw; /* Take full viewport width */
+        margin-left: calc(50% - 50vw); /* Compensate for potential container centering */
+        margin-right: calc(50% - 50vw); /* Compensate for potential container centering */
+        box-sizing: border-box; /* Include padding in width */
+        /* End CRITICAL FIX */
         background-color: #fff;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         z-index: 999; /* Below hamburger, above content */
@@ -251,6 +209,7 @@
         visibility: visible !important;
     }
 
+    /* Individual menu item styling for mobile (when open) */
     .custom-menu-item {
         border-bottom: 1px solid #eee;
         width: 100%;
