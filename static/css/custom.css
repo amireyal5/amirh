@@ -177,7 +177,7 @@ header.header {
 .my-header-logo {
   display: flex;
   justify-content: center; /* This might be overridden by flexbox of .main-header */
-  margin: 0; /* Remove existing margin to be controlled by flexbox */
+  margin: 0; /* Removed existing margin to be controlled by flexbox */
   direction: rtl; /* This implies content inside is RTL, might need adjustment for LTR layout */
   text-align: right;
   font-size: 30px; /* This font-size will affect inherited text, be mindful */
@@ -196,7 +196,7 @@ header.header {
   flex-direction: row; /* Image to the right, text to the left by default (LTR context) */
   align-items: center;
   gap: 20px; /* Adjusted gap for better desktop spacing */
-  margin-top: 0; /* Remove existing margin */
+  margin-top: 0; /* Removed existing margin */
 }
 
 .my-logo-image {
@@ -855,31 +855,26 @@ code, pre {
     }
 
     .my-logo-wrapper {
-        flex-direction: row; /* Keep image and text side-by-side on mobile based on your image */
+        flex-direction: column; /* Image to the right, text to the left by default (LTR context) */
         align-items: center;
-        gap: 8px; /* Slightly less gap on mobile */
+        gap: 0; /* Slightly less gap on mobile */
     }
     
-    /* Override existing media query for .my-logo-wrapper to keep row direction */
-    .my-logo-wrapper {
-        flex-direction: row !important; 
-    }
-
     .my-logo-text {
-        align-items: flex-start; /* Align text to the left */
-        text-align: left; /* Align text to the left */
+        align-items: center; /* Align text to the left */
+        text-align: center; /* Align text to the left */
     }
 
     .my-logo-image {
-        height: 60px; /* Adjusted height for mobile logo image */
+        height: 80px; /* Adjusted height for mobile logo image */
     }
 
     .my-logo-title {
-        font-size: 1.2em; /* Smaller title font size on mobile */
+        font-size: 1.5rem; /* Smaller title font size on mobile */
     }
 
     .my-logo-subtitle {
-        font-size: 0.8em; /* Smaller subtitle font size on mobile */
+        font-size: 0.9rem; /* Smaller subtitle font size on mobile */
     }
 
     /* Show hamburger button on mobile */
