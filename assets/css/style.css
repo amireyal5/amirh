@@ -622,7 +622,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .menu__list {
   list-style: none;
-  background: #00ACC1; /* A teal blue color */
+  background: none; /* A teal blue color */
 }
 
 .menu__item:hover {
