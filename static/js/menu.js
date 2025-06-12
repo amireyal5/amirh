@@ -29,6 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // Prevent default button action (e.g., form submission)
             event.stopPropagation(); // Stop event from bubbling up immediately (prevents document click from closing it)
 
+            // --- CRITICAL DEBUGGER STATEMENT ---
+            // This line will pause execution right here if the click event registers.
+            // If the debugger doesn't stop, the click is not reaching this listener.
+            debugger; 
+            // --- END CRITICAL DEBUGGER STATEMENT ---
+
             console.log('JS: Hamburger button clicked!');
             const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
             this.setAttribute('aria-expanded', !isExpanded);
