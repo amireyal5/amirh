@@ -59,7 +59,7 @@
     display: flex;
     justify-content: space-between; /* Keep space-between for desktop */
     align-items: center;
-    padding: 20px; /* Padding for logo and nav */
+    padding: 10px; /* Padding for logo and nav */
     z-index: 1005;
     direction: rtl; /* Set RTL direction for the main header content */
     flex-wrap: nowrap; /* Prevent wrapping on desktop, handle in mobile media query */
@@ -139,11 +139,12 @@
 .custom-menu-item a.custom-menu-link {
     text-decoration: none;
     color: #555;
-    font-weight: bold;
+    font-weight: 450;
     padding: 10px 0;
     display: block;
     white-space: nowrap;
     transition: color 0.3s ease;
+    font-size: 22px;
 }
 
 .custom-menu-item a.custom-menu-link:hover {

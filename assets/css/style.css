@@ -1472,7 +1472,7 @@ a.contact-link .contact-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 450px;
+    min-height: 650px;
     overflow: hidden; /* Prevent internal content overflow */
     font-family: var(--font-family-primary); /* שימוש בפונט ראשי לעקביות */
     /* CRITICAL FIX: Ensure full width for hero section by using 100vw and compensating for body/html margins/padding */
