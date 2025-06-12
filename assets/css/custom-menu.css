@@ -151,18 +151,21 @@
 @media screen and (max-width: 768px) {
     /* --- Hamburger button styling for mobile --- */
     .custom-menu-toggle {
-        display: block !important; /* Force display */
-        position: relative !important;
-        z-index: 99999 !important; /* Extremely high z-index to be on top */
-        background-color: red !important; /* DEBUGGING: Make it visible */
-        width: 60px !important; /* Make it large for easy clicking */
-        height: 60px !important; /* Make it large for easy clicking */
-        border-radius: 50% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 0 !important;
-        box-shadow: 0 0 0 5px yellow !important; /* DEBUGGING: Highlight with yellow border */
+        display: block; /* Make it visible on mobile */
+        position: relative;
+        z-index: 99999;
+        background: none; /* Remove red background */
+        border: none; /* Remove border */
+        width: 40px; /* Standard size */
+        height: 40px; /* Standard size */
+        border-radius: 0; /* No radius */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        box-shadow: none; /* Remove yellow shadow */
+        cursor: pointer;
+        outline: none; /* Remove outline on focus */
     }
 
     .custom-menu-toggle-text {
@@ -177,8 +180,32 @@
         border: 0;
     }
 
+    .custom-hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 25px;
+        height: 20px;
+    }
+
     .custom-hamburger-icon span {
-        background-color: white !important; /* Make lines visible on red background */
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: #333; /* Standard dark color for lines */
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Animation for hamburger icon on open */
+    .custom-menu-toggle[aria-expanded="true"] .custom-hamburger-icon span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .custom-menu-toggle[aria-expanded="true"] .custom-hamburger-icon span:nth-child(2) {
+        opacity: 0;
+    }
+    .custom-menu-toggle[aria-expanded="true"] .custom-hamburger-icon span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 
     /* --- Mobile Menu List Styling --- */
@@ -200,13 +227,13 @@
         padding: 0;
         margin: 0;
         direction: rtl; /* If RTL site, keep items RTL */
-        transition: none !important; /* No transition for display change */
+        transition: none; /* No transition for display change */
     }
 
     /* Class added by JS when menu is open */
     .custom-menu-list.open { /* Note: JS adds 'open' class directly, not 'custom-menu-list--open' */
-        display: flex !important; /* Force display to flex when open */
-        visibility: visible !important;
+        display: flex; /* Force display to flex when open */
+        visibility: visible;
     }
 
     /* Individual menu item styling for mobile (when open) */
@@ -246,18 +273,18 @@
 @media screen and (min-width: 769px) {
     /* Reset mobile debug styles for desktop */
     .custom-menu-toggle {
-        display: none !important;
+        display: none;
     }
 
     .custom-menu-list {
-        display: flex !important; /* Always visible on desktop */
-        position: static !important;
-        flex-direction: row !important;
-        background-color: transparent !important;
-        box-shadow: none !important;
-        z-index: auto !important;
-        visibility: visible !important;
-        padding: 0 !important;
-        margin: 0 !important;
+        display: flex; /* Always visible on desktop */
+        position: static;
+        flex-direction: row;
+        background-color: transparent;
+        box-shadow: none;
+        z-index: auto;
+        visibility: visible;
+        padding: 0;
+        margin: 0;
     }
 }
