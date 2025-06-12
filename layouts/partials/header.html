@@ -1,5 +1,6 @@
 <header class="header {{ if .IsHome }}header--home{{ end }}">
   <div class="container header__container">
+    {{ partial "custom-logo" . }}
     {{ partial "menu.html" . }}
 
   {{ partial "hero-section.html" . }} 
