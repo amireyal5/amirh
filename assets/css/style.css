@@ -76,7 +76,7 @@ body {
 .container {
   position: relative;
   width: 100%;
-  max-width: 1600px; /* Max width for main content area */
+  max-width: 2000px; /* Max width for main content area */
   margin: 0 auto; /* Center the container */
 }
 
