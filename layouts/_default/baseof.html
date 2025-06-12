@@ -2,7 +2,7 @@
 <html class="no-js" lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ block "title" . }}{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
   <script>
     (function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");
@@ -65,14 +65,42 @@
   {{- if not $server }}
     {{ template "_internal/google_analytics.html" . }}
   {{- end }}
+
+  <!-- Define CSS variable for hero background image -->
+  <!-- CRITICAL FIX: Ensure the image path is correct and Hugo's relURL is used reliably -->
+  <style>
+    :root {
+      --hero-bg-image: url("{{ "/img/hero.webp" | relURL }}");
+      /* Define header height for mobile menu positioning */
+      --custom-header-height: 140px; /* Adjust based on actual header height (top-bar + main-header) */
+      /* DEBUGGING: Add borders to main layout elements to identify overflow issues */
+      /* body { border: 2px solid green !important; } */
+      /* .custom-site-header { border: 1px solid blue !important; } */
+      /* .hero-section { border: 1px solid red !important; } */
+      /* .services-section { border: 1px solid purple !important; } */
+      /* .homepage { border: 1px solid orange !important; } */
+      /* .container { border: 1px solid yellow !important; } */
+      /* .wrapper { border: 1px solid pink !important; } */
+      /* END DEBUGGING */
+    }
+    /* Adjust header height variable for different screen sizes if needed */
+    @media screen and (max-width: 768px) {
+        :root {
+            --custom-header-height: 120px; /* Smaller header height on mobile */
+        }
+    }
+  </style>
 </head>
 <body class="body">
   {{/* REPLACE OLD HEADER PARTIAL WITH OUR NEW CUSTOM HEADER */}}
   {{ partial "custom-header.html" . }}
   
+  {{/* CRITICAL FIX: Place Hero Section directly here, outside the main container */}}
+  {{ if .IsHome }}
+      {{ partial "hero-section.html" . }}
+  {{ end }}
+
   <div class="container container--outer">
-    {{/* The header block is now handled by custom-header.html, so remove this unless it's for another purpose */}}
-    {{/* {{ block "header" . }}{{ partial "header.html" . }}{{ end }} */}} 
     <div class="wrapper flex">
       <div class="primary">
         {{ block "main" . }}

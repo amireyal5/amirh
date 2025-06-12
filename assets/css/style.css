@@ -11,15 +11,15 @@
 /* We define default values here for pure CSS context. */
 /* ==================================== */
 :root {
-  --highlight-color: #00acc1; /* Default highlight color - Updated to #00acc1 */
+  --highlight-color: #ff7f50; /* Updated to Call Now button orange */
   --font-family-primary: "Assistant", sans-serif; /* Default primary font */
   --font-family-secondary: "IBM Plex Mono", monospace; /* Default secondary/mono font */
 
   /* Define primary/secondary colors for new elements to ensure consistency */
-  --primary-color: #007bff; /* General primary blue */
-  --secondary-color: #0056b3; /* Darker blue */
-  --heading-color: #2c3e50; /* Dark grey for headings */
-  --text-color-light: #555; /* Light grey for text */
+  --primary-color: #216a7e; /* Updated to Book An Appointment button blue-turquoise */
+  --secondary-color: #1A576C; /* Darker shade of primary-color */
+  --heading-color: #2c3e50; /* Dark grey for headings - kept for readability */
+  --text-color-light: #555; /* Light grey for text - kept for readability */
   --card-background-color: #ffffff; /* White for card backgrounds */
   --theme-background-color: #ffffff; /* White for main theme background */
 }
@@ -39,7 +39,6 @@ dialog,
 figcaption,
 figure,
 footer,
-header,
 hgroup,
 main,
 nav,
@@ -80,7 +79,10 @@ body {
   background: #fff; /* Light grey background for the body */
   -webkit-font-smoothing: antialiased; /* Enhance font rendering on WebKit */
   min-height: 100vh; /* Ensure body takes full height for scrolling */
+  overflow-x: hidden; /* CRITICAL FIX: Hide horizontal scrollbar for the entire body */
   overflow-y: auto; /* Allow vertical scrolling on body */
+  direction: rtl; /* CRITICAL FIX: Set default direction for the entire body to RTL */
+  width: 100%; /* Ensure body takes full width */
 }
 
 .container {
@@ -162,7 +164,7 @@ textarea {
 .btn {
   display: inline-block;
   padding: 12px 28px;
-  background-color:unset ; /* Primary button background */
+  background-color: var(--primary-color); /* Updated to primary color */
   color: white;
   border-radius: 50px;
   font-weight: 500;
@@ -171,18 +173,18 @@ textarea {
   
   transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
   user-select: none; /* Prevent text selection on button */
-  border: solid 0.5px #1a73e8; /* Remove default border */
+  border: solid 0.5px var(--primary-color); /* Updated to primary color */
 }
 
 .btn:hover {
-  background-color:none; /* Darker primary color on hover */
+  background-color: var(--secondary-color); /* Darker primary color on hover */
   box-shadow: none;/* Enhanced shadow on hover */
 }
 
 /* Circular button specific styles (from custom.css) */
 .btn-circle {
   display: inline-block;
-  background-color: #ddd; /* Light grey for circular buttons */
+  background-color: var(--highlight-color); /* Updated to highlight color */
   color: white;
   padding: 10px 20px;
   border-radius: 25px; /* Pill-shaped button */
@@ -196,7 +198,7 @@ textarea {
 }
 
 .btn-circle:hover {
-  background-color: #aaa; /* Darker grey on hover */
+  background-color: #e65c3b; /* Darker highlight color on hover */
   color: white;
 }
 
@@ -254,7 +256,7 @@ h6 {
 
 /* Base link styling */
 a {
-  color: #1a73e8; /* A vibrant blue for links, consistent with custom.css */
+  color: var(--primary-color); /* Updated to primary color */
   text-decoration: none;
   transition: color 0.3s ease, border-color 0.3s ease;
 }
@@ -704,7 +706,7 @@ select {
   height: 40px;
   padding: 8px;
   margin-right: 6px;
-  background: #1a73e8; (--highlight-color);
+  background: var(--primary-color); /* Updated to primary color */
   fill: #fff;
 }
 
@@ -890,7 +892,7 @@ select {
   font-size: 1.8rem; /* Larger font for post title */
   margin-bottom: 0.5rem;
   font-weight: 700;
-  color: #1a3e6e; /* Dark blue title color */
+  color: var(--primary-color); /* Updated to primary color */
 }
 
 .list__title.post__title a {
@@ -900,7 +902,7 @@ select {
 }
 
 .list__title.post__title a:hover {
-  color: #0c47a1; /* Darker blue on hover */
+  color: var(--secondary-color); /* Darker primary color on hover */
 }
 
 /* Post lead/short description */
@@ -920,19 +922,19 @@ select {
 
 /* "Read more" button for list items */
 .list__footer-readmore.btn {
-  background-color: #1f5fa9; /* A slightly different shade of blue for this button */
+  background-color: var(--primary-color); /* Updated to primary color */
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
   display: inline-block;
   text-decoration: none;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(26, 115, 232, 0.4); /* Re-added shadow for consistency */
+  box-shadow: 0 4px 10px rgba(33, 106, 126, 0.4); /* Updated shadow color */
 }
 
 .list__footer-readmore.btn:hover {
-  background-color: #174a84; /* Darker shade on hover */
-  box-shadow: 0 6px 15px rgba(12, 71, 161, 0.5); /* Re-added shadow on hover */
+  background-color: var(--secondary-color); /* Darker primary color on hover */
+  box-shadow: 0 6px 15px rgba(26, 87, 108, 0.5); /* Updated shadow color */
 }
 
 /* ==================================== */
@@ -1167,7 +1169,7 @@ textarea {
 .widget-search__field:active,
 .widget-search__field:focus {
   cursor: text;
-  outline: 2px solid #005fcc;
+  outline: 2px solid var(--primary-color); /* Updated to primary color */
 }
 
 /* Social links widget (from custom.css) */
@@ -1201,7 +1203,7 @@ textarea {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background-color: #e0e0e0;
+  background-color: var(--primary-color); /* Updated to primary color */
   color: white;
   font-size: 20px;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -1213,7 +1215,7 @@ textarea {
 
 .social-icons-circular li a:hover {
   transform: scale(1.1);
-  background-color: #bdbdbd;
+  background-color: var(--secondary-color); /* Darker primary color on hover */
 }
 
 /* Social widget (Generic, from base theme) */
@@ -1266,18 +1268,18 @@ textarea {
 
 .sidebar-custom h2,
 .sidebar-custom h3 {
-  color: #1a3e6e;
+  color: var(--primary-color); /* Updated to primary color */
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .sidebar-custom a {
-  color: #1a73e8;
+  color: var(--primary-color); /* Updated to primary color */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .sidebar-custom a:hover {
-  color: #0c47a1;
+  color: var(--secondary-color); /* Darker primary color on hover */
 }
 
 /* ==================================== */
@@ -1334,7 +1336,7 @@ main.homepage {
 main.homepage h1,
 main.homepage h2,
 main.homepage h3 {
-  color: #1a3e6e; /* Dark blue heading color */
+  color: var(--primary-color); /* Updated to primary color */
   margin-bottom: 1rem;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Subtle white text shadow */
 }
@@ -1345,44 +1347,44 @@ main.homepage p {
 }
 
 main.homepage a {
-  color: #1a73e8; /* Blue for links in homepage main content */
+  color: var(--primary-color); /* Updated to primary color */
   text-decoration: none;
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 main.homepage a:hover {
-  color: #0c47a1; /* Darker blue on hover */
-  border-color: #0c47a1;
+  color: var(--secondary-color); /* Darker primary color on hover */
+  border-color: var(--secondary-color);
 }
 
 /* Buttons within main.homepage */
 main.homepage .btn {
   display: inline-block;
   padding: 12px 28px;
-  background-color: #1a73e8;
+  background-color: var(--primary-color); /* Updated to primary color */
   color: white;
   border-radius: 5px;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 6px 15px rgba(26, 115, 232, 0.4);
+  box-shadow: 0 6px 15px rgba(33, 106, 126, 0.4); /* Updated shadow color */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   user-select: none;
   border: none;
 }
 
 main.homepage .btn:hover {
-  background-color: #0c47a1;
-  box-shadow: 0 10px 25px rgba(12, 71, 161, 0.6);
+  background-color: var(--secondary-color); /* Darker primary color on hover */
+  box-shadow: 0 10px 25px rgba(26, 87, 108, 0.6); /* Updated shadow color */
 }
 
 /* Blockquotes in homepage main content */
 main.homepage blockquote {
-  border-left: 5px solid #1a73e8; /* Blue left border */
+  border-left: 5px solid var(--primary-color); /* Updated to primary color */
   padding-left: 15px;
   color: #34495e;
   font-style: italic;
-  background-color: #e8f0fe; /* Light blue background */
+  background-color: #e8f0fe; /* Light blue background - kept for contrast */
   margin: 1.5em 0;
   border-radius: 2px;
 }
@@ -1391,24 +1393,24 @@ main.homepage blockquote {
 /* Specific Custom Links & CTAs         */
 /* ==================================== */
 .custom-link {
-  color: #007acc; /* Blue for custom links */
+  color: var(--primary-color); /* Updated to primary color */
   text-decoration: underline;
 }
 
 .custom-link:hover {
-  color: #005fa3;
+  color: var(--secondary-color); /* Darker primary color on hover */
 }
 
 .internal-link {
-  color: #004466; /* Darker blue for internal links */
+  color: var(--primary-color); /* Updated to primary color */
 }
 
 .external-link {
-  color: #cc3300; /* Red for external links */
+  color: var(--highlight-color); /* Updated to highlight color */
 }
 
 a.contact-link {
-  color: #6cbec1; /* Teal for contact links */
+  color: var(--primary-color); /* Updated to primary color */
   font-weight: 600;
   text-decoration: none;
   font-size: 1.2em
@@ -1436,11 +1438,11 @@ a.contact-link .contact-icon {
   font-size: 1.15rem;
   margin-bottom: 20px;
   line-height: 1.5;
-  color: #00695c; /* Dark green for CTA paragraph */
+  color: #00695c; /* Dark green for CTA paragraph - kept for contrast */
 }
 
 .cta-therapy-button {
-  background-color: #00796b; /* Medium green for CTA button */
+  background-color: var(--primary-color); /* Updated to primary color */
   color: #ffffff;
   padding: 14px 30px;
   border-radius: 8px;
@@ -1452,56 +1454,15 @@ a.contact-link .contact-icon {
 }
 
 .cta-therapy-button:hover {
-  background-color: #004d40; /* Dark green on hover */
+  background-color: var(--secondary-color); /* Darker primary color on hover */
 }
-
-/* ==================================== */
-/* Media Queries (Responsive Design)    */
-/* ==================================== */
-@media screen and (max-width: 1475px) {
-  .container--outer {
-    width: 95%; /* Adjust outer container width */
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .container--outer {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .wrapper,
-  .logo {
-    padding: 20px;
-  }
-
-  .widget {
-    margin-bottom: 20px;
-  }
-
-  .footer__container {
-    display: block;
-  }
-
-  .footer__links {
-    padding-bottom: 8px;
-    padding-bottom: 0.5rem;
-    text-align: center;
-  }
-
-  .footer__copyright {
-    text-align: center;
-  }
-}
-
-/* @media screen and (max-width: 768px) { ... } will override some of these for smaller screens */
 
 /* ==================================== */
 /* Hero Section Styles (New)            */
 /* ==================================== */
 .hero-section {
     /* תמונת רקע מנתיב img/hero.webp */
-    background-image: url('/img/hero.webp'); /* CRITICAL FIX: Ensure absolute path for Hugo */
+    background-image: var(--hero-bg-image); /* Use CSS variable from baseof.html */
     background-size: cover;
     background-position: center;
     color: white;
@@ -1512,11 +1473,13 @@ a.contact-link .contact-icon {
     align-items: center;
     justify-content: center;
     min-height: 450px;
-    overflow: hidden;
+    overflow: hidden; /* Prevent internal content overflow */
     font-family: var(--font-family-primary); /* שימוש בפונט ראשי לעקביות */
-    width: 100vw; /* Ensure full viewport width */
-    margin-left: calc(50% - 50vw); /* Compensate for potential container centering */
-    margin-right: calc(50% - 50vw); /* Compensate for potential container centering */
+    /* CRITICAL FIX: Ensure full width for hero section by using 100vw and compensating for body/html margins/padding */
+    width: 100vw; /* Take full viewport width */
+    margin-left: calc(50% - 50vw); /* Pull left to compensate for body/html default margins */
+    margin-right: calc(50% - 50vw); /* Pull right to compensate for body/html default margins */
+    box-sizing: border-box; /* Include padding and border in width */
 }
 
 .hero-section::before {
@@ -1563,12 +1526,11 @@ a.contact-link .contact-icon {
 }
 
 /* סגנון כפתור ראשי בצבע #FC6C44 - מתאים ל-`.button-primary` */
-/* CRITICAL FIX: Changed selector to match HTML class "button button-primary" */
 .hero-buttons .button.button-primary {
     padding: 12px 25px;
     font-size: 1.1em;
     border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
-    background-color: #FC6C44;
+    background-color: #FC6C44; /* Kept specific orange for hero button */
     color: white;
     border: 2px solid #FC6C44;
     transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -1583,12 +1545,11 @@ a.contact-link .contact-icon {
 }
 
 /* סגנון כפתור משני בצבע #0E6781 - מתאים ל-`.button-secondary` */
-/* CRITICAL FIX: Changed selector to match HTML class "button button-secondary" */
 .hero-buttons .button.button-secondary {
     padding: 12px 25px; /* שמירה על גודל זהה לכפתור הראשי */
     font-size: 1.1em;
     border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
-    background-color: #0E6781;
+    background-color: #0E6781; /* Kept specific blue-turquoise for hero button */
     color: white;
     border: 2px solid #0E6781;
     transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -1618,7 +1579,8 @@ a.contact-link .contact-icon {
     padding: 80px 20px; /* Adjusted padding */
     background-color: #f8f8f8; /* Light background for the section */
     text-align: center;
-    width: 100vw; /* Ensure full viewport width */
+    /* CRITICAL FIX: Ensure full width for services section as well */
+    width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     box-sizing: border-box;
@@ -1631,7 +1593,7 @@ a.contact-link .contact-icon {
 
 .section-title {
     font-size: 2.5em; /* Larger title for the section */
-    color: #1a3e6e;
+    color: var(--primary-color); /* Updated to primary color */
     margin-bottom: 50px; /* More space below title */
     font-weight: 700;
 }
@@ -1666,14 +1628,14 @@ a.contact-link .contact-icon {
     width: 80px; /* Icon size */
     height: 80px;
     margin-bottom: 20px;
-    color: #007bff; /* Icon color */
+    color: var(--primary-color); /* Updated to primary color */
     /* If you use SVG or font icons, define their color here */
     /* If it's an image, make sure it's transparent or styled externally */
 }
 
 .service-item h3 {
     font-size: 1.6em;
-    color: #1a3e6e;
+    color: var(--primary-color); /* Updated to primary color */
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -1687,7 +1649,7 @@ a.contact-link .contact-icon {
 }
 
 .service-item .btn-circle {
-    background-color: #007bff; /* Blue button for services */
+    background-color: var(--primary-color); /* Updated to primary color */
     color: white;
     padding: 10px 25px;
     border-radius: 25px;
@@ -1699,7 +1661,7 @@ a.contact-link .contact-icon {
 }
 
 .service-item .btn-circle:hover {
-    background-color: #0056b3;
+    background-color: var(--secondary-color); /* Darker primary color on hover */
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
@@ -1784,7 +1746,7 @@ a.contact-link .contact-icon {
     }
 
     .list__lead.post__lead {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 
     .list__excerpt.post__content {
@@ -1815,6 +1777,10 @@ a.contact-link .contact-icon {
     .hero-section {
         padding: 60px 10px;
         min-height: 350px;
+        /* CRITICAL FIX: Ensure hero section still takes full width on mobile after structure change */
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
     }
 
     .hero-content h1 {
@@ -1830,8 +1796,8 @@ a.contact-link .contact-icon {
         gap: 10px;
     }
 
-    .hero-buttons .button.button-primary, /* CRITICAL FIX: Selector changed */
-    .hero-buttons .button.button-secondary { /* CRITICAL FIX: Selector changed */
+    .hero-buttons .button.button-primary,
+    .hero-buttons .button.button-secondary {
         width: 80%; /* Take more width */
         max-width: 300px;
         margin: 0 auto; /* Center buttons */
@@ -1851,8 +1817,8 @@ a.contact-link .contact-icon {
         gap: 15px;
     }
 
-    .hero-buttons .button.button-primary, /* CRITICAL FIX: Selector changed */
-    .hero-buttons .button.button-secondary { /* CRITICAL FIX: Selector changed */
+    .hero-buttons .button.button-primary,
+    .hero-buttons .button.button-secondary {
         width: auto;
         max-width: none;
         margin: 0;
@@ -1895,8 +1861,8 @@ a.contact-link .contact-icon {
         gap: 8px;
     }
 
-    .hero-buttons .button.button-primary, /* CRITICAL FIX: Selector changed */
-    .hero-buttons .button.button-secondary { /* CRITICAL FIX: Selector changed */
+    .hero-buttons .button.button-primary,
+    .hero-buttons .button.button-secondary {
         padding: 8px 15px;
         font-size: 0.9em;
     }

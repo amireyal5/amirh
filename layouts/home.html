@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main class="homepage">
-    {{ partial "hero-section.html" . }}
+    <!-- CRITICAL FIX: Hero Section is now called directly in baseof.html, so remove it here -->
   
     {{ with .Content }}
     <section class="home-content">
