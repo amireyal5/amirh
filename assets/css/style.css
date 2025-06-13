@@ -1,4 +1,4 @@
-/* ==================================== */
+8/* ==================================== */
 /* Hugo Variables - Default Fallbacks */
 /* Note: Hugo will replace these dynamically based on site parameters. */
 /* We define default values here for pure CSS context. */
@@ -1931,4 +1931,33 @@ a.contact-link .contact-icon {
     margin-bottom: 2rem; /* More space below title */
     line-height: 1.2;
     text-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle text shadow */
+}
+@media (max-width: 600px) {
+  .hero-section {
+    min-height: 100vh; /* תופס את כל גובה החלון במובייל */
+    padding: 60px 20px; /* פחות רווחים כדי שהכול ייכנס */
+  }
+
+  .hero-content h1 {
+    font-size: 2.2em; /* הקטנת כותרת */
+  }
+
+  .hero-content .subtitle {
+    font-size: 1.2em; /* הקטנת תת-כותרת */
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    font-size: 1em;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-buttons .button {
+    flex: 1 1 100%;
+    text-align: center;
+  }
 }
