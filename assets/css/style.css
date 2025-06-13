@@ -357,7 +357,7 @@ pre code {
 }
 
 kbd {
-  padding: 2px 33px;
+  padding: 2px 3px;
   color: #fff;
   background-color: #2a2a2a; /* Dark background for keyboard input */
 }
@@ -1569,31 +1569,31 @@ a.contact-link .contact-icon {
 /* ==================================== */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 0px 15px; /* הופחת ריפוד אנכי להצגת כל התוכן במובייל */
-    min-height: 400px; /* הופחת גובה מינימלי למסכים קטנים יותר */
+    padding: 30px 10px; /* הופחת עוד יותר ריפוד אנכי וצדדי */
+    min-height: 300px; /* הופחת גובה מינימלי למסכים קטנים מאוד */
   }
 
   .hero-content h1 {
-    font-size: 2.2em; /* גודל גופן מוקטן לכותרת ראשית */
-    margin-bottom: 8px; /* הופחת מרווח תחתון */
+    font-size: 1.8em; /* הופחת גודל גופן לכותרת ראשית */
+    margin-bottom: 5px; /* הופחת מרווח תחתון */
   }
 
   .hero-content .subtitle {
-    font-size: 1.3em; /* גודל גופן מוקטן לתת-כותרת */
-    margin-bottom: 20px; /* הופחת מרווח תחתון */
+    font-size: 1.1em; /* הופחת גודל גופן לתת-כותרת */
+    margin-bottom: 15px; /* הופחת מרווח תחתון */
   }
 
   .hero-buttons {
-    gap: 10px; /* הופחת רווח בין הכפתורים המוערמים */
-    margin-bottom: 15px; /* הופחת מרווח תחתון מתחת לכפתורים */
+    gap: 8px; /* הופחת רווח בין הכפתורים המוערמים */
+    margin-bottom: 10px; /* הופחת מרווח תחתון מתחת לכפתורים */
     flex-direction: column; /* ערימת כפתורים אנכית במובייל */
     align-items: center; /* מיקום הכפתורים במרכז */
   }
 
   .hero-buttons .button {
     width: 100%; /* הכפתורים תופסים את מלוא הרוחב במסכים קטנים */
-    max-width: 280px; /* רוחב מקסימלי לכפתורים כדי למנוע כפתורים רחבים מדי */
-    padding: 10px 20px; /* הופחת ריפוד פנימי של הכפתורים */
-    font-size: 1.1em; /* גודל גופן מוקטן לכפתורים */
+    max-width: 260px; /* רוחב מקסימלי לכפתורים כדי למנוע כפתורים רחבים מדי */
+    padding: 8px 15px; /* הופחת ריפוד פנימי של הכפתורים */
+    font-size: 1em; /* גודל גופן מוקטן לכפתורים */
   }
 }
