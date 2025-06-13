@@ -275,7 +275,7 @@
         display: block;
         height: 2px;
         width: 100%;
-        background-color: #333; /* Standard dark color for lines */
+        background-color: #087070; /* Standard dark color for lines */
         border-radius: 2px;
         transition: all 0.3s ease-in-out;
     }
@@ -347,7 +347,7 @@
     }
 
     .custom-menu-item a.custom-menu-link:hover
-        background-color: #f7f7f7;
+      background-color: #f7f7f7;
     }
 
     .custom-menu-item--active a.custom-menu-link {

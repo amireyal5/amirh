@@ -158,7 +158,7 @@ textarea {
 }
 
 /* ==================================== */
-/* Buttons                            */
+/* Buttons                              */
 /* ==================================== */
 /* General button style (from custom.css) */
 .btn {
@@ -833,7 +833,7 @@ select {
 }
 
 /* ==================================== */
-/* List Content                           */
+/* List Content                         */
 /* ==================================== */
 .list__item {
   padding-bottom: 20px;
@@ -1461,414 +1461,139 @@ a.contact-link .contact-icon {
 /* Hero Section Styles (New)            */
 /* ==================================== */
 .hero-section {
-    /* תמונת רקע מנתיב img/hero.webp */
-    background-image: var(--hero-bg-image); /* Use CSS variable from baseof.html */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 650px;
-    overflow: hidden; /* Prevent internal content overflow */
-    font-family: var(--font-family-primary); /* שימוש בפונט ראשי לעקביות */
-    /* CRITICAL FIX: Ensure full width for hero section by using 100vw and compensating for body/html margins/padding */
-    width: 100vw; /* Take full viewport width */
-    margin-left: calc(50% - 50vw); /* Pull left to compensate for body/html default margins */
-    margin-right: calc(50% - 50vw); /* Pull right to compensate for body/html default margins */
-    box-sizing: border-box; /* Include padding and border in width */
+  /* תמונת רקע מנתיב img/hero.webp */
+  background-image: var(--hero-bg-image); /* Use CSS variable from baseof.html */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 650px;
+  overflow: hidden; /* Prevent internal content overflow */
+  font-family: var(--font-family-primary); /* שימוש בפונט ראשי לעקביות */
+  /* CRITICAL FIX: Ensure full width for hero section by using 100vw and compensating for body/html margins/padding */
+  width: 100vw; /* Take full viewport width */
+  margin-left: calc(50% - 50vw); /* Pull left to compensate for body/html default margins */
+  margin-right: calc(50% - 50vw); /* Pull right to compensate for body/html default margins */
+  box-sizing: border-box; /* Include padding and border in width */
 }
 
 .hero-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* שכבת שחור שקופה כדי לשפר קריאות טקסט על רקע תמונה */
-    background-color: rgba(0, 0, 0, 0.4); /* הגדלתי מעט את השקיפות כדי לשפר קריאות */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* שכבת שחור שקופה כדי לשפר קריאות טקסט על רקע תמונה */
+  background-color: rgba(0, 0, 0, 0.4); /* הגדלתי מעט את השקיפות כדי לשפר קריאות */
 }
 
 .hero-content {
-    position: relative;
-    z-index: 0;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 15px; /* הוסף ריפוד פנימי כדי למנוע הדבקה לשוליים במסכים קטנים */
+  position: relative;
+  z-index: 10; /* Changed z-index to ensure content is above the overlay */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px; /* הוסף ריפוד פנימי כדי למנוע הדבקה לשוליים במסכים קטנים */
 }
 
 .hero-content h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    line-height: 1.2;
-    color: white; /* ודא שכותרות ה-Hero לבנות */
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* צל עדין לקריאות טובה יותר */
+  font-size: 3em;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  color: white; /* ודא שכותרות ה-Hero לבנות */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* צל עדין לקריאות טובה יותר */
 }
 
 .hero-content .subtitle {
-    font-size: 1.7em; /* תת-כותרת גדולה יותר כמו בדוגמה */
-    font-weight: 600;
-    margin-bottom: 30px;
-    line-height: 1.5;
-    color: white; /* ודא שתת-כותרות ב-Hero לבנות */
-    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  font-size: 1.7em; /* תת-כותרת גדולה יותר כמו בדוגמה */
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: white; /* ודא שתת-כותרות ב-Hero לבנות */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
 
 .hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px; /* רווח בין כפתורים */
-    margin-bottom: 20px; /* רווח מתחת לכפתורים */
-    flex-wrap: wrap; /* מאפשר לכפתורים לעבור שורה במסכים קטנים */
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* רווח בין כפתורים */
+  margin-bottom: 20px; /* רווח מתחת לכפתורים */
+  flex-wrap: wrap; /* מאפשר לכפתורים לעבור שורה במסכים קטנים */
 }
 
 /* סגנון כפתור ראשי בצבע #FC6C44 - מתאים ל-`.button-primary` */
 .hero-buttons .button.button-primary {
-    padding: 12px 25px;
-    font-size: 1.2em;
-    border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
-    background-color: #FC6C44; /* Kept specific orange for hero button */
-    color: white;
-    border: 2px solid #FC6C44;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    text-decoration: none; /* הסרת קו תחתון מקישור */
-    cursor: pointer;
-    white-space: nowrap; /* מונע שבירת שורה בתוך הכפתור */
+  padding: 12px 25px;
+  font-size: 1.2em;
+  border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
+  background-color: #FC6C44; /* Kept specific orange for hero button */
+  color: white;
+  border: 2px solid #FC6C44;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  text-decoration: none; /* הסרת קו תחתון מקישור */
+  cursor: pointer;
+  white-space: nowrap; /* מונע שבירת שורה בתוך הכפתור */
 }
 
 .hero-buttons .button.button-primary:hover {
-    background-color: #e65c3b; /* גוון כהה יותר בריחוף */
-    border-color: #e65c3b;
+  background-color: #e65c3b; /* גוון כהה יותר בריחוף */
+  border-color: #e65c3b;
 }
 
 /* סגנון כפתור משני בצבע #0E6781 - מתאים ל-`.button-secondary` */
 .hero-buttons .button.button-secondary {
-    padding: 12px 25px; /* שמירה על גודל זהה לכפתור הראשי */
-    font-size: 1.2em;
-    border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
-    background-color: #0E6781; /* Kept specific blue-turquoise for hero button */
-    color: white;
-    border: 2px solid #0E6781;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    text-decoration: none; /* הסרת קו תחתון מקישור */
-    cursor: pointer;
-    white-space: nowrap; /* מונע שבירת שורה בתוך הכפתור */
+  padding: 12px 25px; /* שמירה על גודל זהה לכפתור הראשי */
+  font-size: 1.2em;
+  border-radius: 25px; /* כפתורים מעוגלים יותר ב-Hero */
+  background-color: #0E6781; /* Kept specific blue-turquoise for hero button */
+  color: white;
+  border: 2px solid #0E6781;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  text-decoration: none; /* הסרת קו תחתון מקישור */
+  cursor: pointer;
+  white-space: nowrap; /* מונע שבירת שורה בתוך הכפתור */
 }
 
 .hero-buttons .button.button-secondary:hover {
-    background-color: #0a4f61; /* גוון כהה יותר בריחוף */
-    border-color: #0a4f61;
-}
-
-.hero-description {
-    font-size: 1.1em;
-    max-width: 500px;
-    margin: 0 auto;
-    line-height: 1.5;
-    color: white; /* ודא שהתיאור ב-Hero לבן */
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  background-color: #0A4F62; /* גוון כהה יותר בריחוף */
+  border-color: #0A4F62;
 }
 
 /* ==================================== */
-/* Services Section Styles              */
+/* Responsive Adjustments for Mobile    */
 /* ==================================== */
-.services-section {
-    padding: 80px 20px; /* Adjusted padding */
-    background-color: #f8f8f8; /* Light background for the section */
-    text-align: center;
-    /* CRITICAL FIX: Ensure full width for services section as well */
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    box-sizing: border-box;
-}
-
-.services-section .container {
-    max-width: 1200px; /* Limit inner content width */
-    margin: 0 auto;
-}
-
-.section-title {
-    font-size: 2.5em; /* Larger title for the section */
-    color: var(--primary-color); /* Updated to primary color */
-    margin-bottom: 50px; /* More space below title */
-    font-weight: 700;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 30px; /* Space between cards */
-    justify-content: center; /* Center grid items */
-    align-items: stretch; /* Make all items same height */
-}
-
-.service-item {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Stronger shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-height: 280px; /* Ensure minimum height for consistency */
-}
-
-.service-item:hover {
-    transform: translateY(-8px); /* Lift effect on hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
-}
-
-.service-item .service-icon {
-    width: 80px; /* Icon size */
-    height: 80px;
-    margin-bottom: 20px;
-    color: var(--primary-color); /* Updated to primary color */
-    /* If you use SVG or font icons, define their color here */
-    /* If it's an image, make sure it's transparent or styled externally */
-}
-
-.service-item h3 {
-    font-size: 1.6em;
-    color: var(--primary-color); /* Updated to primary color */
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.service-item p {
-    font-size: 1em;
-    color: #555;
-    line-height: 1.6;
-    flex-grow: 1; /* Allow paragraph to take available space */
-    margin-bottom: 20px;
-}
-
-.service-item .btn-circle {
-    background-color: var(--primary-color); /* Updated to primary color */
-    color: white;
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-weight: 500;
-    font-size: 0.95em;
-    text-decoration: none;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.service-item .btn-circle:hover {
-    background-color: var(--secondary-color); /* Darker primary color on hover */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-
-/* ==================================== */
-/* Media Queries for Responsive Design  */
-/* ==================================== */
-
-/* Original theme media queries, combined and adjusted */
-@media screen and (max-width: 768px) {
-  /* Global responsive adjustments */
-  .container--outer {
-    width: 100%;
-    margin: 0 auto;
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 5px 15px; /* הופחת ריפוד אנכי להצגת כל התוכן במובייל */
+    min-height: 400px; /* הופחת גובה מינימלי למסכים קטנים יותר */
   }
 
-  .wrapper,
-  .logo {
-    padding: 20px;
+  .hero-content h1 {
+    font-size: 2.2em; /* גודל גופן מוקטן לכותרת ראשית */
+    margin-bottom: 8px; /* הופחת מרווח תחתון */
   }
 
-  .widget {
-    margin-bottom: 20px;
+  .hero-content .subtitle {
+    font-size: 1.3em; /* גודל גופן מוקטן לתת-כותרת */
+    margin-bottom: 20px; /* הופחת מרווח תחתון */
   }
 
-  .footer__container {
-    display: block;
+  .hero-buttons {
+    gap: 10px; /* הופחת רווח בין הכפתורים המוערמים */
+    margin-bottom: 15px; /* הופחת מרווח תחתון מתחת לכפתורים */
+    flex-direction: column; /* ערימת כפתורים אנכית במובייל */
+    align-items: center; /* מיקום הכפתורים במרכז */
   }
 
-  .footer__links {
-    padding-bottom: 8px;
-    padding-bottom: 0.5rem;
-    text-align: center;
+  .hero-buttons .button {
+    width: 100%; /* הכפתורים תופסים את מלוא הרוחב במסכים קטנים */
+    max-width: 280px; /* רוחב מקסימלי לכפתורים כדי למנוע כפתורים רחבים מדי */
+    padding: 10px 20px; /* הופחת ריפוד פנימי של הכפתורים */
+    font-size: 1.1em; /* גודל גופן מוקטן לכפתורים */
   }
-
-  .footer__copyright {
-    text-align: center;
-  }
-
-  .wrapper {
-    display: block;
-  }
-
-  .sidebar {
-    float: none;
-    width: 100%;
-    margin: 0;
-  }
-
-  /* Original logo mobile alignment */
-  .logo {
-    text-align: center;
-  }
-
-  .logo__link {
-    margin: 0 auto;
-  }
-
-  /* Fixed the missing closing brace for logo__title */
-  .logo__title {
-    font-size: 1.5rem; /* Example size, adjust as needed */
-  }
-    
-    /* Responsive adjustments for homepage main content */
-    main.homepage {
-        margin: 20px 10px;
-        padding: 20px 15px;
-    }
-
-    main.homepage .btn {
-        padding: 10px 24px;
-        font-size: 0.9rem;
-    }
-
-    /* Responsive adjustments for post list items */
-    .list__item.post {
-        padding: 15px;
-    }
-
-    .list__title.post__title {
-        font-size: 1.3rem;
-    }
-
-    .list__lead.post__lead {
-        font-size: 1.05rem;
-    }
-
-    .list__excerpt.post__content {
-        font-size: 0.95rem;
-    }
-
-    /* Services section mobile adjustments */
-    .services-section {
-        padding: 40px 15px; /* Adjusted padding for mobile */
-    }
-
-    .section-title {
-        font-size: 2em; /* Smaller title on mobile */
-        margin-bottom: 30px;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr; /* Single column on mobile */
-        gap: 20px;
-    }
-    .service-item {
-        margin: 0 auto; /* Center on mobile */
-        max-width: 350px; /* Limit card width on mobile */
-        min-height: unset; /* Allow height to adjust */
-    }
-    
-    /* Hero section specific media queries for mobile */
-    .hero-section {
-        padding: 10px 10px;
-        min-height: 350px;
-        /* CRITICAL FIX: Ensure hero section still takes full width on mobile after structure change */
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        margin-right: calc(50% - 50vw);
-    }
-
-    .hero-content h1 {
-        font-size: 2.2em;
-    }
-
-    .hero-content .subtitle {
-        font-size: 1.6em;
-    }
-
-    .hero-buttons {
-        flex-direction: column; /* Buttons stack vertically */
-        gap: 10px;
-    }
-
-    .hero-buttons .button.button-primary,
-    .hero-buttons .button.button-secondary {
-        width: 90%;
-        max-width: 300px;
-        margin: 0 auto; /* Center buttons */
-    }
-
-    .hero-description {
-        font-size: 1em;
-    }
-} /* Closing brace for @media screen and (max-width: 768px) */
-
-
-/* --- Desktop Styles (min-width: 769px) - Ensures overrides for mobile are reverted --- */
-@media screen and (min-width: 769px) {
-    /* Hero section specific media queries for desktop */
-    .hero-buttons {
-        flex-direction: row; /* Buttons side-by-side */
-        gap: 15px;
-    }
-
-    .hero-buttons .button.button-primary,
-    .hero-buttons .button.button-secondary {
-        width: auto;
-        max-width: none;
-        margin: 0;
-    }
-
-    /* Services grid for desktop */
-    .services-grid {
-        grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 columns on larger screens */
-    }
-}
-
-/* For larger desktops (e.g., > 1200px) */
-@media (min-width: 1201px) {
-    .hero-content h1 {
-        font-size: 3em;
-    }
-
-    .hero-content .subtitle {
-        font-size: 1.5em;
-    }
-}
-
-/* For screens with small height (e.g., landscape phones) */
-@media (max-height: 500px) and (orientation: landscape) {
-    .hero-section {
-        min-height: 250px;
-        padding: 40px 10px;
-    }
-
-    .hero-content h1 {
-        font-size: 1.5em;
-    }
-
-    .hero-content .subtitle {
-        font-size: 0.9em;
-        margin-bottom: 15px;
-    }
-
-    .hero-buttons {
-        gap: 8px;
-    }
-
-    .hero-buttons .button.button-primary,
-    .hero-buttons .button.button-secondary {
-        padding: 8px 15px;
-        font-size: 0.9em;
-    }
-
-    .hero-description {
-        font-size: 0.85em;
-    }
 }
