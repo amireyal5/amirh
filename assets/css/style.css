@@ -1800,7 +1800,17 @@ a.contact-link .contact-icon {
 
 .hero-buttons .button.button-secondary:hover {
   background-color: #0A4F62;
+  }
+    
+
+  @media (max-width: 600px) {
+  .hero-buttons .button {
+    flex: 1 1 100%; /* כל כפתור תופס 100% מרוחב השורה */
+    text-align: center;
+  }
 }
+
+
 
 /* ==================================== */
 /* Services Section - Custom Layout */
