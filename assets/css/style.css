@@ -357,7 +357,7 @@ pre code {
 }
 
 kbd {
-  padding: 2px 3px;
+  padding: 2px 33px;
   color: #fff;
   background-color: #2a2a2a; /* Dark background for keyboard input */
 }
@@ -1502,7 +1502,7 @@ a.contact-link .contact-icon {
 }
 
 .hero-content h1 {
-  font-size: 3em;
+  font-size: 3.8em; /* Adjusted for desktop based on image */
   margin-bottom: 10px;
   line-height: 1.2;
   color: white; /* ודא שכותרות ה-Hero לבנות */
@@ -1510,9 +1510,9 @@ a.contact-link .contact-icon {
 }
 
 .hero-content .subtitle {
-  font-size: 1.7em; /* תת-כותרת גדולה יותר כמו בדוגמה */
+  font-size: 2.1em; /* Adjusted for desktop based on image */
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   line-height: 1.5;
   color: white; /* ודא שתת-כותרות ב-Hero לבנות */
   text-shadow: 0 1px 3px rgba(0,0,0,0.4);
@@ -1569,7 +1569,7 @@ a.contact-link .contact-icon {
 /* ==================================== */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 5px 15px; /* הופחת ריפוד אנכי להצגת כל התוכן במובייל */
+    padding: 0px 15px; /* הופחת ריפוד אנכי להצגת כל התוכן במובייל */
     min-height: 400px; /* הופחת גובה מינימלי למסכים קטנים יותר */
   }
 
