@@ -1,9 +1,8 @@
 <footer class="footer">
 	<div class="container footer__container flex">
 		{{ partial "footer_links.html" . }}
-		<div class="footer__copyright">
-			&copy; {{ now.Format "2006" }} {{ .Site.Params.copyright | default .Site.Title }}.
-			<span class="footer__copyright-credits">{{ T "footer_credits" | safeHTML }}</span>
-		</div>
+		<!-- הערה: החלק התחתון של הפוטר (לוגו, זכויות יוצרים, אייקוני רשתות חברתיות) הועבר כעת לתוך footer_links.html.
+		 לכן, וודא שאין כאן קוד כפול עבורו.
+		 אם היה לך כאן קוד כפול, הוא הוסר במכוון בהתאם לבקשתך. -->
 	</div>
 </footer>

@@ -1,10 +1,3 @@
-/*
- * unified-style.css
- * This file consolidates the custom styling for your Hugo website,
- * ensuring a consistent and modern look across all elements.
- * It combines the custom.css content with the Hugo theme's base styles.
- */
-
 /* ==================================== */
 /* Hugo Variables - Default Fallbacks */
 /* Note: Hugo will replace these dynamically based on site parameters. */
@@ -22,10 +15,15 @@
   --text-color-light: #555; /* Light grey for text - kept for readability */
   --card-background-color: #ffffff; /* White for card backgrounds */
   --theme-background-color: #ffffff; /* White for main theme background */
+
+  /* New variables for footer */
+  --footer-bg-color: #175E70; /* Darker blue-turquoise for footer background, matching image */
+  --footer-text-color: #ffffff; /* White for footer text */
+  --footer-link-hover-color: var(--highlight-color); /* Highlight color on hover for footer links */
 }
 
 /* ==================================== */
-/* Global Resets & Structure            */
+/* Global Resets & Structure            */
 /* ==================================== */
 *,
 *::before,
@@ -158,7 +156,7 @@ textarea {
 }
 
 /* ==================================== */
-/* Buttons                              */
+/* Buttons                              */
 /* ==================================== */
 /* General button style (from custom.css) */
 .btn {
@@ -170,7 +168,7 @@ textarea {
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
-  
+
   transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
   user-select: none; /* Prevent text selection on button */
   border: solid 0.5px var(--primary-color); /* Updated to primary color */
@@ -209,7 +207,7 @@ textarea {
 }
 
 /* ==================================== */
-/* Typography                           */
+/* Typography                           */
 /* ==================================== */
 h1,
 h2,
@@ -446,7 +444,7 @@ select {
 }
 
 /* ==================================== */
-/* Header (Moved to custom-menu.css)    */
+/* Header (Moved to custom-menu.css)    */
 /* ==================================== */
 /* Original theme header styles - kept for compatibility, but main header logic moved to custom-menu.css */
 .header {
@@ -515,7 +513,7 @@ select {
 }
 
 /* ==================================== */
-/* Posts / Pages (General)              */
+/* Posts / Pages (General)              */
 /* ==================================== */
 .post__header,
 .main__header {
@@ -833,7 +831,7 @@ select {
 }
 
 /* ==================================== */
-/* List Content                         */
+/* List Content                         */
 /* ==================================== */
 .list__item {
   padding-bottom: 20px;
@@ -938,7 +936,7 @@ select {
 }
 
 /* ==================================== */
-/* Pagination                           */
+/* Pagination                           */
 /* ==================================== */
 .pagination {
   margin-top: 20px;
@@ -999,7 +997,7 @@ select {
 }
 
 /* ==================================== */
-/* Images / Video                       */
+/* Images / Video                       */
 /* ==================================== */
 img {
   width: auto\9; /* IE8 fallback */
@@ -1023,7 +1021,7 @@ video {
 }
 
 /* ==================================== */
-/* Table                                */
+/* Table                                */
 /* ==================================== */
 table {
   width: 100%;
@@ -1047,7 +1045,7 @@ th {
 }
 
 /* ==================================== */
-/* Forms                                */
+/* Forms                                */
 /* ==================================== */
 input {
   padding: 5px;
@@ -1104,7 +1102,7 @@ textarea {
 }
 
 /* ==================================== */
-/* Widgets                              */
+/* Widgets                              */
 /* ==================================== */
 .widget {
   margin-bottom: 25px;
@@ -1283,39 +1281,280 @@ textarea {
 }
 
 /* ==================================== */
-/* Footer                               */
+/* Footer                               */
 /* ==================================== */
 .footer {
-  padding: 10px 25px;
-  font-size: 12px;
-  font-size: 0.75rem;
-  color: #999;
-  background: #2a2a2a; /* Dark background for footer */
-  border-top: 3px solid #999; /* Grey top border */
+  /* Override existing footer styles to match image */
+  background: var(--footer-bg-color); /* Darker blue-turquoise for footer background */
+  color: var(--footer-text-color); /* White text for footer */
+  padding: 40px 25px 20px; /* Adjusted padding */
+  font-size: 0.95rem; /* Slightly larger base font size */
+  border-top: none; /* Remove top border if any */
 }
 
 .footer__container {
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-  -webkit-justify-content: space-between;
+  /* Existing flex properties are good for overall layout */
+  flex-flow: row wrap; /* Allow wrapping */
+  justify-content: space-between; /* Space out child elements */
+  align-items: flex-start; /* Align columns to the top */
+  max-width: 1400px; /* Adjust max width for footer content */
+  margin: 0 auto; /* Center the footer container */
+  padding-bottom: 20px; /* Space above copyright */
+}
+
+.footer__columns {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  width: 100%; /* Take full width within footer__container */
+  max-width: 1000px; /* Limit width of the columns section */
+  margin-bottom: 20px; /* Space below columns section */
 }
 
-.footer__links {
-  -webkit-order: 1;
-  order: 1;
+.footer__column {
+  flex: 1 1 23%; /* Approx 4 columns for desktop */
+  margin-bottom: 30px; /* Space between columns when they stack */
+  padding: 0 15px; /* Padding inside columns */
+  min-width: 250px; /* Minimum width before wrapping */
 }
 
-.footer a {
-  color: #fff; /* White links in footer */
+.footer__column h3 {
+  color: var(--footer-text-color); /* White headings in footer */
+  font-size: 1.25rem; /* Larger heading for columns */
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
-.footer a:hover {
+.footer__column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__column li {
+  margin-bottom: 0.5rem;
+}
+
+.footer__column a {
+  color: var(--footer-text-color); /* White links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__column a:hover {
+  color: var(--footer-link-hover-color); /* Highlight color on hover */
   text-decoration: underline;
 }
 
-.footer__copyright {
-  /* No specific styles provided in current input, but often used for copyright text alignment */
+.footer__column--contact p {
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.footer__emergency-text {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-top: 1rem;
+}
+
+.footer__patient-portal-btn {
+  background-color: var(--highlight-color); /* Orange button */
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px; /* Slightly rounded corners */
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 127, 80, 0.4); /* Orange shadow */
+  border: none; /* No border for this button */
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.footer__patient-portal-btn:hover {
+  background-color: #e65c3b; /* Darker orange on hover */
+  box-shadow: 0 6px 15px rgba(255, 127, 80, 0.6);
+}
+
+.footer__signup-form {
+  margin-top: 25px;
+}
+
+.footer__signup-form p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.footer__signup-form form {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 10px; /* Space between input and button */
+}
+
+.footer__email-input {
+  flex-grow: 1; /* Allow input to grow */
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.95rem;
+  width: auto; /* Override default 60% */
+}
+
+.footer__email-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__email-input:focus {
+  outline: none;
+  border-color: var(--highlight-color);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer__subscribe-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: var(--primary-color); /* Use primary color for subscribe */
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer__subscribe-btn:hover {
+  background-color: var(--secondary-color); /* Darker primary color on hover */
+}
+
+
+.footer__bottom-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separator line */
+  margin-top: 20px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* Space when stacked */
+  margin-left: auto; /* Push to right for RTL */
+  margin-right: 0;
+  max-width: 250px; /* Limit logo width */
+}
+
+.footer__logo img {
+  height: 60px; /* Adjusted logo height */
+  margin-left: 10px; /* Space between logo and text */
+}
+
+.footer__logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--footer-text-color);
+}
+
+.footer__social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px; /* Space between icons */
+  margin-right: auto; /* Push to left for RTL */
+  margin-left: 0;
+  margin-bottom: 15px; /* Space when stacked */
+}
+
+.footer__social-icons li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
+  color: white;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.footer__social-icons li a:hover {
+  background-color: var(--highlight-color); /* Highlight color on hover */
+  transform: scale(1.1);
+}
+
+
+/* Responsive adjustments for footer */
+@media (max-width: 768px) { /* Tablet and smaller */
+  .footer__columns {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center; /* Center columns */
+  }
+
+  .footer__column {
+    width: 100%; /* Full width for stacked columns */
+    max-width: 400px; /* Limit individual column width */
+    text-align: center; /* Center text in columns */
+    padding: 0 10px;
+  }
+
+  .footer__column ul {
+    text-align: center; /* Center list items */
+  }
+
+  .footer__column li {
+    display: inline-block; /* Make list items inline to allow horizontal wrap */
+    margin: 0 8px 8px; /* Space between inline items */
+  }
+
+  .footer__column--contact p {
+    text-align: center;
+  }
+
+  .footer__patient-portal-btn {
+    display: block; /* Make button full width */
+    margin: 15px auto 20px; /* Center button */
+    max-width: 250px;
+  }
+
+  .footer__signup-form form {
+    flex-direction: column; /* Stack input and button vertically */
+    align-items: center;
+  }
+
+  .footer__email-input,
+  .footer__subscribe-btn {
+    width: 100%; /* Full width for form elements */
+    max-width: 300px;
+  }
+
+  .footer__bottom-row {
+    flex-direction: column; /* Stack logo and social icons */
+  }
+
+  .footer__logo,
+  .footer__social-icons {
+    margin-left: auto;
+    margin-right: auto; /* Center items */
+  }
+}
+
+@media (max-width: 480px) { /* Mobile */
+  .footer {
+    padding: 30px 15px 15px;
+  }
+
+  .footer__column h3 {
+    font-size: 1.15rem;
+  }
 }
 
 /* ==================================== */
@@ -1390,7 +1629,7 @@ main.homepage blockquote {
 }
 
 /* ==================================== */
-/* Specific Custom Links & CTAs         */
+/* Specific Custom Links & CTAs         */
 /* ==================================== */
 .custom-link {
   color: var(--primary-color); /* Updated to primary color */
@@ -1458,7 +1697,7 @@ a.contact-link .contact-icon {
 }
 
 /* ==================================== */
-/* Hero Section Styles (New)            */
+/* Hero Section Styles (New)            */
 /* ==================================== */
 .hero-section {
   /* תמונת רקע מנתיב img/hero.webp */
@@ -1560,64 +1799,9 @@ a.contact-link .contact-icon {
 }
 
 .hero-buttons .button.button-secondary:hover {
-  background-color: #0A4F62; /* גוון כהה יותר בריחוף */
-  border-color: #0A4F62;
+  background-color: #0A4F62;
 }
 
-/* ==================================== */
-/* Responsive Adjustments for Mobile    */
-/* ==================================== */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 30px 10px; /* הופחת עוד יותר ריפוד אנכי וצדדי */
-    min-height: 300px; /* הופחת גובה מינימלי למסכים קטנים מאוד */
-  }
-
-  .hero-content h1 {
-    font-size: 1.8em; /* הופחת גודל גופן לכותרת ראשית */
-    margin-bottom: 5px; /* הופחת מרווח תחתון */
-  }
-
-  .hero-content .subtitle {
-    font-size: 1.1em; /* הופחת גודל גופן לתת-כותרת */
-    margin-bottom: 15px; /* הופחת מרווח תחתון */
-  }
-
-  .hero-buttons {
-    gap: 8px; /* הופחת רווח בין הכפתורים המוערמים */
-    margin-bottom: 10px; /* הופחת מרווח תחתון מתחת לכפתורים */
-    flex-direction: column; /* ערימת כפתורים אנכית במובייל */
-    align-items: center; /* מיקום הכפתורים במרכז */
-  }
-
-  .hero-buttons .button {
-    width: 100%; /* הכפתורים תופסים את מלוא הרוחב במסכים קטנים */
-    max-width: 260px; /* רוחב מקסימלי לכפתורים כדי למנוע כפתורים רחבים מדי */
-    padding: 8px 15px; /* הופחת ריפוד פנימי של הכפתורים */
-    font-size: 1em; /* גודל גופן מוקטן לכפתורים */
-  }
-
-  /* CRITICAL FIX: Ensure sidebar stacks below primary content on mobile */
-  .flex { /* Assuming this class is applied to the main container holding primary and sidebar */
-    flex-direction: column; /* Stack primary and sidebar vertically */
-  }
-
-  .primary {
-    width: 100%; /* Make them take full width when stacked */
-    margin: 0; /* Remove horizontal margins */
-    order: 0; /* Ensure primary content comes first */
-  }
-
-  .sidebar {
-    width: 100%; /* Make them take full width when stacked */
-    margin: 0; /* Remove horizontal margins */
-    order: 1; /* Ensure sidebar comes after primary content */
-  }
-
-  .sidebar--left {
-    margin: 0; /* Remove specific left sidebar margins */
-  }
-     }
 /* ==================================== */
 /* Services Section - Custom Layout */
 /* ==================================== */
@@ -1738,4 +1922,3 @@ a.contact-link .contact-icon {
     line-height: 1.2;
     text-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle text shadow */
 }
-

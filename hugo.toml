@@ -39,7 +39,7 @@ theme = "Mainroad"
     subtitle = ""
 
   [params.sidebar]
-    home = "left"
+    home = false
     list = "left"
     single = "left"
     widgets = ["search", "custom_authorbox", "social", "recent", "categories", "taglist"]
