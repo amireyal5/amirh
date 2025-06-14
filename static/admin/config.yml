@@ -1,0 +1,143 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+locale: he 
+site_url: "https://amireyal5.netlify.app/"
+
+publish_mode: editorial_workflow
+
+slug:
+  encoding: "unicode"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: "מאמרים"
+    label: "מאמרים"
+    folder: "content/מאמרים" # <--- **השינוי העיקרי כאן!**
+    create: true
+    slug: "{{slug}}"
+    media_folder: "content/מאמרים/{{slug}}" # <--- **וגם כאן, כדי שיתאים לנתיב המעודכן**
+    public_folder: "/uploads/מאמרים/{{slug}}"
+    path: "{{slug}}/index"
+    editor:
+      preview: true
+    fields:
+      - { label: "כותרת", name: "title", widget: "string", required: true }
+      - label: "תאריך"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        picker_utc: false
+        required: true
+        default: ""
+      - { label: "מחבר", name: "author", widget: "relation", collection: "authors", search_fields: ["name"], value_field: "name", display_fields: ["name"], required: true }
+      - { label: "קטגוריות", name: "categories", widget: "list", required: false }
+      - { label: "תגיות", name: "tags", widget: "list", required: false }
+      - { label: "תמונה ראשית", name: "thumbnail", widget: "image", required: false }
+      - { label: "תקציר", name: "summary", widget: "text", required: false }
+      - { label: "תוכן", name: "body", widget: "markdown", required: true }
+      
+      # שדה בחירה לכיוון הסיידבר
+      - label: "כיוון סיידבר"
+        name: "sidebar"
+        widget: "select"
+        options:
+          - { label: "שמאל", value: "left" }
+          - { label: "ימין", value: "right" }
+          - { label: "ללא", value: "false" }
+        default: "left"
+        required: false
+
+      - label: "SEO"
+        name: "seo"
+        widget: "object"
+        fields:
+          - { label: "כותרת SEO", name: "title", widget: "string", required: false }
+          - { label: "תיאור SEO", name: "description", widget: "text", required: false }
+          - { label: "מילות מפתח", name: "keywords", widget: "list", required: false }
+      
+      - {
+          label: "מאמרים קשורים",
+          name: "related_posts",
+          widget: "relation",
+          collection: "מאמרים",
+          search_fields: ["title"],
+          value_field: "slug",
+          display_fields: ["title"],
+          multiple: true,
+          required: false
+        }
+
+  - name: "pages"
+    label: "עמודים"
+    files:
+      - label: "דף הבית"
+        name: "home"
+        file: "post/home/index.md"
+        media_folder: "static/uploads/home"
+        public_folder: "/uploads/home"
+        fields:
+          - { label: "כותרת", name: "title", widget: "string", required: true }
+          - { label: "תמונה ראשית", name: "hero_image", widget: "image", required: false }
+          - { label: "תוכן", name: "body", widget: "markdown", required: true }
+      - label: "אודות"
+        name: "about"
+        file: "post/about/index.md"
+        media_folder: "static/uploads/about"
+        public_folder: "/uploads/about"
+        fields:
+          - { label: "כותרת", name: "title", widget: "string", required: true }
+          - { label: "תוכן", name: "body", widget: "markdown", required: true }
+      - label: "סמכות הורית"
+        name: "parental_authority"
+        file: "post/parental-authority/index.md"
+        media_folder: "static/uploads/parental-authority"
+        public_folder: "/uploads/parental-authority"
+        fields:
+          - { label: "כותרת", name: "title", widget: "string", required: true }
+          - { label: "תמונה ראשית", name: "hero_image", widget: "image", required: false }
+          - { label: "תוכן", name: "body", widget: "markdown", required: true }
+      - label: "פוביה חברתית"
+        name: "social_phobia"
+        file: "post/social-phobia/index.md"
+        media_folder: "static/uploads/social-phobia"
+        public_folder: "/uploads/social-phobia"
+        fields:
+          - { label: "כותרת", name: "title", widget: "string", required: true }
+          - { label: "תמונה ראשית", name: "hero_image", widget: "image", required: false }
+          - { label: "תוכן", name: "body", widget: "markdown", required: true }
+
+  - name: "questionnaires"
+    label: "שאלונים"
+    folder: "questionnaires"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "שם שאלון", name: "title", widget: "string", required: true }
+      - { label: "תיאור", name: "description", widget: "text", required: false }
+      - { label: "תוכן השאלון", name: "content", widget: "markdown", required: true }
+      - { label: "תאריך יצירה", name: "created_at", widget: "datetime", required: true }
+
+  - name: "authors"
+    label: "מחברים"
+    folder: "authors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "שם מלא", name: "name", widget: "string", required: true }
+      - { label: "תמונה", name: "avatar", widget: "image", required: false }
+      - { label: "ביוגרפיה", name: "bio", widget: "markdown", required: false }
+      - { label: "קישורים", name: "links", widget: "list", required: false }
+
+taxonomies:
+  - name: "categories"
+    label: "קטגוריות"
+  - name: "tags"
+    label: "תגיות"
