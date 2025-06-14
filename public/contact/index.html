@@ -146,15 +146,12 @@
     <div class="wrapper flex">
       <div class="primary">
         
-<main class="main container mx-auto px-4 py-8" role="main">
+<main class="main single" role="main"> 
+    <article class="post">
+        
+        
 
-  <article class="custom-post space-y-8">
-    <header class="custom-post__header space-y-2">
-      <h1 class="text-4xl font-bold font-primary text-gray-900"></h1>
-      
-    </header>
-
-    
+        
 
 
   
@@ -173,49 +170,15 @@
     </a>
   </div>
 
-<div class="custom-post__content prose max-w-none font-primary">
-      <p><strong>נא מלאו את הפרטים ונחזור אליכם בהקדם האפשרי</strong></p>
+<div class="content post__content clearfix">
+            
+            <h1 class="post__title"></h1>
+            
+            
+            <p><strong>נא מלאו את הפרטים ונחזור אליכם בהקדם האפשרי</strong></p>
 
-
-      
-      <form name="contact" method="POST" netlify action="/thank-you/" class="space-y-4 mt-10">
-        <p class="hidden">
-          <label>אל תמלא אם אתה בן אדם: <input name="bot-field" /></label>
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label for="name" class="block text-sm font-medium">שם</label>
-            <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded p-2 font-primary">
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-medium">אימייל</label>
-            <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded p-2 font-primary">
-          </div>
-          <div>
-            <label for="phone" class="block text-sm font-medium">טלפון</label>
-            <input type="tel" id="phone" name="phone" class="w-full border border-gray-300 rounded p-2 font-primary">
-          </div>
-          <div>
-            <label for="subject" class="block text-sm font-medium">נושא</label>
-            <input type="text" id="subject" name="subject" class="w-full border border-gray-300 rounded p-2 font-primary">
-          </div>
         </div>
-
-        <div>
-          <label for="message" class="block text-sm font-medium">הודעה</label>
-          <textarea id="message" name="message" required rows="5" class="w-full border border-gray-300 rounded p-2 font-primary"></textarea>
-        </div>
-
-        <div>
-          <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded font-primary">
-            שלח
-          </button>
-        </div>
-      </form>
-    </div>
-  </article>
-
+    </article>
 </main>
 
 

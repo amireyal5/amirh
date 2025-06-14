@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>חיפוש באתר</title>
+  <title>חיפוש - עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
   <script>
     (function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");
   </script>
@@ -146,167 +146,31 @@
   <div class="container container--outer">
     <div class="wrapper flex">
       <div class="primary">
+         
+
+<div class="search">
+    <header>
+        <h1>חיפוש</h1>
         
-  <h1>חיפוש באתר</h1>
-  <input type="text" id="searchInput" placeholder="הקלד לחיפוש..." autofocus />
-  <ul class="search-results" id="results"></ul>
-  <div class="no-results" id="noResults" style="display:none;">לא נמצאו תוצאות.</div>
+    </header>
 
-  <style>
-     
-    ul.search-results {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      max-width: 800px;
-      margin: 20px auto 0;
-    }
-    ul.search-results li {
-      padding: 15px 10px;
-      border-bottom: 1px solid #ddd;
-      margin-bottom: 10px;
-    }
-    ul.search-results li:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-    }
-    ul.search-results a {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #0066cc;
-      text-decoration: none;
-    }
-    ul.search-results a:hover {
-      text-decoration: underline;
-    }
-    .search-summary {
-      margin-top: 6px;
-      font-size: 0.95em;
-      color: #555;
-      line-height: 1.4;
-    }
-    .no-results {
-      text-align: center;
-      font-size: 1.1em;
-      color: #888;
-      margin-top: 40px;
-    }
-    input#searchInput {
-      display: block;
-      width: 60%;
-      max-width: 600px;
-      padding: 12px 12px;
-      font-size: 1.2em;
-      margin: 0 auto 25px auto;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      transition: border-color 0.3s ease;
-    }
-    input#searchInput:focus {
-      border-color: #0066cc;
-      outline: none;
-    }
-    mark {
-      background-color: #ffeb3b;
-      color: black;
-      font-weight: bold;
-      padding: 0 2px;
-    }
-  </style>
+    <form action="http://localhost:1313/search/">
+        <input id="search-query" name="q" placeholder="search phrase"/>
+    </form>
 
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-  <script>
-    let fuse;
-    const resultsList = document.getElementById('results');
-    const noResultsDiv = document.getElementById('noResults');
-    const searchInput = document.getElementById('searchInput');
+    <div id="search-results"></div>
+</div>
 
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param) || '';
-    }
-
-    
-    function getSnippet(content, query, snippetLength = 160) {
-      const lowerContent = content.toLowerCase();
-      const lowerQuery = query.toLowerCase();
-      const index = lowerContent.indexOf(lowerQuery);
-      if (index === -1) {
-        
-        return content.length > snippetLength ? content.substring(0, snippetLength) + '...' : content;
-      }
-      const start = Math.max(0, index - 50);
-      let end = start + snippetLength;
-      if (end > content.length) end = content.length;
-      let snippet = content.substring(start, end);
-      if (start > 0) snippet = '...' + snippet;
-      if (end < content.length) snippet = snippet + '...';
-      return snippet;
-    }
-
-    
-    function highlight(text, query) {
-      if (!query) return text;
-      const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const regex = new RegExp(`(${escapedQuery})`, 'gi');
-      return text.replace(regex, '<mark>$1</mark>');
-    }
-
-    fetch('/index.json')
-      .then(res => res.json())
-      .then(data => {
-        fuse = new Fuse(data, {
-          keys: ['title', 'content', 'tags'],
-          includeScore: true,
-          threshold: 0.4,
-          ignoreLocation: true
-        });
-
-        const queryFromURL = getQueryParam('q');
-        if (queryFromURL) {
-          searchInput.value = queryFromURL;
-          doSearch(queryFromURL);
-        }
-      });
-
-    searchInput.addEventListener('input', function() {
-      doSearch(this.value.trim());
-      const params = new URLSearchParams(window.location.search);
-      if (this.value.trim() === '') {
-        params.delete('q');
-      } else {
-        params.set('q', this.value.trim());
-      }
-      const newRelativePathQuery = window.location.pathname + '?' + params.toString();
-      history.replaceState(null, '', newRelativePathQuery);
-    });
-
-    function doSearch(query) {
-      if (!query) {
-        resultsList.innerHTML = '';
-        noResultsDiv.style.display = 'none';
-        return;
-      }
-      const results = fuse.search(query);
-      if (results.length === 0) {
-        resultsList.innerHTML = '';
-        noResultsDiv.style.display = 'block';
-        return;
-      }
-      noResultsDiv.style.display = 'none';
-      resultsList.innerHTML = results.map(result => {
-        const item = result.item;
-        const snippet = getSnippet(item.content, query);
-        return `
-          <li>
-            <a href="${item.url}">${highlight(item.title, query)}</a>
-            <p class="search-summary">${highlight(snippet, query)}</p>
-          </li>
-        `;
-      }).join('');
-    }
-  </script>
+<template id="search-result-template"><div class="search_summary">
+    <h2 class="post-title no-text-decoration"><a class="search_link search_title" href=""></a></h2>
+    <p><em class="search_snippet"></em></p>
+    <small>
+        <table>
+            <tr class="search_iftags"><td><strong>Tags</strong></td><td class="search_tags"></td></tr>
+            <tr class="search_ifcategories"><td><strong>Categories</strong></td><td class="search_categories"></td></tr>
+        </table>
+    </small>
+</div></template>
 
       </div>
       
@@ -314,54 +178,51 @@
     </div>
     
     
-    <footer class="footer">
-	<div class="container footer__container flex">
-		
-    <div class="footer__column">
-        <h3>משאבים</h3>
-        <ul>
-            <li><a href="#">בלוגים</a></li>
-            <li><a href="#">סרטונים</a></li>
-            <li><a href="#">מאמרים</a></li>
-            <li><a href="#">שאלות נפוצות</a></li>
-            <li><a href="#">התמחויות מקומיות</a></li>
-            <li><a href="#">מיקומי טלרפואה</a></li>
-        </ul>
-    </div>
-    <div class="footer__column footer__column--contact">
-        <h3>צור קשר ותמיכה</h3>
-        <p>לתיאום: 054-4509962</p>
-        <p class="footer__emergency-text">לעזרה מיידית התקשר או שלח הודעה לקו החירום למשברים ב-988. אם זה מצב חירום חייג 911.</p>
-        <a href="#" class="btn footer__patient-portal-btn">פורטל מטופלים</a>
+    
 
-        <div class="footer__signup-form">
-            <p>הירשם לקבלת טיפים מועילים ועדכונים חשובים מ-aaaaaa</p>
-            <form>
-                <input type="email" placeholder="אימייל" aria-label="הזן את האימייל שלך" class="footer__email-input">
-                <button type="submit" class="footer__subscribe-btn">הרשמה</button>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="footer__bottom-row">
-    <div class="footer__logo">
-        <img src="/img/logo.png" alt="עמיר אייל פסיכותרפיה והדרכת הורים לוגו">
-        <span class="footer__logo-text">עמיר אייל פסיכותרפיה</span>
-    </div>
-    <div class="footer__copyright">
-        &copy; 2025 עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים.
-        <span class="footer__copyright-credits">נבנה עם <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> וערכת העיצוב     <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>.</span>
-    </div>
-    <ul class="footer__social-icons">
-      <li><a href="https://wa.me/972547509962" aria-label="וואטסאפ" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-               <li><a href="mailto:amir@amireyal.co.il" aria-label="מייל"><i class="fas fa-envelope"></i></a></li>
-        <li><a href="tel:0547509962" aria-label="טלפון נייד"><i class="fas fa-phone"></i></a></li>
-    </ul>
-</div>
 
-		
-	</div>
-</footer>
+
+    
+    
+
+    
+        
+    
+    
+
+    
+        
+    
+    
+
+    
+        
+    
+    
+
+
+
+<script>
+ 
+ if (window.navigator.userAgent.indexOf('Trident/') > 0) {
+     let urls = ["/js/iecompat/fetch.min.js","/js/iecompat/promises.min.js","/js/iecompat/remove.min.js","/js/iecompat/template.min.js"];
+     let head = document.getElementsByTagName("head")[0];
+     urls.forEach(function(url) {
+         let script = document.createElement("script");
+         script.src = url;
+         head.appendChild(script);
+     });
+ }
+ 
+</script>
+
+
+
+
+<script src=/js/libs/fuse.min.5738262989a1b0634d3783e1d64316f818e86093368d5e62e08945a1e640f572.js></script>
+<script src=/js/libs/mark.min.dec10577664529b93fd1f621add5e3fb4e57ae55d11c650221ab3ebc552fc35f.js></script>
+
+<script src=/js/search.73761f6f846e089d7a8c675b0a1b321a354780e465c9d78f3d32caec5ec7c742.js></script>
 
   </div>
 
