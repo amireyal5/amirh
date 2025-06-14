@@ -1,41 +1,41 @@
+{{ define "meta_tags" }}
+
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="{{ .Title }}">
+
+{{ if .Params.image }}
+{{ with .Params.image }}
+<meta property="og:image" content="{{ . | absURL }}">
+{{ end }}
+{{ else }}
+<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image | absURL }}">
+{{ end }}
+
+{{- if .Description }}
+<meta name="description" content="{{ .Description }}" />
+<meta property="og:description" content="{{ .Description }}" />
+<meta property="twitter:description" content="{{ .Description }}" />
+{{- else if .Summary }}
+<meta name="description" content="{{ .Summary }}" />
+<meta property="og:description" content="{{ .Summary }}" />
+<meta property="twitter:description" content="{{ .Summary }}" />
+{{- else if .Site.Params.description }}
+<meta name="description" content="{{ .Site.Params.description }}" />
+<meta property="og:description" content="{{ .Site.Params.description }}" />
+<meta property="twitter:description" content="{{ .Site.Params.description }}" />
+{{- end }}
+
+{{ end }}
+
 {{ define "main" }}
-<main class="main single" role="main"> <!-- Changed class from homepage to single for clarity -->
-    <article class="post">
-        <!-- REMOVED: The old header structure. The main site header is now handled globally by baseof.html. -->
-        <!-- <header class="post__header">
-            <h1 class="post__title">{{ .Title }}</h1>
-            {{- with .Params.lead }}
-            <p class="post__lead">{{ . }}</p>
-            {{- end }}
-            {{ with partial "post_meta.html" . -}}
-            <div class="post__meta meta">{{ . }}</div>
-            {{- end }}
-        </header> -->
-
-        {{ partial "post_thumbnail.html" (dict "class" "post" "page" .) }}
-        {{- partial "post_toc.html" . -}}
-
-        <div class="content post__content clearfix">
-            <!-- CRITICAL FIX: Re-added post title and meta here, so they appear within the main content area -->
-            <h1 class="post__title">{{ .Title }}</h1>
-            {{- with .Params.lead }}
-            <p class="post__lead">{{ . }}</p>
-            {{- end }}
-            {{ with partial "post_meta.html" . -}}
-            <div class="post__meta meta">{{ . }}</div>
-            {{- end }}
-            
-            {{ .Content }}
-        </div>
-        
-        {{- if .Params.tags }}
-        <footer class="post__footer">
-            {{ partial "post_tags.html" . }}
-        </footer>
-        {{- end }}
-    </article>
-</main>
-
-{{ partial "pager.html" . }}
-{{ partial "comments.html" . }}
+<div class="mx-auto my-10 max-w-6xl">
+  <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+    <h1 class="title text-5xl mb-4">{{.Title}}</h1>
+    <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1">{{.Content}}</div>
+  </div>
+</div>
 {{ end }}

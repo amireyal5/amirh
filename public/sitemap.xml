@@ -2,15 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-06-07T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/products/example/</loc>
+    <lastmod>2020-06-23T12:33:45+10:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/contact/</loc>
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2025-06-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <lastmod>2025-06-07T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-06-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/1/</loc>
+    <lastmod>2025-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/1/</loc>
     <lastmod>2025-06-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/1/</loc>
@@ -23,6 +35,9 @@
     <lastmod>2025-06-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/%D7%9E%D7%AA%D7%91%D7%92%D7%A8%D7%99%D7%9D/</loc>
+    <lastmod>2025-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-06-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/%D7%A4%D7%A1%D7%99%D7%9B%D7%95%D7%AA%D7%A8%D7%A4%D7%99%D7%94/</loc>
@@ -38,6 +53,12 @@
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/%D7%94%D7%AA%D7%9E%D7%95%D7%93%D7%93%D7%95%D7%AA/</loc>
+    <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/2/</loc>
+    <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/2/</loc>
@@ -61,8 +82,20 @@
     <loc>http://localhost:1313/tags/%D7%9E%D7%AA%D7%97/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/blog/%D7%A7%D7%A9%D7%99%D7%99%D7%9D-%D7%91%D7%9E%D7%A2%D7%A8%D7%9B%D7%95%D7%AA-%D7%99%D7%97%D7%A1%D7%99%D7%9D-%D7%90%D7%99%D7%9A-%D7%9C%D7%A0%D7%95%D7%95%D7%98-%D7%91%D7%90%D7%AA%D7%92%D7%A8%D7%99%D7%9D-%D7%95%D7%9C%D7%A6%D7%9E%D7%95%D7%97-%D7%99%D7%97%D7%93/</loc>
+    <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/%D7%A7%D7%A9%D7%99%D7%99%D7%9D-%D7%91%D7%9E%D7%A2%D7%A8%D7%9B%D7%95%D7%AA-%D7%99%D7%97%D7%A1%D7%99%D7%9D-%D7%90%D7%99%D7%9A-%D7%9C%D7%A0%D7%95%D7%95%D7%98-%D7%91%D7%90%D7%AA%D7%92%D7%A8%D7%99%D7%9D-%D7%95%D7%9C%D7%A6%D7%9E%D7%95%D7%97-%D7%99%D7%97%D7%93/</loc>
+    <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/%D7%A7%D7%A9%D7%99%D7%99%D7%9D-%D7%91%D7%9E%D7%A2%D7%A8%D7%9B%D7%95%D7%AA-%D7%99%D7%97%D7%A1%D7%99%D7%9D-%D7%90%D7%99%D7%9A-%D7%9C%D7%A0%D7%95%D7%95%D7%98-%D7%91%D7%90%D7%AA%D7%92%D7%A8%D7%99%D7%9D-%D7%95%D7%9C%D7%A6%D7%9E%D7%95%D7%97-%D7%99%D7%97%D7%93/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/3/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/3/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/3/</loc>
     <lastmod>2025-06-04T00:00:00+00:00</lastmod>
@@ -94,6 +127,9 @@
     <loc>http://localhost:1313/tags/%D7%97%D7%A8%D7%93%D7%94-%D7%97%D7%91%D7%A8%D7%AA%D7%99%D7%AA/</loc>
     <lastmod>2025-05-31T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/posts/social-phobia/</loc>
+    <lastmod>2025-05-31T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/social-phobia/</loc>
     <lastmod>2025-05-31T00:00:00+00:00</lastmod>
   </url><url>
@@ -103,8 +139,20 @@
     <loc>http://localhost:1313/tags/%D7%A1%D7%9E%D7%9B%D7%95%D7%AA-%D7%94%D7%95%D7%A8%D7%99%D7%AA/</loc>
     <lastmod>2025-05-31T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/blog/parental-authority/</loc>
+    <lastmod>2025-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/parental-authority/</loc>
+    <lastmod>2025-05-31T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/parental-authority/</loc>
     <lastmod>2025-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/specific-phobia/</loc>
+    <lastmod>2025-05-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/specific-phobia/</loc>
+    <lastmod>2025-05-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/specific-phobia/</loc>
     <lastmod>2025-05-07T00:00:00+00:00</lastmod>
@@ -118,11 +166,23 @@
     <loc>http://localhost:1313/tags/%D7%9E%D7%A0%D7%99%D7%A4%D7%95%D7%9C%D7%A6%D7%99%D7%94-%D7%A8%D7%92%D7%A9%D7%99%D7%AA/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/blog/emotional-manipulations-in-divorce-conflicts/</loc>
+    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/emotional-manipulations-in-divorce-conflicts/</loc>
+    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/emotional-manipulations-in-divorce-conflicts/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/%D7%A1%D7%9B%D7%A1%D7%95%D7%9A-%D7%92%D7%99%D7%A8%D7%95%D7%A9%D7%99%D7%9F/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/mindfulness/</loc>
+    <lastmod>2025-03-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/mindfulness/</loc>
+    <lastmod>2025-03-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/mindfulness/</loc>
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
@@ -130,14 +190,32 @@
     <loc>http://localhost:1313/tags/%D7%93%D7%90%D7%92%D7%94/</loc>
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/blog/%D7%A1%D7%9B%D7%A1%D7%95%D7%9A-%D7%92%D7%99%D7%A8%D7%95%D7%A9%D7%99%D7%9D-%D7%9B%D7%A9%D7%94%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%91%D7%90%D7%9E%D7%A6%D7%A2-%D7%9E%D7%94-%D7%A9%D7%9B%D7%9C-%D7%94%D7%95%D7%A8%D7%94-%D7%97%D7%99%D7%99%D7%91-%D7%9C%D7%93%D7%A2%D7%AA-%D7%9B%D7%93%D7%99-%D7%9C%D7%94%D7%AA%D7%9E%D7%95%D7%93%D7%93-%D7%A0%D7%9B%D7%95%D7%9F/</loc>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/%D7%A1%D7%9B%D7%A1%D7%95%D7%9A-%D7%92%D7%99%D7%A8%D7%95%D7%A9%D7%99%D7%9D-%D7%9B%D7%A9%D7%94%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%91%D7%90%D7%9E%D7%A6%D7%A2-%D7%9E%D7%94-%D7%A9%D7%9B%D7%9C-%D7%94%D7%95%D7%A8%D7%94-%D7%97%D7%99%D7%99%D7%91-%D7%9C%D7%93%D7%A2%D7%AA-%D7%9B%D7%93%D7%99-%D7%9C%D7%94%D7%AA%D7%9E%D7%95%D7%93%D7%93-%D7%A0%D7%9B%D7%95%D7%9F/</loc>
+    <lastmod>2025-02-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/%D7%A1%D7%9B%D7%A1%D7%95%D7%9A-%D7%92%D7%99%D7%A8%D7%95%D7%A9%D7%99%D7%9D-%D7%9B%D7%A9%D7%94%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%91%D7%90%D7%9E%D7%A6%D7%A2-%D7%9E%D7%94-%D7%A9%D7%9B%D7%9C-%D7%94%D7%95%D7%A8%D7%94-%D7%97%D7%99%D7%99%D7%91-%D7%9C%D7%93%D7%A2%D7%AA-%D7%9B%D7%93%D7%99-%D7%9C%D7%94%D7%AA%D7%9E%D7%95%D7%93%D7%93-%D7%A0%D7%9B%D7%95%D7%9F/</loc>
     <lastmod>2025-02-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/%D7%92%D7%9C%D7%95%D7%91%D7%95%D7%A1-%D7%94%D7%99%D7%A1%D7%98%D7%A8%D7%99%D7%A7%D7%95%D7%A1/</loc>
     <lastmod>2025-01-07T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/blog/globus-hystericus/</loc>
+    <lastmod>2025-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/globus-hystericus/</loc>
+    <lastmod>2025-01-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/globus-hystericus/</loc>
     <lastmod>2025-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/%D7%94%D7%95%D7%A8%D7%95%D7%AA-%D7%91%D7%A2%D7%99%D7%93%D7%9F-%D7%94%D7%9E%D7%A1%D7%9B%D7%99%D7%9D-%D7%9B%D7%9C%D7%99%D7%9D-%D7%9C%D7%94%D7%A6%D7%91%D7%AA-%D7%92%D7%91%D7%95%D7%9C%D7%95%D7%AA-%D7%95%D7%A9%D7%99%D7%9E%D7%95%D7%A9-%D7%9E%D7%95%D7%A9%D7%9B%D7%9C/</loc>
+    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/%D7%94%D7%95%D7%A8%D7%95%D7%AA-%D7%91%D7%A2%D7%99%D7%93%D7%9F-%D7%94%D7%9E%D7%A1%D7%9B%D7%99%D7%9D-%D7%9B%D7%9C%D7%99%D7%9D-%D7%9C%D7%94%D7%A6%D7%91%D7%AA-%D7%92%D7%91%D7%95%D7%9C%D7%95%D7%AA-%D7%95%D7%A9%D7%99%D7%9E%D7%95%D7%A9-%D7%9E%D7%95%D7%A9%D7%9B%D7%9C/</loc>
+    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/%D7%9E%D7%90%D7%9E%D7%A8%D7%99%D7%9D/%D7%94%D7%95%D7%A8%D7%95%D7%AA-%D7%91%D7%A2%D7%99%D7%93%D7%9F-%D7%94%D7%9E%D7%A1%D7%9B%D7%99%D7%9D-%D7%9B%D7%9C%D7%99%D7%9D-%D7%9C%D7%94%D7%A6%D7%91%D7%AA-%D7%92%D7%91%D7%95%D7%9C%D7%95%D7%AA-%D7%95%D7%A9%D7%99%D7%9E%D7%95%D7%A9-%D7%9E%D7%95%D7%A9%D7%9B%D7%9C/</loc>
     <lastmod>2024-12-30T00:00:00+00:00</lastmod>
@@ -151,9 +229,14 @@
     <loc>http://localhost:1313/pages/thank-you/</loc>
     <lastmod>2023-10-27T10:30:00+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/products/</loc>
+    <lastmod>2020-06-23T12:33:45+10:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/docs/</loc>
   </url><url>
     <loc>http://localhost:1313/questionnaires/</loc>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
     <loc>http://localhost:1313/pages/about/</loc>
   </url><url>
@@ -161,6 +244,8 @@
   </url><url>
     <loc>http://localhost:1313/search/</loc>
     <priority>0.1</priority>
+  </url><url>
+    <loc>http://localhost:1313/faq/</loc>
   </url><url>
     <loc>http://localhost:1313/pages/faq/</loc>
   </url>

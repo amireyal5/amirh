@@ -1,136 +1,35 @@
 <!DOCTYPE html>
-<html class="no-js" lang="he" dir="rtl">
+<html lang="{{ .Site.Language.Lang }}" dir="{{ if eq .Site.Language.LanguageDirection "rtl" }}rtl{{ else }}ltr{{ end }}">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ block "title" . }}{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
-  <script>
-    (function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");
-  </script>
-  <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}" />
-
-  {{- if .Site.Params.opengraph }}
-    {{ template "_internal/opengraph.html" . }}
-  {{- end }}
-  {{- if .Site.Params.schema }}
-    {{ template "_internal/schema.html" . }}
-  {{- end }}
-  {{- if .Site.Params.twitter_cards }}
-    {{ template "_internal/twitter_cards.html" . }}
-  {{- end }}
-
-  {{/* Load standard CSS files first */}}
-  {{ $contactFormCss := resources.Get "css/contact-form.css" | minify }}
-  <link rel="stylesheet" href="{{ $contactFormCss.RelPermalink }}" />
-
-  {{- $googleFontsLink := .Site.Params.googleFontsLink | default "https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" }}
-  {{- if hasPrefix $googleFontsLink "https://fonts.googleapis.com/" }}
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-    <link rel="stylesheet" href="{{ $googleFontsLink }}" />
-  {{- end }}
-  
-  <!-- Add these specific fonts if not already covered by googleFontsLink -->
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-
-  {{/* Load main theme CSS file */}}
-  {{ $style := resources.Get "css/style.css" | minify -}}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-
-  {{/* Load other theme-specific CSS */}}
-  <link rel="stylesheet" href="{{ "/css/accordion.css" | relURL }}">
-  <link rel="stylesheet" href="{{ "css/all.min.css" | relURL }}" />
-
-  {{/* Your old custom.css from static, if still needed for other custom styles, load it before custom-menu.css */}}
-  <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}" />
-
-  <!-- Load our NEW custom menu CSS last to ensure it overrides everything -->
-  {{ $customMenuCss := resources.Get "css/custom-menu.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $customMenuCss.RelPermalink }}" integrity="{{ $customMenuCss.Data.Integrity }}">
-  
-  {{- with .OutputFormats.Get "rss" }}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
-  {{- end }}
-
-  <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" />
-
-  {{- $server := "" }}
-  {{- if gt (int (index (split hugo.Version ".") 1)) "120" }}
-    {{ $server = hugo.IsServer }}
-  {{- else }}
-    {{ $server = .Site.IsServer }}
-  {{- end -}}
-  {{- if not $server }}
-    {{ template "_internal/google_analytics.html" . }}
-  {{- end }}
-
-  <!-- Define CSS variable for hero background image -->
-  <!-- CRITICAL FIX: Ensure the image path is correct and Hugo's relURL is used reliably -->
-  <style>
-    :root {
-      --hero-bg-image: url("{{ "/img/hero.webp" | relURL }}");
-      /* Define header height for mobile menu positioning */
-      --custom-header-height: 140px; /* Adjust based on actual header height (top-bar + main-header) */
-      /* DEBUGGING: Add borders to main layout elements to identify overflow issues */
-      /* body { border: 2px solid green !important; } */
-      /* .custom-site-header { border: 1px solid blue !important; } */
-      /* .hero-section { border: 1px solid red !important; } */
-      /* .services-section { border: 1px solid purple !important; } */
-      /* .homepage { border: 1px solid orange !important; } */
-      /* .container { border: 1px solid yellow !important; } */
-      /* .wrapper { border: 1px solid pink !important; } */
-      /* END DEBUGGING */
-    }
-    /* Adjust header height variable for different screen sizes if needed */
-    @media screen and (max-width: 768px) {
-        :root {
-            --custom-header-height: 120px; /* Smaller header height on mobile */
-        }
-    }
-  </style>
+  {{- partial "head.html" . -}}
+  {{ block "meta_tags" . }}{{ end }}
 </head>
-<body class="body">
-  {{/* REPLACE OLD HEADER PARTIAL WITH OUR NEW CUSTOM HEADER */}}
-  {{ partial "custom-header.html" . }}
-  
-  {{/* CRITICAL FIX: Place Hero Section directly here, outside the main container */}}
-  {{ if .IsHome }}
-      {{ partial "hero-section.html" . }}
-  {{ end }}
 
-  <div class="container container--outer">
-    <div class="wrapper flex">
-      <div class="primary">
-        {{ block "main" . }}
-          {{ with .Content }}
-            <div class="content main__content clearfix">
-              {{ . }}
-            </div>
-          {{ end }}
-        {{ end }}
-      </div>
-      {{ block "sidebar" . }}{{ partial "sidebar.html" . }}{{ end }}
-    </div>
-    {{/* המקום להדביק את הקריאה ל-Partial של השירותים */}}
-    {{ if .IsHome }}
-        {{ partial "services_section.html" . }}
-    {{ end }}
-    {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
+<body class="flex flex-col min-h-screen">
+  {{- partial "header.html" . -}}
+
+  <main class="flex-grow">
+    {{- block "main" . }}{{- end }}
+  </main>
+
+  {{- partial "footer.html" . -}}
+
+  <!-- כפתור חזור למעלה -->
+  <div class="scroll-top rounded-full">
+    <span class="icon-keyboard_arrow_up text-2xl"></span>
   </div>
 
-  {{/* Remove the old menu.js script load if it's there.
-       We are loading our new custom-menu.js with defer. */}}
-  {{/* <script async defer src="{{ "js/menu.js" | relURL }}"></script> */}}
-
-  {{/* Load our NEW custom menu JavaScript last, with defer */}}
-  {{ $customMenuJs := resources.Get "js/custom-menu.js" | minify | fingerprint }}
-  <script src="{{ $customMenuJs.RelPermalink }}" defer integrity="{{ $customMenuJs.Data.Integrity }}"></script>
-
-  {{ range .Site.Params.customJS }}
-    <script src="{{ . | relURL }}"></script>
-  {{ end }}
-  {{ partial "mathjax.html" . }}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollTopBtn = document.querySelector('.scroll-top');
+      if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
 </body>
+
 </html>
