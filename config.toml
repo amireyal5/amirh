@@ -8,7 +8,7 @@ ignoreLogs = ['warning-goldmark-raw-html']
 [Pagination]
   pagerSize = 10
 
-theme = "Mainroad"
+theme = "tella"
 
 [params]
   description = "הבלוג האישי שלי על כל דבר"
