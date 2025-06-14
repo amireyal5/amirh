@@ -20,5 +20,8 @@
   "homepage": "https://github.com/amireyal5/amirh#readme",
   "devDependencies": {
     "pagefind": "^1.3.0"
+  },
+  "dependencies": {
+    "postcss": "^8.5.5"
   }
 }
