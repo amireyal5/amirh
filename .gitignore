@@ -1,0 +1,29 @@
+# קבצי אובייקט מקומפלים, ספריות סטטיות ודינמיות (Shared Objects)
+*.o
+*.a
+*.so
+
+# תיקיות
+_obj
+_test
+
+# סיומות/קידומות ספציפיות לארכיטקטורה
+*.[568vq]
+[568vq].out
+
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+*.exe
+*.test
+
+/public
+.DS_Store
+
+# ספציפי ל-Node.js (מומלץ מאוד לפרויקטים המשתמשים ב-npm)
+node_modules/
