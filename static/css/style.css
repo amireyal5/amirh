@@ -1,0 +1,431 @@
+/* font */
+
+/* הגדרת גופני אייקונים - אין שינוי כאן */
+@font-face {
+  font-family: 'icomoon';
+  src: url('./fonts/icomoon.ttf?w047j2') format('truetype'),
+    url('./fonts/icomoon.woff?w047j2') format('woff'),
+    url('./fonts/icomoon.svg?w047j2#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* היפוך אייקוני חיצים כדי שיתאימו ל-RTL */
+/* לדוגמה, חץ שפנה שמאלה יפנה ימינה עבור מעבר קדימה ב-RTL */
+.icon-x:before {
+  content: "\e900";
+}
+.icon-message:before {
+  content: "\e901";
+}
+.icon-create:before {
+  content: "\e902";
+}
+.icon-email:before {
+  content: "\e903";
+}
+.icon-access_time:before {
+  content: "\e904";
+}
+/* חץ שמאלה - ב-RTL הוא מעבר קדימה, אז אייקון חץ ימינה */
+.icon-keyboard_arrow_left:before {
+  content: "\e906"; /* שינוי מ-e905 ל-e906 */
+}
+/* חץ ימינה - ב-RTL הוא מעבר אחורה, אז אייקון חץ שמאלה */
+.icon-keyboard_arrow_right:before {
+  content: "\e905"; /* שינוי מ-e906 ל-e905 */
+}
+.icon-desktop_windows:before {
+  content: "\e907";
+}
+.icon-discord:before {
+  content: "\e908";
+}
+.icon-folder:before {
+  content: "\e909";
+}
+.icon-lightbulb_outline:before {
+  content: "\e90a";
+}
+.icon-person:before {
+  content: "\e90b";
+}
+.icon-file_download:before {
+  content: "\e90c";
+}
+.icon-remove_red_eye:before {
+  content: "\e90d";
+}
+.icon-keyboard_arrow_up:before {
+  content: "\e90e";
+}
+.icon-line:before {
+  content: "\e90f";
+}
+.icon-hatenabookmark:before {
+  content: "\e910";
+}
+.icon-price-tag:before {
+  content: "\e935";
+}
+.icon-sphere:before {
+  content: "\e9c9";
+}
+.icon-link:before {
+  content: "\e9cb";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+.icon-facebook:before {
+  content: "\f09a";
+}
+.icon-get-pocket:before {
+  content: "\f265";
+}
+
+/* הגדרת גופנים ותמיכה ב-RTL */
+body {
+  /* הוספת גופנים מתאימים לעברית כמו 'Assistant', 'Rubik' או 'Heebo' */
+  /* 'Noto Sans Hebrew' הוא גם אופציה טובה כיוון ש'Noto Sans JP' כבר קיים */
+  font-family: 'Assistant', 'Rubik', 'Heebo', 'Noto Sans Hebrew', 'Montserrat', 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  direction: rtl; /* הגדרת כיוון כללי מימין לשמאל */
+  text-align: right; /* יישור טקסט לימין כברירת מחדל */
+}
+
+.content {
+  font-family: 'Open Sans', 'Noto Sans JP', sans-serif; /* שמירה על הגופן המקורי, אך יש לשקול הוספת גופן עברי גם כאן אם התוכן הוא בעברית */
+  /* אם התוכן ספציפית בעברית, אפשר להוסיף כאן גופן עברי ספציפי */
+  text-align: right; /* יישור טקסט התוכן לימין */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* slide */
+
+@keyframes ScaleAni {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.swiper-slide .s-fade-txt {
+  position: absolute;
+  top: 50%;
+  /* שימוש ב-left ו-transform לשמירה על מרכוז יחסי, עובד ב-RTL גם כן */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.swiper-slide .s-fade-txt {
+  animation: FadeAni 0.5s ease 1s 1 normal both;
+}
+@keyframes FadeAni {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.wrap {
+  overflow: hidden;
+}
+
+.swiper-wrapper img {
+  width: 100%;
+  height: 85vh;
+  object-fit: cover;
+}
+.active {
+  display: block !important;
+}
+.slide-wrap img {
+  width: 100%;
+  height: 85vh;
+  object-fit: cover;
+}
+.slide-class {
+  margin: 0 auto;
+}
+.animation-slide {
+  position: relative;
+}
+/* כפתורי ניווט בסליידר - הספריה אמורה לטפל בכיווניות אוטומטית */
+/* אך אם יש בעיות מיקום, ייתכן שיהיה צורך לשנות left/right כאן */
+.swiper-button-prev:after,
+.swiper-container-rtl, /* swiper-container-rtl זהו קלאס ש-Swiper.js מוסיף בעצמו */
+.swiper-button-next:after {
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  background: #fff;
+}
+
+/* menu */
+.mopen {
+  /* היפוך Float לימין */
+  float: right; /* שינוי מ-left ל-right */
+  display: block;
+  background: rgba(255, 255, 255, 0);
+  position: relative;
+  z-index: 1000;
+}
+
+.mopen span {
+  transition: all 0.3s;
+  transform: rotate(0deg);
+  width: 50px;
+  height: 2px;
+  display: block;
+  background: #000;
+  position: absolute;
+  /* שמירה על left: 50% ומרכוז באמצעות transform: translate */
+  left: 50%;
+  /* היפוך margin-left ל-margin-right */
+  margin-right: -25px; /* שינוי מ-margin-left ל-margin-right */
+  top: 50%;
+}
+.mopen .top {
+  transform: translateY(-17px);
+}
+.mopen .bottom {
+  transform: translateY(17px);
+}
+.mopen.is-open span {
+  background: #fff;
+}
+.mopen.is-open .middle {
+  background: rgba(255, 255, 255, 0);
+}
+.mopen.is-open .top {
+  transform: rotate(-45deg) translateY(0px);
+}
+.mopen.is-open .bottom {
+  transform: rotate(45deg) translateY(0px);
+}
+
+/* menu bg */
+#overlay {
+  visibility: hidden;
+  display: flex;
+  transition: 0.3s linear;
+  position: absolute;
+  z-index: 900;
+  align-items: center;
+  justify-content: center;
+  right: 0; /* שינוי מ-left ל-right */
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  opacity: 0;
+}
+#overlay.open {
+  visibility: visible;
+  opacity: 0.95;
+}
+body.scroll-lock {
+  position: fixed;
+  /* שמירה על left ו-right לצורך נעילת גלילה */
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+.scroll-top {
+  background-color: #222;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  /* העברת כפתור הגלילה למעלה לצד שמאל ב-RTL */
+  left: 1.5rem; /* שינוי מ-right ל-left */
+  right: auto; /* ביטול right אם היה מוגדר */
+  bottom: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  cursor: pointer;
+}
+
+/* form */
+
+input[type='text'],
+textarea {
+  width: 100%;
+  max-width: 72em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  text-align: right; /* יישור טקסט לימין בתוך שדות קלט */
+}
+input,
+textarea {
+  -webkit-appearance: none;
+}
+input[type='checkbox'] {
+  -webkit-appearance: checkbox;
+}
+span.begin-task-list + ul {
+  padding-right: 0; /* שינוי מ-padding-left ל-padding-right */
+  list-style: none;
+}
+
+/* pagination */
+
+.pagination {
+  display: flex;
+  list-style: none;
+  border-radius: 0.25rem;
+  margin: 20px 0;
+  padding: 0;
+  justify-content: center;
+  direction: ltr; /* שמירה על כיוון LTR עבור כפתורי המספור כדי שלא יתהפכו */
+}
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1rem;
+  /* שינוי margin-left ל-margin-right עבור RTL */
+  margin-right: -1px; /* שינוי מ-margin-left ל-margin-right */
+  margin-left: auto; /* ביטול margin-left אם היה מוגדר */
+  line-height: 1.25;
+  border: 1px solid #dee2e6;
+}
+.homepage .page-link,
+.listing .page-link {
+  background-color: #fff;
+}
+.page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #dee2e6;
+}
+.page-item.active .page-link {
+  z-index: 1;
+}
+
+/* toc - Table of Contents */
+
+#TableOfContents > ul {
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 0.5em 1em; /* שמירה על ריפוד אחיד */
+  line-height: 2;
+}
+#TableOfContents > ul:before {
+  content: 'תוכן עניינים'; /* שינוי כותרת לתוכן עניינים בעברית */
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+#TableOfContents ul {
+  list-style-type: none;
+  text-align: right; /* יישור פריטי הרשימה לימין */
+}
+#TableOfContents li {
+  padding-top: 0;
+}
+#TableOfContents li > ul {
+  /* שינוי padding-left ל-padding-right עבור ריווח הזחה ב-RTL */
+  padding-right: 1em; /* שינוי מ-padding-left ל-padding-right */
+  padding-left: auto; /* ביטול padding-left אם היה מוגדר */
+  width: 100%;
+}
+#TableOfContents a {
+  display: block;
+  border-bottom: dashed 1px lightgray;
+}
+
+/* hljs - Code highlighting */
+.hljs-ln-code {
+  /* שינוי padding-left ל-padding-right עבור מספרי שורות ב-RTL */
+  padding-right: 0.8em !important; /* שינוי מ-padding-left ל-padding-right */
+  padding-left: auto; /* ביטול padding-left אם היה מוגדר */
+}
+.content code table.hljs-ln {
+  margin: 0;
+  direction: ltr; /* שמירת כיוון LTR עבור תוכן קוד */
+  text-align: left; /* יישור קוד לשמאל, כרגיל בקוד */
+}
+.content code table.hljs-ln tr {
+  border-bottom-width: 0px;
+}
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background-color: #121212;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px #121212;
+}
+
+/* share */
+.share-button {
+  padding-top: 10px;
+  padding-bottom: 8px;
+  transition: all 0.3s;
+}
+.share-button:hover {
+  opacity: 0.7;
+}
+.x {
+  background-color: #000;
+}
+.twitter {
+  background-color: #1da1f2;
+}
+.line {
+  background-color: #00c300;
+}
+.facebook {
+  background-color: #3b5998;
+}
+.pocket {
+  background-color: #ef4056;
+}
+.hatena {
+  background-color: #00a4de;
+}
+.url {
+  background-color: #222;
+}
