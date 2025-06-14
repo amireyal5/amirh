@@ -1,6 +1,7 @@
 ---
-    name: "צרו קשר"
-    weight: 30
+title: 'Contact'
 ---
 
-**נא מלאו את הפרטים ונחזור אליכם בהקדם האפשרי**
+To contact us, please fill out the form below.
+
+{{< form >}}

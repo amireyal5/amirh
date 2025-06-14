@@ -9,20 +9,6 @@
     <lastBuildDate>Sat, 07 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Example Project</title>
-      <link>http://localhost:1313/products/example/</link>
-      <pubDate>Tue, 23 Jun 2020 12:33:45 +1000</pubDate>
-      <guid>http://localhost:1313/products/example/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan dapibus purus, vel maximus erat facilisis vel. Suspendisse eu ipsum consequat, sodales nulla vel, faucibus velit. Fusce imperdiet lacus nec cursus auctor. In vulputate arcu et nulla placerat, nec pulvinar quam rhoncus. Praesent vel placerat nunc. Mauris elit felis, pulvinar egestas risus ut, fermentum ullamcorper orci. Integer tempor, neque sed fermentum eleifend, ligula est tincidunt purus, sodales semper elit enim ut mi.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/contact/</guid>
-      <description>נא מלאו את הפרטים ונחזור אליכם בהקדם האפשרי</description>
-    </item>
-    <item>
       <title>איך יודעים שהטיפול עוזר לי? סימני התקדמות במסע לשינוי וצמיחה</title>
       <link>http://localhost:1313/blog/1/</link>
       <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
@@ -275,11 +261,11 @@
       <description>הודעתך התקבלה בהצלחה! נחזור אליכם בהקדם האפשרי.&#xA;לחזור לעמוד הבית.</description>
     </item>
     <item>
-      <title>אודות</title>
-      <link>http://localhost:1313/about/</link>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>עמיר אייל – פסיכותרפיסט מוסמך אני כאן כדי ללוות אתכם – מבוגרים, הורים ומתבגרים – במסע פנימי, שמתחיל לא פעם בשאלה פשוטה: &amp;ldquo;האם אפשר אחרת?&amp;rdquo;&#xA;מה מביא אנשים אליי? לפעמים זו תחושת תקיעות – כאילו דלת פנימית שנסגרה מזמן לא מצליחה להיפתח.&#xA;לפעמים זו חרדה ששוטפת בלי אזהרה, דיכאון שמערפל את היום, או קשרים שכבר לא מחזיקים כמו פעם.&#xA;ולעיתים זו פשוט התחושה שמשהו לא עובד. שיכול להיות אחרת – אבל איך?</description>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>To contact us, please fill out the form below.</description>
     </item>
     <item>
       <title>אודות</title>
