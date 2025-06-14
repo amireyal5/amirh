@@ -23,7 +23,7 @@
 }
 
 /* ==================================== */
-/* Global Resets & Structure            */
+/* Global Resets & Structure            */
 /* ==================================== */
 *,
 *::before,
@@ -102,25 +102,30 @@ body {
 .flex {
   display: -webkit-flex; /* Safari */
   display: flex; /* Flexbox utility class */
+  /* הוסף את הכלל הבא כדי למרכז את התוכן הראשי כאשר הוא עומד לבד */
+  justify-content: center;
 }
 
 .primary {
-  -webkit-flex: 1 0 65.83%;
-  flex: 1 0 65.83%; /* Primary content area takes ~66% width */
+  -webkit-flex: 0 0 65.83%; /* שינוי: flex-grow ל-0 כדי למנוע ממנו להתפרס על כל הרוחב */
+  flex: 0 0 65.83%; /* שינוי: flex-grow ל-0 כדי למנוע ממנו להתפרס על כל הרוחב */
+  /* כדי שה-margin auto יעבוד למרכוז, צריך לוודא שאין flex-grow שגורם לו למלא רווחים */
+  margin: 0 auto; /* הוסף את זה כדי למרכז את התוכן הראשי תמיד */
   -webkit-order: 1;
   order: 1;
   min-width: 0; /* Allow content to shrink */
 }
 
 .sidebar {
-  -webkit-flex: 1 0 31.66%;
-  flex: 1 0 31.66%; /* Sidebar takes ~31% width */
+  -webkit-flex: 0 0 31.66%; /* שינוי: flex-grow ל-0, כי הרוחב קבוע */
+  flex: 0 0 31.66%; /* שינוי: flex-grow ל-0, כי הרוחב קבוע */
   -webkit-order: 2;
   order: 2;
   min-width: 0;
   margin: 0 0 0 2.5%; /* Space between primary and sidebar */
 }
 
+/* ניתן להשאיר את הכללים האלה אם יש סיידבר שמאלי אפשרי */
 .sidebar--left {
   -webkit-order: 0; /* Override order for left sidebar */
   order: 0;
@@ -154,7 +159,6 @@ textarea {
   font-size: inherit; /* Inherit font size from parent */
   line-height: inherit; /* Inherit line height from parent */
 }
-
 /* ==================================== */
 /* Buttons                              */
 /* ==================================== */
