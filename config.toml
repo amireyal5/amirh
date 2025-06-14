@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://amireyal5.netlify.app/"
 title =  "עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים"
 languageCode = "he"
 defaultContentLanguage = "he"
