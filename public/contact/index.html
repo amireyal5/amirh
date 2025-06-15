@@ -64,15 +64,41 @@
 <meta property="twitter:description" content="To contact us, please fill out the form below." />
 
 
-
-  
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
-  
 </head>
 
 <body class="flex flex-col min-h-screen"><header>
     <div id="overlay">
         <ul class="text-center list-none text-white text-3xl">
+            
+            <li class="p-2">
+                <a href="/">
+                    <span>בית</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/faq/">
+                    <span>שאלות נפוצות</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/blog/">
+                    <span>בלוג</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/about/">
+                    <span>אודות</span>
+                </a>
+            </li>
+            
+            <li class="p-2">
+                <a href="/contact/">
+                    <span>צרו קשר</span>
+                </a>
+            </li>
             
         </ul>
     </div>
@@ -92,6 +118,31 @@
             <div class="text-lg lg:flex-grow">
             </div>
             <div class="text-lg">
+                
+                <a href="/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    בית
+                </a>
+                
+                <a href="/faq/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    שאלות נפוצות
+                </a>
+                
+                <a href="/blog/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    בלוג
+                </a>
+                
+                <a href="/about/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    אודות
+                </a>
+                
+                <a href="/contact/"
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    צרו קשר
+                </a>
                 
             </div>
         </div>
@@ -121,68 +172,12 @@
 </div>
 
   </main><footer class="bg-tlgray-100">
-  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
-    <div class="items-center text-xl text-grey-900 mr-6">
-      Tella
-    </div>
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
-      <div class="text-lg lg:flex-grow">
-      </div>
-      <div class="flex flex-row items-center text-lg">
-        
-      </div>
-    </div>
-    <div class="search-form-container mx-auto my-5 max-w-6xl px-4 w-full">
-        <form action="/search/" method="get" class="flex items-center justify-center">
-            <input type="search" name="q" id="search-query" placeholder="חיפוש באתר..." class="p-2 border rounded-md w-full bg-gray-700 text-white placeholder-gray-400">
-            <button type="submit" class="ml-2 p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">חפש</button>
-        </form>
-    </div>
-  </div>
-  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
-    &copy; עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים 2025 All Rights Reserved.
-  </div>
-</footer><div class="scroll-top rounded-full">
-    <span class="icon-keyboard_arrow_up text-2xl"></span>
-  </div>
-
-  <script>
-    
-    document.addEventListener('DOMContentLoaded', () => {
-      const scrollTopBtn = document.querySelector('.scroll-top');
-      if (scrollTopBtn) {
-        scrollTopBtn.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-    });
-  </script>
-
-  <script>
-    
-    function toggleNav() {
-      var hamburger = document.getElementById("hamburgerbtn");
-      var overlay = document.getElementById("overlay");
-      var body = document.body;
-
-      if (hamburger && overlay) {
-        hamburger.addEventListener("click", function () {
-          overlay.classList.toggle("open");
-          hamburger.classList.toggle("is-open");
-          body.classList.toggle("scroll-lock");
-        });
-      }
-    }
-    toggleNav();
-  </script>
-
   
   <script src='/js/clipboard.min.js'></script>
   <script src='/js/highlight.min.js'></script>
   <script src='/js/highlightjs-line-numbers.min.js'></script>
   <script src='/js/sweetalert2.min.js'></script>
   <script>
-    
     hljs.initHighlightingOnLoad();
     hljs.initLineNumbersOnLoad();
     new ClipboardJS('.url');
@@ -196,26 +191,70 @@
     }
   </script>
   
-
-  <script src="/js/swiper-bundle.min.js"></script>
   <script>
-    
-    var mySwiper = new Swiper(".swiper-container", {
-      direction: "horizontal",
-      loop: true,
-      speed: 550,
-      autoplay: {
-        delay: 6000,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
     });
   </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6">
+      Tella
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          Home
+          
+        </a>
+        
+        <a href="https://github.com/opera7133/tella" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          
+          <i class='icon-github text-2xl'></i>
+          
+        </a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
+    &copy; עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים 2025 All Rights Reserved.
+  </div>
+</footer>
 
-  </body>
+  <div class="scroll-top rounded-full">
+    <span class="icon-keyboard_arrow_up text-2xl"></span>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollTopBtn = document.querySelector('.scroll-top');
+      if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+</body>
+
 </html>

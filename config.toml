@@ -1,5 +1,5 @@
 baseURL = "https://amireyal5.netlify.app/"
-title = "עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים"
+title =  "עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים"
 languageCode = "he"
 defaultContentLanguage = "he"
 defaultContentLanguageInSubdir = false
@@ -18,7 +18,7 @@ theme = "tella"
   authorbox = true
   pager = true
   post_meta = ["date", "categories"]
-  mainSections = ["blog"] # מחקתי את הערך הכפול של mainSections
+  mainSections = ["blog"]  # מחקתי את הערך הכפול של mainSections
   showBlog = true
   googleFonts = true
 
@@ -55,30 +55,45 @@ theme = "tella"
 
 languageDirection = "rtl"
 
-# **הגדרות קריטיות ליצירת index.json**
-[outputs]
-  home = ["HTML", "RSS", "JSON"] # וודא ש"JSON" קיים כאן!
+[menu]
 
-[mediaTypes]
-  [mediaTypes."application/json"]
-    suffixes = ["json"]
+  [[menu.main]]
+    identifier = "faq"
+    name = "שאלות נפוצות"
+    url = "/faq/"
+    weight = 1
 
-[outputFormats.json]
-  mediaType = "application/json"
-  baseName = "index"
-  is="text"
-  isPlainText = true
-  noUgly = true
+  [[menu.main]]
+    identifier = "blog"
+    name = "בלוג"
+    url = "/blog/"
+    weight = 2
 
-# **החלק הזה חסר לך או לא הוגדר נכון - הוא אומר ל-Hugo מה לכלול ב-index.json**
-# הוא מגדיר תבנית חדשה בשם 'searchindex' (או כל שם אחר שתבחר)
-# שמשתמשת בפורמט 'json' וכוללת את התוכן של כל העמודים.
-# לאחר מכן, צריך לקרוא לתבנית הזו באמצעות הפניה ל'searchindex' ב-baseof.html או בקובץ index.html
-# כדי ש-Hugo ידע לייצר את הקובץ.
-[fuse_index]
-  output = "json"
-  fields = ["title", "content", "permalink", "tags", "summary"] # השדות שאתה רוצה לכלול באינדקס
+  [[menu.main]]
+    identifier = "about"
+    name = "אודות"
+    url = "/about/"
+    weight = 3
 
-[cascade]
-  [cascade._target]
-    kind = "page" # או "section" אם אתה רוצה לכלול רק סקשנים מסוימים
+  [[menu.main]]
+    identifier = "contact"
+    name = "צרו קשר"
+    url = "/contact/"
+    weight = 4
+
+  [[menu.main]]
+    identifier = "home"
+    name = "בית"
+    url = "/"
+    weight = 1
+
+  [[menu.footer]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.footer]]
+    name = "Github"
+    url = "https://github.com/opera7133/tella"
+    pre = "<i class='icon-github text-2xl'></i>"
+    weight = 2
