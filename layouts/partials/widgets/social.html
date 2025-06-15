@@ -1,0 +1,44 @@
+<div class="social-links-widget widget">
+    <h4 class="widget-title"></h4>
+
+    <ul class="social-icons-circular"> {{ with .Site.Params.myEmail }}
+        <li>
+            <a href="mailto:{{ . }}" title="דוא ל" class="email-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </li>
+        {{ end }}
+
+        {{ with .Site.Params.myPhone }}
+        <li>
+            <a href="tel:{{ . }}" title="טלפון" class="phone-icon">
+                <i class="fas fa-phone"></i>
+            </a>
+        </li>
+        {{ end }}
+
+        {{ with .Site.Params.myWhatsapp }}
+        <li>
+            <a href="{{ . }}" title="וואטסאפ" target="_blank" rel="noopener noreferrer" class="whatsapp-icon">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </li>
+        {{ end }}
+
+        {{ with .Site.Params.myLinkedin }}
+        <li>
+            <a href="{{ . }}" title="לינקדאין" target="_blank" rel="noopener noreferrer" class="linkedin-icon">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        {{ end }}
+
+        {{ with .Site.Params.myGithub }}
+        <li>
+            <a href="{{ . }}" title="גיטהאב" target="_blank" rel="noopener noreferrer" class="github-icon">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</div>

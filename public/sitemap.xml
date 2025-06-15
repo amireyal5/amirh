@@ -239,6 +239,9 @@
     <loc>http://localhost:1313/search/</loc>
     <priority>0.1</priority>
   </url><url>
+    <loc>http://localhost:1313/search/</loc>
+    <priority>0.1</priority>
+  </url><url>
     <loc>http://localhost:1313/faq/</loc>
   </url><url>
     <loc>http://localhost:1313/pages/faq/</loc>

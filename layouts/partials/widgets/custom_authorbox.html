@@ -1,0 +1,23 @@
+{{- with .Site.Params.author }}
+  {{- if or .avatar .name .bio }}
+    <div class="widget custom-authorbox">
+      {{- with .name }}
+        <h4 class="custom-authorbox__name">{{ . }}</h4>
+      {{- end }}
+
+      {{- with .avatar }}
+        <div class="custom-authorbox__avatar">
+          <a href="/pages/about">
+            <img src="{{ . | relURL }}" alt="{{ $.Site.Params.author.name }} avatar" height="270" width="250">
+          </a>
+        </div>
+      {{- end }}
+
+      {{- with .bio }}
+        <div class="custom-authorbox__bio">
+          {{ . | markdownify }}
+        </div>
+      {{- end }}
+    </div>
+  {{- end }}
+{{- end }}

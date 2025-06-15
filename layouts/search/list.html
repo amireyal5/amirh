@@ -1,0 +1,95 @@
+{{ define "main" }}
+<div class="container mx-auto my-8 p-4">
+    <h1 class="text-4xl font-bold mb-6 text-center">תוצאות חיפוש</h1>
+
+    <div class="search-results-page-container bg-white p-6 rounded-lg shadow-md max-w-4xl mx-auto">
+        <h2 class="text-2xl font-semibold mb-4">חיפוש עבור: <span id="search-query-display" class="text-blue-600"></span></h2>
+        <ul id="search-results-list" class="space-y-4">
+            </ul>
+        <p id="no-results-message" class="hidden text-gray-600 mt-4">לא נמצאו תוצאות עבור החיפוש שלך.</p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchQueryParam = new URLSearchParams(window.location.search).get('q');
+    const searchQueryDisplay = document.getElementById('search-query-display');
+    const searchResultsList = document.getElementById('search-results-list');
+    const noResultsMessage = document.getElementById('no-results-message');
+    let fuse;
+
+    if (!searchQueryParam) {
+        searchQueryDisplay.textContent = "(ריק)";
+        noResultsMessage.textContent = "אנא הזן מונח חיפוש.";
+        noResultsMessage.style.display = 'block';
+        return;
+    }
+
+    searchQueryDisplay.textContent = searchQueryParam;
+
+    // Load the search index (index.json)
+    fetch('/index.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const options = {
+                keys: [
+                    { name: 'title', weight: 0.8 },
+                    { name: 'content', weight: 0.5 },
+                    { name: 'tags', weight: 0.3 }
+                ],
+                includeScore: false,
+                threshold: 0.3, // ניתן לשנות את רמת הדיוק
+                ignoreLocation: true,
+                minMatchCharLength: 2
+            };
+            fuse = new Fuse(data, options);
+
+            // Perform search once Fuse is initialized and data is loaded
+            performSearch(searchQueryParam);
+        })
+        .catch(error => {
+            console.error('Error loading search index:', error);
+            searchResultsList.innerHTML = '<li>שגיאה בטעינת נתוני החיפוש. נסה לרענן את העמוד.</li>';
+            noResultsMessage.style.display = 'none'; // הסתר הודעת "אין תוצאות"
+        });
+
+    function performSearch(query) {
+        searchResultsList.innerHTML = ''; // נקה תוצאות קודמות
+        noResultsMessage.style.display = 'none'; // הסתר הודעת "אין תוצאות" בהתחלה
+
+        if (query.length >= 2 && fuse) {
+            const results = fuse.search(query);
+
+            if (results.length > 0) {
+                results.forEach(result => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = result.item.permalink;
+                    a.textContent = result.item.title;
+                    a.classList.add('text-blue-500', 'hover:underline', 'font-medium'); // Tailwind classes
+                    li.appendChild(a);
+                    if (result.item.summary) {
+                        const summaryP = document.createElement('p');
+                        summaryP.textContent = result.item.summary.substring(0, 150) + '...'; // הצג קטע טקסט
+                        summaryP.classList.add('text-gray-700', 'text-sm', 'mt-1');
+                        li.appendChild(summaryP);
+                    }
+                    searchResultsList.appendChild(li);
+                });
+            } else {
+                noResultsMessage.style.display = 'block'; // עדיין הצג, אבל עם הודעת "לא נמצאו תוצאות"
+            }
+        } else {
+            noResultsMessage.textContent = "אנא הזן לפחות 2 תווים לחיפוש.";
+            noResultsMessage.style.display = 'block';
+        }
+    }
+});
+</script>
+{{ end }}

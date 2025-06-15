@@ -1,46 +1,4 @@
 <footer class="bg-tlgray-100">
-  {{ if not .IsHome }}
-  <script src='{{ "/js/clipboard.min.js" | relURL }}'></script>
-  <script src='{{ "/js/highlight.min.js" | relURL }}'></script>
-  <script src='{{ "/js/highlightjs-line-numbers.min.js" | relURL }}'></script>
-  <script src='{{ "/js/sweetalert2.min.js" | relURL }}'></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-    new ClipboardJS('.url');
-
-    function OnClickURL() {
-      Swal.fire({
-        icon: 'success',
-        title: 'Copied!',
-        text: 'Copied the URL and title.'
-      })
-    }
-  </script>
-  {{ end }}
-  <script>
-    function toggleNav() {
-      var hamburger = document.getElementById("hamburgerbtn");
-      var overlay = document.getElementById("overlay");
-      var body = document.body;
-
-      hamburger.addEventListener("click", function () {
-        overlay.classList.toggle("open");
-        hamburger.classList.toggle("is-open");
-        body.classList.toggle("scroll-lock");
-      });
-    }
-    toggleNav();
-
-    document.querySelector('.scroll-top').addEventListener('click', () => {
-      document.documentElement.scrollTop = 0;
-    });
-  </script>
-  {{ if .Site.Params.googleFonts }}
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
-  {{ else }}
-  <link href='{{ "css/webfonts.min.css" | relURL }}' rel="stylesheet" />
-  {{ end }}
   <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
     <div class="items-center text-xl text-grey-900 mr-6">
       {{ .Site.Params.site.name }}
@@ -59,6 +17,12 @@
         </a>
         {{ end }}
       </div>
+    </div>
+    <div class="search-form-container mx-auto my-5 max-w-6xl px-4 w-full">
+        <form action="{{ "search/" | relURL }}" method="get" class="flex items-center justify-center">
+            <input type="search" name="q" id="search-query" placeholder="חיפוש באתר..." class="p-2 border rounded-md w-full bg-gray-700 text-white placeholder-gray-400">
+            <button type="submit" class="ml-2 p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">חפש</button>
+        </form>
     </div>
   </div>
   <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
