@@ -1,14 +1,18 @@
 baseURL = "https://amireyal5.netlify.app/"
-title =  "עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים"
+title = "עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים"
 languageCode = "he"
 defaultContentLanguage = "he"
 defaultContentLanguageInSubdir = false
 ignoreLogs = ['warning-goldmark-raw-html']
+languageDirection = "rtl"
+
+theme = "tella"
 
 [Pagination]
   pagerSize = 10
 
-theme = "tella"
+[outputs]
+  home = ["HTML", "JSON"]
 
 [params]
   description = "הבלוג האישי שלי על כל דבר"
@@ -18,7 +22,7 @@ theme = "tella"
   authorbox = true
   pager = true
   post_meta = ["date", "categories"]
-  mainSections = ["blog"]  # מחקתי את הערך הכפול של mainSections
+  mainSections = ["blog"]
   showBlog = true
   googleFonts = true
 
@@ -53,10 +57,7 @@ theme = "tella"
   meta_og_image = "https://amireyal.co.il/images/og-image.png"
   meta_og_description = "טיפול פסיכותרפי מקצועי לבוגרים, מתבגרים והדרכת הורים – עמיר אייל."
 
-languageDirection = "rtl"
-
 [menu]
-
   [[menu.main]]
     identifier = "faq"
     name = "שאלות נפוצות"

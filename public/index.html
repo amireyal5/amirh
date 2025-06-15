@@ -12,9 +12,9 @@
   <meta property="og:url" content="https://amireyal.co.il" />
   <meta property="og:image" content="https://amireyal.co.il/images/og-image.png" />
   <meta property="og:description" content="טיפול פסיכותרפי מקצועי לבוגרים, מתבגרים והדרכת הורים – עמיר אייל." />
-  <meta name="twitter:card" content="" />
-  <meta name="twitter:site" content="" />
-  <meta name="twitter:creator" content="" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
 <meta charset="utf-8">
 <title>עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -271,7 +271,9 @@
     </a>
 </div></div>
   <footer class="bg-tlgray-100">
+
   
+
   <script>
     function toggleNav() {
       var hamburger = document.getElementById("hamburgerbtn");
@@ -284,22 +286,24 @@
         body.classList.toggle("scroll-lock");
       });
     }
+
     toggleNav();
 
     document.querySelector('.scroll-top').addEventListener('click', () => {
       document.documentElement.scrollTop = 0;
     });
   </script>
+
   
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
   
+
   <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
     <div class="items-center text-xl text-grey-900 mr-6">
       Tella
     </div>
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
-      <div class="text-lg lg:flex-grow">
-      </div>
+      <div class="text-lg lg:flex-grow"></div>
       <div class="flex flex-row items-center text-lg">
         
         <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
@@ -317,9 +321,27 @@
       </div>
     </div>
   </div>
+
+  
+  <div class="bg-gray-700 p-4 flex justify-center">
+    <input
+      type="search"
+      id="search-input"
+      placeholder="חפש באתר..."
+      class="w-full max-w-md p-2 rounded"
+      aria-label="חיפוש באתר"
+    />
+  </div>
+
+  
+  <div id="search-results" class="max-w-md mx-auto p-4 text-white"></div>
+
   <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
     &copy; עמיר אייל פסיכותרפיה מתבגרים, מבוגרים והדרכת הורים 2025 All Rights Reserved.
   </div>
+
+  
+  <script src='/js/search.js'></script>
 </footer>
 <script src="/js/swiper-bundle.min.js"></script>
   <script>

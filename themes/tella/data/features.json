@@ -1,0 +1,20 @@
+[
+  {
+    "title": "טיפול במתבגרים",
+    "description": "ליווי רגשי בגיל ההתבגרות, עם דגש על תקשורת וגבולות.",
+    "image": "img/strip/teen.jpg",
+    "link": "/categories/מתבגרים/"
+  },
+  {
+    "title": "הדרכת הורים",
+    "description": "תהליך תומך להורים מול אתגרים רגשיים והתנהגותיים.",
+    "image": "img/strip/parenting.jpg",
+    "link": "/categories/הדרכת-הורים"
+  },
+  {
+    "title": "טיפול במבוגרים",
+    "description": "טיפול מותאם למצבי חיים שונים – חרדה, דיכאון, תקיעות רגשית.",
+    "image": "img/strip/adults.jpg",
+    "link": "/categories/פסיכותרפיה"
+  }
+]
