@@ -4,6 +4,8 @@ date: 2025-06-16
 author: עמיר אייל
 categories:
   - חירום
+tags:
+  - חירום
 sidebar: left
 ---
 
